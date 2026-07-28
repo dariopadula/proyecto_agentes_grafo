@@ -1,0 +1,2177 @@
+{
+  "project_id": "licencia_conducir",
+  "generated_at": "2026-07-27T14:50:18-03:00",
+  "source": "accepted_candidate_links",
+  "accepted_links_count": 22,
+  "resources_count": 160,
+  "discarded_resources_count": 44,
+  "filter_rules_path": "C:\\DARIO\\Git\\proyecto_agentes_grafo\\herramienta_modelado_tramites\\data\\projects\\licencia_conducir\\resource_filter_rules.json",
+  "pages": [
+    {
+      "link_id": "link_001",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/certificado/antecedente-de-licencia-de-conducir",
+      "title": "Antecedente de licencia de conducir",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab2411.pdf",
+          "title": "Códigos de patologías",
+          "anchor_text": "Códigos de patologías",
+          "resource_type": "pdf",
+          "source_context": "Códigos de patologías ( pdf - 37.24 KB)",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24952",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/certificado/antecedente-de-licencia-de-conducir",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_002",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-profesional-por-primera-vez-categoria-b-c-d-e-f-y-h-g3-con-examen-medico-en-la",
+      "title": "Aspirante de licencia de conducir profesional",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://montevideo.gub.uy/node/97154",
+          "title": "antigüedad y descripción",
+          "anchor_text": "antigüedad y descripción",
+          "resource_type": "link",
+          "source_context": "Verificar antigüedad y descripción de la categoría que aspira",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_1.pdf",
+          "title": "certificados médicos complementarios",
+          "anchor_text": "certificados médicos complementarios",
+          "resource_type": "pdf",
+          "source_context": "Quienes presenten alguna de las patologías detalladas a continuación deben presentar los siguientes certificados médicos complementarios",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "http://normativa.montevideo.gub.uy/articulo/65940",
+          "title": "normativa vigente",
+          "anchor_text": "normativa vigente",
+          "resource_type": "normativa",
+          "source_context": "Según la normativa vigente ciertas patologías médicas son causales de denegatoria en categoría profesional. Las personas que, a juicio del personal médico de la Intendencia, presenten afecciones severas capaces de influir en las condiciones de aptitud y seguridad en el tránsito podrán ser declaradas no aptas en categoría profesional.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2.pdf",
+          "title": "academia de conducción habilitada",
+          "anchor_text": "academia de conducción habilitada",
+          "resource_type": "pdf",
+          "source_context": "El trámite se puede realizar de forma particular o por medio de una academia de conducción habilitada . En caso de realizarlo de forma particular, para agendar el examen práctico deberás traer fotocopia u original de:",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENLICPR&recurso=ASPPROF-MEDINT&pagina_retorno=https%3A//www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "agenda electrónica",
+          "anchor_text": "agenda electrónica",
+          "resource_type": "agenda",
+          "source_context": "Reservá día y hora por el teléfono 1950 4000 opción 2, por mensaje de texto al WhatsApp 099 019 500 o en la agenda electrónica para realizarte el examen médico en la Intendencia.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "http://normativa.montevideo.gub.uy/articulo/65474",
+          "title": "Plazos máximos para categorías profesionales",
+          "anchor_text": "Plazos máximos para categorías profesionales",
+          "resource_type": "normativa",
+          "source_context": "A partir de los 56 años se modifican los plazos de aspirante y/o renovación profesional. Plazos máximos para categorías profesionales .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_008",
+          "url": "https://normativa.montevideo.gub.uy/articulo/66035",
+          "title": "antigüedad",
+          "anchor_text": "antigüedad",
+          "resource_type": "normativa",
+          "source_context": "Se debe acreditar antigüedad como persona conductora habilitada (según la categoría a la que se aspira). Las licencias de categoría B o H se pueden obtener sin antigüedad en otra categoría.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_009",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/manualprofesional_0.pdf",
+          "title": "manual de estudio para el examen teórico",
+          "anchor_text": "manual de estudio para el examen teórico",
+          "resource_type": "pdf",
+          "source_context": "El manual de estudio para el examen teórico se encuentra disponible únicamente en formato digital. Para categoría E , además, deberás estudiar el complemento de examen teórico para categoría E .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_010",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/complementoteoricocate2019.pdf",
+          "title": "complemento de examen teórico para categoría E",
+          "anchor_text": "complemento de examen teórico para categoría E",
+          "resource_type": "pdf",
+          "source_context": "El manual de estudio para el examen teórico se encuentra disponible únicamente en formato digital. Para categoría E , además, deberás estudiar el complemento de examen teórico para categoría E .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_011",
+          "url": "https://normativa.montevideo.gub.uy/articulo/65812",
+          "title": "Artículo R.424.16",
+          "anchor_text": "Artículo R.424.16",
+          "resource_type": "normativa",
+          "source_context": "Si hacés prueba práctica en un vehículo automático, la licencia que obtengas solo te habilitará a conducir vehículos automáticos ( Artículo R.424.16 ).",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_012",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENLICPR&recurso=ASPPROF-MEDINT&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservar hora",
+          "anchor_text": "Reservar hora",
+          "resource_type": "agenda",
+          "source_context": "Reservar hora",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_013",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/planilladeclasespracticas_4.pdf",
+          "title": "Planilla de clases prácticas",
+          "anchor_text": "Planilla de clases prácticas",
+          "resource_type": "pdf",
+          "source_context": "Planilla de clases prácticas ( pdf - 53.15 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_014",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_5.pdf",
+          "title": "Códigos de patologías",
+          "anchor_text": "Códigos de patologías",
+          "resource_type": "pdf",
+          "source_context": "Códigos de patologías ( pdf - 37.24 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_015",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/categoriaslicenciasconducir.pdf",
+          "title": "Antigüedad y descripción de categorías profesionales",
+          "anchor_text": "Antigüedad y descripción de categorías profesionales",
+          "resource_type": "pdf",
+          "source_context": "Antigüedad y descripción de categorías profesionales ( pdf - 3.54 MB)",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/52294",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_016",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-profesional-por-primera-vez-categoria-b-c-d-e-f-y-h-g3-con-examen-medico-en-la",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_003",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-nombre-en-licencia-de-conducir-de-persona-trans",
+      "title": "Cambio de nombre en licencia de conducir de persona trans",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "http://www.montevideo.gub.uy/asl/asl/sistemas/gestar/resoluci.nsf/WEB/Intendente/4233-20",
+          "title": "Resolución N° 4233/20",
+          "anchor_text": "Resolución N° 4233/20",
+          "resource_type": "link",
+          "source_context": "Resolución N° 4233/20",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "http://www.montevideo.gub.uy/asl/asl/sistemas/gestar/resoluci.nsf/WEB/Intendente/0634-23",
+          "title": "Resolución N° 0634/23",
+          "anchor_text": "Resolución N° 0634/23",
+          "resource_type": "link",
+          "source_context": "Resolución N° 0634/23",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/62638",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-nombre-en-licencia-de-conducir-de-persona-trans",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_004",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/contravencion-por-circular-sin-libreta",
+      "title": "Contravención por circular sin libreta",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=ITRANSIT&recurso=TPRESENC&pagina_retorno=http://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservar hora",
+          "anchor_text": "Reservar hora",
+          "resource_type": "agenda",
+          "source_context": "Reservar hora",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://normativa.montevideo.gub.uy/articulo/65845",
+          "title": "Art. D. 545 del Digesto Departamental",
+          "anchor_text": "Art. D. 545 del Digesto Departamental",
+          "resource_type": "normativa",
+          "source_context": "Art. D. 545 del Digesto Departamental",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://normativa.montevideo.gub.uy/articulo/66081",
+          "title": "Art. D.678 del Digesto Departamental",
+          "anchor_text": "Art. D.678 del Digesto Departamental",
+          "resource_type": "normativa",
+          "source_context": "Art. D.678 del Digesto Departamental",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/53286",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/contravencion-por-circular-sin-libreta",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_005",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/exoneracion/costo-de-licencias-de-conducir-profesionales-categorias-c-d-e-y-f",
+      "title": "Costo de licencias de conducir profesionales categorías C, D, E y F",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formulariobeneficiootrosprogramas11_1.pdf",
+          "title": "Constancia de pertenencia a un programa de inclusión social y promoción de la autonomía económica",
+          "anchor_text": "Constancia de pertenencia a un programa de inclusión social y promoción de la autonomía económica",
+          "resource_type": "pdf",
+          "source_context": "Constancia de pertenencia a un programa de inclusión social y promoción de la autonomía económica (si corresponde).",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://montevideo.gub.uy/node/62727",
+          "title": "formulario web",
+          "anchor_text": "formulario web",
+          "resource_type": "formulario",
+          "source_context": "Completá el formulario web adjuntando la documentación requerida.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=VUNICA&recurso=ADMUSUARIOS&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservá día y hora",
+          "anchor_text": "Reservá día y hora",
+          "resource_type": "agenda",
+          "source_context": "Reservá día y hora para concurrir presencialmente al Servicio de Atención a la Ciudadanía.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=VUNICA&recurso=RESERVAPREVIA&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservar hora",
+          "anchor_text": "Reservar hora",
+          "resource_type": "agenda",
+          "source_context": "Reservar hora",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/declaracionjuradaexoneraciontasadeexpedicionpunccdeyf1.pdf",
+          "title": "Declaración Jurada - Pago de licencias de conducir profesionales categorías C, D, E y F",
+          "anchor_text": "Declaración Jurada - Pago de licencias de conducir profesionales categorías C, D, E y F",
+          "resource_type": "pdf",
+          "source_context": "Declaración Jurada - Pago de licencias de conducir profesionales categorías C, D, E y F ( pdf - 92.05 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/1708454541257.pdf",
+          "title": "Resolución Nro.: 0690/24",
+          "anchor_text": "Resolución Nro.: 0690/24",
+          "resource_type": "pdf",
+          "source_context": "Resolución Nro.: 0690/24 ( pdf - 19.9 KB)",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/62635",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_008",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/exoneracion/costo-de-licencias-de-conducir-profesionales-categorias-c-d-e-y-f",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_006",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/duplicado-de-la-licencia-de-conducir",
+      "title": "Duplicado de licencia de conducir",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=CONDUPLI&recurso=DUPLICADO&pagina_retorno=http%3A//www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "agenda web",
+          "anchor_text": "agenda web",
+          "resource_type": "agenda",
+          "source_context": "Reservá día y hora por Whatsapp al 099 019 500 , por teléfono llamando del 1950 4000 opción 2 o a través de la agenda web .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=CONDUPLI&recurso=DUPLICADO&pagina_retorno=http://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservar hora",
+          "anchor_text": "Reservar hora",
+          "resource_type": "agenda",
+          "source_context": "Reservar hora",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_11.pdf",
+          "title": "Códigos de patologías",
+          "anchor_text": "Códigos de patologías",
+          "resource_type": "pdf",
+          "source_context": "Códigos de patologías ( pdf - 37.24 KB)",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24955",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/duplicado-de-la-licencia-de-conducir",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_007",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/evaluacion-medica-para-personas-con-discapacidad",
+      "title": "Evaluación médica para afectación de coche por Ley 13.102 o Decreto 22.515",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/EE%202024-4730-98-000099.pdf",
+          "title": "este documento",
+          "anchor_text": "este documento",
+          "resource_type": "pdf",
+          "source_context": "Si la persona beneficiaria es menor de edad o no conduce, no hace la evaluación médica en la IM. En el trámite de VUCE debe ingresar este documento .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=ASPIRANT&recurso=SDI&pagina_retorno=https%3A//www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "agenda electrónica",
+          "anchor_text": "agenda electrónica",
+          "resource_type": "agenda",
+          "source_context": "Reservá día y hora en la agenda electrónica para realizarte el examen médico en la Intendencia.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=ASPIRANT&recurso=SDI&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservar hora",
+          "anchor_text": "Reservar hora",
+          "resource_type": "agenda",
+          "source_context": "Reservar hora",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/61488",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/evaluacion-medica-para-personas-con-discapacidad",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_008",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/homologacion-de-licencia-de-conducir-categorias-a-g1-y-g2",
+      "title": "Homologación de licencia de conducir categorías A, G1 y G2",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Instituciones_médicas_habilitadas.pdf",
+          "title": "instituciones habilitadas",
+          "anchor_text": "instituciones habilitadas",
+          "resource_type": "pdf",
+          "source_context": "Certificado médico expedido por instituciones habilitadas .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/ESPAN%CC%83A%20convenio%20canje%20licencia%20conducir.pdf",
+          "title": "convenio bilateral",
+          "anchor_text": "convenio bilateral",
+          "resource_type": "pdf",
+          "source_context": "Se revalidan en las categorías que correspondan de acuerdo a la tabla de canje establecida en el convenio bilateral . Tu licencia española será retenida.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=HOEXAM&recurso=HOEXAM&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "agenda electrónica",
+          "anchor_text": "agenda electrónica",
+          "resource_type": "agenda",
+          "source_context": "Reservá día y hora en la agenda electrónica para realizar la homologación",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24.pdf",
+          "title": "Códigos de patologías",
+          "anchor_text": "Códigos de patologías",
+          "resource_type": "pdf",
+          "source_context": "Códigos de patologías ( pdf - 37.24 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1.pdf",
+          "title": "Instituciones médicas habilitadas - Junio 2026",
+          "anchor_text": "Instituciones médicas habilitadas - Junio 2026",
+          "resource_type": "pdf",
+          "source_context": "Instituciones médicas habilitadas - Junio 2026 ( pdf - 185.47 KB)",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24956",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/homologacion-de-licencia-de-conducir-categorias-a-g1-y-g2",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_009",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/homologacion-de-licencia-de-conducir-categorias-b-c-d-e-f-h-yo-g3",
+      "title": "Homologación de licencia de conducir categorías B, C, D, E, F, H y G3",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_0.pdf",
+          "title": "certificados médicos complementarios",
+          "anchor_text": "certificados médicos complementarios",
+          "resource_type": "pdf",
+          "source_context": "Quienes presenten alguna de las patologías detalladas a continuación deben presentar certificados médicos complementarios :",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "http://normativa.montevideo.gub.uy/articulo/65940",
+          "title": "normativa vigente",
+          "anchor_text": "normativa vigente",
+          "resource_type": "normativa",
+          "source_context": "Según la normativa vigente , ciertas patologías médicas son causales de denegatoria en categoría profesional. Las personas que, a juicio del personal médico de la Intendencia, presenten afecciones severas capaces de influir en las condiciones de aptitud y seguridad en el tránsito podrán ser declaradas no aptas en categoría profesional.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "http://normativa.montevideo.gub.uy/articulo/66035",
+          "title": "antigüedad",
+          "anchor_text": "antigüedad",
+          "resource_type": "normativa",
+          "source_context": "Para acreditar tu antigüedad como conductor o conductora habilitada necesitarás el certificado de antecedentes u hoja de vida de tu licencia de conducir(certificado que se emite en el país de origen que describe el historial como conductor o conductora). Si está apostillado , no tendrás que rendir el examen teórico y práctico amateur.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/ESPA%C3%91A%20convenio%20canje%20licencia%20conducir.pdf",
+          "title": "convenio bilateral",
+          "anchor_text": "convenio bilateral",
+          "resource_type": "pdf",
+          "source_context": "Se revalidan en las categorías que correspondan de acuerdo a la tabla de canje establecida en el convenio bilateral .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENLICPR&recurso=ASPPROF-MEDINT&pagina_retorno=https%3A//www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "agenda electrónica",
+          "anchor_text": "agenda electrónica",
+          "resource_type": "agenda",
+          "source_context": "Reservá día y hora en la agenda electrónica para realizarte el examen médico en la Intendencia.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://montevideo.gub.uy/index.php/node/24200/",
+          "title": "Contralor de Conductores",
+          "anchor_text": "Contralor de Conductores",
+          "resource_type": "link",
+          "source_context": "Si tu licencia es de otro departamento, continuás el trámite en el servicio de Contralor de Conductores .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_008",
+          "url": "http://normativa.montevideo.gub.uy/articulo/65474",
+          "title": "Ver los plazos máximos para categorías profesionales",
+          "anchor_text": "Ver los plazos máximos para categorías profesionales",
+          "resource_type": "normativa",
+          "source_context": "A partir de los 56 años se modifican los plazos de aspirante y/o renovación profesional. Ver los plazos máximos para categorías profesionales .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_009",
+          "url": "https://normativa.montevideo.gub.uy/articulo/66035",
+          "title": "antigüedad",
+          "anchor_text": "antigüedad",
+          "resource_type": "normativa",
+          "source_context": "Se debe acreditar antigüedad como persona conductora habilitada (según la categoría a la que se aspira). Las licencias de categoría B o H se pueden obtener sin antigüedad en otra categoría.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_010",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/manualprofesional_0_0.pdf",
+          "title": "manual de estudio para el examen teórico",
+          "anchor_text": "manual de estudio para el examen teórico",
+          "resource_type": "pdf",
+          "source_context": "El manual de estudio para el examen teórico se encuentra disponible únicamente en formato digital. Para categoría E, además, deberás estudiar el complemento de examen teórico para categoría E .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_011",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/complementoteoricocate2019_0.pdf",
+          "title": "complemento de examen teórico para categoría E",
+          "anchor_text": "complemento de examen teórico para categoría E",
+          "resource_type": "pdf",
+          "source_context": "El manual de estudio para el examen teórico se encuentra disponible únicamente en formato digital. Para categoría E, además, deberás estudiar el complemento de examen teórico para categoría E .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_012",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENLICPR&recurso=RENPROF-MEDINT&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservar hora",
+          "anchor_text": "Reservar hora",
+          "resource_type": "agenda",
+          "source_context": "Reservar hora",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_013",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/circular61-20-puncextranjeros-criterios14.09.20_0.pdf",
+          "title": "Circular del Congreso de Intendentes sobre canje de licencias",
+          "anchor_text": "Circular del Congreso de Intendentes sobre canje de licencias",
+          "resource_type": "pdf",
+          "source_context": "Circular del Congreso de Intendentes sobre canje de licencias ( pdf - 497.67 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_014",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_12.pdf",
+          "title": "Códigos de patologías",
+          "anchor_text": "Códigos de patologías",
+          "resource_type": "pdf",
+          "source_context": "Códigos de patologías ( pdf - 37.24 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_015",
+          "url": "http://normativa.montevideo.gub.uy/armado/65104",
+          "title": "Certificados de aptitud psicofísica",
+          "anchor_text": "Certificados de aptitud psicofísica",
+          "resource_type": "normativa",
+          "source_context": "Certificados de aptitud psicofísica",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/48069",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_016",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/homologacion-de-licencia-de-conducir-categorias-b-c-d-e-f-h-yo-g3",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_010",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/inscripcion-de-aspirantes-a-licencia-de-conducir-por-parte-de-la-academia-de-conducir",
+      "title": "Inscripción de aspirantes a licencia de conducir por parte de la academia de conducir",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/node/52464",
+          "title": "Suscripción o actualización de personas administradoras de usuarios para empresas y otras entidades",
+          "anchor_text": "Suscripción o actualización de personas administradoras de usuarios para empresas y otras entidades",
+          "resource_type": "link",
+          "source_context": "Para acceder al formulario la academia debe contar con usuario para servicios y trámites digitales provisto por la Intendencia. Si no cuenta con un usuario, debe realizar el trámite de Suscripción o actualización de personas administradoras de usuarios para empresas y otras entidades .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://normativa.montevideo.gub.uy/articulo/65910",
+          "title": "Trámites a cumplir por las academias de conducir",
+          "anchor_text": "Trámites a cumplir por las academias de conducir",
+          "resource_type": "normativa",
+          "source_context": "Trámites a cumplir por las academias de conducir",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-por-primera-vez-hasta-79-anos-categoria-a",
+          "title": "Licencia de conducir categoría A, hasta 79 años inclusive",
+          "anchor_text": "Licencia de conducir categoría A, hasta 79 años inclusive",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Licencia de conducir categoría A, hasta 79 años inclusive",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-por-primera-vez-categoria-g1-y-g2-motos-hasta-79-anos-inclusive",
+          "title": "Licencia de conducir para categoría G1 y G2 hasta 79 años inclusive",
+          "anchor_text": "Licencia de conducir para categoría G1 y G2 hasta 79 años inclusive",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Licencia de conducir para categoría G1 y G2 hasta 79 años inclusive",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-profesional-por-primera-vez-categoria-b-c-d-e-f-y-h-g3-con-examen-medico-en-la",
+          "title": "Aspirante de licencia de conducir profesional",
+          "anchor_text": "Aspirante de licencia de conducir profesional",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Aspirante de licencia de conducir profesional",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/53710",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/registro/inscripcion-de-aspirantes-a-licencia-de-conducir-por-parte-de-la-academia-de-conducir",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_011",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-por-primera-vez-hasta-79-anos-categoria-a",
+      "title": "Licencia de conducir categoría A, hasta 79 años inclusive",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Instituciones_médicas_habilitadas.pdf",
+          "title": "instituciones habilitadas",
+          "anchor_text": "instituciones habilitadas",
+          "resource_type": "pdf",
+          "source_context": "Certificado médico, realizado en las instituciones habilitadas de Montevideo.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_0.pdf",
+          "title": "academia de conducción,",
+          "anchor_text": "academia de conducción,",
+          "resource_type": "pdf",
+          "source_context": "Si lo vas a realizar a través de una academia de conducción, solo deberás dirigirte a ella con la documentación y la academia continuará la gestión ante la Intendencia.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=ASPIRANT&recurso=INITRAMA&pagina_retorno=https%3A//www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "agenda electrónica",
+          "anchor_text": "agenda electrónica",
+          "resource_type": "agenda",
+          "source_context": "Solicitá día y hora a través de la agenda electrónica , escribiendo por Whatsapp al 099 019 500 o llamando al 1950 4000 opción 2 para presentar la documentación.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "http://montevideo.gub.uy/sites/default/files/biblioteca/manualautosymotos_0.pdf",
+          "title": "manual de estudio para el examen teórico",
+          "anchor_text": "manual de estudio para el examen teórico",
+          "resource_type": "pdf",
+          "source_context": "El manual de estudio para el examen teórico se encuentra disponible para descargar.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://normativa.montevideo.gub.uy/articulo/65812",
+          "title": "Artículo R.424.16",
+          "anchor_text": "Artículo R.424.16",
+          "resource_type": "normativa",
+          "source_context": "Si hacés la prueba práctica en un vehículo automático la licencia que obtengas solo te habilitará a conducir vehículos automáticos ( Artículo R.424.16 ).",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=ASPIRANT&recurso=INITRAMA&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservar hora",
+          "anchor_text": "Reservar hora",
+          "resource_type": "agenda",
+          "source_context": "Reservar hora",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_008",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/manualautosymotos_0.pdf",
+          "title": "Manual de estudio para aspirantes",
+          "anchor_text": "Manual de estudio para aspirantes",
+          "resource_type": "pdf",
+          "source_context": "Manual de estudio para aspirantes ( pdf - 3.81 MB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_009",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formularioaspirante.pdf",
+          "title": "Formulario de aspirantes",
+          "anchor_text": "Formulario de aspirantes",
+          "resource_type": "pdf",
+          "source_context": "Formulario de aspirantes ( pdf - 323.02 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_010",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/planilladeclasespracticas_1.pdf",
+          "title": "Planilla de clases prácticas",
+          "anchor_text": "Planilla de clases prácticas",
+          "resource_type": "pdf",
+          "source_context": "Planilla de clases prácticas ( pdf - 53.15 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_011",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_2.pdf",
+          "title": "Códigos de patologías",
+          "anchor_text": "Códigos de patologías",
+          "resource_type": "pdf",
+          "source_context": "Códigos de patologías ( pdf - 37.24 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_012",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1_0.pdf",
+          "title": "Instituciones médicas habilitadas - Junio 2026",
+          "anchor_text": "Instituciones médicas habilitadas - Junio 2026",
+          "resource_type": "pdf",
+          "source_context": "Instituciones médicas habilitadas - Junio 2026 ( pdf - 185.47 KB)",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/33373",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_013",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-por-primera-vez-hasta-79-anos-categoria-a",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_012",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-entre-75-y-79-anos-inclusive-con-patologias-restrictivas-y",
+      "title": "Licencia de conducir categorías A, G1 y G2, entre 75 y 79 años inclusive con examen médico realizado en las instituciones habilitadas",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Instituciones_m%C3%A9dicas_habilitadas.pdf",
+          "title": "instituciones habilitadas.",
+          "anchor_text": "instituciones habilitadas.",
+          "resource_type": "pdf",
+          "source_context": "Certificado médico para renovación de licencia e xpedido por instituciones habilitadas. Si tenés las patologías restrictivas códigos 4, 24, 31 o 37, el certificado médico se hace en la Intendencia. Ingresá al trámite de renovación de licencia de conducir para las categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37 para más información.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-hasta-79-anos-inclusive-con-patologias-restrictivas",
+          "title": "renovación de licencia de conducir para las categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37",
+          "anchor_text": "renovación de licencia de conducir para las categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Certificado médico para renovación de licencia e xpedido por instituciones habilitadas. Si tenés las patologías restrictivas códigos 4, 24, 31 o 37, el certificado médico se hace en la Intendencia. Ingresá al trámite de renovación de licencia de conducir para las categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37 para más información.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_5.pdf",
+          "title": "academias habilitadas",
+          "anchor_text": "academias habilitadas",
+          "resource_type": "pdf",
+          "source_context": "También podés hacer la prueba con alguna de las academias habilitadas de Montevideo.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENOVCON&recurso=RENMAYOR-MEDEXT&pagina_retorno=https%3A//www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "agenda electrónica",
+          "anchor_text": "agenda electrónica",
+          "resource_type": "agenda",
+          "source_context": "Reservá día y hora en la agenda electrónica . También podés hacerlo a través de Whatsapp escribiendo al 099 019 500 o llamando al 1950 4000 opción 2.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://normativa.montevideo.gub.uy/articulo/65474",
+          "title": "plazos máximos para categorías amateur (A, G1 y G2)",
+          "anchor_text": "plazos máximos para categorías amateur (A, G1 y G2)",
+          "resource_type": "normativa",
+          "source_context": "A partir de los 56 años se modifican los plazos de renovación. Conocé los plazos máximos para categorías amateur (A, G1 y G2) . Entre los 70 y los 78 años la renovación es por 3 años máximo. A los 79, por 2 años máximo.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://normativa.montevideo.gub.uy/articulo/65812",
+          "title": "Artículo R.424.16.",
+          "anchor_text": "Artículo R.424.16.",
+          "resource_type": "normativa",
+          "source_context": "Si hacés la prueba práctica en vehículo automático o semiautomático, la licencia que obtengas solo te habilitará a conducir ese tipo de vehículos ( Artículo R.424.16. )",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_008",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENOVCON&recurso=RENMAYOR-MEDEXT&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservar hora",
+          "anchor_text": "Reservar hora",
+          "resource_type": "agenda",
+          "source_context": "Reservar hora",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_009",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/patologiasmedicas2_1.pdf",
+          "title": "Códigos de patologías",
+          "anchor_text": "Códigos de patologías",
+          "resource_type": "pdf",
+          "source_context": "Códigos de patologías ( pdf - 174.55 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_010",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1_3.pdf",
+          "title": "Instituciones médicas habilitadas - Junio 2026",
+          "anchor_text": "Instituciones médicas habilitadas - Junio 2026",
+          "resource_type": "pdf",
+          "source_context": "Instituciones médicas habilitadas - Junio 2026 ( pdf - 185.47 KB)",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/52451",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_011",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-entre-75-y-79-anos-inclusive-con-patologias-restrictivas-y",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_013",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-por-primera-vez-categoria-g1-y-g2-motos-hasta-79-anos-inclusive",
+      "title": "Licencia de conducir para categoría G1 y G2 hasta 79 años inclusive",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Instituciones_m%C3%A9dicas_habilitadas.pdf",
+          "title": "instituciones habilitadas",
+          "anchor_text": "instituciones habilitadas",
+          "resource_type": "pdf",
+          "source_context": "Certificado médico, realizado en las instituciones habilitadas de Montevideo",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_1.pdf",
+          "title": "academia de conducción:",
+          "anchor_text": "academia de conducción:",
+          "resource_type": "pdf",
+          "source_context": "1- Gestión por medio de una academia de conducción: se dirige a esta con los requisitos mencionados y la academia realizará el trámite ante la Intendencia.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://montevideo.gub.uy/sites/default/files/biblioteca/cartadeautorizaciondemenorg1edit.pdf",
+          "title": "autorización del menor",
+          "anchor_text": "autorización del menor",
+          "resource_type": "pdf",
+          "source_context": "Categoría G1: Si tenes 16 años deberás presentarte acompañado por padre, madre o tutor, con libreta de matrimonio, partida de nacimiento o tutela otorgada por un Juez. Asimismo se debe completar autorización del menor firmada por ambos padres.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://normativa.montevideo.gub.uy/articulo/65812",
+          "title": "Artículo R.424.16 .",
+          "anchor_text": "Artículo R.424.16 .",
+          "resource_type": "normativa",
+          "source_context": "Artículo R.424.16 . Examen práctico con vehículos automáticos",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://montevideo.gub.uy/sites/default/files/biblioteca/manualautosymotos.pdf",
+          "title": "El manual de estudio para el examen teórico",
+          "anchor_text": "El manual de estudio para el examen teórico",
+          "resource_type": "pdf",
+          "source_context": "El manual de estudio para el examen teórico se encuentra disponible para descargar, únicamente en formato digital.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=ASPIRANT&recurso=INITRAMA&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservar hora",
+          "anchor_text": "Reservar hora",
+          "resource_type": "agenda",
+          "source_context": "Reservar hora",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_008",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_1.pdf",
+          "title": "Códigos de Patologías",
+          "anchor_text": "Códigos de Patologías",
+          "resource_type": "pdf",
+          "source_context": "Códigos de Patologías ( pdf - 37.24 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_009",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/manualautosymotos.pdf",
+          "title": "Manual de Estudio para Aspirantes",
+          "anchor_text": "Manual de Estudio para Aspirantes",
+          "resource_type": "pdf",
+          "source_context": "Manual de Estudio para Aspirantes ( pdf - 3.81 MB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_010",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formularioaspirante_1.pdf",
+          "title": "Formulario de Aspirantes",
+          "anchor_text": "Formulario de Aspirantes",
+          "resource_type": "pdf",
+          "source_context": "Formulario de Aspirantes ( pdf - 323.02 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_011",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/cartadeautorizaciondemenorg1edit.pdf",
+          "title": "Autorización del menor para G1",
+          "anchor_text": "Autorización del menor para G1",
+          "resource_type": "pdf",
+          "source_context": "Autorización del menor para G1 ( pdf - 54.4 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_012",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/Planilla%20de%20clases%20pr%C3%A1cticas%202025.pdf",
+          "title": "Planilla de clases prácticas",
+          "anchor_text": "Planilla de clases prácticas",
+          "resource_type": "pdf",
+          "source_context": "Planilla de clases prácticas ( pdf - 40.45 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_013",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1_1.pdf",
+          "title": "Instituciones médicas habilitadas - Junio 2026",
+          "anchor_text": "Instituciones médicas habilitadas - Junio 2026",
+          "resource_type": "pdf",
+          "source_context": "Instituciones médicas habilitadas - Junio 2026 ( pdf - 185.47 KB)",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/25012",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_014",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-por-primera-vez-categoria-g1-y-g2-motos-hasta-79-anos-inclusive",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_014",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-para-personas-con-discapacidad",
+      "title": "Licencia de conducir para personas con discapacidad",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://montevideo.gub.uy/sites/default/files/biblioteca/requisitosespecialesmedicoamateur_1.pdf",
+          "title": "documentación complementaria",
+          "anchor_text": "documentación complementaria",
+          "resource_type": "pdf",
+          "source_context": "Las personas que además presenten alguna de las patologías mencionadas abajo deben informarse de la documentación complementaria que deben traer en la fecha agendada.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=ASPIRANT&recurso=SDI&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "agenda electrónica",
+          "anchor_text": "agenda electrónica",
+          "resource_type": "agenda",
+          "source_context": "Reservá día y hora por el teléfono 1950 4000 opción 2, por el Whatsapp 099 019 500 o en la agenda electrónica para realizarte el examen médico en la Intendencia.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "http://montevideo.gub.uy/sites/default/files/biblioteca/manualautosymotos_0.pdf",
+          "title": "manual de estudio para el examen teórico",
+          "anchor_text": "manual de estudio para el examen teórico",
+          "resource_type": "pdf",
+          "source_context": "El manual de estudio para el examen teórico se encuentra disponible únicamente en formato digital.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formularioaspirante_0.pdf",
+          "title": "Formulario de aspirantes",
+          "anchor_text": "Formulario de aspirantes",
+          "resource_type": "pdf",
+          "source_context": "Formulario de aspirantes ( pdf - 323.02 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/planilladeclasespracticas.pdf",
+          "title": "Planilla de clases prácticas",
+          "anchor_text": "Planilla de clases prácticas",
+          "resource_type": "pdf",
+          "source_context": "Planilla de clases prácticas ( pdf - 53.15 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoamateur.pdf",
+          "title": "Requisitos médicos complementarios",
+          "anchor_text": "Requisitos médicos complementarios",
+          "resource_type": "pdf",
+          "source_context": "Requisitos médicos complementarios ( pdf - 77.84 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_008",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_0.pdf",
+          "title": "Códigos de patologías",
+          "anchor_text": "Códigos de patologías",
+          "resource_type": "pdf",
+          "source_context": "Códigos de patologías ( pdf - 37.24 KB)",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/25004",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_009",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-para-personas-con-discapacidad",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_015",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-por-primera-vez-para-categoria-a-a-partir-de-80-anos",
+      "title": "Licencia de conducir por primera vez para categoría A, G1 o G2 a partir de 80 años",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://montevideo.gub.uy/sites/default/files/biblioteca/requisitosespecialesmedicoamateur_1.pdf",
+          "title": "documentación adicional requerida",
+          "anchor_text": "documentación adicional requerida",
+          "resource_type": "pdf",
+          "source_context": "Las personas que presenten alguna de las patologías detalladas a continuación deberán revisar la documentación adicional requerida y traerla el día de su cita.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENLICPR&recurso=ASPPROF-MEDINT&pagina_retorno=https%3A//www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "agenda electrónica",
+          "anchor_text": "agenda electrónica",
+          "resource_type": "agenda",
+          "source_context": "Reservá día y hora por teléfono al 1950 4000 opción 2, por mensaje de texto al Whatsapp 099 019 500 o por la agenda electrónica para realizarte el examen médico en la Intendencia.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_3.pdf",
+          "title": "academia de conducción",
+          "anchor_text": "academia de conducción",
+          "resource_type": "pdf",
+          "source_context": "Si vas a dar el examen con una academia de conducción , deberás dirigirte a ella para que continúe el trámite.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "http://montevideo.gub.uy/sites/default/files/biblioteca/manualautosymotos_0.pdf",
+          "title": "manual de estudio para el examen teórico",
+          "anchor_text": "manual de estudio para el examen teórico",
+          "resource_type": "pdf",
+          "source_context": "El manual de estudio para el examen teórico se encuentra disponible únicamente en formato digital.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://normativa.montevideo.gub.uy/articulo/65812",
+          "title": "Artículo R.424.16",
+          "anchor_text": "Artículo R.424.16",
+          "resource_type": "normativa",
+          "source_context": "Si hacés la prueba práctica en un vehículo automático, la licencia que obtengas solo te habilitará a conducir vehículos automáticos ( Artículo R.424.16 )",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENOVCON&recurso=RENMAYOR-MEDINT&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservar hora",
+          "anchor_text": "Reservar hora",
+          "resource_type": "agenda",
+          "source_context": "Reservar hora",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_008",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/manualautosymotos_1.pdf",
+          "title": "Manual de aspirantes a licencia de conducir",
+          "anchor_text": "Manual de aspirantes a licencia de conducir",
+          "resource_type": "pdf",
+          "source_context": "Manual de aspirantes a licencia de conducir ( pdf - 3.81 MB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_009",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formularioaspirante_2.pdf",
+          "title": "Formulario de Aspirantes",
+          "anchor_text": "Formulario de Aspirantes",
+          "resource_type": "pdf",
+          "source_context": "Formulario de Aspirantes ( pdf - 323.02 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_010",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/planilladeclasespracticas_2.pdf",
+          "title": "Planilla de clases prácticas",
+          "anchor_text": "Planilla de clases prácticas",
+          "resource_type": "pdf",
+          "source_context": "Planilla de clases prácticas ( pdf - 53.15 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_011",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoamateur_2.pdf",
+          "title": "Certificados médicos complementarios",
+          "anchor_text": "Certificados médicos complementarios",
+          "resource_type": "pdf",
+          "source_context": "Certificados médicos complementarios ( pdf - 77.84 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_012",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_3.pdf",
+          "title": "Códigos de Patologías",
+          "anchor_text": "Códigos de Patologías",
+          "resource_type": "pdf",
+          "source_context": "Códigos de Patologías ( pdf - 37.24 KB)",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/25013",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_013",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-por-primera-vez-para-categoria-a-a-partir-de-80-anos",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_016",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/multas-asociadas-al-conductor-por-vehiculos-que-no-son-de-su-propiedad",
+      "title": "Multas asociadas al conductor por vehículos que no son de su propiedad",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://montevideo.gub.uy/institucional/dependencias/inspeccion-de-transito",
+          "title": "Servicio de Inspección de Tránsito",
+          "anchor_text": "Servicio de Inspección de Tránsito",
+          "resource_type": "link",
+          "source_context": "La persona interesada debe presentarse en el Servicio de Inspección de Tránsito (San José 1390)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=ITRANSIT&recurso=TPRESENC&pagina_retorno=http://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservar hora",
+          "anchor_text": "Reservar hora",
+          "resource_type": "agenda",
+          "source_context": "Reservar hora",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/53285",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/multas-asociadas-al-conductor-por-vehiculos-que-no-son-de-su-propiedad",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_017",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/exoneracion/pago-de-licencia-de-conducir-amateur-categoria-a",
+      "title": "Pago de licencia de conducir amateur categoría A",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://montevideo.gub.uy/sites/default/files/biblioteca/declaracionjuradaexoneraciontasadeexpedicionpunca.pdf",
+          "title": "Declaración jurada,",
+          "anchor_text": "Declaración jurada,",
+          "resource_type": "pdf",
+          "source_context": "Declaración jurada, con timbre profesional, donde se detallen los ingresos de las personas que integran el hogar.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formulariobeneficiootrosprogramas11_1.pdf",
+          "title": "Constancia de pertenencia a un programa de inclusión social y promoción de la autonomía económica",
+          "anchor_text": "Constancia de pertenencia a un programa de inclusión social y promoción de la autonomía económica",
+          "resource_type": "pdf",
+          "source_context": "Constancia de pertenencia a un programa de inclusión social y promoción de la autonomía económica (si corresponde).",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://montevideo.gub.uy/node/62727",
+          "title": "formulario web",
+          "anchor_text": "formulario web",
+          "resource_type": "formulario",
+          "source_context": "Completá el formulario web adjuntando la documentación requerida.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=VUNICA&recurso=ADMUSUARIOS&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservá día y hora",
+          "anchor_text": "Reservá día y hora",
+          "resource_type": "agenda",
+          "source_context": "Reservá día y hora para concurrir presencialmente al Servicio de Atención a la Ciudadanía .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://montevideo.gub.uy/institucional/dependencias/servicio-de-atencion-a-la-ciudadania",
+          "title": "Servicio de Atención a la Ciudadanía",
+          "anchor_text": "Servicio de Atención a la Ciudadanía",
+          "resource_type": "link",
+          "source_context": "Reservá día y hora para concurrir presencialmente al Servicio de Atención a la Ciudadanía .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=VUNICA&recurso=RESERVAPREVIA&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservar hora",
+          "anchor_text": "Reservar hora",
+          "resource_type": "agenda",
+          "source_context": "Reservar hora",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_008",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/declaracionjuradaexoneraciontasadeexpedicionpunca.pdf",
+          "title": "Declaración Jurada - Pago de licencia de conducir amateur categoría A",
+          "anchor_text": "Declaración Jurada - Pago de licencia de conducir amateur categoría A",
+          "resource_type": "pdf",
+          "source_context": "Declaración Jurada - Pago de licencia de conducir amateur categoría A ( pdf - 95.81 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_009",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formulariobeneficiootrosprogramas11_0.pdf",
+          "title": "Formulario de benecios de otros programas de la IM",
+          "anchor_text": "Formulario de benecios de otros programas de la IM",
+          "resource_type": "pdf",
+          "source_context": "Formulario de benecios de otros programas de la IM ( pdf - 134.38 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_010",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/1708454541257_0.pdf",
+          "title": "Resolución Nro.: 0690/24",
+          "anchor_text": "Resolución Nro.: 0690/24",
+          "resource_type": "pdf",
+          "source_context": "Resolución Nro.: 0690/24 ( pdf - 19.9 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_011",
+          "url": "http://www.montevideo.gub.uy/asl/asl/sistemas/gestar/resoluci.nsf/WEB/Intendente/0690-24",
+          "title": "Resolución N° 0690/24",
+          "anchor_text": "Resolución N° 0690/24",
+          "resource_type": "link",
+          "source_context": "Resolución N° 0690/24",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/62633",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_012",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/exoneracion/pago-de-licencia-de-conducir-amateur-categoria-a",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_018",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/academias-de-conducir",
+      "title": "Registro de academias de conducir",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://montevideo.gub.uy/sites/default/files/biblioteca/3-formulariodeinscripciondeacademias.pdf",
+          "title": "Formulario de solicitud",
+          "anchor_text": "Formulario de solicitud",
+          "resource_type": "pdf",
+          "source_context": "Formulario de solicitud (completar con letra clara)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/3-formulariodeinscripciondeacademias.pdf",
+          "title": "Formulario de inscripción para academias",
+          "anchor_text": "Formulario de inscripción para academias",
+          "resource_type": "pdf",
+          "source_context": "Formulario de inscripción para academias ( pdf - 102.93 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/Cierre%20de%20academias.pdf",
+          "title": "Resolución 2069/24",
+          "anchor_text": "Resolución 2069/24",
+          "resource_type": "pdf",
+          "source_context": "Resolución 2069/24 ( pdf - 5.96 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://normativa.montevideo.gub.uy/armado/65117",
+          "title": "Fiscalización administrativa sobre conductores y vehículos",
+          "anchor_text": "Fiscalización administrativa sobre conductores y vehículos",
+          "resource_type": "normativa",
+          "source_context": "Fiscalización administrativa sobre conductores y vehículos",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://normativa.montevideo.gub.uy/articulos/65138",
+          "title": "Academias de Conducir",
+          "anchor_text": "Academias de Conducir",
+          "resource_type": "normativa",
+          "source_context": "Academias de Conducir",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/29711",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/registro/academias-de-conducir",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_019",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-a-partir-de-80-anos-con-examen-medico-en-la-intendencia",
+      "title": "Renovación de licencia de conducir categorías A, G1 y G2 a partir de 80 años",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://montevideo.gub.uy/sites/default/files/biblioteca/requisitosespecialesmedicoamateur_1.pdf",
+          "title": "documentación complementaria",
+          "anchor_text": "documentación complementaria",
+          "resource_type": "pdf",
+          "source_context": "Además, quienes presenten alguna de las patologías mencionadas abajo deberán presentar la siguiente documentación complementaria en la fecha agendada.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_2.pdf",
+          "title": "academias habilitadas de Montevideo.",
+          "anchor_text": "academias habilitadas de Montevideo.",
+          "resource_type": "pdf",
+          "source_context": "También podés hacer la prueba con alguna de las academias habilitadas de Montevideo.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENOVCON&recurso=RENMAYOR-MEDINT&pagina_retorno=https%3A//www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "agenda electrónica",
+          "anchor_text": "agenda electrónica",
+          "resource_type": "agenda",
+          "source_context": "Reservá día y hora por el teléfono 1950 4000 opción 2, por mensaje de texto al Whatsapp 099 019 500 o en la agenda electrónica para realizarte el examen médico en la Intendencia.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://normativa.montevideo.gub.uy/articulo/65812",
+          "title": "Artículo R.424.16.",
+          "anchor_text": "Artículo R.424.16.",
+          "resource_type": "normativa",
+          "source_context": "Si hacés la prueba práctica en un vehículo automático la licencia que obtengas solo te habilitará a conducir vehículos automáticos ( Artículo R.424.16. ).",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENOVCON&recurso=RENMAYOR-MEDINT&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservar hora",
+          "anchor_text": "Reservar hora",
+          "resource_type": "agenda",
+          "source_context": "Reservar hora",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_2.pdf",
+          "title": "Certificados médicos complementarios",
+          "anchor_text": "Certificados médicos complementarios",
+          "resource_type": "pdf",
+          "source_context": "Certificados médicos complementarios ( pdf - 65.06 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_008",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_6.pdf",
+          "title": "Códigos de patologías",
+          "anchor_text": "Códigos de patologías",
+          "resource_type": "pdf",
+          "source_context": "Códigos de patologías ( pdf - 37.24 KB)",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24953",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_009",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-a-partir-de-80-anos-con-examen-medico-en-la-intendencia",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_020",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-hasta-74-anos-inclusive-sin-patologias-restrictivas",
+      "title": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 74 años inclusive",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Instituciones_médicas_habilitadas.pdf",
+          "title": "instituciones habilitadas",
+          "anchor_text": "instituciones habilitadas",
+          "resource_type": "pdf",
+          "source_context": "Certificado médico para renovación de licencia expedido por instituciones habilitadas",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENOVCON&recurso=RENCOMUN&pagina_retorno=https%3A//www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "agenda electrónica",
+          "anchor_text": "agenda electrónica",
+          "resource_type": "agenda",
+          "source_context": "Reservá día y hora en la agenda electrónica , en el 1950 4000 opción 2 o por Whatsapp al 099 019 500 .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/node/42183",
+          "title": "Licencia de conducir categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37",
+          "anchor_text": "Licencia de conducir categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37",
+          "resource_type": "link",
+          "source_context": "Si tenés las patologías 4, 24, 31 o 37 , deberás hacer el trámite de Licencia de conducir categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37 .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://normativa.montevideo.gub.uy/articulo/65474",
+          "title": "Plazos máximos para categorías amateur (A, G1 y G2).",
+          "anchor_text": "Plazos máximos para categorías amateur (A, G1 y G2).",
+          "resource_type": "normativa",
+          "source_context": "A partir de los 56 años se modifican los plazos de renovación. Plazos máximos para categorías amateur (A, G1 y G2).",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENOVCON&recurso=RENCOMUN&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservar hora",
+          "anchor_text": "Reservar hora",
+          "resource_type": "agenda",
+          "source_context": "Reservar hora",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_8.pdf",
+          "title": "Códigos de patologías",
+          "anchor_text": "Códigos de patologías",
+          "resource_type": "pdf",
+          "source_context": "Códigos de patologías ( pdf - 37.24 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_008",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_6.pdf",
+          "title": "Academias de conducir habilitadas - Octubre 2025",
+          "anchor_text": "Academias de conducir habilitadas - Octubre 2025",
+          "resource_type": "pdf",
+          "source_context": "Academias de conducir habilitadas - Octubre 2025 ( pdf - 140.71 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_009",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1_2.pdf",
+          "title": "Instituciones médicas habilitadas - Junio 2026",
+          "anchor_text": "Instituciones médicas habilitadas - Junio 2026",
+          "resource_type": "pdf",
+          "source_context": "Instituciones médicas habilitadas - Junio 2026 ( pdf - 185.47 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_010",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-hasta-79-anos-inclusive-con-patologias-restrictivas",
+          "title": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37.",
+          "anchor_text": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37.",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37.",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24977",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_011",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-hasta-74-anos-inclusive-sin-patologias-restrictivas",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_021",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-hasta-79-anos-inclusive-con-patologias-restrictivas",
+      "title": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37.",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://montevideo.gub.uy/sites/default/files/biblioteca/codigosdepatologiasab24_9.pdf",
+          "title": "patologías médicas",
+          "anchor_text": "patologías médicas",
+          "resource_type": "pdf",
+          "source_context": "Las personas que además presenten alguna de las patologías médicas del siguiente listado deben informarse acerca de la documentación complementaria requerida por patología que deben presentar.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://montevideo.gub.uy/sites/default/files/biblioteca/requisitosespecialesmedicoamateur_1.pdf",
+          "title": "documentación complementaria requerida por patología",
+          "anchor_text": "documentación complementaria requerida por patología",
+          "resource_type": "pdf",
+          "source_context": "Las personas que además presenten alguna de las patologías médicas del siguiente listado deben informarse acerca de la documentación complementaria requerida por patología que deben presentar.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://montevideo.gub.uy/sites/default/files/biblioteca/2024academiasdeconducirhabilitadas_1.pdf",
+          "title": "academia de conducción,",
+          "anchor_text": "academia de conducción,",
+          "resource_type": "pdf",
+          "source_context": "En caso de gestionar la renovación a través de una academia de conducción, deberás dirigirte a ella con los requisitos mencionados y la academia realizará el trámite ante la Intendencia.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENOVCON&recurso=RENPATRES-MEDINT&pagina_retorno=https%3A//www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "agenda electrónica",
+          "anchor_text": "agenda electrónica",
+          "resource_type": "agenda",
+          "source_context": "Reservá día y hora por el teléfono 1950 4000 opción 2, por mensaje de texto al Whatsapp 099 019 500 o en la agenda electrónica para realizarte el examen médico en la Intendencia.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://montevideo.gub.uy/index.php/node/24200/",
+          "title": "Servicio de Contralor de Conductores",
+          "anchor_text": "Servicio de Contralor de Conductores",
+          "resource_type": "link",
+          "source_context": "Continuá el trámite en el Servicio de Contralor de Conductores .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://normativa.montevideo.gub.uy/articulo/65474",
+          "title": "Plazos máximos para categorías amateur (A,G1 y G2)",
+          "anchor_text": "Plazos máximos para categorías amateur (A,G1 y G2)",
+          "resource_type": "normativa",
+          "source_context": "A partir de los 56 años se modifican los plazos de renovación. Plazos máximos para categorías amateur (A,G1 y G2)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_008",
+          "url": "https://normativa.montevideo.gub.uy/articulo/65812",
+          "title": "Artículo R.424.16",
+          "anchor_text": "Artículo R.424.16",
+          "resource_type": "normativa",
+          "source_context": "Si hacés el examen práctico en vehículo automático la licencia que obtengas solo te habilitará a conducir vehículos automáticos ( Artículo R.424.16 ).",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_009",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENOVCON&recurso=RENPATRES-MEDINT&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservar hora",
+          "anchor_text": "Reservar hora",
+          "resource_type": "agenda",
+          "source_context": "Reservar hora",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_010",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoamateur_0.pdf",
+          "title": "Certificados médicos complementarios",
+          "anchor_text": "Certificados médicos complementarios",
+          "resource_type": "pdf",
+          "source_context": "Certificados médicos complementarios ( pdf - 77.84 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_011",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_9.pdf",
+          "title": "Códigos de patologías",
+          "anchor_text": "Códigos de patologías",
+          "resource_type": "pdf",
+          "source_context": "Códigos de patologías ( pdf - 37.24 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_012",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_4.pdf",
+          "title": "Academias de conducir habilitadas - Octubre 2025",
+          "anchor_text": "Academias de conducir habilitadas - Octubre 2025",
+          "resource_type": "pdf",
+          "source_context": "Academias de conducir habilitadas - Octubre 2025 ( pdf - 140.71 KB)",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/42183",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_013",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-hasta-79-anos-inclusive-con-patologias-restrictivas",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_022",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-profesionales-b-c-d-e-f-h-g3-con-examen-medico-en-la-intendencia",
+      "title": "Renovación de licencia de conducir profesional",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://montevideo.gub.uy/sites/default/files/biblioteca/requisitosespecialesmedicoprofesionales.pdf",
+          "title": "certificados médicos complementarios",
+          "anchor_text": "certificados médicos complementarios",
+          "resource_type": "pdf",
+          "source_context": "Quienes presenten alguna de las patologías detalladas a continuación deben presentar los siguientes certificados médicos complementarios",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "http://normativa.montevideo.gub.uy/articulo/65940",
+          "title": "normativa vigente",
+          "anchor_text": "normativa vigente",
+          "resource_type": "normativa",
+          "source_context": "Según la normativa vigente ciertas patologías médicas son causales de denegatoria en categoría profesional. Las personas que, a juicio del personal médico de la Intendencia, presenten afecciones severas capaces de influir en las condiciones de aptitud y seguridad en el tránsito podrán ser declaradas no aptas en categoría profesional.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2024academiasdeconducirhabilitadas_5.pdf",
+          "title": "academia de conducir habilitada",
+          "anchor_text": "academia de conducir habilitada",
+          "resource_type": "pdf",
+          "source_context": "A partir de los 75 años de edad , además de los requisitos mencionados, deberás rendir prueba práctica de manejo . Para ello podés optar por una academia de conducir habilitada o hacerlo de forma particular:",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://tramites.montevideo.gub.uy/aplicacion/tramites-de-licencias-de-conducir-profesionales-profesionales-medico-intendencia",
+          "title": "agenda electrónica.",
+          "anchor_text": "agenda electrónica.",
+          "resource_type": "agenda",
+          "source_context": "Reservá día y hora por Whatsapp escribiendo al 099 019 500 , telefónicamente llamando al 1950 4000 opción 2 o a través de la agenda electrónica.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://normativa.montevideo.gub.uy/articulo/65474",
+          "title": "Conocé los plazos máximos para categorías profesionales",
+          "anchor_text": "Conocé los plazos máximos para categorías profesionales",
+          "resource_type": "normativa",
+          "source_context": "A partir de los 56 años se modifican los plazos de renovación. Conocé los plazos máximos para categorías profesionales .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENLICPR&recurso=RENPROF-MEDINT&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservar hora",
+          "anchor_text": "Reservar hora",
+          "resource_type": "agenda",
+          "source_context": "Reservar hora",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_008",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales.pdf",
+          "title": "Certificados médicos complementarios",
+          "anchor_text": "Certificados médicos complementarios",
+          "resource_type": "pdf",
+          "source_context": "Certificados médicos complementarios ( pdf - 65.06 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_009",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_10.pdf",
+          "title": "Códigos de patologías",
+          "anchor_text": "Códigos de patologías",
+          "resource_type": "pdf",
+          "source_context": "Códigos de patologías ( pdf - 37.24 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_010",
+          "url": "https://normativa.montevideo.gub.uy/articulo/65940",
+          "title": "Digesto Departamental - Artículo R. 424.190",
+          "anchor_text": "Digesto Departamental - Artículo R. 424.190",
+          "resource_type": "normativa",
+          "source_context": "Digesto Departamental - Artículo R. 424.190",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_011",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-profesional-por-primera-vez-categoria-b-c-d-e-f-y-h-g3-con-examen-medico-en-la",
+          "title": "Aspirante de licencia de conducir profesional",
+          "anchor_text": "Aspirante de licencia de conducir profesional",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Aspirante de licencia de conducir profesional",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/52387",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_012",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-profesionales-b-c-d-e-f-h-g3-con-examen-medico-en-la-intendencia",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    }
+  ]
+}

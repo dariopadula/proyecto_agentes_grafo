@@ -1,0 +1,245 @@
+{
+  "project_id": "licencia_conducir",
+  "review_status": "complete",
+  "updated_at": "2026-07-27T12:40:19-03:00",
+  "decisions": [
+    {
+      "link_id": "link_001",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/certificado/antecedente-de-licencia-de-conducir",
+      "primary_role": "terminal_case",
+      "secondary_roles": [
+        "auxiliary_info"
+      ],
+      "reviewed_by": "Dario",
+      "reviewed_at": "2026-07-27T12:40:19-03:00",
+      "confidence": "alta",
+      "notes": ""
+    },
+    {
+      "link_id": "link_002",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-profesional-por-primera-vez-categoria-b-c-d-e-f-y-h-g3-con-examen-medico-en-la",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "Dario",
+      "reviewed_at": "2026-07-27T12:24:15-03:00",
+      "confidence": "alta",
+      "notes": ""
+    },
+    {
+      "link_id": "link_003",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-nombre-en-licencia-de-conducir-de-persona-trans",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "Dario",
+      "reviewed_at": "2026-07-27T12:24:35-03:00",
+      "confidence": "alta",
+      "notes": ""
+    },
+    {
+      "link_id": "link_004",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/contravencion-por-circular-sin-libreta",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "Dario",
+      "reviewed_at": "2026-07-27T12:24:59-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_005",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/exoneracion/costo-de-licencias-de-conducir-profesionales-categorias-c-d-e-y-f",
+      "primary_role": "terminal_case",
+      "secondary_roles": [
+        "auxiliary_info"
+      ],
+      "reviewed_by": "Dario",
+      "reviewed_at": "2026-07-27T12:26:12-03:00",
+      "confidence": "media",
+      "notes": "Tiene que ver con exoneraciones y reducciones de costos para libretas de tipo A, G1 y G2"
+    },
+    {
+      "link_id": "link_006",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/duplicado-de-la-licencia-de-conducir",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "Dario",
+      "reviewed_at": "2026-07-27T12:26:29-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_007",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/evaluacion-medica-para-personas-con-discapacidad",
+      "primary_role": "terminal_case",
+      "secondary_roles": [
+        "auxiliary_info",
+        "related_procedure"
+      ],
+      "reviewed_by": "Dario",
+      "reviewed_at": "2026-07-27T12:30:36-03:00",
+      "confidence": "media",
+      "notes": "Entiendo que puede ser un tramite concreto o que puede ser consultado por otro tramite en caso de dudas"
+    },
+    {
+      "link_id": "link_008",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/homologacion-de-licencia-de-conducir-categorias-a-g1-y-g2",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-07-27T12:30:47-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_009",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/homologacion-de-licencia-de-conducir-categorias-b-c-d-e-f-h-yo-g3",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-07-27T12:30:55-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_010",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/inscripcion-de-aspirantes-a-licencia-de-conducir-por-parte-de-la-academia-de-conducir",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-07-27T12:31:23-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_011",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-por-primera-vez-hasta-79-anos-categoria-a",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-07-27T12:31:32-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_012",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-entre-75-y-79-anos-inclusive-con-patologias-restrictivas-y",
+      "primary_role": "terminal_case",
+      "secondary_roles": [
+        "auxiliary_info",
+        "related_procedure"
+      ],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-07-27T12:32:05-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_013",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-por-primera-vez-categoria-g1-y-g2-motos-hasta-79-anos-inclusive",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-07-27T12:32:21-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_014",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-para-personas-con-discapacidad",
+      "primary_role": "terminal_case",
+      "secondary_roles": [
+        "auxiliary_info"
+      ],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-07-27T12:35:11-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_015",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-por-primera-vez-para-categoria-a-a-partir-de-80-anos",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-07-27T12:35:24-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_016",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/multas-asociadas-al-conductor-por-vehiculos-que-no-son-de-su-propiedad",
+      "primary_role": "terminal_case",
+      "secondary_roles": [
+        "auxiliary_info"
+      ],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-07-27T12:36:10-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_017",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/exoneracion/pago-de-licencia-de-conducir-amateur-categoria-a",
+      "primary_role": "terminal_case",
+      "secondary_roles": [
+        "auxiliary_info"
+      ],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-07-27T12:36:33-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_018",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/academias-de-conducir",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-07-27T12:36:39-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_019",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-a-partir-de-80-anos-con-examen-medico-en-la-intendencia",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-07-27T12:36:49-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_020",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-hasta-74-anos-inclusive-sin-patologias-restrictivas",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-07-27T12:37:03-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_021",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-hasta-79-anos-inclusive-con-patologias-restrictivas",
+      "primary_role": "terminal_case",
+      "secondary_roles": [
+        "auxiliary_info"
+      ],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-07-27T12:37:36-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_022",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-profesionales-b-c-d-e-f-h-g3-con-examen-medico-en-la-intendencia",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-07-27T12:37:44-03:00",
+      "confidence": "media",
+      "notes": ""
+    }
+  ]
+}

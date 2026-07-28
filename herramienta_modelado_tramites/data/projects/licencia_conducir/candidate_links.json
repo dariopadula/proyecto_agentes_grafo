@@ -1,0 +1,227 @@
+{
+  "project_id": "licencia_conducir",
+  "source_url": "https://tramites.montevideo.gub.uy/buscador_tramites/Licencia%20de%20conducir",
+  "generated_at": "2026-07-24T15:06:29-03:00",
+  "links": [
+    {
+      "link_id": "link_001",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/certificado/antecedente-de-licencia-de-conducir",
+      "title": "Antecedente de licencia de conducir",
+      "anchor_text": "Antecedente de licencia de conducir",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_002",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-profesional-por-primera-vez-categoria-b-c-d-e-f-y-h-g3-con-examen-medico-en-la",
+      "title": "Aspirante de licencia de conducir profesional",
+      "anchor_text": "Aspirante de licencia de conducir profesional",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_003",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-nombre-en-licencia-de-conducir-de-persona-trans",
+      "title": "Cambio de nombre en licencia de conducir de persona trans",
+      "anchor_text": "Cambio de nombre en licencia de conducir de persona trans",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_004",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/contravencion-por-circular-sin-libreta",
+      "title": "Contravención por circular sin libreta",
+      "anchor_text": "Contravención por circular sin libreta",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_005",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/exoneracion/costo-de-licencias-de-conducir-profesionales-categorias-c-d-e-y-f",
+      "title": "Costo de licencias de conducir profesionales categorías C, D, E y F",
+      "anchor_text": "Costo de licencias de conducir profesionales categorías C, D, E y F",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_006",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/duplicado-de-la-licencia-de-conducir",
+      "title": "Duplicado de licencia de conducir",
+      "anchor_text": "Duplicado de licencia de conducir",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_007",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/evaluacion-medica-para-personas-con-discapacidad",
+      "title": "Evaluación médica para afectación de coche por Ley 13.102 o Decreto 22.515",
+      "anchor_text": "Evaluación médica para afectación de coche por Ley 13.102 o Decreto 22.515",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_008",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/homologacion-de-licencia-de-conducir-categorias-a-g1-y-g2",
+      "title": "Homologación de licencia de conducir categorías A, G1 y G2",
+      "anchor_text": "Homologación de licencia de conducir categorías A, G1 y G2",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_009",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/homologacion-de-licencia-de-conducir-categorias-b-c-d-e-f-h-yo-g3",
+      "title": "Homologación de licencia de conducir categorías B, C, D, E, F, H y G3",
+      "anchor_text": "Homologación de licencia de conducir categorías B, C, D, E, F, H y G3",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_010",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/inscripcion-de-aspirantes-a-licencia-de-conducir-por-parte-de-la-academia-de-conducir",
+      "title": "Inscripción de aspirantes a licencia de conducir por parte de la academia de conducir",
+      "anchor_text": "Inscripción de aspirantes a licencia de conducir por parte de la academia de conducir",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_011",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-por-primera-vez-hasta-79-anos-categoria-a",
+      "title": "Licencia de conducir categoría A, hasta 79 años inclusive",
+      "anchor_text": "Licencia de conducir categoría A, hasta 79 años inclusive",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_012",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-entre-75-y-79-anos-inclusive-con-patologias-restrictivas-y",
+      "title": "Licencia de conducir categorías A, G1 y G2, entre 75 y 79 años inclusive con examen médico realizado en las instituciones habilitadas",
+      "anchor_text": "Licencia de conducir categorías A, G1 y G2, entre 75 y 79 años inclusive con examen médico realizado en las instituciones habilitadas",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_013",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-por-primera-vez-categoria-g1-y-g2-motos-hasta-79-anos-inclusive",
+      "title": "Licencia de conducir para categoría G1 y G2 hasta 79 años inclusive",
+      "anchor_text": "Licencia de conducir para categoría G1 y G2 hasta 79 años inclusive",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_014",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-para-personas-con-discapacidad",
+      "title": "Licencia de conducir para personas con discapacidad",
+      "anchor_text": "Licencia de conducir para personas con discapacidad",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_015",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-por-primera-vez-para-categoria-a-a-partir-de-80-anos",
+      "title": "Licencia de conducir por primera vez para categoría A, G1 o G2 a partir de 80 años",
+      "anchor_text": "Licencia de conducir por primera vez para categoría A, G1 o G2 a partir de 80 años",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_016",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/multas-asociadas-al-conductor-por-vehiculos-que-no-son-de-su-propiedad",
+      "title": "Multas asociadas al conductor por vehículos que no son de su propiedad",
+      "anchor_text": "Multas asociadas al conductor por vehículos que no son de su propiedad",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_017",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/exoneracion/pago-de-licencia-de-conducir-amateur-categoria-a",
+      "title": "Pago de licencia de conducir amateur categoría A",
+      "anchor_text": "Pago de licencia de conducir amateur categoría A",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_018",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/academias-de-conducir",
+      "title": "Registro de academias de conducir",
+      "anchor_text": "Registro de academias de conducir",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_019",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-a-partir-de-80-anos-con-examen-medico-en-la-intendencia",
+      "title": "Renovación de licencia de conducir categorías A, G1 y G2 a partir de 80 años",
+      "anchor_text": "Renovación de licencia de conducir categorías A, G1 y G2 a partir de 80 años",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_020",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-hasta-74-anos-inclusive-sin-patologias-restrictivas",
+      "title": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 74 años inclusive",
+      "anchor_text": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 74 años inclusive",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_021",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-hasta-79-anos-inclusive-con-patologias-restrictivas",
+      "title": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37.",
+      "anchor_text": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37.",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    },
+    {
+      "link_id": "link_022",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-profesionales-b-c-d-e-f-h-g3-con-examen-medico-en-la-intendencia",
+      "title": "Renovación de licencia de conducir profesional",
+      "anchor_text": "Renovación de licencia de conducir profesional",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "detected_role": "candidate",
+      "status": "pending_review"
+    }
+  ]
+}
