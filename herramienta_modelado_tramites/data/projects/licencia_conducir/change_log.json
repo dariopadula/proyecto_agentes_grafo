@@ -9473,6 +9473,1197 @@
         "reviewed_at": "2026-07-30T11:35:48-03:00",
         "analysis_generated_at": "2026-07-30T11:33:35-03:00"
       }
+    },
+    {
+      "event_id": "event_304",
+      "timestamp": "2026-07-30T12:26:30-03:00",
+      "actor": "codex",
+      "action": "analyze_auxiliary_links",
+      "target_type": "project",
+      "target_id": "licencia_conducir",
+      "summary": "Se inventariaron 119 apariciones de enlaces auxiliares no documentales y 14 agendas candidatas.",
+      "before": null,
+      "after": {
+        "appearance_count": 119,
+        "excluded_document_count": 85,
+        "by_functional_kind": {
+          "agenda": 31,
+          "enlace_general": 32,
+          "formulario_web": 24,
+          "normativa": 26,
+          "tramite_relacionado": 6
+        },
+        "by_existing_use": {
+          "process_as_context": 27,
+          "show_as_link": 34,
+          "sin_decision": 58
+        },
+        "by_filter_status": {
+          "discarded_by_rule": 44,
+          "reviewable": 75
+        },
+        "exact_url_group_count": 17,
+        "normalized_equivalence_candidate_count": 11,
+        "agenda_candidate_count": 14,
+        "agenda_repeated_candidate_count": 12
+      }
+    },
+    {
+      "event_id": "event_305",
+      "timestamp": "2026-07-30T12:27:55-03:00",
+      "actor": "codex",
+      "action": "analyze_auxiliary_links",
+      "target_type": "project",
+      "target_id": "licencia_conducir",
+      "summary": "Se inventariaron 119 apariciones de enlaces auxiliares no documentales y 14 agendas candidatas.",
+      "before": null,
+      "after": {
+        "appearance_count": 119,
+        "excluded_document_count": 85,
+        "by_functional_kind": {
+          "agenda": 31,
+          "enlace_general": 32,
+          "formulario_web": 24,
+          "normativa": 26,
+          "tramite_relacionado": 6
+        },
+        "by_existing_use": {
+          "process_as_context": 27,
+          "show_as_link": 34,
+          "sin_decision": 58
+        },
+        "by_filter_status": {
+          "discarded_by_rule": 44,
+          "reviewable": 75
+        },
+        "exact_url_group_count": 17,
+        "normalized_equivalence_candidate_count": 11,
+        "agenda_candidate_count": 14,
+        "agenda_repeated_candidate_count": 12,
+        "representative_examples": {
+          "process_as_context": [
+            "link_002::resource_002",
+            "link_002::resource_004",
+            "link_002::resource_007",
+            "link_002::resource_008",
+            "link_002::resource_011"
+          ],
+          "show_as_link": [
+            "link_002::resource_006",
+            "link_002::resource_012",
+            "link_004::resource_002",
+            "link_005::resource_003",
+            "link_005::resource_004"
+          ],
+          "discarded_by_rule": [
+            "link_001::resource_001",
+            "link_001::resource_003",
+            "link_002::resource_001",
+            "link_002::resource_016",
+            "link_003::resource_001"
+          ],
+          "needs_review": [
+            "link_014::resource_003",
+            "link_018::resource_005",
+            "link_020::resource_010",
+            "link_021::resource_005",
+            "link_021::resource_006"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_306",
+      "timestamp": "2026-07-30T13:04:03-03:00",
+      "actor": "codex",
+      "action": "analyze_auxiliary_links",
+      "target_type": "project",
+      "target_id": "licencia_conducir",
+      "summary": "Se inventariaron 119 apariciones de enlaces auxiliares no documentales y 14 agendas candidatas.",
+      "before": null,
+      "after": {
+        "appearance_count": 119,
+        "excluded_document_count": 85,
+        "by_functional_kind": {
+          "agenda": 31,
+          "enlace_general": 32,
+          "formulario_web": 24,
+          "normativa": 26,
+          "tramite_relacionado": 6
+        },
+        "by_existing_use": {
+          "process_as_context": 27,
+          "show_as_link": 34,
+          "sin_decision": 58
+        },
+        "by_filter_status": {
+          "discarded_by_rule": 44,
+          "reviewable": 75
+        },
+        "exact_url_group_count": 17,
+        "normalized_equivalence_candidate_count": 11,
+        "agenda_candidate_count": 14,
+        "agenda_repeated_candidate_count": 12,
+        "representative_examples": {
+          "process_as_context": [
+            "link_002::resource_002",
+            "link_002::resource_004",
+            "link_002::resource_007",
+            "link_002::resource_008",
+            "link_002::resource_011"
+          ],
+          "show_as_link": [
+            "link_002::resource_006",
+            "link_002::resource_012",
+            "link_004::resource_002",
+            "link_005::resource_003",
+            "link_005::resource_004"
+          ],
+          "discarded_by_rule": [
+            "link_001::resource_001",
+            "link_001::resource_003",
+            "link_002::resource_001",
+            "link_002::resource_016",
+            "link_003::resource_001"
+          ],
+          "needs_review": [
+            "link_014::resource_003",
+            "link_018::resource_005",
+            "link_020::resource_010",
+            "link_021::resource_005",
+            "link_021::resource_006"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_307",
+      "timestamp": "2026-07-30T13:04:41-03:00",
+      "actor": "codex",
+      "action": "analyze_auxiliary_links",
+      "target_type": "project",
+      "target_id": "licencia_conducir",
+      "summary": "Se inventariaron 119 apariciones de enlaces auxiliares no documentales y 13 agendas candidatas.",
+      "before": null,
+      "after": {
+        "appearance_count": 119,
+        "excluded_document_count": 85,
+        "by_functional_kind": {
+          "agenda": 31,
+          "enlace_general": 32,
+          "formulario_web": 24,
+          "normativa": 26,
+          "tramite_relacionado": 6
+        },
+        "by_existing_use": {
+          "process_as_context": 27,
+          "show_as_link": 34,
+          "sin_decision": 58
+        },
+        "by_filter_status": {
+          "discarded_by_rule": 44,
+          "reviewable": 75
+        },
+        "exact_url_group_count": 17,
+        "normalized_equivalence_candidate_count": 12,
+        "agenda_candidate_count": 13,
+        "agenda_repeated_candidate_count": 12,
+        "representative_examples": {
+          "process_as_context": [
+            "link_002::resource_002",
+            "link_002::resource_004",
+            "link_002::resource_007",
+            "link_002::resource_008",
+            "link_002::resource_011"
+          ],
+          "show_as_link": [
+            "link_002::resource_006",
+            "link_002::resource_012",
+            "link_004::resource_002",
+            "link_005::resource_003",
+            "link_005::resource_004"
+          ],
+          "discarded_by_rule": [
+            "link_001::resource_001",
+            "link_001::resource_003",
+            "link_002::resource_001",
+            "link_002::resource_016",
+            "link_003::resource_001"
+          ],
+          "needs_review": [
+            "link_014::resource_003",
+            "link_018::resource_005",
+            "link_020::resource_010",
+            "link_021::resource_005",
+            "link_021::resource_006"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_308",
+      "timestamp": "2026-07-30T13:05:50-03:00",
+      "actor": "funcionario",
+      "action": "verify_pdf_family",
+      "target_type": "pdf_family",
+      "target_id": "pdf_family_002",
+      "summary": "Se verificó la familia pdf_family_002: 1 particiones y 0 apariciones no verificadas.",
+      "before": null,
+      "after": {
+        "status": "complete",
+        "verified_at": "2026-07-30T13:05:50-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_002_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_002::resource_003",
+              "link_009::resource_002",
+              "link_019::resource_007"
+            ],
+            "binary_sha256_values": [
+              "5f922d803a551e1d040ea31a56164a1a2c748d69c792b96efbadc3fc45d96aac"
+            ],
+            "normalized_text_sha256": "4f88fe63924087965d11beae75202245a55fa38460637af1c72b507dbcc0d917",
+            "derived_relations": [
+              {
+                "source_node_id": "link_002",
+                "target_resource_id": "pdf_family_002_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_002::resource_003"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_009",
+                "target_resource_id": "pdf_family_002_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_009::resource_002"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_019",
+                "target_resource_id": "pdf_family_002_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_019::resource_007"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "event_id": "event_309",
+      "timestamp": "2026-07-30T16:05:39-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "agenda_001",
+      "summary": "Se revisó agenda_001: confirmed_same / show_as_link. Se aplicó a 0 apariciones y se conservaron 3 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "agenda_001",
+        "group_kind": "agenda",
+        "identity_decision": "confirmed_same",
+        "default_use": "show_as_link",
+        "scope": "shared",
+        "selected_canonical_url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=ASPIRANT&recurso=INITRAMA&pagina_retorno=https%3A//www.montevideo.gub.uy&solo_cuerpo=false",
+        "display_name": "Agenda ASPIRANT / INITRAMA",
+        "notes": "",
+        "appearance_ids": [
+          "link_011::resource_004",
+          "link_011::resource_007",
+          "link_013::resource_007"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:05:39-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [],
+          "preserved_individual_exception_ids": [
+            "link_011::resource_004",
+            "link_011::resource_007",
+            "link_013::resource_007"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_310",
+      "timestamp": "2026-07-30T16:06:47-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "agenda_002",
+      "summary": "Se revisó agenda_002: confirmed_same / show_as_link. Se aplicó a 1 apariciones y se conservaron 2 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "agenda_002",
+        "group_kind": "agenda",
+        "identity_decision": "confirmed_same",
+        "default_use": "show_as_link",
+        "scope": "shared",
+        "selected_canonical_url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=ASPIRANT&recurso=SDI&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+        "display_name": "Agenda ASPIRANT / SDI",
+        "notes": "",
+        "appearance_ids": [
+          "link_007::resource_003",
+          "link_007::resource_004",
+          "link_014::resource_003"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:06:47-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [
+            "link_014::resource_003"
+          ],
+          "preserved_individual_exception_ids": [
+            "link_007::resource_003",
+            "link_007::resource_004"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_311",
+      "timestamp": "2026-07-30T16:07:11-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "agenda_003",
+      "summary": "Se revisó agenda_003: confirmed_same / show_as_link. Se aplicó a 0 apariciones y se conservaron 2 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "agenda_003",
+        "group_kind": "agenda",
+        "identity_decision": "confirmed_same",
+        "default_use": "show_as_link",
+        "scope": "shared",
+        "selected_canonical_url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=CONDUPLI&recurso=DUPLICADO&pagina_retorno=http%3A//www.montevideo.gub.uy&solo_cuerpo=false",
+        "display_name": "Agenda CONDUPLI / DUPLICADO",
+        "notes": "",
+        "appearance_ids": [
+          "link_006::resource_002",
+          "link_006::resource_003"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:07:11-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [],
+          "preserved_individual_exception_ids": [
+            "link_006::resource_002",
+            "link_006::resource_003"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_312",
+      "timestamp": "2026-07-30T16:07:44-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "agenda_004",
+      "summary": "Se revisó agenda_004: confirmed_same / show_as_link. Se aplicó a 0 apariciones y se conservaron 1 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "agenda_004",
+        "group_kind": "agenda",
+        "identity_decision": "confirmed_same",
+        "default_use": "show_as_link",
+        "scope": "shared",
+        "selected_canonical_url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=HOEXAM&recurso=HOEXAM&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+        "display_name": "Agenda HOEXAM / HOEXAM",
+        "notes": "",
+        "appearance_ids": [
+          "link_008::resource_004"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:07:44-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [],
+          "preserved_individual_exception_ids": [
+            "link_008::resource_004"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_313",
+      "timestamp": "2026-07-30T16:08:21-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "agenda_005",
+      "summary": "Se revisó agenda_005: confirmed_same / show_as_link. Se aplicó a 0 apariciones y se conservaron 2 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "agenda_005",
+        "group_kind": "agenda",
+        "identity_decision": "confirmed_same",
+        "default_use": "show_as_link",
+        "scope": "shared",
+        "selected_canonical_url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=ITRANSIT&recurso=TPRESENC&pagina_retorno=http://www.montevideo.gub.uy&solo_cuerpo=false",
+        "display_name": "Agenda ITRANSIT / TPRESENC",
+        "notes": "",
+        "appearance_ids": [
+          "link_004::resource_002",
+          "link_016::resource_003"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:08:21-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [],
+          "preserved_individual_exception_ids": [
+            "link_004::resource_002",
+            "link_016::resource_003"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_314",
+      "timestamp": "2026-07-30T16:08:51-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "agenda_006",
+      "summary": "Se revisó agenda_006: confirmed_same / show_as_link. Se aplicó a 0 apariciones y se conservaron 4 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "agenda_006",
+        "group_kind": "agenda",
+        "identity_decision": "confirmed_same",
+        "default_use": "show_as_link",
+        "scope": "shared",
+        "selected_canonical_url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENLICPR&recurso=ASPPROF-MEDINT&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+        "display_name": "Agenda RENLICPR / ASPPROF-MEDINT",
+        "notes": "",
+        "appearance_ids": [
+          "link_002::resource_006",
+          "link_002::resource_012",
+          "link_009::resource_006",
+          "link_015::resource_003"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:08:51-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [],
+          "preserved_individual_exception_ids": [
+            "link_002::resource_006",
+            "link_002::resource_012",
+            "link_009::resource_006",
+            "link_015::resource_003"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_315",
+      "timestamp": "2026-07-30T16:09:07-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "agenda_007",
+      "summary": "Se revisó agenda_007: confirmed_same / show_as_link. Se aplicó a 2 apariciones y se conservaron 1 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "agenda_007",
+        "group_kind": "agenda",
+        "identity_decision": "confirmed_same",
+        "default_use": "show_as_link",
+        "scope": "shared",
+        "selected_canonical_url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENLICPR&recurso=RENPROF-MEDINT&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+        "display_name": "Agenda RENLICPR / RENPROF-MEDINT",
+        "notes": "",
+        "appearance_ids": [
+          "link_009::resource_012",
+          "link_022::resource_005",
+          "link_022::resource_007"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:09:07-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [
+            "link_022::resource_005",
+            "link_022::resource_007"
+          ],
+          "preserved_individual_exception_ids": [
+            "link_009::resource_012"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_316",
+      "timestamp": "2026-07-30T16:09:37-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "agenda_008",
+      "summary": "Se revisó agenda_008: confirmed_same / show_as_link. Se aplicó a 0 apariciones y se conservaron 2 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "agenda_008",
+        "group_kind": "agenda",
+        "identity_decision": "confirmed_same",
+        "default_use": "show_as_link",
+        "scope": "shared",
+        "selected_canonical_url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENOVCON&recurso=RENCOMUN&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+        "display_name": "Agenda RENOVCON / RENCOMUN",
+        "notes": "",
+        "appearance_ids": [
+          "link_020::resource_003",
+          "link_020::resource_006"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:09:37-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [],
+          "preserved_individual_exception_ids": [
+            "link_020::resource_003",
+            "link_020::resource_006"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_317",
+      "timestamp": "2026-07-30T16:09:54-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "agenda_009",
+      "summary": "Se revisó agenda_009: confirmed_same / show_as_link. Se aplicó a 0 apariciones y se conservaron 2 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "agenda_009",
+        "group_kind": "agenda",
+        "identity_decision": "confirmed_same",
+        "default_use": "show_as_link",
+        "scope": "shared",
+        "selected_canonical_url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENOVCON&recurso=RENMAYOR-MEDEXT&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+        "display_name": "Agenda RENOVCON / RENMAYOR-MEDEXT",
+        "notes": "",
+        "appearance_ids": [
+          "link_012::resource_005",
+          "link_012::resource_008"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:09:54-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [],
+          "preserved_individual_exception_ids": [
+            "link_012::resource_005",
+            "link_012::resource_008"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_318",
+      "timestamp": "2026-07-30T16:10:15-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "agenda_010",
+      "summary": "Se revisó agenda_010: confirmed_same / show_as_link. Se aplicó a 0 apariciones y se conservaron 3 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "agenda_010",
+        "group_kind": "agenda",
+        "identity_decision": "confirmed_same",
+        "default_use": "show_as_link",
+        "scope": "shared",
+        "selected_canonical_url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENOVCON&recurso=RENMAYOR-MEDINT&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+        "display_name": "Agenda RENOVCON / RENMAYOR-MEDINT",
+        "notes": "",
+        "appearance_ids": [
+          "link_015::resource_007",
+          "link_019::resource_004",
+          "link_019::resource_006"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:10:15-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [],
+          "preserved_individual_exception_ids": [
+            "link_015::resource_007",
+            "link_019::resource_004",
+            "link_019::resource_006"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_319",
+      "timestamp": "2026-07-30T16:10:39-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "agenda_011",
+      "summary": "Se revisó agenda_011: confirmed_same / show_as_link. Se aplicó a 2 apariciones y se conservaron 0 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "agenda_011",
+        "group_kind": "agenda",
+        "identity_decision": "confirmed_same",
+        "default_use": "show_as_link",
+        "scope": "shared",
+        "selected_canonical_url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=RENOVCON&recurso=RENPATRES-MEDINT&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+        "display_name": "Agenda RENOVCON / RENPATRES-MEDINT",
+        "notes": "",
+        "appearance_ids": [
+          "link_021::resource_005",
+          "link_021::resource_009"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:10:39-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [
+            "link_021::resource_005",
+            "link_021::resource_009"
+          ],
+          "preserved_individual_exception_ids": []
+        }
+      }
+    },
+    {
+      "event_id": "event_320",
+      "timestamp": "2026-07-30T16:10:54-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "agenda_012",
+      "summary": "Se revisó agenda_012: confirmed_same / show_as_link. Se aplicó a 0 apariciones y se conservaron 2 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "agenda_012",
+        "group_kind": "agenda",
+        "identity_decision": "confirmed_same",
+        "default_use": "show_as_link",
+        "scope": "shared",
+        "selected_canonical_url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=VUNICA&recurso=ADMUSUARIOS&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+        "display_name": "Agenda VUNICA / ADMUSUARIOS",
+        "notes": "",
+        "appearance_ids": [
+          "link_005::resource_004",
+          "link_017::resource_005"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:10:54-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [],
+          "preserved_individual_exception_ids": [
+            "link_005::resource_004",
+            "link_017::resource_005"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_321",
+      "timestamp": "2026-07-30T16:11:10-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "agenda_013",
+      "summary": "Se revisó agenda_013: confirmed_same / show_as_link. Se aplicó a 0 apariciones y se conservaron 2 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "agenda_013",
+        "group_kind": "agenda",
+        "identity_decision": "confirmed_same",
+        "default_use": "show_as_link",
+        "scope": "shared",
+        "selected_canonical_url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=VUNICA&recurso=RESERVAPREVIA&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+        "display_name": "Agenda VUNICA / RESERVAPREVIA",
+        "notes": "",
+        "appearance_ids": [
+          "link_005::resource_005",
+          "link_017::resource_007"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:11:10-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [],
+          "preserved_individual_exception_ids": [
+            "link_005::resource_005",
+            "link_017::resource_007"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_322",
+      "timestamp": "2026-07-30T16:11:33-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "normalized_url_001",
+      "summary": "Se revisó normalized_url_001: confirmed_same / show_as_link. Se aplicó a 2 apariciones y se conservaron 4 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "normalized_url_001",
+        "group_kind": "normalized",
+        "identity_decision": "confirmed_same",
+        "default_use": "show_as_link",
+        "scope": "shared",
+        "selected_canonical_url": "https://normativa.montevideo.gub.uy/articulo/65474",
+        "display_name": "Plazos máximos para categorías profesionales",
+        "notes": "",
+        "appearance_ids": [
+          "link_002::resource_007",
+          "link_009::resource_008",
+          "link_012::resource_006",
+          "link_020::resource_005",
+          "link_021::resource_007",
+          "link_022::resource_006"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:11:33-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [
+            "link_021::resource_007",
+            "link_022::resource_006"
+          ],
+          "preserved_individual_exception_ids": [
+            "link_002::resource_007",
+            "link_009::resource_008",
+            "link_012::resource_006",
+            "link_020::resource_005"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_323",
+      "timestamp": "2026-07-30T16:12:05-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "normalized_url_002",
+      "summary": "Se revisó normalized_url_002: confirmed_same / process_as_context. Se aplicó a 2 apariciones y se conservaron 2 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "normalized_url_002",
+        "group_kind": "normalized",
+        "identity_decision": "confirmed_same",
+        "default_use": "process_as_context",
+        "scope": "shared",
+        "selected_canonical_url": "https://normativa.montevideo.gub.uy/articulo/65940",
+        "display_name": "normativa vigente",
+        "notes": "",
+        "appearance_ids": [
+          "link_002::resource_004",
+          "link_009::resource_003",
+          "link_022::resource_003",
+          "link_022::resource_010"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:12:05-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [
+            "link_022::resource_003",
+            "link_022::resource_010"
+          ],
+          "preserved_individual_exception_ids": [
+            "link_002::resource_004",
+            "link_009::resource_003"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_324",
+      "timestamp": "2026-07-30T16:12:15-03:00",
+      "actor": "funcionario",
+      "action": "update_auxiliary_link_group_review",
+      "target_type": "auxiliary_link_group",
+      "target_id": "normalized_url_001",
+      "summary": "Se revisó normalized_url_001: confirmed_same / process_as_context. Se aplicó a 2 apariciones y se conservaron 4 excepciones.",
+      "before": {
+        "group_id": "normalized_url_001",
+        "group_kind": "normalized",
+        "identity_decision": "confirmed_same",
+        "default_use": "show_as_link",
+        "scope": "shared",
+        "selected_canonical_url": "https://normativa.montevideo.gub.uy/articulo/65474",
+        "display_name": "Plazos máximos para categorías profesionales",
+        "notes": "",
+        "appearance_ids": [
+          "link_002::resource_007",
+          "link_009::resource_008",
+          "link_012::resource_006",
+          "link_020::resource_005",
+          "link_021::resource_007",
+          "link_022::resource_006"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:11:33-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [
+            "link_021::resource_007",
+            "link_022::resource_006"
+          ],
+          "preserved_individual_exception_ids": [
+            "link_002::resource_007",
+            "link_009::resource_008",
+            "link_012::resource_006",
+            "link_020::resource_005"
+          ]
+        }
+      },
+      "after": {
+        "group_id": "normalized_url_001",
+        "group_kind": "normalized",
+        "identity_decision": "confirmed_same",
+        "default_use": "process_as_context",
+        "scope": "shared",
+        "selected_canonical_url": "https://normativa.montevideo.gub.uy/articulo/65474",
+        "display_name": "Plazos máximos para categorías profesionales",
+        "notes": "",
+        "appearance_ids": [
+          "link_002::resource_007",
+          "link_009::resource_008",
+          "link_012::resource_006",
+          "link_020::resource_005",
+          "link_021::resource_007",
+          "link_022::resource_006"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:12:15-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [
+            "link_021::resource_007",
+            "link_022::resource_006"
+          ],
+          "preserved_individual_exception_ids": [
+            "link_002::resource_007",
+            "link_009::resource_008",
+            "link_012::resource_006",
+            "link_020::resource_005"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_325",
+      "timestamp": "2026-07-30T16:12:53-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "normalized_url_003",
+      "summary": "Se revisó normalized_url_003: confirmed_same / process_as_context. Se aplicó a 0 apariciones y se conservaron 3 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "normalized_url_003",
+        "group_kind": "normalized",
+        "identity_decision": "confirmed_same",
+        "default_use": "process_as_context",
+        "scope": "shared",
+        "selected_canonical_url": "https://normativa.montevideo.gub.uy/articulo/66035",
+        "display_name": "antigüedad",
+        "notes": "",
+        "appearance_ids": [
+          "link_002::resource_008",
+          "link_009::resource_004",
+          "link_009::resource_009"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:12:53-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [],
+          "preserved_individual_exception_ids": [
+            "link_002::resource_008",
+            "link_009::resource_004",
+            "link_009::resource_009"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_326",
+      "timestamp": "2026-07-30T16:13:15-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "exact_url_003",
+      "summary": "Se revisó exact_url_003: confirmed_same / process_as_context. Se aplicó a 1 apariciones y se conservaron 1 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "exact_url_003",
+        "group_kind": "exact",
+        "identity_decision": "confirmed_same",
+        "default_use": "process_as_context",
+        "scope": "shared",
+        "selected_canonical_url": "https://montevideo.gub.uy/index.php/node/24200/",
+        "display_name": "Contralor de Conductores",
+        "notes": "",
+        "appearance_ids": [
+          "link_009::resource_007",
+          "link_021::resource_006"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:13:15-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [
+            "link_021::resource_006"
+          ],
+          "preserved_individual_exception_ids": [
+            "link_009::resource_007"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_327",
+      "timestamp": "2026-07-30T16:13:35-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "exact_url_004",
+      "summary": "Se revisó exact_url_004: confirmed_same / process_as_context. Se aplicó a 0 apariciones y se conservaron 2 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "exact_url_004",
+        "group_kind": "exact",
+        "identity_decision": "confirmed_same",
+        "default_use": "process_as_context",
+        "scope": "shared",
+        "selected_canonical_url": "https://montevideo.gub.uy/node/62727",
+        "display_name": "formulario web",
+        "notes": "",
+        "appearance_ids": [
+          "link_005::resource_003",
+          "link_017::resource_004"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:13:35-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [],
+          "preserved_individual_exception_ids": [
+            "link_005::resource_003",
+            "link_017::resource_004"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_328",
+      "timestamp": "2026-07-30T16:13:58-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "exact_url_006",
+      "summary": "Se revisó exact_url_006: confirmed_same / process_as_context. Se aplicó a 1 apariciones y se conservaron 6 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "exact_url_006",
+        "group_kind": "exact",
+        "identity_decision": "confirmed_same",
+        "default_use": "process_as_context",
+        "scope": "shared",
+        "selected_canonical_url": "https://normativa.montevideo.gub.uy/articulo/65812",
+        "display_name": "Artículo R.424.16",
+        "notes": "",
+        "appearance_ids": [
+          "link_002::resource_011",
+          "link_011::resource_006",
+          "link_012::resource_007",
+          "link_013::resource_005",
+          "link_015::resource_006",
+          "link_019::resource_005",
+          "link_021::resource_008"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:13:58-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [
+            "link_021::resource_008"
+          ],
+          "preserved_individual_exception_ids": [
+            "link_002::resource_011",
+            "link_011::resource_006",
+            "link_012::resource_007",
+            "link_013::resource_005",
+            "link_015::resource_006",
+            "link_019::resource_005"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_329",
+      "timestamp": "2026-07-30T16:14:49-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "exact_url_008",
+      "summary": "Se revisó exact_url_008: confirmed_same / process_as_context. Se aplicó a 1 apariciones y se conservaron 1 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "exact_url_008",
+        "group_kind": "exact",
+        "identity_decision": "confirmed_same",
+        "default_use": "process_as_context",
+        "scope": "shared",
+        "selected_canonical_url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/renovacion/licencia-de-conducir-categorias-a-g1-y-g2-hasta-79-anos-inclusive-con-patologias-restrictivas",
+        "display_name": "renovación de licencia de conducir para las categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37",
+        "notes": "",
+        "appearance_ids": [
+          "link_012::resource_003",
+          "link_020::resource_010"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:14:49-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [
+            "link_020::resource_010"
+          ],
+          "preserved_individual_exception_ids": [
+            "link_012::resource_003"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_330",
+      "timestamp": "2026-07-30T16:15:02-03:00",
+      "actor": "funcionario",
+      "action": "review_auxiliary_link_group",
+      "target_type": "auxiliary_link_group",
+      "target_id": "exact_url_009",
+      "summary": "Se revisó exact_url_009: confirmed_same / process_as_context. Se aplicó a 1 apariciones y se conservaron 1 excepciones.",
+      "before": null,
+      "after": {
+        "group_id": "exact_url_009",
+        "group_kind": "exact",
+        "identity_decision": "confirmed_same",
+        "default_use": "process_as_context",
+        "scope": "shared",
+        "selected_canonical_url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/licencia-de-conducir-profesional-por-primera-vez-categoria-b-c-d-e-f-y-h-g3-con-examen-medico-en-la",
+        "display_name": "Aspirante de licencia de conducir profesional",
+        "notes": "",
+        "appearance_ids": [
+          "link_010::resource_006",
+          "link_022::resource_011"
+        ],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T16:15:02-03:00",
+        "analysis_generated_at": "2026-07-30T13:04:41-03:00",
+        "materialization": {
+          "applied_appearance_ids": [
+            "link_022::resource_011"
+          ],
+          "preserved_individual_exception_ids": [
+            "link_010::resource_006"
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "event_331",
+      "timestamp": "2026-07-30T16:40:09-03:00",
+      "actor": "codex",
+      "action": "reapply_auxiliary_link_group_decisions",
+      "target_type": "project",
+      "target_id": "licencia_conducir",
+      "summary": "Se reaplicaron decisiones de 21 grupos a 59 apariciones; se conservaron 0 excepciones explícitas.",
+      "before": null,
+      "after": {
+        "applied_appearance_ids": [
+          "link_011::resource_004",
+          "link_011::resource_007",
+          "link_013::resource_007",
+          "link_007::resource_003",
+          "link_007::resource_004",
+          "link_014::resource_003",
+          "link_006::resource_002",
+          "link_006::resource_003",
+          "link_008::resource_004",
+          "link_004::resource_002",
+          "link_016::resource_003",
+          "link_002::resource_006",
+          "link_002::resource_012",
+          "link_009::resource_006",
+          "link_015::resource_003",
+          "link_009::resource_012",
+          "link_022::resource_005",
+          "link_022::resource_007",
+          "link_020::resource_003",
+          "link_020::resource_006",
+          "link_012::resource_005",
+          "link_012::resource_008",
+          "link_015::resource_007",
+          "link_019::resource_004",
+          "link_019::resource_006",
+          "link_021::resource_005",
+          "link_021::resource_009",
+          "link_005::resource_004",
+          "link_017::resource_005",
+          "link_005::resource_005",
+          "link_017::resource_007",
+          "link_002::resource_007",
+          "link_009::resource_008",
+          "link_012::resource_006",
+          "link_020::resource_005",
+          "link_021::resource_007",
+          "link_022::resource_006",
+          "link_002::resource_004",
+          "link_009::resource_003",
+          "link_022::resource_003",
+          "link_022::resource_010",
+          "link_002::resource_008",
+          "link_009::resource_004",
+          "link_009::resource_009",
+          "link_009::resource_007",
+          "link_021::resource_006",
+          "link_005::resource_003",
+          "link_017::resource_004",
+          "link_002::resource_011",
+          "link_011::resource_006",
+          "link_012::resource_007",
+          "link_013::resource_005",
+          "link_015::resource_006",
+          "link_019::resource_005",
+          "link_021::resource_008",
+          "link_012::resource_003",
+          "link_020::resource_010",
+          "link_010::resource_006",
+          "link_022::resource_011"
+        ],
+        "preserved_individual_exception_ids": []
+      }
     }
   ]
 }

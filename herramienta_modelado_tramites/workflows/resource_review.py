@@ -64,6 +64,19 @@ def save_resource_decision(
         "notes": notes,
         "reviewed_by": actor,
         "reviewed_at": timestamp,
+        "decision_source": "individual",
+        "overrides_group": bool(
+            previous_decision
+            and previous_decision.get("decision_source")
+            == "auxiliary_group"
+        ),
+        "overridden_group_id": (
+            previous_decision.get("source_group_id")
+            if previous_decision
+            and previous_decision.get("decision_source")
+            == "auxiliary_group"
+            else None
+        ),
     }
 
     _upsert_decision(resource_review, decision)

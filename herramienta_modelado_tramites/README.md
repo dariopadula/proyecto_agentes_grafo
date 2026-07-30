@@ -13,8 +13,11 @@ Aplicacion local en desarrollo activo con:
 - reglas configurables de filtrado;
 - revision del uso y alcance de los recursos.
 - analisis deterministico y agrupacion propuesta de PDF.
+- inventario deterministico de enlaces auxiliares no documentales.
 
-El siguiente paso es detectar cuando un recurso interno coincide con un link principal ya conocido y permitir registrar una relacion sin duplicar documentacion.
+El siguiente paso es revisar los 14 recursos internos pendientes y validar una
+excepcion individual sobre una decision heredada. Luego debe evaluarse la misma
+materializacion para las decisiones de grupos PDF.
 
 El MVP inicial esta definido en:
 
@@ -284,3 +287,47 @@ descarga los PDF en esta etapa.
 La descarga y comparación se ejecutan bajo demanda desde la pantalla para una
 familia concreta. El botón ofrece un modo local para usar solamente archivos
 presentes en `data/projects/<project_id>/pdfs/`.
+
+## Inventariar enlaces auxiliares no documentales
+
+```bash
+python app.py analyze-auxiliary-links --project-id licencia_conducir
+```
+
+Genera `data/projects/licencia_conducir/auxiliary_link_analysis.json`.
+
+El análisis conserva apariciones y nodos de origen, excluye documentos
+descargables, detecta repeticiones exactas y equivalencias normalizadas, y
+propone grupos de agendas. Para agendas intermedias puede seguir hasta cinco
+redirecciones HTTP dentro de dominios permitidos. No recorre enlaces del HTML.
+
+El inventario se visualiza en:
+
+```text
+http://127.0.0.1:8000/projects/licencia_conducir/auxiliary-links
+```
+
+La pantalla permite buscar y separar agendas, equivalencias normalizadas y URLs
+exactas. Muestra nodos, uso actual, contexto, URL original, destino final y
+evidencia de redirección.
+
+Cada grupo permite:
+
+- confirmar que representa el mismo recurso, mantenerlo separado o revisarlo
+  después;
+- elegir uso, alcance, URL canónica, nombre y notas;
+- aplicar la decisión a todas las apariciones del grupo.
+
+Las decisiones grupales se guardan en:
+
+```text
+data/projects/licencia_conducir/auxiliary_link_group_review.json
+```
+
+También se materializan por aparición en `resource_review.json`. La decisión
+grupal reemplaza clasificaciones individuales anteriores. Si el funcionario
+edita después una aparición heredada, esa edición queda marcada como excepción
+explícita y no se sobrescribe al actualizar el grupo.
+
+La pantalla `resources` permite filtrar recursos pendientes, decisiones
+heredadas de grupos y decisiones individuales.

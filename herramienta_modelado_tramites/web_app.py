@@ -13,6 +13,7 @@ from config import PROJECTS_DIR
 from core.html_utils import html_escape
 from core.json_store import load_json
 from workflows.human_review import save_link_decision
+from workflows.auxiliary_link_group_review import save_auxiliary_group_decision
 from workflows.pdf_analysis import mark_pdf_family_verification_queued
 from workflows.pdf_analysis import mark_pdf_family_verification_failed
 from workflows.pdf_analysis import verify_pdf_family
@@ -50,6 +51,11 @@ class TramiteModelingHandler(BaseHTTPRequestHandler):
             self._send_html(_pdf_groups_page(project_id, self.path))
             return
 
+        project_id = _project_id_from_auxiliary_links_path(path)
+        if project_id:
+            self._send_html(_auxiliary_links_page(project_id, self.path))
+            return
+
         self._send_not_found()
 
     def do_POST(self) -> None:
@@ -72,6 +78,11 @@ class TramiteModelingHandler(BaseHTTPRequestHandler):
         pdf_verify_route = _pdf_family_verify_route(path)
         if pdf_verify_route:
             self._verify_pdf_family(pdf_verify_route)
+            return
+
+        auxiliary_group_route = _auxiliary_group_decision_route(path)
+        if auxiliary_group_route:
+            self._save_auxiliary_group_review(auxiliary_group_route)
             return
 
         route = _decision_route(path)
@@ -205,6 +216,50 @@ class TramiteModelingHandler(BaseHTTPRequestHandler):
             f"/projects/{project_id}/pdf-groups?saved={family_id}#{family_id}"
         )
 
+    def _save_auxiliary_group_review(
+        self,
+        route: tuple[str, str],
+    ) -> None:
+        project_id, group_id = route
+        form = self._read_form()
+        try:
+            decision = save_auxiliary_group_decision(
+                project_id=project_id,
+                group_id=group_id,
+                identity_decision=_single(form, "identity_decision"),
+                default_use=_single(form, "default_use"),
+                scope=_single(form, "scope", "shared"),
+                selected_canonical_url=_single(
+                    form,
+                    "selected_canonical_url",
+                ),
+                display_name=_single(form, "display_name"),
+                notes=_single(form, "notes"),
+                actor=_single(form, "actor", DEFAULT_ACTOR),
+            )
+        except ValueError as error:
+            self._redirect(
+                f"/projects/{project_id}/auxiliary-links"
+                f"?error={html_escape(error)}#{group_id}"
+            )
+            return
+        applied = len(
+            decision.get("materialization", {}).get(
+                "applied_appearance_ids",
+                [],
+            )
+        )
+        exceptions = len(
+            decision.get("materialization", {}).get(
+                "preserved_individual_exception_ids",
+                [],
+            )
+        )
+        self._redirect(
+            f"/projects/{project_id}/auxiliary-links?saved={group_id}"
+            f"&applied={applied}&exceptions={exceptions}#{group_id}"
+        )
+
     def log_message(self, format: str, *args: Any) -> None:
         # Mantiene la consola limpia; los errores se informan en la pagina.
         return
@@ -289,6 +344,9 @@ def _projects_page() -> str:
               <a class="button secondary" href="/projects/{html_escape(project_id)}/pdf-groups">
                 Revisar grupos PDF
               </a>
+              <a class="button secondary" href="/projects/{html_escape(project_id)}/auxiliary-links">
+                Revisar enlaces auxiliares
+              </a>
             </article>
             """
         )
@@ -325,7 +383,22 @@ def _resources_page(project_id: str, request_path: str) -> str:
     pages = node_resources.get("pages", [])
     total_resources = node_resources.get("resources_count", 0)
     total_discarded = node_resources.get("discarded_resources_count", 0)
-    reviewed_resources = len(decisions_by_resource)
+    reviewable_ids = {
+        f"{page.get('link_id')}::{resource.get('resource_id')}"
+        for page in pages
+        for resource in page.get("resources", [])
+    }
+    reviewed_resources = sum(
+        decision_id in reviewable_ids
+        for decision_id in decisions_by_resource
+    )
+    inherited_resources = sum(
+        decision_id in reviewable_ids
+        and decision.get("decision_source") == "auxiliary_group"
+        for decision_id, decision in decisions_by_resource.items()
+    )
+    individual_resources = reviewed_resources - inherited_resources
+    pending_resources = max(0, total_resources - reviewed_resources)
     message = _status_message(request_path)
 
     cards = "".join(
@@ -344,7 +417,9 @@ def _resources_page(project_id: str, request_path: str) -> str:
         <div><strong>{html_escape(node_resources.get("accepted_links_count"))}</strong><span>Nodos explorados</span></div>
         <div><strong>{html_escape(total_resources)}</strong><span>Recursos utiles</span></div>
         <div><strong>{html_escape(total_discarded)}</strong><span>Descartados por regla</span></div>
-        <div><strong>{html_escape(reviewed_resources)}</strong><span>Recursos revisados</span></div>
+        <div><strong>{html_escape(pending_resources)}</strong><span>Pendientes</span></div>
+        <div><strong>{html_escape(inherited_resources)}</strong><span>Decisiones de grupo</span></div>
+        <div><strong>{html_escape(individual_resources)}</strong><span>Decisiones individuales</span></div>
       </div>
       {message}
     </section>
@@ -359,6 +434,12 @@ def _resources_page(project_id: str, request_path: str) -> str:
         <option value="kept">Solo utiles</option>
         <option value="discarded">Solo descartados</option>
       </select>
+      <select id="decisionFilter">
+        <option value="">Todos los estados</option>
+        <option value="pending">Pendientes</option>
+        <option value="group">Decisión heredada de grupo</option>
+        <option value="individual">Decisión individual</option>
+      </select>
       <button type="button" onclick="clearResourceFilters()">Limpiar</button>
     </section>
     <section class="cards">
@@ -368,19 +449,23 @@ def _resources_page(project_id: str, request_path: str) -> str:
       const search = document.getElementById("search");
       const typeFilter = document.getElementById("typeFilter");
       const discardFilter = document.getElementById("discardFilter");
+      const decisionFilter = document.getElementById("decisionFilter");
       search.addEventListener("input", applyResourceFilters);
       typeFilter.addEventListener("change", applyResourceFilters);
       discardFilter.addEventListener("change", applyResourceFilters);
+      decisionFilter.addEventListener("change", applyResourceFilters);
 
       function applyResourceFilters() {{
         const query = search.value.trim().toLowerCase();
         const type = typeFilter.value;
         const discardState = discardFilter.value;
+        const decisionState = decisionFilter.value;
         document.querySelectorAll(".resource-row").forEach(row => {{
           const matchesText = !query || row.dataset.search.includes(query);
           const matchesType = !type || row.dataset.type === type;
           const matchesDiscard = !discardState || row.dataset.discard === discardState;
-          row.classList.toggle("hidden", !(matchesText && matchesType && matchesDiscard));
+          const matchesDecision = !decisionState || row.dataset.decision === decisionState;
+          row.classList.toggle("hidden", !(matchesText && matchesType && matchesDiscard && matchesDecision));
         }});
       }}
 
@@ -388,11 +473,440 @@ def _resources_page(project_id: str, request_path: str) -> str:
         search.value = "";
         typeFilter.value = "";
         discardFilter.value = "";
+        decisionFilter.value = "";
         applyResourceFilters();
       }}
     </script>
     """
     return _page(f"Recursos internos - {project.get('name')}", body)
+
+
+def _auxiliary_links_page(project_id: str, request_path: str) -> str:
+    project_dir = PROJECTS_DIR / project_id
+    project = load_json(project_dir / "project.json")
+    analysis_path = project_dir / "auxiliary_link_analysis.json"
+    if not analysis_path.exists():
+        body = f"""
+        <section class="panel">
+          <p><a href="/">Volver a proyectos</a></p>
+          <h2>{html_escape(project.get("name"))}</h2>
+          <p>No existe <code>auxiliary_link_analysis.json</code>.</p>
+          <p class="muted">Ejecuta <code>python app.py analyze-auxiliary-links --project-id {html_escape(project_id)}</code>.</p>
+        </section>
+        """
+        return _page("Enlaces auxiliares", body)
+
+    analysis = load_json(analysis_path)
+    group_review_path = project_dir / "auxiliary_link_group_review.json"
+    group_review = (
+        load_json(group_review_path)
+        if group_review_path.exists()
+        else {"review_status": "not_started", "decisions": []}
+    )
+    decisions = {
+        item.get("group_id"): item
+        for item in group_review.get("decisions", [])
+    }
+    appearances = {
+        item.get("appearance_id"): item
+        for item in analysis.get("appearances", [])
+    }
+    summary = analysis.get("summary", {})
+    agenda_groups = analysis.get("agenda_candidates", [])
+    normalized_groups = analysis.get(
+        "normalized_equivalence_candidates",
+        [],
+    )
+    exact_groups = analysis.get("exact_url_groups", [])
+    normalized_non_agenda = [
+        group
+        for group in normalized_groups
+        if group.get("suggested_functional_kind") != "agenda"
+    ]
+    covered_by_normalized = {
+        appearance_id
+        for group in normalized_non_agenda
+        for appearance_id in group.get("appearance_ids", [])
+    }
+    cards = "".join(
+        _auxiliary_group_card(
+            project_id,
+            group,
+            appearances,
+            "agenda",
+            decisions.get(group.get("group_id"), {}),
+        )
+        for group in agenda_groups
+    )
+    cards += "".join(
+        _auxiliary_group_card(
+            project_id,
+            group,
+            appearances,
+            "normalized",
+            decisions.get(group.get("group_id"), {}),
+        )
+        for group in normalized_non_agenda
+    )
+    cards += "".join(
+        _auxiliary_group_card(
+            project_id,
+            group,
+            appearances,
+            "exact",
+            decisions.get(group.get("group_id"), {}),
+        )
+        for group in exact_groups
+        if group.get("suggested_functional_kind") != "agenda"
+        and not (
+            set(group.get("appearance_ids", []))
+            & covered_by_normalized
+        )
+    )
+
+    body = f"""
+    <section class="panel">
+      <p>
+        <a href="/">Volver a proyectos</a> |
+        <a href="/projects/{html_escape(project_id)}/resources">Ver recursos internos</a> |
+        <a href="/projects/{html_escape(project_id)}/pdf-groups">Revisar PDF</a>
+      </p>
+      <h2>{html_escape(project.get("name"))}</h2>
+      <p class="muted">
+        Confirma el tratamiento una vez por grupo. La decisión se registra y se
+        aplica a las apariciones sin decisión individual.
+      </p>
+      <div class="stats">
+        <div><strong>{html_escape(summary.get("appearance_count", 0))}</strong><span>Apariciones no documentales</span></div>
+        <div><strong>{html_escape(summary.get("exact_url_group_count", 0))}</strong><span>Grupos por URL exacta</span></div>
+        <div><strong>{html_escape(summary.get("normalized_equivalence_candidate_count", 0))}</strong><span>Equivalencias fuertes</span></div>
+        <div><strong>{html_escape(summary.get("agenda_candidate_count", 0))}</strong><span>Agendas candidatas</span></div>
+      </div>
+      {_auxiliary_status_message(request_path)}
+    </section>
+    <section class="toolbar">
+      <input id="auxSearch" type="search" placeholder="Buscar agenda, recurso, nodo o URL">
+      <select id="auxKind">
+        <option value="">Todos los grupos</option>
+        <option value="agenda">Agendas</option>
+        <option value="normalized">Equivalencias normalizadas</option>
+        <option value="exact">URLs exactas</option>
+      </select>
+      <button type="button" onclick="clearAuxFilters()">Limpiar</button>
+    </section>
+    <section class="cards">{cards}</section>
+    <script>
+      const auxSearch = document.getElementById("auxSearch");
+      const auxKind = document.getElementById("auxKind");
+      auxSearch.addEventListener("input", applyAuxFilters);
+      auxKind.addEventListener("change", applyAuxFilters);
+
+      function applyAuxFilters() {{
+        const query = auxSearch.value.trim().toLowerCase();
+        const kind = auxKind.value;
+        document.querySelectorAll(".aux-group").forEach(card => {{
+          const matchesText = !query || card.dataset.search.includes(query);
+          const matchesKind = !kind || card.dataset.kind === kind;
+          card.classList.toggle("hidden", !(matchesText && matchesKind));
+        }});
+      }}
+
+      function clearAuxFilters() {{
+        auxSearch.value = "";
+        auxKind.value = "";
+        applyAuxFilters();
+      }}
+    </script>
+    """
+    return _page(f"Enlaces auxiliares - {project.get('name')}", body)
+
+
+def _auxiliary_group_card(
+    project_id: str,
+    group: dict[str, Any],
+    appearances: dict[str, dict[str, Any]],
+    section_kind: str,
+    decision: dict[str, Any],
+) -> str:
+    items = [
+        appearances[appearance_id]
+        for appearance_id in group.get("appearance_ids", [])
+        if appearance_id in appearances
+    ]
+    evidence = group.get("evidence", {})
+    title = _auxiliary_group_title(group, items)
+    search_text = " ".join(
+        str(value or "")
+        for value in [
+            group.get("group_id"),
+            title,
+            evidence.get("value"),
+            *group.get("source_node_ids", []),
+            *group.get("detected_urls", []),
+        ]
+    ).lower()
+    rows = "".join(_auxiliary_appearance_row(item) for item in items)
+    review_form = _auxiliary_group_review_form(
+        project_id,
+        group,
+        items,
+        title,
+        decision,
+    )
+    materialization = decision.get("materialization", {})
+    decision_summary = ""
+    if decision:
+        decision_summary = f"""
+        <p class="message ok">
+          Decisión guardada: {html_escape(decision.get("identity_decision"))} /
+          {html_escape(decision.get("default_use"))}.
+          Aplicada a {len(materialization.get("applied_appearance_ids", []))}
+          apariciones; {len(materialization.get("preserved_individual_exception_ids", []))}
+          excepciones individuales conservadas.
+        </p>
+        """
+    return f"""
+    <article class="card aux-group"
+        id="{html_escape(group.get("group_id"))}"
+        data-kind="{html_escape(section_kind)}"
+        data-search="{html_escape(search_text)}">
+      <div class="card-head">
+        <div>
+          <p class="eyebrow">{html_escape(group.get("group_id"))}</p>
+          <h2>{html_escape(title)}</h2>
+          <p class="muted">{html_escape(_auxiliary_section_label(section_kind))}</p>
+        </div>
+        <span class="pill">{html_escape(_auxiliary_certainty_label(group.get("certainty")))}</span>
+      </div>
+      <dl>
+        <dt>Apariciones</dt><dd>{html_escape(evidence.get("appearance_count", len(items)))}</dd>
+        <dt>Nodos de origen</dt><dd>{html_escape(", ".join(group.get("source_node_ids", [])))}</dd>
+        <dt>Clave candidata</dt><dd class="url">{html_escape(evidence.get("value"))}</dd>
+        <dt>Usos existentes</dt><dd>{html_escape(", ".join(group.get("existing_uses", [])) or "Sin decisión")}</dd>
+      </dl>
+      {decision_summary}
+      {review_form}
+      <details {"open" if section_kind == "agenda" else ""}>
+        <summary>Ver apariciones y evidencia</summary>
+        <div class="resource-list">{rows}</div>
+      </details>
+    </article>
+    """
+
+
+def _auxiliary_group_review_form(
+    project_id: str,
+    group: dict[str, Any],
+    items: list[dict[str, Any]],
+    suggested_title: str,
+    decision: dict[str, Any],
+) -> str:
+    canonical_urls = list(
+        dict.fromkeys(
+            item.get("candidate_canonical_url")
+            or item.get("detected_url")
+            for item in items
+            if item.get("candidate_canonical_url")
+            or item.get("detected_url")
+        )
+    )
+    selected_url = (
+        decision.get("selected_canonical_url")
+        or (canonical_urls[0] if len(canonical_urls) == 1 else "")
+    )
+    return f"""
+    <form method="post"
+        action="/projects/{html_escape(project_id)}/auxiliary-links/{html_escape(group.get("group_id"))}/review">
+      <div class="form-grid">
+        <label>
+          Identidad del grupo
+          <select name="identity_decision" required>
+            {_auxiliary_identity_options(decision.get("identity_decision", ""))}
+          </select>
+        </label>
+        <label>
+          Uso para el grupo
+          <select name="default_use" required>
+            <option value="">Seleccionar</option>
+            {_resource_use_options(decision.get("default_use", ""))}
+          </select>
+        </label>
+        <label>
+          Alcance
+          <select name="scope">
+            {_resource_scope_options(decision.get("scope", "shared"))}
+          </select>
+        </label>
+      </div>
+      <div class="form-grid">
+        <label>
+          URL canónica
+          <select name="selected_canonical_url">
+            <option value="">Sin seleccionar</option>
+            {_auxiliary_canonical_url_options(canonical_urls, selected_url)}
+          </select>
+        </label>
+        <label>
+          Nombre mantenible
+          <input name="display_name"
+              value="{html_escape(decision.get("display_name") or suggested_title)}">
+        </label>
+        <label>
+          Revisor
+          <input name="actor"
+              value="{html_escape(decision.get("reviewed_by", DEFAULT_ACTOR))}">
+        </label>
+      </div>
+      <label>
+        Notas del grupo
+        <textarea name="notes"
+            placeholder="Criterio general o aclaraciones para las excepciones.">{html_escape(decision.get("notes", ""))}</textarea>
+      </label>
+      <div class="actions">
+        <button type="submit">Guardar y aplicar al grupo</button>
+        <span class="muted">
+          Las decisiones individuales existentes se conservan como excepciones.
+        </span>
+      </div>
+    </form>
+    """
+
+
+def _auxiliary_identity_options(selected: str) -> str:
+    labels = {
+        "confirmed_same": "Confirmar mismo recurso",
+        "keep_separate": "Mantener recursos separados",
+        "review_later": "Revisar identidad después",
+    }
+    options = '<option value="">Seleccionar</option>'
+    return options + "".join(
+        f"""
+        <option value="{html_escape(code)}" {"selected" if code == selected else ""}>
+          {html_escape(label)}
+        </option>
+        """
+        for code, label in labels.items()
+    )
+
+
+def _auxiliary_canonical_url_options(
+    urls: list[str],
+    selected: str,
+) -> str:
+    return "".join(
+        f"""
+        <option value="{html_escape(url)}" {"selected" if url == selected else ""}>
+          {html_escape(url)}
+        </option>
+        """
+        for url in urls
+    )
+
+
+def _auxiliary_status_message(request_path: str) -> str:
+    query = parse_qs(urlparse(request_path).query)
+    if "saved" in query:
+        applied = query.get("applied", ["0"])[0]
+        exceptions = query.get("exceptions", ["0"])[0]
+        return f"""
+        <p class="message ok">
+          Grupo {html_escape(query["saved"][0])} guardado.
+          Se aplicó a {html_escape(applied)} apariciones y se conservaron
+          {html_escape(exceptions)} excepciones individuales.
+        </p>
+        """
+    if "error" in query:
+        return f"""
+        <p class="message error">
+          No se pudo guardar: {html_escape(query["error"][0])}
+        </p>
+        """
+    return ""
+
+
+def _auxiliary_appearance_row(item: dict[str, Any]) -> str:
+    detected_url = item.get("detected_url", "")
+    canonical_url = item.get("candidate_canonical_url") or detected_url
+    canonical = ""
+    if canonical_url != detected_url:
+        canonical = f"""
+        <p><strong>Destino final propuesto:</strong>
+          <a href="{html_escape(canonical_url)}" target="_blank" rel="noreferrer">
+            {html_escape(canonical_url)}
+          </a>
+        </p>
+        """
+    resolution = item.get("redirect_resolution", {})
+    redirect_evidence = ""
+    if resolution.get("status") == "resolved":
+        redirect_evidence = f"""
+        <p class="message ok">
+          Redirección resuelta: {html_escape(resolution.get("redirect_count"))}
+          salto(s), sin recorrer enlaces de la página.
+        </p>
+        """
+    elif resolution.get("status") not in {None, "not_needed"}:
+        redirect_evidence = f"""
+        <p class="message error">
+          Redirección: {html_escape(resolution.get("status"))}.
+          {html_escape(resolution.get("error"))}
+        </p>
+        """
+
+    return f"""
+    <div class="resource-row">
+      <div class="resource-head">
+        <span class="pill">{html_escape(item.get("appearance_id"))}</span>
+        <strong>{html_escape(item.get("label") or item.get("detected_url"))}</strong>
+      </div>
+      <p><strong>Nodo:</strong> {html_escape(item.get("source_node_title"))}
+        <span class="muted">({html_escape(item.get("source_node_id"))})</span>
+      </p>
+      <p><strong>URL detectada:</strong>
+        <a href="{html_escape(detected_url)}" target="_blank" rel="noreferrer">
+          {html_escape(detected_url)}
+        </a>
+      </p>
+      {canonical}
+      {redirect_evidence}
+      <dl>
+        <dt>Tipo</dt><dd>{html_escape(item.get("functional_kind"))}</dd>
+        <dt>Uso actual</dt><dd>{html_escape(item.get("existing_use") or "Sin decisión")}</dd>
+        <dt>Estado</dt><dd>{html_escape(item.get("filter_status"))}</dd>
+        <dt>Contexto</dt><dd>{html_escape(item.get("source_context"))}</dd>
+      </dl>
+    </div>
+    """
+
+
+def _auxiliary_group_title(
+    group: dict[str, Any],
+    items: list[dict[str, Any]],
+) -> str:
+    if group.get("suggested_functional_kind") == "agenda" and items:
+        parameters = items[0].get("identity_parameters", {})
+        agenda = parameters.get("agenda")
+        recurso = parameters.get("recurso")
+        if agenda and recurso:
+            return f"Agenda {agenda} / {recurso}"
+    labels = [item.get("label") for item in items if item.get("label")]
+    return labels[0] if labels else group.get("group_id", "Grupo")
+
+
+def _auxiliary_section_label(section_kind: str) -> str:
+    return {
+        "agenda": "Agenda candidata",
+        "normalized": "Equivalencia normalizada fuerte",
+        "exact": "URL exactamente repetida",
+    }.get(section_kind, section_kind)
+
+
+def _auxiliary_certainty_label(certainty: str) -> str:
+    return {
+        "agenda_parameters_match": "Coinciden agenda y recurso",
+        "strong_normalized_equivalent": "Equivalencia fuerte",
+        "exact_url": "URL exacta",
+    }.get(certainty, certainty)
 
 
 def _pdf_groups_page(project_id: str, request_path: str) -> str:
@@ -1096,7 +1610,16 @@ def _resource_page_card(
         for resource in resources
     )
     discarded_rows = "".join(
-        _resource_row(project_id, page.get("link_id", ""), resource, "discarded", {})
+        _resource_row(
+            project_id,
+            page.get("link_id", ""),
+            resource,
+            "discarded",
+            decisions_by_resource.get(
+                f"{page.get('link_id')}::{resource.get('resource_id')}",
+                {},
+            ),
+        )
         for resource in discarded
     )
     error = ""
@@ -1162,13 +1685,27 @@ def _resource_row(
             resource.get("discard_reason"),
         ]
     ).lower()
+    if not decision:
+        decision_state = "pending"
+        decision_badge = '<span class="pill">Pendiente</span>'
+    elif decision.get("decision_source") == "auxiliary_group":
+        decision_state = "group"
+        decision_badge = (
+            '<span class="pill">Heredada del grupo '
+            f'{html_escape(decision.get("source_group_id"))}</span>'
+        )
+    else:
+        decision_state = "individual"
+        decision_badge = '<span class="pill">Decisión individual</span>'
     return f"""
     <div class="resource-row" id="{html_escape(source_link_id)}-{html_escape(resource.get("resource_id"))}"
         data-search="{html_escape(search_text)}"
         data-type="{html_escape(resource.get("resource_type"))}"
-        data-discard="{html_escape(discard_state)}">
+        data-discard="{html_escape(discard_state)}"
+        data-decision="{html_escape(decision_state)}">
       <div class="resource-head">
         <span class="pill">{html_escape(resource.get("resource_type"))}</span>
+        {decision_badge}
         <strong>
           <a href="{html_escape(resource.get("url"))}" target="_blank" rel="noreferrer">
             {html_escape(resource.get("title") or resource.get("url"))}
@@ -1348,6 +1885,17 @@ def _project_id_from_pdf_groups_path(path: str) -> str | None:
     return None
 
 
+def _project_id_from_auxiliary_links_path(path: str) -> str | None:
+    parts = path.strip("/").split("/")
+    if (
+        len(parts) == 3
+        and parts[0] == "projects"
+        and parts[2] == "auxiliary-links"
+    ):
+        return parts[1]
+    return None
+
+
 def _decision_route(path: str) -> tuple[str, str] | None:
     parts = path.strip("/").split("/")
     if len(parts) == 4 and parts[0] == "projects" and parts[2] == "review-links":
@@ -1359,6 +1907,20 @@ def _resource_decision_route(path: str) -> tuple[str, str, str] | None:
     parts = path.strip("/").split("/")
     if len(parts) == 5 and parts[0] == "projects" and parts[2] == "resources":
         return parts[1], parts[3], parts[4]
+    return None
+
+
+def _auxiliary_group_decision_route(
+    path: str,
+) -> tuple[str, str] | None:
+    parts = path.strip("/").split("/")
+    if (
+        len(parts) == 5
+        and parts[0] == "projects"
+        and parts[2] == "auxiliary-links"
+        and parts[4] == "review"
+    ):
+        return parts[1], parts[3]
     return None
 
 

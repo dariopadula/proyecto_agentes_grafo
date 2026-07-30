@@ -4,6 +4,7 @@ from config import DEFAULT_ACTOR
 from config import LINK_ROLE_LABELS
 from workflows.link_discovery import discover_candidate_links
 from workflows.human_review import save_link_decision
+from workflows.auxiliary_link_analysis import analyze_auxiliary_links
 from workflows.node_resource_discovery import discover_node_resources
 from workflows.pdf_analysis import analyze_project_pdfs
 from workflows.project_setup import create_project
@@ -116,6 +117,21 @@ def main() -> None:
         help="Persona o rol que ejecuta el analisis.",
     )
 
+    auxiliary_links_parser = subparsers.add_parser(
+        "analyze-auxiliary-links",
+        help="Inventaria enlaces auxiliares no documentales.",
+    )
+    auxiliary_links_parser.add_argument(
+        "--project-id",
+        required=True,
+        help="ID del proyecto con recursos descubiertos.",
+    )
+    auxiliary_links_parser.add_argument(
+        "--actor",
+        default=DEFAULT_ACTOR,
+        help="Persona o rol que ejecuta el inventario.",
+    )
+
     args = parser.parse_args()
 
     if args.command == "init-project":
@@ -184,6 +200,22 @@ def main() -> None:
         print(f"No intentados: {result['not_attempted_count']}")
         print(f"Grupos propuestos: {result['proposed_group_count']}")
         print(f"Archivo: {result['pdf_analysis_path']}")
+
+    if args.command == "analyze-auxiliary-links":
+        result = analyze_auxiliary_links(
+            project_id=args.project_id,
+            actor=args.actor,
+        )
+        print(f"Proyecto: {result['project_id']}")
+        print(f"Apariciones no documentales: {result['appearance_count']}")
+        print(f"Documentos excluidos: {result['excluded_document_count']}")
+        print(f"Grupos por URL exacta: {result['exact_group_count']}")
+        print(
+            "Equivalencias normalizadas: "
+            f"{result['normalized_group_count']}"
+        )
+        print(f"Agendas candidatas: {result['agenda_group_count']}")
+        print(f"Archivo: {result['analysis_path']}")
 
 
 if __name__ == "__main__":

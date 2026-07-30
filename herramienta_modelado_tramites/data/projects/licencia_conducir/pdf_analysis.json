@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1",
-  "generated_at": "2026-07-30T11:33:35-03:00",
+  "generated_at": "2026-07-30T13:05:50-03:00",
   "project_id": "licencia_conducir",
   "resource_type": "pdf",
   "source": {
@@ -2055,7 +2055,7 @@
       },
       "verification": {
         "status": "complete",
-        "verified_at": "2026-07-30T11:33:35-03:00",
+        "verified_at": "2026-07-30T13:05:50-03:00",
         "all_appearances_same": true,
         "partitions": [
           {
