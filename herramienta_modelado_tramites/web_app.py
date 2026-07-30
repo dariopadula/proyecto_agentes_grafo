@@ -1,6 +1,7 @@
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler
 from http.server import ThreadingHTTPServer
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs
@@ -12,11 +13,17 @@ from config import PROJECTS_DIR
 from core.html_utils import html_escape
 from core.json_store import load_json
 from workflows.human_review import save_link_decision
+from workflows.pdf_analysis import mark_pdf_family_verification_queued
+from workflows.pdf_analysis import mark_pdf_family_verification_failed
+from workflows.pdf_analysis import verify_pdf_family
+from workflows.pdf_group_review import save_pdf_family_decision
+from workflows.pdf_group_review import save_pdf_partition_decision
 from workflows.resource_review import save_resource_decision
 
 
 HOST = "127.0.0.1"
 PORT = 8000
+PDF_VERIFICATION_EXECUTOR = ThreadPoolExecutor(max_workers=2)
 
 
 class TramiteModelingHandler(BaseHTTPRequestHandler):
@@ -38,6 +45,11 @@ class TramiteModelingHandler(BaseHTTPRequestHandler):
             self._send_html(_resources_page(project_id, self.path))
             return
 
+        project_id = _project_id_from_pdf_groups_path(path)
+        if project_id:
+            self._send_html(_pdf_groups_page(project_id, self.path))
+            return
+
         self._send_not_found()
 
     def do_POST(self) -> None:
@@ -45,6 +57,21 @@ class TramiteModelingHandler(BaseHTTPRequestHandler):
         resource_route = _resource_decision_route(path)
         if resource_route:
             self._save_resource_review(resource_route)
+            return
+
+        pdf_group_route = _pdf_group_decision_route(path)
+        if pdf_group_route:
+            self._save_pdf_group_review(pdf_group_route)
+            return
+
+        pdf_family_decision_route = _pdf_family_decision_route(path)
+        if pdf_family_decision_route:
+            self._save_pdf_family_decision(pdf_family_decision_route)
+            return
+
+        pdf_verify_route = _pdf_family_verify_route(path)
+        if pdf_verify_route:
+            self._verify_pdf_family(pdf_verify_route)
             return
 
         route = _decision_route(path)
@@ -110,6 +137,74 @@ class TramiteModelingHandler(BaseHTTPRequestHandler):
             f"#{source_link_id}-{resource_id}"
         )
 
+    def _save_pdf_group_review(self, route: tuple[str, str, str]) -> None:
+        project_id, family_id, partition_id = route
+        form = self._read_form()
+        try:
+            save_pdf_partition_decision(
+                project_id=project_id,
+                family_id=family_id,
+                partition_id=partition_id,
+                identity_decision=_single(form, "identity_decision"),
+                default_use=_single(form, "default_use"),
+                selected_canonical_url=_single(form, "selected_canonical_url"),
+                display_name=_single(form, "display_name"),
+                notes=_single(form, "notes"),
+                actor=_single(form, "actor", DEFAULT_ACTOR),
+            )
+        except ValueError as error:
+            self._redirect(
+                f"/projects/{project_id}/pdf-groups?error={html_escape(error)}"
+                f"#{family_id}"
+            )
+            return
+        self._redirect(
+            f"/projects/{project_id}/pdf-groups?saved={partition_id}#{family_id}"
+        )
+
+    def _verify_pdf_family(self, route: tuple[str, str]) -> None:
+        project_id, family_id = route
+        form = self._read_form()
+        verify_pdf_family(
+            project_id=project_id,
+            family_id=family_id,
+            actor=_single(form, "actor", DEFAULT_ACTOR),
+            local_only=_single(form, "local_only") == "true",
+        )
+        self._redirect(
+            f"/projects/{project_id}/pdf-groups?verified={family_id}#{family_id}"
+        )
+
+    def _save_pdf_family_decision(self, route: tuple[str, str]) -> None:
+        project_id, family_id = route
+        form = self._read_form()
+        try:
+            save_pdf_family_decision(
+                project_id=project_id,
+                family_id=family_id,
+                default_use=_single(form, "default_use"),
+                selected_canonical_url=_single(form, "selected_canonical_url"),
+                display_name=_single(form, "display_name"),
+                notes=_single(form, "notes"),
+                actor=_single(form, "actor", DEFAULT_ACTOR),
+            )
+            mark_pdf_family_verification_queued(project_id, family_id)
+            PDF_VERIFICATION_EXECUTOR.submit(
+                _verify_pdf_family_background,
+                project_id,
+                family_id,
+                _single(form, "actor", DEFAULT_ACTOR),
+            )
+        except ValueError as error:
+            self._redirect(
+                f"/projects/{project_id}/pdf-groups?error={html_escape(error)}"
+                f"#{family_id}"
+            )
+            return
+        self._redirect(
+            f"/projects/{project_id}/pdf-groups?saved={family_id}#{family_id}"
+        )
+
     def log_message(self, format: str, *args: Any) -> None:
         # Mantiene la consola limpia; los errores se informan en la pagina.
         return
@@ -146,6 +241,17 @@ def run() -> None:
     server.serve_forever()
 
 
+def _verify_pdf_family_background(
+    project_id: str,
+    family_id: str,
+    actor: str,
+) -> None:
+    try:
+        verify_pdf_family(project_id, family_id, actor, local_only=False)
+    except Exception as error:
+        mark_pdf_family_verification_failed(project_id, family_id, error)
+
+
 def _projects_page() -> str:
     projects = []
     for project_dir in sorted(PROJECTS_DIR.iterdir()):
@@ -179,6 +285,9 @@ def _projects_page() -> str:
               </a>
               <a class="button secondary" href="/projects/{html_escape(project_id)}/resources">
                 Ver recursos internos
+              </a>
+              <a class="button secondary" href="/projects/{html_escape(project_id)}/pdf-groups">
+                Revisar grupos PDF
               </a>
             </article>
             """
@@ -284,6 +393,535 @@ def _resources_page(project_id: str, request_path: str) -> str:
     </script>
     """
     return _page(f"Recursos internos - {project.get('name')}", body)
+
+
+def _pdf_groups_page(project_id: str, request_path: str) -> str:
+    project_dir = PROJECTS_DIR / project_id
+    project = load_json(project_dir / "project.json")
+    analysis_path = project_dir / "pdf_analysis.json"
+    if not analysis_path.exists():
+        body = f"""
+        <section class="panel">
+          <p><a href="/">Volver a proyectos</a></p>
+          <h2>{html_escape(project.get("name"))}</h2>
+          <p>No existe <code>pdf_analysis.json</code>.</p>
+          <p class="muted">Ejecuta <code>python app.py analyze-pdfs --project-id {html_escape(project_id)}</code>.</p>
+        </section>
+        """
+        return _page("Revisión agrupada de PDF", body)
+
+    analysis = load_json(analysis_path)
+    review_path = project_dir / "pdf_group_review.json"
+    review = (
+        load_json(review_path)
+        if review_path.exists()
+        else {"review_status": "not_started", "decisions": []}
+    )
+    decisions = {
+        item.get("partition_id"): item
+        for item in review.get("decisions", [])
+        if item.get("partition_id")
+    }
+    legacy_decision_count = sum(
+        not item.get("partition_id")
+        for item in review.get("decisions", [])
+    )
+    family_decisions = {
+        item.get("family_id"): item
+        for item in review.get("family_decisions", [])
+    }
+    appearances = {
+        item.get("appearance_id"): item
+        for item in analysis.get("appearances", [])
+    }
+    groups = analysis.get("proposed_groups", [])
+    partition_count = sum(
+        len(group.get("verification", {}).get("partitions", []))
+        for group in groups
+    )
+    reviewed_count = len(decisions)
+    cards = "".join(
+        _pdf_group_card(
+            project_id,
+            group,
+            appearances,
+            decisions,
+            family_decisions.get(group.get("group_id"), {}),
+        )
+        for group in groups
+    )
+    summary = analysis.get("summary", {})
+    body = f"""
+    <section class="panel">
+      <p>
+        <a href="/">Volver a proyectos</a> |
+        <a href="/projects/{html_escape(project_id)}/resources">Ver recursos internos</a>
+      </p>
+      <h2>{html_escape(project.get("name"))}</h2>
+      <p class="muted">
+        El funcionario puede confirmar una familia por su conocimiento. La
+        verificación técnica se ejecuta después, con límites de seguridad.
+      </p>
+      <div class="stats">
+        <div><strong>{len(groups)}</strong><span>Grupos propuestos</span></div>
+        <div><strong>{reviewed_count}/{partition_count}</strong><span>Particiones revisadas</span></div>
+        <div><strong>{html_escape(summary.get("analyzed_count", 0))}</strong><span>PDF analizados</span></div>
+        <div><strong>{html_escape("requiere revisión" if legacy_decision_count else review.get("review_status"))}</strong><span>Estado</span></div>
+      </div>
+      {f'<p class="message">Se conservaron {legacy_decision_count} decisiones del modelo anterior. No se aplican automáticamente a las nuevas particiones.</p>' if legacy_decision_count else ""}
+      {_status_message(request_path)}
+    </section>
+    <section class="toolbar">
+      <input id="pdfSearch" type="search" placeholder="Buscar grupo, recurso, nodo o URL">
+      <select id="verificationFilter">
+        <option value="">Todos los estados de verificación</option>
+        <option value="not_started">Sin verificar</option>
+        <option value="queued">Verificación en curso</option>
+        <option value="partial">Verificación parcial</option>
+        <option value="complete">Verificación completa</option>
+        <option value="error">Error técnico</option>
+      </select>
+      <select id="reviewFilter">
+        <option value="">Revisados y pendientes</option>
+        <option value="pending">Solo pendientes</option>
+        <option value="reviewed">Solo revisados</option>
+      </select>
+      <button type="button" onclick="clearPdfFilters()">Limpiar</button>
+    </section>
+    <section class="cards">{cards}</section>
+    <script>
+      const pdfSearch = document.getElementById("pdfSearch");
+      const verificationFilter = document.getElementById("verificationFilter");
+      const reviewFilter = document.getElementById("reviewFilter");
+      [pdfSearch, verificationFilter, reviewFilter].forEach(
+        control => control.addEventListener("input", applyPdfFilters)
+      );
+      function applyPdfFilters() {{
+        const query = pdfSearch.value.trim().toLowerCase();
+        document.querySelectorAll(".pdf-group").forEach(card => {{
+          const textOk = !query || card.dataset.search.includes(query);
+          const certaintyOk = !verificationFilter.value ||
+            card.dataset.verification === verificationFilter.value;
+          const reviewOk = !reviewFilter.value ||
+            card.dataset.review === reviewFilter.value;
+          card.classList.toggle("hidden", !(textOk && certaintyOk && reviewOk));
+        }});
+      }}
+      function clearPdfFilters() {{
+        pdfSearch.value = "";
+        verificationFilter.value = "";
+        reviewFilter.value = "";
+        applyPdfFilters();
+      }}
+    </script>
+    """
+    return _page(f"Revisión agrupada de PDF - {project.get('name')}", body)
+
+
+def _pdf_group_card(
+    project_id: str,
+    group: dict[str, Any],
+    appearances: dict[str, dict[str, Any]],
+    decisions: dict[str, dict[str, Any]],
+    family_decision: dict[str, Any],
+) -> str:
+    group_id = group.get("group_id", "")
+    items = [
+        appearances[item_id]
+        for item_id in group.get("appearance_ids", [])
+        if item_id in appearances
+    ]
+    proposed = group.get("proposed_canonical_resource", {})
+    display_name = proposed.get("display_name") or ""
+    verification = group.get("verification", {})
+    partitions = verification.get("partitions", [])
+    certainty = group.get("certainty", "")
+    search_text = " ".join(
+        [
+            group_id,
+            display_name,
+            certainty,
+            *[
+                " ".join(
+                    str(item.get(field, "") or "")
+                    for field in (
+                        "source_node_id",
+                        "source_node_title",
+                        "label",
+                        "detected_url",
+                    )
+                )
+                for item in items
+            ],
+        ]
+    ).lower()
+    return f"""
+    <article class="card pdf-group" id="{html_escape(group_id)}"
+        data-verification="{html_escape(verification.get("status"))}"
+        data-review="{"reviewed" if family_decision or (partitions and all(part.get("partition_id") in decisions for part in partitions)) else "pending"}"
+        data-search="{html_escape(search_text)}">
+      <div class="card-head">
+        <div>
+          <p class="eyebrow">{html_escape(group_id)}</p>
+          <h2>{html_escape(display_name)}</h2>
+          <p class="muted">{len(items)} apariciones · familia propuesta por nombre de archivo</p>
+        </div>
+        <span class="pill">{html_escape(_verification_label(verification.get("status")))}</span>
+      </div>
+      {_pdf_evidence(group, items)}
+      <h3>Links incluidos en la familia</h3>
+      {_appearance_rows(items, set())}
+      {_manual_family_form(project_id, group, items, family_decision)}
+      <form method="post" action="/projects/{html_escape(project_id)}/pdf-groups/{html_escape(group_id)}/verify">
+        <input type="hidden" name="actor" value="{html_escape(DEFAULT_ACTOR)}">
+        <label class="checkbox">
+          <input type="checkbox" name="local_only" value="true">
+          Usar solo PDF locales (no descargar)
+        </label>
+        <button type="submit">Verificar ahora</button>
+      </form>
+      {_verification_result(
+          project_id,
+          group,
+          items,
+          decisions,
+          family_decision,
+      )}
+    </article>
+    """
+
+
+def _manual_family_form(
+    project_id: str,
+    family: dict[str, Any],
+    items: list[dict[str, Any]],
+    decision: dict[str, Any],
+) -> str:
+    proposed = family.get("proposed_canonical_resource", {})
+    selected_url = (
+        decision.get("selected_canonical_url")
+        or proposed.get("proposed_canonical_url")
+        or ""
+    )
+    default_use = (
+        decision.get("default_use")
+        or proposed.get("suggested_default_use")
+        or "review_later"
+    )
+    display_name = (
+        decision.get("display_name")
+        or proposed.get("display_name")
+        or ""
+    )
+    reconciliation = decision.get("verification_reconciliation")
+    notice = {
+        "consistent": '<p class="message ok">La verificación coincide con la decisión manual.</p>',
+        "conflict": '<p class="message error">La verificación encontró contenidos distintos. Revisa las particiones.</p>',
+        "verification_incomplete": '<p class="message">La decisión manual se conserva; la verificación quedó incompleta.</p>',
+        "pending": '<p class="message">La verificación automática está pendiente.</p>',
+    }.get(reconciliation, "")
+    return f"""
+    <section class="manual-decision">
+      <h3>Decisión directa del funcionario</h3>
+      <p class="muted">Confirma toda la familia como un mismo recurso. Al guardar, la verificación técnica comienza en segundo plano.</p>
+      {notice}
+      <form method="post"
+          action="/projects/{html_escape(project_id)}/pdf-groups/{html_escape(family.get("group_id"))}/confirm">
+        <div class="form-grid">
+          <label>Uso
+            <select name="default_use">{_resource_use_options(default_use)}</select>
+          </label>
+          <label>Nombre
+            <input name="display_name" value="{html_escape(display_name)}">
+          </label>
+          <label>Revisor
+            <input name="actor" value="{html_escape(decision.get("reviewed_by", DEFAULT_ACTOR))}">
+          </label>
+        </div>
+        <label>URL canónica
+          <select name="selected_canonical_url">
+            {_canonical_url_options(items, selected_url)}
+          </select>
+        </label>
+        <label>Notas
+          <textarea name="notes">{html_escape(decision.get("notes"))}</textarea>
+        </label>
+        <div class="actions">
+          <button type="submit">Confirmar toda la familia</button>
+          <span class="muted">{_reviewed_at(decision)}</span>
+        </div>
+      </form>
+    </section>
+    """
+
+
+def _verification_result(
+    project_id: str,
+    family: dict[str, Any],
+    items: list[dict[str, Any]],
+    decisions: dict[str, dict[str, Any]],
+    family_decision: dict[str, Any],
+) -> str:
+    verification = family.get("verification", {})
+    partitions = verification.get("partitions", [])
+    if verification.get("status") == "not_started":
+        return '<p class="message">Contenido todavía no verificado.</p>'
+    if verification.get("status") == "queued":
+        return '<p class="message">Verificación automática en curso. Recarga la página en unos momentos.</p>'
+    if verification.get("status") == "error":
+        return (
+            '<p class="message error">La verificación no pudo completarse: '
+            f'{html_escape(verification.get("error"))}</p>'
+        )
+
+    by_id = {item.get("appearance_id"): item for item in items}
+    partition_cards = "".join(
+        _pdf_partition_card(
+            project_id,
+            family,
+            partition,
+            [by_id[item_id] for item_id in partition.get("appearance_ids", [])],
+            decisions.get(partition.get("partition_id"), {}),
+        )
+        for partition in partitions
+    )
+    unverified = [
+        by_id[item_id]
+        for item_id in verification.get("unverified_appearance_ids", [])
+        if item_id in by_id
+    ]
+    all_same = verification.get("all_appearances_same")
+    statuses = [
+        item.get("analysis", {}).get("status", "pending")
+        for item in items
+    ]
+    verified_count = statuses.count("analyzed")
+    skipped_count = statuses.count("skipped_by_policy")
+    download_error_count = statuses.count("download_error")
+    analysis_error_count = sum(
+        status in {"analysis_error", "error"} for status in statuses
+    )
+    pending_count = sum(
+        status in {
+            "not_verified",
+            "pending",
+            "not_attempted_local_only",
+        }
+        for status in statuses
+    )
+    partition_decided = all(
+        partition.get("partition_id") in decisions
+        for partition in partitions
+    )
+    clean_result = (
+        verification.get("status") == "complete"
+        and all_same
+        and len(partitions) == 1
+        and partition_decided
+    )
+    detail_open = "" if clean_result else " open"
+    summary_lines = [
+        f"<li><strong>{len(items)}</strong> PDF en la familia</li>",
+        f"<li><strong>{verified_count}</strong> verificados</li>",
+        f"<li><strong>{skipped_count}</strong> omitidos por límites</li>",
+        f"<li><strong>{download_error_count}</strong> no pudieron descargarse</li>",
+        f"<li><strong>{analysis_error_count}</strong> no pudieron analizarse</li>",
+        f"<li><strong>{pending_count}</strong> pendientes</li>",
+        (
+            f"<li><strong>{len(partitions)}</strong> "
+            f"{'documento diferente encontrado' if len(partitions) == 1 else 'documentos diferentes encontrados'}</li>"
+        ),
+    ]
+    reconciliation = family_decision.get("verification_reconciliation")
+    outcome = {
+        "consistent": "La verificación coincide con la decisión del funcionario.",
+        "conflict": "La verificación encontró varios contenidos y requiere revisión.",
+        "verification_incomplete": "La decisión se conserva, pero la verificación fue incompleta.",
+    }.get(reconciliation, "")
+    return f"""
+    <section class="verification-result">
+      <h3>Resultado de la verificación</h3>
+      <ul class="verification-summary">{"".join(summary_lines)}</ul>
+      {f'<p class="message ok">{html_escape(outcome)}</p>' if reconciliation == "consistent" else f'<p class="message">{html_escape(outcome)}</p>' if outcome else ""}
+      <details{detail_open}>
+        <summary>Ver detalle del resultado</summary>
+        {partition_cards}
+        {"<h4>Sin verificar</h4>" + _appearance_rows(unverified, set()) if unverified else ""}
+      </details>
+    </section>
+    """
+
+
+def _pdf_partition_card(
+    project_id: str,
+    family: dict[str, Any],
+    partition: dict[str, Any],
+    items: list[dict[str, Any]],
+    decision: dict[str, Any],
+) -> str:
+    family_id = family.get("group_id", "")
+    partition_id = partition.get("partition_id", "")
+    proposed = family.get("proposed_canonical_resource", {})
+    certainty = partition.get("certainty", "")
+    identity = decision.get(
+        "identity_decision",
+        "confirmed_same" if certainty == "exact_binary_duplicate" else "review_later",
+    )
+    default_use = (
+        decision.get("default_use")
+        or proposed.get("suggested_default_use")
+        or "review_later"
+    )
+    display_name = decision.get("display_name") or proposed.get("display_name") or ""
+    selected_url = decision.get("selected_canonical_url") or (
+        items[0].get("detected_url") if items else ""
+    )
+    inherited = decision.get("decision_source") == "inherited_from_family"
+    inherited_notice = (
+        '<p class="message ok">Decisión aplicada automáticamente desde la '
+        'confirmación de la familia. No necesitas volver a guardarla.</p>'
+        if inherited
+        else ""
+    )
+    button_label = (
+        "Modificar decisión de esta partición"
+        if inherited
+        else "Guardar partición"
+    )
+    return f"""
+    <div class="partition-card">
+      <div class="resource-head">
+        <strong>{html_escape(partition_id)}</strong>
+        <span class="pill">{html_escape(_certainty_label(certainty))}</span>
+        <span>{len(items)} aparición(es)</span>
+      </div>
+      {inherited_notice}
+      {_appearance_rows(items, set())}
+      <form method="post"
+          action="/projects/{html_escape(project_id)}/pdf-groups/{html_escape(family_id)}/{html_escape(partition_id)}">
+        <div class="form-grid">
+          <label>Decisión
+            <select name="identity_decision">{_identity_options(identity)}</select>
+          </label>
+          <label>Uso
+            <select name="default_use">{_resource_use_options(default_use)}</select>
+          </label>
+          <label>Nombre
+            <input name="display_name" value="{html_escape(display_name)}">
+          </label>
+        </div>
+        <label>URL canónica
+          <select name="selected_canonical_url">
+            {_canonical_url_options(items, selected_url)}
+          </select>
+        </label>
+        <label>Notas
+          <textarea name="notes">{html_escape(decision.get("notes"))}</textarea>
+        </label>
+        <input type="hidden" name="actor"
+            value="{html_escape(decision.get("reviewed_by", DEFAULT_ACTOR))}">
+        <div class="actions">
+          <button type="submit">{button_label}</button>
+          <span class="muted">{_reviewed_at(decision)}</span>
+        </div>
+      </form>
+    </div>
+    """
+
+
+def _pdf_evidence(
+    group: dict[str, Any],
+    items: list[dict[str, Any]],
+) -> str:
+    evidence = group.get("evidence", {})
+    return f"""
+    <dl>
+      <dt>Agrupado por</dt><dd>Nombre normalizado obtenido de la URL</dd>
+      <dt>Clave</dt><dd>{html_escape(evidence.get("value"))}</dd>
+    </dl>
+    """
+
+
+def _appearance_rows(
+    items: list[dict[str, Any]],
+    excluded: set[str],
+) -> str:
+    rows = []
+    for item in items:
+        appearance_id = item.get("appearance_id", "")
+        analysis = item.get("analysis", {})
+        rows.append(
+            f"""
+            <div class="appearance-row">
+              <div>
+                <strong>{html_escape(item.get("label") or item.get("file_name"))}</strong>
+                <p class="muted">
+                  Nodo: {html_escape(item.get("source_node_title") or item.get("source_node_id"))}
+                  · uso actual: {html_escape(item.get("existing_use"))}
+                  · análisis: {html_escape(analysis.get("status"))}
+                </p>
+                {f'<p class="message error">{html_escape(analysis.get("error"))}</p>' if analysis.get("error") else ""}
+                <a class="url" href="{html_escape(item.get("detected_url"))}"
+                    target="_blank" rel="noreferrer">{html_escape(item.get("detected_url"))}</a>
+              </div>
+            </div>
+            """
+        )
+    return "".join(rows)
+
+
+def _canonical_url_options(
+    items: list[dict[str, Any]],
+    selected: str,
+) -> str:
+    options = []
+    seen = set()
+    for item in items:
+        url = item.get("detected_url", "")
+        if not url or url in seen:
+            continue
+        seen.add(url)
+        label = item.get("file_name") or url
+        is_selected = " selected" if url == selected else ""
+        options.append(
+            f'<option value="{html_escape(url)}"{is_selected}>'
+            f'{html_escape(label)} — {html_escape(item.get("source_node_title"))}'
+            "</option>"
+        )
+    return "".join(options)
+
+
+def _identity_options(selected: str) -> str:
+    labels = [
+        ("review_later", "Revisar después"),
+        ("confirmed_same", "Confirmar: son el mismo recurso"),
+        ("keep_separate", "Mantener separados"),
+    ]
+    return "".join(
+        f'<option value="{code}"{" selected" if code == selected else ""}>'
+        f"{label}</option>"
+        for code, label in labels
+    )
+
+
+def _certainty_label(certainty: str) -> str:
+    return {
+        "exact_binary_duplicate": "Duplicado exacto",
+        "probable_same_content": "Mismo contenido probable",
+        "similar_candidate": "Posible similitud",
+        "unverified": "No verificado",
+        "distinct_content": "Contenido distinto",
+    }.get(certainty, certainty)
+
+
+def _verification_label(status: str) -> str:
+    return {
+        "not_started": "Sin verificar",
+        "queued": "Verificación en curso",
+        "partial": "Verificación parcial",
+        "complete": "Verificación completa",
+        "error": "Error técnico",
+    }.get(status, status)
 
 
 def _review_links_page(project_id: str, request_path: str) -> str:
@@ -703,6 +1341,13 @@ def _project_id_from_resources_path(path: str) -> str | None:
     return None
 
 
+def _project_id_from_pdf_groups_path(path: str) -> str | None:
+    parts = path.strip("/").split("/")
+    if len(parts) == 3 and parts[0] == "projects" and parts[2] == "pdf-groups":
+        return parts[1]
+    return None
+
+
 def _decision_route(path: str) -> tuple[str, str] | None:
     parts = path.strip("/").split("/")
     if len(parts) == 4 and parts[0] == "projects" and parts[2] == "review-links":
@@ -714,6 +1359,42 @@ def _resource_decision_route(path: str) -> tuple[str, str, str] | None:
     parts = path.strip("/").split("/")
     if len(parts) == 5 and parts[0] == "projects" and parts[2] == "resources":
         return parts[1], parts[3], parts[4]
+    return None
+
+
+def _pdf_group_decision_route(path: str) -> tuple[str, str, str] | None:
+    parts = path.strip("/").split("/")
+    if (
+        len(parts) == 5
+        and parts[0] == "projects"
+        and parts[2] == "pdf-groups"
+        and parts[4] not in {"verify", "confirm"}
+    ):
+        return parts[1], parts[3], parts[4]
+    return None
+
+
+def _pdf_family_verify_route(path: str) -> tuple[str, str] | None:
+    parts = path.strip("/").split("/")
+    if (
+        len(parts) == 5
+        and parts[0] == "projects"
+        and parts[2] == "pdf-groups"
+        and parts[4] == "verify"
+    ):
+        return parts[1], parts[3]
+    return None
+
+
+def _pdf_family_decision_route(path: str) -> tuple[str, str] | None:
+    parts = path.strip("/").split("/")
+    if (
+        len(parts) == 5
+        and parts[0] == "projects"
+        and parts[2] == "pdf-groups"
+        and parts[4] == "confirm"
+    ):
+        return parts[1], parts[3]
     return None
 
 
@@ -732,6 +1413,8 @@ def _status_message(request_path: str) -> str:
     query = parse_qs(urlparse(request_path).query)
     if "saved" in query:
         return f"""<p class="message ok">Decision guardada para {html_escape(query["saved"][0])}.</p>"""
+    if "verified" in query:
+        return f"""<p class="message ok">Verificación terminada para {html_escape(query["verified"][0])}.</p>"""
     if "error" in query:
         return f"""<p class="message error">No se pudo guardar: {html_escape(query["error"][0])}</p>"""
     return ""
@@ -954,8 +1637,58 @@ def _page(title: str, body: str) -> str:
       gap: 8px;
       flex-wrap: wrap;
     }}
+    .appearance-row {{
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      padding: 10px 0;
+      border-top: 1px solid var(--border);
+    }}
+    .appearance-row:first-of-type {{
+      border-top: 0;
+    }}
+    .appearance-row p {{
+      margin: 4px 0;
+    }}
+    .exclusion {{
+      color: var(--error-text);
+    }}
+    .verification-result {{
+      margin-top: 16px;
+      border-top: 2px solid var(--border);
+      padding-top: 8px;
+    }}
+    .partition-card {{
+      margin: 12px 0;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px;
+      background: #f8fafc;
+    }}
+    .verification-summary {{
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      padding: 0;
+      list-style: none;
+    }}
+    .verification-summary li {{
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px;
+      background: #f8fafc;
+    }}
+    details {{
+      margin-top: 12px;
+    }}
+    summary {{
+      color: var(--accent);
+      cursor: pointer;
+      font-weight: bold;
+    }}
     @media (max-width: 760px) {{
-      .card-head, .form-grid, .stats, dl {{
+      .card-head, .form-grid, .stats, dl, .appearance-row, .verification-summary {{
         display: grid;
         grid-template-columns: 1fr;
       }}

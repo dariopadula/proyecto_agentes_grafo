@@ -12,6 +12,7 @@ Aplicacion local en desarrollo activo con:
 - exploracion de recursos internos;
 - reglas configurables de filtrado;
 - revision del uso y alcance de los recursos.
+- analisis deterministico y agrupacion propuesta de PDF.
 
 El siguiente paso es detectar cuando un recurso interno coincide con un link principal ya conocido y permitir registrar una relacion sin duplicar documentacion.
 
@@ -176,6 +177,35 @@ Tambien se puede entrar a:
 http://127.0.0.1:8000/projects/licencia_conducir/resources
 ```
 
+La revisión agrupada de PDF está disponible en:
+
+```text
+http://127.0.0.1:8000/projects/licencia_conducir/pdf-groups
+```
+
+La pantalla muestra siempre todos los links de cada familia. El funcionario
+puede confirmar directamente que representan el mismo recurso. Al guardar, la
+verificación técnica comienza en segundo plano y no bloquea la decisión.
+
+Cada partición puede revisarse por separado para elegir uso, nombre y URL
+canónica. Los archivos que no pudieron analizarse permanecen como no
+verificados. Las decisiones se guardan en `pdf_group_review.json`, separadas del
+análisis regenerable.
+
+La verificación está acotada: máximo 20 MB por PDF, 20 segundos de descarga,
+100 páginas y 1.000.000 de caracteres para extracción textual. Superar un
+límite produce `skipped_by_policy`; no invalida la decisión del funcionario.
+
+Si la verificación completa produce una sola partición consistente, la decisión
+familiar se aplica automáticamente y no exige otro guardado. Varias particiones
+requieren revisión separada. Si se usa `Verificar ahora` antes de confirmar, las
+particiones quedan pendientes de decisión.
+
+Después de verificar, la pantalla resume PDF verificados, omitidos por límites,
+errores de descarga, errores de análisis, pendientes y documentos diferentes.
+El detalle técnico queda cerrado cuando hay una única partición consistente ya
+decidida y se abre automáticamente cuando requiere intervención.
+
 Esa pantalla muestra los recursos internos detectados por `discover-resources`, agrupados por nodo principal y separados entre recursos utiles y descartados por regla.
 
 Para cada recurso util se puede decidir que debe hacer la herramienta:
@@ -240,3 +270,17 @@ Por defecto descarta recursos cuya URL contiene:
 Los recursos descartados no se pierden: quedan registrados dentro de `discarded_resources` con la regla y el motivo de descarte.
 
 Esta salida todavia es preliminar. Sirve para revisar que recursos auxiliares aparecen dentro de cada nodo principal antes de construir la pantalla de revision de recursos.
+
+## Analizar PDF auxiliares
+
+```bash
+python app.py analyze-pdfs --project-id licencia_conducir
+```
+
+Genera `data/projects/licencia_conducir/pdf_analysis.json` con las apariciones y
+familias iniciales construidas por el nombre normalizado obtenido de la URL. No
+descarga los PDF en esta etapa.
+
+La descarga y comparación se ejecutan bajo demanda desde la pantalla para una
+familia concreta. El botón ofrece un modo local para usar solamente archivos
+presentes en `data/projects/<project_id>/pdfs/`.

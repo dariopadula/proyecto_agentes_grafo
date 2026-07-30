@@ -1,0 +1,3030 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-07-30T11:33:35-03:00",
+  "project_id": "licencia_conducir",
+  "resource_type": "pdf",
+  "source": {
+    "node_resources": "C:\\DARIO\\Git\\proyecto_agentes_grafo\\herramienta_modelado_tramites\\data\\projects\\licencia_conducir\\node_resources.json",
+    "resource_review": "C:\\DARIO\\Git\\proyecto_agentes_grafo\\herramienta_modelado_tramites\\data\\projects\\licencia_conducir\\resource_review.json",
+    "local_pdf_dir": "C:\\DARIO\\Git\\proyecto_agentes_grafo\\herramienta_modelado_tramites\\data\\projects\\licencia_conducir\\pdfs"
+  },
+  "analysis_policy": {
+    "semantic_interpretation": false,
+    "llm_usage": false,
+    "selected_uses": [
+      "process_as_context",
+      "show_as_link"
+    ],
+    "verification_mode": "on_demand_by_family"
+  },
+  "summary": {
+    "appearance_count": 71,
+    "analyzed_count": 55,
+    "error_count": 0,
+    "download_error_count": 0,
+    "analysis_error_count": 0,
+    "skipped_by_policy_count": 0,
+    "not_attempted_count": 0,
+    "proposed_group_count": 13,
+    "verified_family_count": 13,
+    "partition_count": 13
+  },
+  "appearances": [
+    {
+      "appearance_id": "link_001::resource_002",
+      "source_node_id": "link_001",
+      "source_node_title": "Antecedente de licencia de conducir",
+      "resource_id": "resource_002",
+      "label": "Códigos de patologías",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab2411.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "node_only",
+      "file_name": "codigosdepatologiasab2411.pdf",
+      "canonical_name": "codigosdepatologiasab24",
+      "analysis": {
+        "status": "analyzed",
+        "source": "local_file",
+        "local_file_name": "codigosdepatologiasab2411 (1).pdf",
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_002::resource_003",
+      "source_node_id": "link_002",
+      "source_node_title": "Aspirante de licencia de conducir profesional",
+      "resource_id": "resource_003",
+      "label": "certificados médicos complementarios",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_1.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "node_only",
+      "file_name": "requisitosespecialesmedicoprofesionales_1.pdf",
+      "canonical_name": "requisitosespecialesmedicoprofesionales",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 66617,
+        "page_count": 1,
+        "character_count": 1184,
+        "word_count": 160,
+        "binary_sha256": "5f922d803a551e1d040ea31a56164a1a2c748d69c792b96efbadc3fc45d96aac",
+        "normalized_text_sha256": "4f88fe63924087965d11beae75202245a55fa38460637af1c72b507dbcc0d917",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_002::resource_005",
+      "source_node_id": "link_002",
+      "source_node_title": "Aspirante de licencia de conducir profesional",
+      "resource_id": "resource_005",
+      "label": "academia de conducción habilitada",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "2025_Academias_de_conducir_habilitadas-2.pdf",
+      "canonical_name": "2025_academias_de_conducir_habilitadas",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_002::resource_009",
+      "source_node_id": "link_002",
+      "source_node_title": "Aspirante de licencia de conducir profesional",
+      "resource_id": "resource_009",
+      "label": "manual de estudio para el examen teórico",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/manualprofesional_0.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "manualprofesional_0.pdf",
+      "canonical_name": "manualprofesional",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_002::resource_010",
+      "source_node_id": "link_002",
+      "source_node_title": "Aspirante de licencia de conducir profesional",
+      "resource_id": "resource_010",
+      "label": "complemento de examen teórico para categoría E",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/complementoteoricocate2019.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "complementoteoricocate2019.pdf",
+      "canonical_name": "complementoteoricocate2019",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 139548,
+        "page_count": 2,
+        "character_count": 4012,
+        "word_count": 155,
+        "binary_sha256": "d504654ff1d0e6bdd0a8d00edc669820ab5d6d1f473b197295e9cb67931fb688",
+        "normalized_text_sha256": "ff6af1f29f59ad1711fa5cd7354f53d212753de45bfbe652dce987bfd23728c7",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_002::resource_013",
+      "source_node_id": "link_002",
+      "source_node_title": "Aspirante de licencia de conducir profesional",
+      "resource_id": "resource_013",
+      "label": "Planilla de clases prácticas",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/planilladeclasespracticas_4.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "planilladeclasespracticas_4.pdf",
+      "canonical_name": "planilladeclasespracticas",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 54429,
+        "page_count": 1,
+        "character_count": 1007,
+        "word_count": 167,
+        "binary_sha256": "bdf800e17ba11abfca680fe02077a35cd24ebbd800c72ab80367a4c9ddec664d",
+        "normalized_text_sha256": "7e64603b677640cd6fdfb3b96103a977097e79acceebace5366e6c8b71d926bf",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_002::resource_014",
+      "source_node_id": "link_002",
+      "source_node_title": "Aspirante de licencia de conducir profesional",
+      "resource_id": "resource_014",
+      "label": "Códigos de patologías",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_5.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "shared",
+      "file_name": "codigosdepatologiasab24_5.pdf",
+      "canonical_name": "codigosdepatologiasab24",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_002::resource_015",
+      "source_node_id": "link_002",
+      "source_node_title": "Aspirante de licencia de conducir profesional",
+      "resource_id": "resource_015",
+      "label": "Antigüedad y descripción de categorías profesionales",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/categoriaslicenciasconducir.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "node_only",
+      "file_name": "categoriaslicenciasconducir.pdf",
+      "canonical_name": "categoriaslicenciasconducir",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_005::resource_002",
+      "source_node_id": "link_005",
+      "source_node_title": "Costo de licencias de conducir profesionales categorías C, D, E y F",
+      "resource_id": "resource_002",
+      "label": "Constancia de pertenencia a un programa de inclusión social y promoción de la autonomía económica",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formulariobeneficiootrosprogramas11_1.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "formulariobeneficiootrosprogramas11_1.pdf",
+      "canonical_name": "formulariobeneficiootrosprogramas11",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 137600,
+        "page_count": 3,
+        "character_count": 3313,
+        "word_count": 490,
+        "binary_sha256": "d12713a5bfaa69c733d0e584164fafc63c4f209aedf73839537699fa6aad493b",
+        "normalized_text_sha256": "5762f83b80d83132153fcade7cbb974197172305cccab5b3128d857153ceb582",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_005::resource_006",
+      "source_node_id": "link_005",
+      "source_node_title": "Costo de licencias de conducir profesionales categorías C, D, E y F",
+      "resource_id": "resource_006",
+      "label": "Declaración Jurada - Pago de licencias de conducir profesionales categorías C, D, E y F",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/declaracionjuradaexoneraciontasadeexpedicionpunccdeyf1.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "declaracionjuradaexoneraciontasadeexpedicionpunccdeyf1.pdf",
+      "canonical_name": "declaracionjuradaexoneraciontasadeexpedicionpunccdeyf1",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_005::resource_007",
+      "source_node_id": "link_005",
+      "source_node_title": "Costo de licencias de conducir profesionales categorías C, D, E y F",
+      "resource_id": "resource_007",
+      "label": "Resolución Nro.: 0690/24",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/1708454541257.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "node_only",
+      "file_name": "1708454541257.pdf",
+      "canonical_name": "",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_006::resource_004",
+      "source_node_id": "link_006",
+      "source_node_title": "Duplicado de licencia de conducir",
+      "resource_id": "resource_004",
+      "label": "Códigos de patologías",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_11.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "shared",
+      "file_name": "codigosdepatologiasab24_11.pdf",
+      "canonical_name": "codigosdepatologiasab24",
+      "analysis": {
+        "status": "analyzed",
+        "source": "local_file",
+        "local_file_name": "codigosdepatologiasab24_11.pdf",
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_007::resource_002",
+      "source_node_id": "link_007",
+      "source_node_title": "Evaluación médica para afectación de coche por Ley 13.102 o Decreto 22.515",
+      "resource_id": "resource_002",
+      "label": "este documento",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/EE%202024-4730-98-000099.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "EE 2024-4730-98-000099.pdf",
+      "canonical_name": "ee_2024_4730_98",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_008::resource_002",
+      "source_node_id": "link_008",
+      "source_node_title": "Homologación de licencia de conducir categorías A, G1 y G2",
+      "resource_id": "resource_002",
+      "label": "instituciones habilitadas",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Instituciones_médicas_habilitadas.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "2025_Instituciones_médicas_habilitadas.pdf",
+      "canonical_name": "2025_instituciones_m_dicas_habilitadas",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 189623,
+        "page_count": 2,
+        "character_count": 1862,
+        "word_count": 311,
+        "binary_sha256": "4952de9de72f51af53c0842e80d0d1970fa4e8bd31efa556a7da403a2f1e426c",
+        "normalized_text_sha256": "de1603c2c32396a16e6eafc76b9b247e1a3e735d6d187a9ee8afd72dc6662bf7",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_008::resource_003",
+      "source_node_id": "link_008",
+      "source_node_title": "Homologación de licencia de conducir categorías A, G1 y G2",
+      "resource_id": "resource_003",
+      "label": "convenio bilateral",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/ESPAN%CC%83A%20convenio%20canje%20licencia%20conducir.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "node_only",
+      "file_name": "ESPAÑA convenio canje licencia conducir.pdf",
+      "canonical_name": "espan_a_convenio_canje_licencia_conducir",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_008::resource_005",
+      "source_node_id": "link_008",
+      "source_node_title": "Homologación de licencia de conducir categorías A, G1 y G2",
+      "resource_id": "resource_005",
+      "label": "Códigos de patologías",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "shared",
+      "file_name": "codigosdepatologiasab24.pdf",
+      "canonical_name": "codigosdepatologiasab24",
+      "analysis": {
+        "status": "analyzed",
+        "source": "local_file",
+        "local_file_name": "codigosdepatologiasab24.pdf",
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_008::resource_006",
+      "source_node_id": "link_008",
+      "source_node_title": "Homologación de licencia de conducir categorías A, G1 y G2",
+      "resource_id": "resource_006",
+      "label": "Instituciones médicas habilitadas - Junio 2026",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "2026_Instituciones_médicas_habilitadas-1.pdf",
+      "canonical_name": "2026_instituciones_m_dicas_habilitadas",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_009::resource_002",
+      "source_node_id": "link_009",
+      "source_node_title": "Homologación de licencia de conducir categorías B, C, D, E, F, H y G3",
+      "resource_id": "resource_002",
+      "label": "certificados médicos complementarios",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_0.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "node_only",
+      "file_name": "requisitosespecialesmedicoprofesionales_0.pdf",
+      "canonical_name": "requisitosespecialesmedicoprofesionales",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 66617,
+        "page_count": 1,
+        "character_count": 1184,
+        "word_count": 160,
+        "binary_sha256": "5f922d803a551e1d040ea31a56164a1a2c748d69c792b96efbadc3fc45d96aac",
+        "normalized_text_sha256": "4f88fe63924087965d11beae75202245a55fa38460637af1c72b507dbcc0d917",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_009::resource_005",
+      "source_node_id": "link_009",
+      "source_node_title": "Homologación de licencia de conducir categorías B, C, D, E, F, H y G3",
+      "resource_id": "resource_005",
+      "label": "convenio bilateral",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/ESPA%C3%91A%20convenio%20canje%20licencia%20conducir.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "node_only",
+      "file_name": "ESPAÑA convenio canje licencia conducir.pdf",
+      "canonical_name": "espa_a_convenio_canje_licencia_conducir",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_009::resource_010",
+      "source_node_id": "link_009",
+      "source_node_title": "Homologación de licencia de conducir categorías B, C, D, E, F, H y G3",
+      "resource_id": "resource_010",
+      "label": "manual de estudio para el examen teórico",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/manualprofesional_0_0.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "manualprofesional_0_0.pdf",
+      "canonical_name": "manualprofesional_0",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_009::resource_011",
+      "source_node_id": "link_009",
+      "source_node_title": "Homologación de licencia de conducir categorías B, C, D, E, F, H y G3",
+      "resource_id": "resource_011",
+      "label": "complemento de examen teórico para categoría E",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/complementoteoricocate2019_0.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "complementoteoricocate2019_0.pdf",
+      "canonical_name": "complementoteoricocate2019",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 139548,
+        "page_count": 2,
+        "character_count": 4012,
+        "word_count": 155,
+        "binary_sha256": "d504654ff1d0e6bdd0a8d00edc669820ab5d6d1f473b197295e9cb67931fb688",
+        "normalized_text_sha256": "ff6af1f29f59ad1711fa5cd7354f53d212753de45bfbe652dce987bfd23728c7",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_009::resource_013",
+      "source_node_id": "link_009",
+      "source_node_title": "Homologación de licencia de conducir categorías B, C, D, E, F, H y G3",
+      "resource_id": "resource_013",
+      "label": "Circular del Congreso de Intendentes sobre canje de licencias",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/circular61-20-puncextranjeros-criterios14.09.20_0.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "node_only",
+      "file_name": "circular61-20-puncextranjeros-criterios14.09.20_0.pdf",
+      "canonical_name": "circular61_20_puncextranjeros_criterios14_09_20",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_009::resource_014",
+      "source_node_id": "link_009",
+      "source_node_title": "Homologación de licencia de conducir categorías B, C, D, E, F, H y G3",
+      "resource_id": "resource_014",
+      "label": "Códigos de patologías",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_12.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "shared",
+      "file_name": "codigosdepatologiasab24_12.pdf",
+      "canonical_name": "codigosdepatologiasab24",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_011::resource_002",
+      "source_node_id": "link_011",
+      "source_node_title": "Licencia de conducir categoría A, hasta 79 años inclusive",
+      "resource_id": "resource_002",
+      "label": "instituciones habilitadas",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Instituciones_médicas_habilitadas.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "2025_Instituciones_médicas_habilitadas.pdf",
+      "canonical_name": "2025_instituciones_m_dicas_habilitadas",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 189623,
+        "page_count": 2,
+        "character_count": 1862,
+        "word_count": 311,
+        "binary_sha256": "4952de9de72f51af53c0842e80d0d1970fa4e8bd31efa556a7da403a2f1e426c",
+        "normalized_text_sha256": "de1603c2c32396a16e6eafc76b9b247e1a3e735d6d187a9ee8afd72dc6662bf7",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_011::resource_003",
+      "source_node_id": "link_011",
+      "source_node_title": "Licencia de conducir categoría A, hasta 79 años inclusive",
+      "resource_id": "resource_003",
+      "label": "academia de conducción,",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_0.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "2025_Academias_de_conducir_habilitadas-2_0.pdf",
+      "canonical_name": "2025_academias_de_conducir_habilitadas_2",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 144086,
+        "page_count": 4,
+        "character_count": 4391,
+        "word_count": 560,
+        "binary_sha256": "22dce05d1a872c0c7d23c725212d5856f075e4d5bd86f18d71115ad46128737d",
+        "normalized_text_sha256": "fac0977f071a9a4ba0287acefa94fb37eaf2319b7da49a7248f28df3c083eb10",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_011::resource_005",
+      "source_node_id": "link_011",
+      "source_node_title": "Licencia de conducir categoría A, hasta 79 años inclusive",
+      "resource_id": "resource_005",
+      "label": "manual de estudio para el examen teórico",
+      "detected_url": "http://montevideo.gub.uy/sites/default/files/biblioteca/manualautosymotos_0.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "manualautosymotos_0.pdf",
+      "canonical_name": "manualautosymotos",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 3994413,
+        "page_count": 128,
+        "character_count": 111960,
+        "word_count": 18217,
+        "binary_sha256": "a0cf13c0f0b56f6408b0ceccb2636fe101c12414af30cd63eef63cd885245304",
+        "normalized_text_sha256": "8d8ac3213aee4ab53a8eb7cdeb46d79ecfa7ba697103f4c924920cb27df0ebfe",
+        "encrypted": false,
+        "text_extraction_truncated": true,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_011::resource_008",
+      "source_node_id": "link_011",
+      "source_node_title": "Licencia de conducir categoría A, hasta 79 años inclusive",
+      "resource_id": "resource_008",
+      "label": "Manual de estudio para aspirantes",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/manualautosymotos_0.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "manualautosymotos_0.pdf",
+      "canonical_name": "manualautosymotos",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 3994413,
+        "page_count": 128,
+        "character_count": 111960,
+        "word_count": 18217,
+        "binary_sha256": "a0cf13c0f0b56f6408b0ceccb2636fe101c12414af30cd63eef63cd885245304",
+        "normalized_text_sha256": "8d8ac3213aee4ab53a8eb7cdeb46d79ecfa7ba697103f4c924920cb27df0ebfe",
+        "encrypted": false,
+        "text_extraction_truncated": true,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_011::resource_009",
+      "source_node_id": "link_011",
+      "source_node_title": "Licencia de conducir categoría A, hasta 79 años inclusive",
+      "resource_id": "resource_009",
+      "label": "Formulario de aspirantes",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formularioaspirante.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "formularioaspirante.pdf",
+      "canonical_name": "formularioaspirante",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 330773,
+        "page_count": 2,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "347de44e74f0dbc5da5250766d4d0f4ab05de329537ffd1e04fb8e52cd4482c4",
+        "normalized_text_sha256": "",
+        "encrypted": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_011::resource_010",
+      "source_node_id": "link_011",
+      "source_node_title": "Licencia de conducir categoría A, hasta 79 años inclusive",
+      "resource_id": "resource_010",
+      "label": "Planilla de clases prácticas",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/planilladeclasespracticas_1.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "planilladeclasespracticas_1.pdf",
+      "canonical_name": "planilladeclasespracticas",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 54429,
+        "page_count": 1,
+        "character_count": 1007,
+        "word_count": 167,
+        "binary_sha256": "bdf800e17ba11abfca680fe02077a35cd24ebbd800c72ab80367a4c9ddec664d",
+        "normalized_text_sha256": "7e64603b677640cd6fdfb3b96103a977097e79acceebace5366e6c8b71d926bf",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_011::resource_011",
+      "source_node_id": "link_011",
+      "source_node_title": "Licencia de conducir categoría A, hasta 79 años inclusive",
+      "resource_id": "resource_011",
+      "label": "Códigos de patologías",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_2.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "shared",
+      "file_name": "codigosdepatologiasab24_2.pdf",
+      "canonical_name": "codigosdepatologiasab24",
+      "analysis": {
+        "status": "analyzed",
+        "source": "local_file",
+        "local_file_name": "codigosdepatologiasab24_2.pdf",
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_011::resource_012",
+      "source_node_id": "link_011",
+      "source_node_title": "Licencia de conducir categoría A, hasta 79 años inclusive",
+      "resource_id": "resource_012",
+      "label": "Instituciones médicas habilitadas - Junio 2026",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1_0.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "2026_Instituciones_médicas_habilitadas-1_0.pdf",
+      "canonical_name": "2026_instituciones_m_dicas_habilitadas_1",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 189918,
+        "page_count": 1,
+        "character_count": 1760,
+        "word_count": 296,
+        "binary_sha256": "55a02161592275b6af447ada21c8f0ff6ad7d796564a89b85019bc1e4d3e2860",
+        "normalized_text_sha256": "d061d2e50efa0c2eb10412b850356c7981d49d1cd4528ec8b06134003a871485",
+        "encrypted": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_012::resource_002",
+      "source_node_id": "link_012",
+      "source_node_title": "Licencia de conducir categorías A, G1 y G2, entre 75 y 79 años inclusive con examen médico realizado en las instituciones habilitadas",
+      "resource_id": "resource_002",
+      "label": "instituciones habilitadas.",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Instituciones_m%C3%A9dicas_habilitadas.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "2025_Instituciones_médicas_habilitadas.pdf",
+      "canonical_name": "2025_instituciones_m_dicas_habilitadas",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 189623,
+        "page_count": 2,
+        "character_count": 1862,
+        "word_count": 311,
+        "binary_sha256": "4952de9de72f51af53c0842e80d0d1970fa4e8bd31efa556a7da403a2f1e426c",
+        "normalized_text_sha256": "de1603c2c32396a16e6eafc76b9b247e1a3e735d6d187a9ee8afd72dc6662bf7",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_012::resource_004",
+      "source_node_id": "link_012",
+      "source_node_title": "Licencia de conducir categorías A, G1 y G2, entre 75 y 79 años inclusive con examen médico realizado en las instituciones habilitadas",
+      "resource_id": "resource_004",
+      "label": "academias habilitadas",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_5.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "shared",
+      "file_name": "2025_Academias_de_conducir_habilitadas-2_5.pdf",
+      "canonical_name": "2025_academias_de_conducir_habilitadas_2",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 144086,
+        "page_count": 4,
+        "character_count": 4391,
+        "word_count": 560,
+        "binary_sha256": "22dce05d1a872c0c7d23c725212d5856f075e4d5bd86f18d71115ad46128737d",
+        "normalized_text_sha256": "fac0977f071a9a4ba0287acefa94fb37eaf2319b7da49a7248f28df3c083eb10",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_012::resource_009",
+      "source_node_id": "link_012",
+      "source_node_title": "Licencia de conducir categorías A, G1 y G2, entre 75 y 79 años inclusive con examen médico realizado en las instituciones habilitadas",
+      "resource_id": "resource_009",
+      "label": "Códigos de patologías",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/patologiasmedicas2_1.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "shared",
+      "file_name": "patologiasmedicas2_1.pdf",
+      "canonical_name": "patologiasmedicas2",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_012::resource_010",
+      "source_node_id": "link_012",
+      "source_node_title": "Licencia de conducir categorías A, G1 y G2, entre 75 y 79 años inclusive con examen médico realizado en las instituciones habilitadas",
+      "resource_id": "resource_010",
+      "label": "Instituciones médicas habilitadas - Junio 2026",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1_3.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "2026_Instituciones_médicas_habilitadas-1_3.pdf",
+      "canonical_name": "2026_instituciones_m_dicas_habilitadas_1",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 189918,
+        "page_count": 1,
+        "character_count": 1760,
+        "word_count": 296,
+        "binary_sha256": "55a02161592275b6af447ada21c8f0ff6ad7d796564a89b85019bc1e4d3e2860",
+        "normalized_text_sha256": "d061d2e50efa0c2eb10412b850356c7981d49d1cd4528ec8b06134003a871485",
+        "encrypted": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_013::resource_002",
+      "source_node_id": "link_013",
+      "source_node_title": "Licencia de conducir para categoría G1 y G2 hasta 79 años inclusive",
+      "resource_id": "resource_002",
+      "label": "instituciones habilitadas",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Instituciones_m%C3%A9dicas_habilitadas.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "2025_Instituciones_médicas_habilitadas.pdf",
+      "canonical_name": "2025_instituciones_m_dicas_habilitadas",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 189623,
+        "page_count": 2,
+        "character_count": 1862,
+        "word_count": 311,
+        "binary_sha256": "4952de9de72f51af53c0842e80d0d1970fa4e8bd31efa556a7da403a2f1e426c",
+        "normalized_text_sha256": "de1603c2c32396a16e6eafc76b9b247e1a3e735d6d187a9ee8afd72dc6662bf7",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_013::resource_003",
+      "source_node_id": "link_013",
+      "source_node_title": "Licencia de conducir para categoría G1 y G2 hasta 79 años inclusive",
+      "resource_id": "resource_003",
+      "label": "academia de conducción:",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_1.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "2025_Academias_de_conducir_habilitadas-2_1.pdf",
+      "canonical_name": "2025_academias_de_conducir_habilitadas_2",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 144086,
+        "page_count": 4,
+        "character_count": 4391,
+        "word_count": 560,
+        "binary_sha256": "22dce05d1a872c0c7d23c725212d5856f075e4d5bd86f18d71115ad46128737d",
+        "normalized_text_sha256": "fac0977f071a9a4ba0287acefa94fb37eaf2319b7da49a7248f28df3c083eb10",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_013::resource_004",
+      "source_node_id": "link_013",
+      "source_node_title": "Licencia de conducir para categoría G1 y G2 hasta 79 años inclusive",
+      "resource_id": "resource_004",
+      "label": "autorización del menor",
+      "detected_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/cartadeautorizaciondemenorg1edit.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "node_only",
+      "file_name": "cartadeautorizaciondemenorg1edit.pdf",
+      "canonical_name": "cartadeautorizaciondemenorg1edit",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_013::resource_006",
+      "source_node_id": "link_013",
+      "source_node_title": "Licencia de conducir para categoría G1 y G2 hasta 79 años inclusive",
+      "resource_id": "resource_006",
+      "label": "El manual de estudio para el examen teórico",
+      "detected_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/manualautosymotos.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "manualautosymotos.pdf",
+      "canonical_name": "manualautosymotos",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 3994413,
+        "page_count": 128,
+        "character_count": 111960,
+        "word_count": 18217,
+        "binary_sha256": "a0cf13c0f0b56f6408b0ceccb2636fe101c12414af30cd63eef63cd885245304",
+        "normalized_text_sha256": "8d8ac3213aee4ab53a8eb7cdeb46d79ecfa7ba697103f4c924920cb27df0ebfe",
+        "encrypted": false,
+        "text_extraction_truncated": true,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_013::resource_008",
+      "source_node_id": "link_013",
+      "source_node_title": "Licencia de conducir para categoría G1 y G2 hasta 79 años inclusive",
+      "resource_id": "resource_008",
+      "label": "Códigos de Patologías",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_1.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "shared",
+      "file_name": "codigosdepatologiasab24_1.pdf",
+      "canonical_name": "codigosdepatologiasab24",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_013::resource_009",
+      "source_node_id": "link_013",
+      "source_node_title": "Licencia de conducir para categoría G1 y G2 hasta 79 años inclusive",
+      "resource_id": "resource_009",
+      "label": "Manual de Estudio para Aspirantes",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/manualautosymotos.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "manualautosymotos.pdf",
+      "canonical_name": "manualautosymotos",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 3994413,
+        "page_count": 128,
+        "character_count": 111960,
+        "word_count": 18217,
+        "binary_sha256": "a0cf13c0f0b56f6408b0ceccb2636fe101c12414af30cd63eef63cd885245304",
+        "normalized_text_sha256": "8d8ac3213aee4ab53a8eb7cdeb46d79ecfa7ba697103f4c924920cb27df0ebfe",
+        "encrypted": false,
+        "text_extraction_truncated": true,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_013::resource_010",
+      "source_node_id": "link_013",
+      "source_node_title": "Licencia de conducir para categoría G1 y G2 hasta 79 años inclusive",
+      "resource_id": "resource_010",
+      "label": "Formulario de Aspirantes",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formularioaspirante_1.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "formularioaspirante_1.pdf",
+      "canonical_name": "formularioaspirante",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 330773,
+        "page_count": 2,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "347de44e74f0dbc5da5250766d4d0f4ab05de329537ffd1e04fb8e52cd4482c4",
+        "normalized_text_sha256": "",
+        "encrypted": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_013::resource_012",
+      "source_node_id": "link_013",
+      "source_node_title": "Licencia de conducir para categoría G1 y G2 hasta 79 años inclusive",
+      "resource_id": "resource_012",
+      "label": "Planilla de clases prácticas",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/Planilla%20de%20clases%20pr%C3%A1cticas%202025.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "Planilla de clases prácticas 2025.pdf",
+      "canonical_name": "planilla_de_clases_pr_cticas_2025",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_013::resource_013",
+      "source_node_id": "link_013",
+      "source_node_title": "Licencia de conducir para categoría G1 y G2 hasta 79 años inclusive",
+      "resource_id": "resource_013",
+      "label": "Instituciones médicas habilitadas - Junio 2026",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1_1.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "2026_Instituciones_médicas_habilitadas-1_1.pdf",
+      "canonical_name": "2026_instituciones_m_dicas_habilitadas_1",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 189918,
+        "page_count": 1,
+        "character_count": 1760,
+        "word_count": 296,
+        "binary_sha256": "55a02161592275b6af447ada21c8f0ff6ad7d796564a89b85019bc1e4d3e2860",
+        "normalized_text_sha256": "d061d2e50efa0c2eb10412b850356c7981d49d1cd4528ec8b06134003a871485",
+        "encrypted": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_014::resource_002",
+      "source_node_id": "link_014",
+      "source_node_title": "Licencia de conducir para personas con discapacidad",
+      "resource_id": "resource_002",
+      "label": "documentación complementaria",
+      "detected_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/requisitosespecialesmedicoamateur_1.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "node_only",
+      "file_name": "requisitosespecialesmedicoamateur_1.pdf",
+      "canonical_name": "requisitosespecialesmedicoamateur",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 79708,
+        "page_count": 1,
+        "character_count": 1353,
+        "word_count": 184,
+        "binary_sha256": "c9ccdd8d4309cab8a34aa39a75a45700115068df135519bed10e82a4c5f47e7c",
+        "normalized_text_sha256": "3a4f10f716c27aeee38907535039d1bebbb45921f5e1694c444d4fe10b0a5617",
+        "encrypted": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_014::resource_004",
+      "source_node_id": "link_014",
+      "source_node_title": "Licencia de conducir para personas con discapacidad",
+      "resource_id": "resource_004",
+      "label": "manual de estudio para el examen teórico",
+      "detected_url": "http://montevideo.gub.uy/sites/default/files/biblioteca/manualautosymotos_0.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "manualautosymotos_0.pdf",
+      "canonical_name": "manualautosymotos",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 3994413,
+        "page_count": 128,
+        "character_count": 111960,
+        "word_count": 18217,
+        "binary_sha256": "a0cf13c0f0b56f6408b0ceccb2636fe101c12414af30cd63eef63cd885245304",
+        "normalized_text_sha256": "8d8ac3213aee4ab53a8eb7cdeb46d79ecfa7ba697103f4c924920cb27df0ebfe",
+        "encrypted": false,
+        "text_extraction_truncated": true,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_014::resource_005",
+      "source_node_id": "link_014",
+      "source_node_title": "Licencia de conducir para personas con discapacidad",
+      "resource_id": "resource_005",
+      "label": "Formulario de aspirantes",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formularioaspirante_0.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "formularioaspirante_0.pdf",
+      "canonical_name": "formularioaspirante",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 330773,
+        "page_count": 2,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "347de44e74f0dbc5da5250766d4d0f4ab05de329537ffd1e04fb8e52cd4482c4",
+        "normalized_text_sha256": "",
+        "encrypted": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_014::resource_007",
+      "source_node_id": "link_014",
+      "source_node_title": "Licencia de conducir para personas con discapacidad",
+      "resource_id": "resource_007",
+      "label": "Requisitos médicos complementarios",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoamateur.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "node_only",
+      "file_name": "requisitosespecialesmedicoamateur.pdf",
+      "canonical_name": "requisitosespecialesmedicoamateur",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 79708,
+        "page_count": 1,
+        "character_count": 1353,
+        "word_count": 184,
+        "binary_sha256": "c9ccdd8d4309cab8a34aa39a75a45700115068df135519bed10e82a4c5f47e7c",
+        "normalized_text_sha256": "3a4f10f716c27aeee38907535039d1bebbb45921f5e1694c444d4fe10b0a5617",
+        "encrypted": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_014::resource_008",
+      "source_node_id": "link_014",
+      "source_node_title": "Licencia de conducir para personas con discapacidad",
+      "resource_id": "resource_008",
+      "label": "Códigos de patologías",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_0.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "shared",
+      "file_name": "codigosdepatologiasab24_0.pdf",
+      "canonical_name": "codigosdepatologiasab24",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_015::resource_002",
+      "source_node_id": "link_015",
+      "source_node_title": "Licencia de conducir por primera vez para categoría A, G1 o G2 a partir de 80 años",
+      "resource_id": "resource_002",
+      "label": "documentación adicional requerida",
+      "detected_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/requisitosespecialesmedicoamateur_1.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "node_only",
+      "file_name": "requisitosespecialesmedicoamateur_1.pdf",
+      "canonical_name": "requisitosespecialesmedicoamateur",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 79708,
+        "page_count": 1,
+        "character_count": 1353,
+        "word_count": 184,
+        "binary_sha256": "c9ccdd8d4309cab8a34aa39a75a45700115068df135519bed10e82a4c5f47e7c",
+        "normalized_text_sha256": "3a4f10f716c27aeee38907535039d1bebbb45921f5e1694c444d4fe10b0a5617",
+        "encrypted": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_015::resource_004",
+      "source_node_id": "link_015",
+      "source_node_title": "Licencia de conducir por primera vez para categoría A, G1 o G2 a partir de 80 años",
+      "resource_id": "resource_004",
+      "label": "academia de conducción",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_3.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "2025_Academias_de_conducir_habilitadas-2_3.pdf",
+      "canonical_name": "2025_academias_de_conducir_habilitadas_2",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 144086,
+        "page_count": 4,
+        "character_count": 4391,
+        "word_count": 560,
+        "binary_sha256": "22dce05d1a872c0c7d23c725212d5856f075e4d5bd86f18d71115ad46128737d",
+        "normalized_text_sha256": "fac0977f071a9a4ba0287acefa94fb37eaf2319b7da49a7248f28df3c083eb10",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_015::resource_005",
+      "source_node_id": "link_015",
+      "source_node_title": "Licencia de conducir por primera vez para categoría A, G1 o G2 a partir de 80 años",
+      "resource_id": "resource_005",
+      "label": "manual de estudio para el examen teórico",
+      "detected_url": "http://montevideo.gub.uy/sites/default/files/biblioteca/manualautosymotos_0.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "manualautosymotos_0.pdf",
+      "canonical_name": "manualautosymotos",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 3994413,
+        "page_count": 128,
+        "character_count": 111960,
+        "word_count": 18217,
+        "binary_sha256": "a0cf13c0f0b56f6408b0ceccb2636fe101c12414af30cd63eef63cd885245304",
+        "normalized_text_sha256": "8d8ac3213aee4ab53a8eb7cdeb46d79ecfa7ba697103f4c924920cb27df0ebfe",
+        "encrypted": false,
+        "text_extraction_truncated": true,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_015::resource_008",
+      "source_node_id": "link_015",
+      "source_node_title": "Licencia de conducir por primera vez para categoría A, G1 o G2 a partir de 80 años",
+      "resource_id": "resource_008",
+      "label": "Manual de aspirantes a licencia de conducir",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/manualautosymotos_1.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "manualautosymotos_1.pdf",
+      "canonical_name": "manualautosymotos",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 3994413,
+        "page_count": 128,
+        "character_count": 111960,
+        "word_count": 18217,
+        "binary_sha256": "a0cf13c0f0b56f6408b0ceccb2636fe101c12414af30cd63eef63cd885245304",
+        "normalized_text_sha256": "8d8ac3213aee4ab53a8eb7cdeb46d79ecfa7ba697103f4c924920cb27df0ebfe",
+        "encrypted": false,
+        "text_extraction_truncated": true,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_015::resource_009",
+      "source_node_id": "link_015",
+      "source_node_title": "Licencia de conducir por primera vez para categoría A, G1 o G2 a partir de 80 años",
+      "resource_id": "resource_009",
+      "label": "Formulario de Aspirantes",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formularioaspirante_2.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "formularioaspirante_2.pdf",
+      "canonical_name": "formularioaspirante",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 330773,
+        "page_count": 2,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "347de44e74f0dbc5da5250766d4d0f4ab05de329537ffd1e04fb8e52cd4482c4",
+        "normalized_text_sha256": "",
+        "encrypted": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_015::resource_010",
+      "source_node_id": "link_015",
+      "source_node_title": "Licencia de conducir por primera vez para categoría A, G1 o G2 a partir de 80 años",
+      "resource_id": "resource_010",
+      "label": "Planilla de clases prácticas",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/planilladeclasespracticas_2.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "planilladeclasespracticas_2.pdf",
+      "canonical_name": "planilladeclasespracticas",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 54429,
+        "page_count": 1,
+        "character_count": 1007,
+        "word_count": 167,
+        "binary_sha256": "bdf800e17ba11abfca680fe02077a35cd24ebbd800c72ab80367a4c9ddec664d",
+        "normalized_text_sha256": "7e64603b677640cd6fdfb3b96103a977097e79acceebace5366e6c8b71d926bf",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_015::resource_011",
+      "source_node_id": "link_015",
+      "source_node_title": "Licencia de conducir por primera vez para categoría A, G1 o G2 a partir de 80 años",
+      "resource_id": "resource_011",
+      "label": "Certificados médicos complementarios",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoamateur_2.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "node_only",
+      "file_name": "requisitosespecialesmedicoamateur_2.pdf",
+      "canonical_name": "requisitosespecialesmedicoamateur",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 79708,
+        "page_count": 1,
+        "character_count": 1353,
+        "word_count": 184,
+        "binary_sha256": "c9ccdd8d4309cab8a34aa39a75a45700115068df135519bed10e82a4c5f47e7c",
+        "normalized_text_sha256": "3a4f10f716c27aeee38907535039d1bebbb45921f5e1694c444d4fe10b0a5617",
+        "encrypted": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_015::resource_012",
+      "source_node_id": "link_015",
+      "source_node_title": "Licencia de conducir por primera vez para categoría A, G1 o G2 a partir de 80 años",
+      "resource_id": "resource_012",
+      "label": "Códigos de Patologías",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_3.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "shared",
+      "file_name": "codigosdepatologiasab24_3.pdf",
+      "canonical_name": "codigosdepatologiasab24",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_017::resource_002",
+      "source_node_id": "link_017",
+      "source_node_title": "Pago de licencia de conducir amateur categoría A",
+      "resource_id": "resource_002",
+      "label": "Declaración jurada,",
+      "detected_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/declaracionjuradaexoneraciontasadeexpedicionpunca.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "declaracionjuradaexoneraciontasadeexpedicionpunca.pdf",
+      "canonical_name": "declaracionjuradaexoneraciontasadeexpedicionpunca",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 98114,
+        "page_count": 4,
+        "character_count": 4473,
+        "word_count": 675,
+        "binary_sha256": "c726fe5629bcaf11e8cc1c75c77c47d30db8a43ca2452591e201eff45ca7e594",
+        "normalized_text_sha256": "48a97372b85f57eae8e937b2383f0eacf3fc5ee9e4d060802db27e58cb244e67",
+        "encrypted": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_017::resource_003",
+      "source_node_id": "link_017",
+      "source_node_title": "Pago de licencia de conducir amateur categoría A",
+      "resource_id": "resource_003",
+      "label": "Constancia de pertenencia a un programa de inclusión social y promoción de la autonomía económica",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formulariobeneficiootrosprogramas11_1.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "formulariobeneficiootrosprogramas11_1.pdf",
+      "canonical_name": "formulariobeneficiootrosprogramas11",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 137600,
+        "page_count": 3,
+        "character_count": 3313,
+        "word_count": 490,
+        "binary_sha256": "d12713a5bfaa69c733d0e584164fafc63c4f209aedf73839537699fa6aad493b",
+        "normalized_text_sha256": "5762f83b80d83132153fcade7cbb974197172305cccab5b3128d857153ceb582",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_017::resource_008",
+      "source_node_id": "link_017",
+      "source_node_title": "Pago de licencia de conducir amateur categoría A",
+      "resource_id": "resource_008",
+      "label": "Declaración Jurada - Pago de licencia de conducir amateur categoría A",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/declaracionjuradaexoneraciontasadeexpedicionpunca.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "declaracionjuradaexoneraciontasadeexpedicionpunca.pdf",
+      "canonical_name": "declaracionjuradaexoneraciontasadeexpedicionpunca",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 98114,
+        "page_count": 4,
+        "character_count": 4473,
+        "word_count": 675,
+        "binary_sha256": "c726fe5629bcaf11e8cc1c75c77c47d30db8a43ca2452591e201eff45ca7e594",
+        "normalized_text_sha256": "48a97372b85f57eae8e937b2383f0eacf3fc5ee9e4d060802db27e58cb244e67",
+        "encrypted": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_017::resource_010",
+      "source_node_id": "link_017",
+      "source_node_title": "Pago de licencia de conducir amateur categoría A",
+      "resource_id": "resource_010",
+      "label": "Resolución Nro.: 0690/24",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/1708454541257_0.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "1708454541257_0.pdf",
+      "canonical_name": "",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_018::resource_002",
+      "source_node_id": "link_018",
+      "source_node_title": "Registro de academias de conducir",
+      "resource_id": "resource_002",
+      "label": "Formulario de solicitud",
+      "detected_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/3-formulariodeinscripciondeacademias.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "3-formulariodeinscripciondeacademias.pdf",
+      "canonical_name": "3_formulariodeinscripciondeacademias",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 105399,
+        "page_count": 5,
+        "character_count": 3595,
+        "word_count": 520,
+        "binary_sha256": "43a8c6f7b58de5d3f59cf4a93ea56952ad4831c2c86b26063b4aeb2e3a6d3173",
+        "normalized_text_sha256": "cd875560441ae5f7b2fc263c3d53baf7d882090b2d1f09ba2517296b0ac509c1",
+        "encrypted": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_018::resource_003",
+      "source_node_id": "link_018",
+      "source_node_title": "Registro de academias de conducir",
+      "resource_id": "resource_003",
+      "label": "Formulario de inscripción para academias",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/3-formulariodeinscripciondeacademias.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "3-formulariodeinscripciondeacademias.pdf",
+      "canonical_name": "3_formulariodeinscripciondeacademias",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 105399,
+        "page_count": 5,
+        "character_count": 3595,
+        "word_count": 520,
+        "binary_sha256": "43a8c6f7b58de5d3f59cf4a93ea56952ad4831c2c86b26063b4aeb2e3a6d3173",
+        "normalized_text_sha256": "cd875560441ae5f7b2fc263c3d53baf7d882090b2d1f09ba2517296b0ac509c1",
+        "encrypted": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_018::resource_004",
+      "source_node_id": "link_018",
+      "source_node_title": "Registro de academias de conducir",
+      "resource_id": "resource_004",
+      "label": "Resolución 2069/24",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/Cierre%20de%20academias.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "node_only",
+      "file_name": "Cierre de academias.pdf",
+      "canonical_name": "cierre_de_academias",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_019::resource_002",
+      "source_node_id": "link_019",
+      "source_node_title": "Renovación de licencia de conducir categorías A, G1 y G2 a partir de 80 años",
+      "resource_id": "resource_002",
+      "label": "documentación complementaria",
+      "detected_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/requisitosespecialesmedicoamateur_1.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "node_only",
+      "file_name": "requisitosespecialesmedicoamateur_1.pdf",
+      "canonical_name": "requisitosespecialesmedicoamateur",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 79708,
+        "page_count": 1,
+        "character_count": 1353,
+        "word_count": 184,
+        "binary_sha256": "c9ccdd8d4309cab8a34aa39a75a45700115068df135519bed10e82a4c5f47e7c",
+        "normalized_text_sha256": "3a4f10f716c27aeee38907535039d1bebbb45921f5e1694c444d4fe10b0a5617",
+        "encrypted": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_019::resource_003",
+      "source_node_id": "link_019",
+      "source_node_title": "Renovación de licencia de conducir categorías A, G1 y G2 a partir de 80 años",
+      "resource_id": "resource_003",
+      "label": "academias habilitadas de Montevideo.",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_2.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "2025_Academias_de_conducir_habilitadas-2_2.pdf",
+      "canonical_name": "2025_academias_de_conducir_habilitadas_2",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 144086,
+        "page_count": 4,
+        "character_count": 4391,
+        "word_count": 560,
+        "binary_sha256": "22dce05d1a872c0c7d23c725212d5856f075e4d5bd86f18d71115ad46128737d",
+        "normalized_text_sha256": "fac0977f071a9a4ba0287acefa94fb37eaf2319b7da49a7248f28df3c083eb10",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_019::resource_007",
+      "source_node_id": "link_019",
+      "source_node_title": "Renovación de licencia de conducir categorías A, G1 y G2 a partir de 80 años",
+      "resource_id": "resource_007",
+      "label": "Certificados médicos complementarios",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_2.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "node_only",
+      "file_name": "requisitosespecialesmedicoprofesionales_2.pdf",
+      "canonical_name": "requisitosespecialesmedicoprofesionales",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 66617,
+        "page_count": 1,
+        "character_count": 1184,
+        "word_count": 160,
+        "binary_sha256": "5f922d803a551e1d040ea31a56164a1a2c748d69c792b96efbadc3fc45d96aac",
+        "normalized_text_sha256": "4f88fe63924087965d11beae75202245a55fa38460637af1c72b507dbcc0d917",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_019::resource_008",
+      "source_node_id": "link_019",
+      "source_node_title": "Renovación de licencia de conducir categorías A, G1 y G2 a partir de 80 años",
+      "resource_id": "resource_008",
+      "label": "Códigos de patologías",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_6.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "shared",
+      "file_name": "codigosdepatologiasab24_6.pdf",
+      "canonical_name": "codigosdepatologiasab24",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_020::resource_002",
+      "source_node_id": "link_020",
+      "source_node_title": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 74 años inclusive",
+      "resource_id": "resource_002",
+      "label": "instituciones habilitadas",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Instituciones_médicas_habilitadas.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "2025_Instituciones_médicas_habilitadas.pdf",
+      "canonical_name": "2025_instituciones_m_dicas_habilitadas",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 189623,
+        "page_count": 2,
+        "character_count": 1862,
+        "word_count": 311,
+        "binary_sha256": "4952de9de72f51af53c0842e80d0d1970fa4e8bd31efa556a7da403a2f1e426c",
+        "normalized_text_sha256": "de1603c2c32396a16e6eafc76b9b247e1a3e735d6d187a9ee8afd72dc6662bf7",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_020::resource_007",
+      "source_node_id": "link_020",
+      "source_node_title": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 74 años inclusive",
+      "resource_id": "resource_007",
+      "label": "Códigos de patologías",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_8.pdf",
+      "existing_use": "process_as_context",
+      "existing_scope": "shared",
+      "file_name": "codigosdepatologiasab24_8.pdf",
+      "canonical_name": "codigosdepatologiasab24",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_020::resource_008",
+      "source_node_id": "link_020",
+      "source_node_title": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 74 años inclusive",
+      "resource_id": "resource_008",
+      "label": "Academias de conducir habilitadas - Octubre 2025",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_6.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "2025_Academias_de_conducir_habilitadas-2_6.pdf",
+      "canonical_name": "2025_academias_de_conducir_habilitadas_2",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 144086,
+        "page_count": 4,
+        "character_count": 4391,
+        "word_count": 560,
+        "binary_sha256": "22dce05d1a872c0c7d23c725212d5856f075e4d5bd86f18d71115ad46128737d",
+        "normalized_text_sha256": "fac0977f071a9a4ba0287acefa94fb37eaf2319b7da49a7248f28df3c083eb10",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    }
+  ],
+  "proposed_groups": [
+    {
+      "group_id": "pdf_family_001",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "codigosdepatologiasab24",
+        "appearance_count": 11,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_001::resource_002",
+        "link_002::resource_014",
+        "link_006::resource_004",
+        "link_008::resource_005",
+        "link_009::resource_014",
+        "link_011::resource_011",
+        "link_013::resource_008",
+        "link_014::resource_008",
+        "link_015::resource_012",
+        "link_019::resource_008",
+        "link_020::resource_007"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_codigosdepatologiasab24",
+        "display_name": "Códigos de patologías",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab2411.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_5.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_11.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_12.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_2.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_1.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_0.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_3.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_6.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_8.pdf"
+        ],
+        "suggested_default_use": "process_as_context",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "complete",
+        "verified_at": "2026-07-30T11:33:09-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_001_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_001::resource_002",
+              "link_002::resource_014",
+              "link_006::resource_004",
+              "link_008::resource_005",
+              "link_009::resource_014",
+              "link_011::resource_011",
+              "link_013::resource_008",
+              "link_014::resource_008",
+              "link_015::resource_012",
+              "link_019::resource_008",
+              "link_020::resource_007"
+            ],
+            "binary_sha256_values": [
+              "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438"
+            ],
+            "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+            "derived_relations": [
+              {
+                "source_node_id": "link_001",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_001::resource_002"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_002",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_002::resource_014"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_006",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_006::resource_004"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_008",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_008::resource_005"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_009",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_009::resource_014"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_011",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_011::resource_011"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_013",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_013::resource_008"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_014",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_014::resource_008"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_015",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_015::resource_012"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_019",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_019::resource_008"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_020",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_020::resource_007"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "group_id": "pdf_family_002",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "requisitosespecialesmedicoprofesionales",
+        "appearance_count": 3,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_002::resource_003",
+        "link_009::resource_002",
+        "link_019::resource_007"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_requisitosespecialesmedicoprofesionales",
+        "display_name": "certificados médicos complementarios",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_1.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_0.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_2.pdf"
+        ],
+        "suggested_default_use": "process_as_context",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "complete",
+        "verified_at": "2026-07-30T11:33:35-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_002_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_002::resource_003",
+              "link_009::resource_002",
+              "link_019::resource_007"
+            ],
+            "binary_sha256_values": [
+              "5f922d803a551e1d040ea31a56164a1a2c748d69c792b96efbadc3fc45d96aac"
+            ],
+            "normalized_text_sha256": "4f88fe63924087965d11beae75202245a55fa38460637af1c72b507dbcc0d917",
+            "derived_relations": [
+              {
+                "source_node_id": "link_002",
+                "target_resource_id": "pdf_family_002_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_002::resource_003"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_009",
+                "target_resource_id": "pdf_family_002_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_009::resource_002"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_019",
+                "target_resource_id": "pdf_family_002_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_019::resource_007"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "group_id": "pdf_family_003",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "complementoteoricocate2019",
+        "appearance_count": 2,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_002::resource_010",
+        "link_009::resource_011"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_complementoteoricocate2019",
+        "display_name": "complemento de examen teórico para categoría E",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/complementoteoricocate2019.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/complementoteoricocate2019_0.pdf"
+        ],
+        "suggested_default_use": "show_as_link",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "complete",
+        "verified_at": "2026-07-29T15:50:06-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_003_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_002::resource_010",
+              "link_009::resource_011"
+            ],
+            "binary_sha256_values": [
+              "d504654ff1d0e6bdd0a8d00edc669820ab5d6d1f473b197295e9cb67931fb688"
+            ],
+            "normalized_text_sha256": "ff6af1f29f59ad1711fa5cd7354f53d212753de45bfbe652dce987bfd23728c7",
+            "derived_relations": [
+              {
+                "source_node_id": "link_002",
+                "target_resource_id": "pdf_family_003_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_002::resource_010"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_009",
+                "target_resource_id": "pdf_family_003_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_009::resource_011"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "group_id": "pdf_family_004",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "planilladeclasespracticas",
+        "appearance_count": 3,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_002::resource_013",
+        "link_011::resource_010",
+        "link_015::resource_010"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_planilladeclasespracticas",
+        "display_name": "Planilla de clases prácticas",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/planilladeclasespracticas_4.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/planilladeclasespracticas_1.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/planilladeclasespracticas_2.pdf"
+        ],
+        "suggested_default_use": "show_as_link",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "complete",
+        "verified_at": "2026-07-29T15:50:27-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_004_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_002::resource_013",
+              "link_011::resource_010",
+              "link_015::resource_010"
+            ],
+            "binary_sha256_values": [
+              "bdf800e17ba11abfca680fe02077a35cd24ebbd800c72ab80367a4c9ddec664d"
+            ],
+            "normalized_text_sha256": "7e64603b677640cd6fdfb3b96103a977097e79acceebace5366e6c8b71d926bf",
+            "derived_relations": [
+              {
+                "source_node_id": "link_002",
+                "target_resource_id": "pdf_family_004_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_002::resource_013"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_011",
+                "target_resource_id": "pdf_family_004_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_011::resource_010"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_015",
+                "target_resource_id": "pdf_family_004_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_015::resource_010"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "group_id": "pdf_family_005",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "formulariobeneficiootrosprogramas11",
+        "appearance_count": 2,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_005::resource_002",
+        "link_017::resource_003"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_formulariobeneficiootrosprogramas11",
+        "display_name": "Constancia de pertenencia a un programa de inclusión social y promoción de la autonomía económica",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formulariobeneficiootrosprogramas11_1.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [],
+        "suggested_default_use": "show_as_link",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "complete",
+        "verified_at": "2026-07-29T15:50:35-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_005_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_005::resource_002",
+              "link_017::resource_003"
+            ],
+            "binary_sha256_values": [
+              "d12713a5bfaa69c733d0e584164fafc63c4f209aedf73839537699fa6aad493b"
+            ],
+            "normalized_text_sha256": "5762f83b80d83132153fcade7cbb974197172305cccab5b3128d857153ceb582",
+            "derived_relations": [
+              {
+                "source_node_id": "link_005",
+                "target_resource_id": "pdf_family_005_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_005::resource_002"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_017",
+                "target_resource_id": "pdf_family_005_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_017::resource_003"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "group_id": "pdf_family_006",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "2025_instituciones_m_dicas_habilitadas",
+        "appearance_count": 5,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_008::resource_002",
+        "link_011::resource_002",
+        "link_012::resource_002",
+        "link_013::resource_002",
+        "link_020::resource_002"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_2025_instituciones_m_dicas_habilitadas",
+        "display_name": "instituciones habilitadas",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Instituciones_médicas_habilitadas.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Instituciones_m%C3%A9dicas_habilitadas.pdf"
+        ],
+        "suggested_default_use": "show_as_link",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "complete",
+        "verified_at": "2026-07-29T15:50:55-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_006_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_008::resource_002",
+              "link_011::resource_002",
+              "link_012::resource_002",
+              "link_013::resource_002",
+              "link_020::resource_002"
+            ],
+            "binary_sha256_values": [
+              "4952de9de72f51af53c0842e80d0d1970fa4e8bd31efa556a7da403a2f1e426c"
+            ],
+            "normalized_text_sha256": "de1603c2c32396a16e6eafc76b9b247e1a3e735d6d187a9ee8afd72dc6662bf7",
+            "derived_relations": [
+              {
+                "source_node_id": "link_008",
+                "target_resource_id": "pdf_family_006_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_008::resource_002"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_011",
+                "target_resource_id": "pdf_family_006_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_011::resource_002"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_012",
+                "target_resource_id": "pdf_family_006_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_012::resource_002"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_013",
+                "target_resource_id": "pdf_family_006_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_013::resource_002"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_020",
+                "target_resource_id": "pdf_family_006_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_020::resource_002"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "group_id": "pdf_family_007",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "2025_academias_de_conducir_habilitadas_2",
+        "appearance_count": 6,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_011::resource_003",
+        "link_012::resource_004",
+        "link_013::resource_003",
+        "link_015::resource_004",
+        "link_019::resource_003",
+        "link_020::resource_008"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_2025_academias_de_conducir_habilitadas_2",
+        "display_name": "academia de conducción,",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_0.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_5.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_1.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_3.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_2.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_6.pdf"
+        ],
+        "suggested_default_use": "show_as_link",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "complete",
+        "verified_at": "2026-07-29T15:51:20-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_007_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_011::resource_003",
+              "link_012::resource_004",
+              "link_013::resource_003",
+              "link_015::resource_004",
+              "link_019::resource_003",
+              "link_020::resource_008"
+            ],
+            "binary_sha256_values": [
+              "22dce05d1a872c0c7d23c725212d5856f075e4d5bd86f18d71115ad46128737d"
+            ],
+            "normalized_text_sha256": "fac0977f071a9a4ba0287acefa94fb37eaf2319b7da49a7248f28df3c083eb10",
+            "derived_relations": [
+              {
+                "source_node_id": "link_011",
+                "target_resource_id": "pdf_family_007_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_011::resource_003"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_012",
+                "target_resource_id": "pdf_family_007_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_012::resource_004"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_013",
+                "target_resource_id": "pdf_family_007_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_013::resource_003"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_015",
+                "target_resource_id": "pdf_family_007_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_015::resource_004"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_019",
+                "target_resource_id": "pdf_family_007_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_019::resource_003"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_020",
+                "target_resource_id": "pdf_family_007_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_020::resource_008"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "group_id": "pdf_family_008",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "manualautosymotos",
+        "appearance_count": 7,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_011::resource_005",
+        "link_011::resource_008",
+        "link_013::resource_006",
+        "link_013::resource_009",
+        "link_014::resource_004",
+        "link_015::resource_005",
+        "link_015::resource_008"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_manualautosymotos",
+        "display_name": "manual de estudio para el examen teórico",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "http://montevideo.gub.uy/sites/default/files/biblioteca/manualautosymotos_0.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/manualautosymotos_0.pdf",
+          "https://montevideo.gub.uy/sites/default/files/biblioteca/manualautosymotos.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/manualautosymotos.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/manualautosymotos_1.pdf"
+        ],
+        "suggested_default_use": "show_as_link",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "complete",
+        "verified_at": "2026-07-29T15:53:46-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_008_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_011::resource_005",
+              "link_011::resource_008",
+              "link_013::resource_006",
+              "link_013::resource_009",
+              "link_014::resource_004",
+              "link_015::resource_005",
+              "link_015::resource_008"
+            ],
+            "binary_sha256_values": [
+              "a0cf13c0f0b56f6408b0ceccb2636fe101c12414af30cd63eef63cd885245304"
+            ],
+            "normalized_text_sha256": "8d8ac3213aee4ab53a8eb7cdeb46d79ecfa7ba697103f4c924920cb27df0ebfe",
+            "derived_relations": [
+              {
+                "source_node_id": "link_011",
+                "target_resource_id": "pdf_family_008_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_011::resource_005",
+                  "link_011::resource_008"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_013",
+                "target_resource_id": "pdf_family_008_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_013::resource_006",
+                  "link_013::resource_009"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_014",
+                "target_resource_id": "pdf_family_008_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_014::resource_004"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_015",
+                "target_resource_id": "pdf_family_008_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_015::resource_005",
+                  "link_015::resource_008"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "group_id": "pdf_family_009",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "formularioaspirante",
+        "appearance_count": 4,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_011::resource_009",
+        "link_013::resource_010",
+        "link_014::resource_005",
+        "link_015::resource_009"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_formularioaspirante",
+        "display_name": "Formulario de aspirantes",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formularioaspirante.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formularioaspirante_1.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formularioaspirante_0.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formularioaspirante_2.pdf"
+        ],
+        "suggested_default_use": "show_as_link",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "complete",
+        "verified_at": "2026-07-29T15:21:20-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_009_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_011::resource_009",
+              "link_013::resource_010",
+              "link_014::resource_005",
+              "link_015::resource_009"
+            ],
+            "binary_sha256_values": [
+              "347de44e74f0dbc5da5250766d4d0f4ab05de329537ffd1e04fb8e52cd4482c4"
+            ],
+            "normalized_text_sha256": null,
+            "derived_relations": [
+              {
+                "source_node_id": "link_011",
+                "target_resource_id": "pdf_family_009_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_011::resource_009"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_013",
+                "target_resource_id": "pdf_family_009_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_013::resource_010"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_014",
+                "target_resource_id": "pdf_family_009_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_014::resource_005"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_015",
+                "target_resource_id": "pdf_family_009_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_015::resource_009"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "group_id": "pdf_family_010",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "2026_instituciones_m_dicas_habilitadas_1",
+        "appearance_count": 3,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_011::resource_012",
+        "link_012::resource_010",
+        "link_013::resource_013"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_2026_instituciones_m_dicas_habilitadas_1",
+        "display_name": "Instituciones médicas habilitadas - Junio 2026",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1_0.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1_3.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1_1.pdf"
+        ],
+        "suggested_default_use": "show_as_link",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "complete",
+        "verified_at": "2026-07-29T15:22:18-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_010_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_011::resource_012",
+              "link_012::resource_010",
+              "link_013::resource_013"
+            ],
+            "binary_sha256_values": [
+              "55a02161592275b6af447ada21c8f0ff6ad7d796564a89b85019bc1e4d3e2860"
+            ],
+            "normalized_text_sha256": "d061d2e50efa0c2eb10412b850356c7981d49d1cd4528ec8b06134003a871485",
+            "derived_relations": [
+              {
+                "source_node_id": "link_011",
+                "target_resource_id": "pdf_family_010_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_011::resource_012"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_012",
+                "target_resource_id": "pdf_family_010_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_012::resource_010"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_013",
+                "target_resource_id": "pdf_family_010_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_013::resource_013"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "group_id": "pdf_family_011",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "requisitosespecialesmedicoamateur",
+        "appearance_count": 5,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_014::resource_002",
+        "link_014::resource_007",
+        "link_015::resource_002",
+        "link_015::resource_011",
+        "link_019::resource_002"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_requisitosespecialesmedicoamateur",
+        "display_name": "documentación complementaria",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/requisitosespecialesmedicoamateur_1.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoamateur.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoamateur_2.pdf"
+        ],
+        "suggested_default_use": "process_as_context",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "complete",
+        "verified_at": "2026-07-29T15:22:30-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_011_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_014::resource_002",
+              "link_014::resource_007",
+              "link_015::resource_002",
+              "link_015::resource_011",
+              "link_019::resource_002"
+            ],
+            "binary_sha256_values": [
+              "c9ccdd8d4309cab8a34aa39a75a45700115068df135519bed10e82a4c5f47e7c"
+            ],
+            "normalized_text_sha256": "3a4f10f716c27aeee38907535039d1bebbb45921f5e1694c444d4fe10b0a5617",
+            "derived_relations": [
+              {
+                "source_node_id": "link_014",
+                "target_resource_id": "pdf_family_011_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_014::resource_002",
+                  "link_014::resource_007"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_015",
+                "target_resource_id": "pdf_family_011_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_015::resource_002",
+                  "link_015::resource_011"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_019",
+                "target_resource_id": "pdf_family_011_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_019::resource_002"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "group_id": "pdf_family_012",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "declaracionjuradaexoneraciontasadeexpedicionpunca",
+        "appearance_count": 2,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_017::resource_002",
+        "link_017::resource_008"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_declaracionjuradaexoneraciontasadeexpedicionpunca",
+        "display_name": "Declaración jurada,",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/declaracionjuradaexoneraciontasadeexpedicionpunca.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/declaracionjuradaexoneraciontasadeexpedicionpunca.pdf"
+        ],
+        "suggested_default_use": "show_as_link",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "complete",
+        "verified_at": "2026-07-29T15:23:46-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_012_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_017::resource_002",
+              "link_017::resource_008"
+            ],
+            "binary_sha256_values": [
+              "c726fe5629bcaf11e8cc1c75c77c47d30db8a43ca2452591e201eff45ca7e594"
+            ],
+            "normalized_text_sha256": "48a97372b85f57eae8e937b2383f0eacf3fc5ee9e4d060802db27e58cb244e67",
+            "derived_relations": [
+              {
+                "source_node_id": "link_017",
+                "target_resource_id": "pdf_family_012_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_017::resource_002",
+                  "link_017::resource_008"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "group_id": "pdf_family_013",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "3_formulariodeinscripciondeacademias",
+        "appearance_count": 2,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_018::resource_002",
+        "link_018::resource_003"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_3_formulariodeinscripciondeacademias",
+        "display_name": "Formulario de solicitud",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/3-formulariodeinscripciondeacademias.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/3-formulariodeinscripciondeacademias.pdf"
+        ],
+        "suggested_default_use": "show_as_link",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "complete",
+        "verified_at": "2026-07-29T15:23:56-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_013_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_018::resource_002",
+              "link_018::resource_003"
+            ],
+            "binary_sha256_values": [
+              "43a8c6f7b58de5d3f59cf4a93ea56952ad4831c2c86b26063b4aeb2e3a6d3173"
+            ],
+            "normalized_text_sha256": "cd875560441ae5f7b2fc263c3d53baf7d882090b2d1f09ba2517296b0ac509c1",
+            "derived_relations": [
+              {
+                "source_node_id": "link_018",
+                "target_resource_id": "pdf_family_013_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_018::resource_002",
+                  "link_018::resource_003"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    }
+  ]
+}

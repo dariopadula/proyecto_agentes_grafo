@@ -8,6 +8,11 @@ OUTPUTS_DIR = BASE_DIR / "outputs"
 
 DEFAULT_ACTOR = "funcionario"
 
+PDF_MAX_DOWNLOAD_BYTES = 20 * 1024 * 1024
+PDF_MAX_TEXT_PAGES = 100
+PDF_MAX_TEXT_CHARACTERS = 1_000_000
+PDF_DOWNLOAD_TIMEOUT_SECONDS = 20
+
 LINK_ROLES = {
     "terminal_case",
     "auxiliary_info",

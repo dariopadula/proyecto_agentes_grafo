@@ -5,6 +5,7 @@ from config import LINK_ROLE_LABELS
 from workflows.link_discovery import discover_candidate_links
 from workflows.human_review import save_link_decision
 from workflows.node_resource_discovery import discover_node_resources
+from workflows.pdf_analysis import analyze_project_pdfs
 from workflows.project_setup import create_project
 from workflows.review_links import build_review_links
 
@@ -100,6 +101,21 @@ def main() -> None:
         help="Persona o rol que ejecuta la exploracion.",
     )
 
+    pdf_parser = subparsers.add_parser(
+        "analyze-pdfs",
+        help="Analiza PDF revisados y propone grupos determinísticos.",
+    )
+    pdf_parser.add_argument(
+        "--project-id",
+        required=True,
+        help="ID del proyecto con recursos revisados.",
+    )
+    pdf_parser.add_argument(
+        "--actor",
+        default=DEFAULT_ACTOR,
+        help="Persona o rol que ejecuta el analisis.",
+    )
+
     args = parser.parse_args()
 
     if args.command == "init-project":
@@ -155,6 +171,19 @@ def main() -> None:
         print(f"Recursos internos encontrados: {result['resources_count']}")
         print(f"Recursos descartados por reglas: {result['discarded_resources_count']}")
         print(f"Archivo: {result['node_resources_path']}")
+
+    if args.command == "analyze-pdfs":
+        result = analyze_project_pdfs(
+            project_id=args.project_id,
+            actor=args.actor,
+        )
+        print(f"Proyecto: {result['project_id']}")
+        print(f"Apariciones PDF seleccionadas: {result['appearance_count']}")
+        print(f"PDF analizados: {result['analyzed_count']}")
+        print(f"Errores: {result['error_count']}")
+        print(f"No intentados: {result['not_attempted_count']}")
+        print(f"Grupos propuestos: {result['proposed_group_count']}")
+        print(f"Archivo: {result['pdf_analysis_path']}")
 
 
 if __name__ == "__main__":
