@@ -44,6 +44,7 @@ def save_pdf_family_decision(
     timestamp = now_iso()
     decision = {
         "family_id": family_id,
+        "appearance_ids": sorted(allowed_ids),
         "identity_decision": "confirmed_same_manually",
         "default_use": default_use,
         "selected_canonical_url": selected_canonical_url,
@@ -55,6 +56,18 @@ def save_pdf_family_decision(
         "verification_reconciliation": "pending",
     }
     _upsert_family_decision(review, decision)
+    applied_ids, exception_ids = _materialize_pdf_decision(
+        project_dir,
+        analysis,
+        family.get("appearance_ids", []),
+        decision,
+        family_id,
+    )
+    decision["materialization"] = {
+        "applied_appearance_ids": applied_ids,
+        "preserved_individual_exception_ids": exception_ids,
+        "reconciled_at": timestamp,
+    }
     review["updated_at"] = timestamp
     save_json(review, review_path)
 
@@ -125,6 +138,21 @@ def save_pdf_partition_decision(
         "analysis_generated_at": analysis.get("generated_at"),
     }
     _upsert_decision(review, decision)
+    applied_ids = []
+    exception_ids = []
+    if identity_decision == "confirmed_same":
+        applied_ids, exception_ids = _materialize_pdf_decision(
+            project_dir,
+            analysis,
+            partition.get("appearance_ids", []),
+            decision,
+            partition_id,
+        )
+    decision["materialization"] = {
+        "applied_appearance_ids": applied_ids,
+        "preserved_individual_exception_ids": exception_ids,
+        "reconciled_at": timestamp,
+    }
     review["review_status"] = _review_status(
         _all_partition_ids(analysis),
         review.get("decisions", []),
@@ -186,6 +214,80 @@ def _appearance_urls(
         if item.get("appearance_id") in appearance_ids
         and item.get("detected_url")
     }
+
+
+def _materialize_pdf_decision(
+    project_dir,
+    analysis: dict[str, Any],
+    appearance_ids: list[str],
+    group_decision: dict[str, Any],
+    source_group_id: str,
+) -> tuple[list[str], list[str]]:
+    """Proyecta una decisión PDF grupal sobre sus apariciones individuales."""
+    resource_review_path = project_dir / "resource_review.json"
+    if resource_review_path.exists():
+        resource_review = load_json(resource_review_path)
+    else:
+        resource_review = {
+            "project_id": analysis.get("project_id"),
+            "review_status": "not_started",
+            "updated_at": now_iso(),
+            "decisions": [],
+        }
+    appearances = {
+        item.get("appearance_id"): item
+        for item in analysis.get("appearances", [])
+    }
+    selected = [
+        appearances[item_id]
+        for item_id in appearance_ids
+        if item_id in appearances
+    ]
+    scope = (
+        "shared"
+        if len({item.get("source_node_id") for item in selected}) > 1
+        else "node_only"
+    )
+    decisions = resource_review.setdefault("decisions", [])
+    by_id = {
+        item.get("decision_id"): (index, item)
+        for index, item in enumerate(decisions)
+    }
+    applied_ids = []
+    exception_ids = []
+    for appearance in selected:
+        appearance_id = appearance.get("appearance_id")
+        previous_entry = by_id.get(appearance_id)
+        previous = previous_entry[1] if previous_entry else None
+        if previous and previous.get("overrides_group") is True:
+            exception_ids.append(appearance_id)
+            continue
+        inherited = {
+            "decision_id": appearance_id,
+            "source_link_id": appearance.get("source_node_id"),
+            "resource_id": appearance.get("resource_id"),
+            "url": appearance.get("detected_url"),
+            "canonical_url": group_decision.get("selected_canonical_url"),
+            "canonical_resource_id": source_group_id,
+            "title": appearance.get("label"),
+            "resource_type": "pdf",
+            "use": group_decision.get("default_use"),
+            "scope": scope,
+            "notes": group_decision.get("notes"),
+            "reviewed_by": group_decision.get("reviewed_by"),
+            "reviewed_at": group_decision.get("reviewed_at"),
+            "decision_source": "pdf_group",
+            "source_group_id": source_group_id,
+            "inherited": True,
+        }
+        if previous_entry:
+            decisions[previous_entry[0]] = inherited
+        else:
+            decisions.append(inherited)
+        applied_ids.append(appearance_id)
+    resource_review["updated_at"] = now_iso()
+    save_json(resource_review, resource_review_path)
+    return applied_ids, exception_ids
 
 
 def _load_or_create_review(project_id: str, path) -> dict[str, Any]:

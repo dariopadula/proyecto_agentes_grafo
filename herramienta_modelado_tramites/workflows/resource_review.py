@@ -68,13 +68,13 @@ def save_resource_decision(
         "overrides_group": bool(
             previous_decision
             and previous_decision.get("decision_source")
-            == "auxiliary_group"
+            in {"auxiliary_group", "pdf_group"}
         ),
         "overridden_group_id": (
             previous_decision.get("source_group_id")
             if previous_decision
             and previous_decision.get("decision_source")
-            == "auxiliary_group"
+            in {"auxiliary_group", "pdf_group"}
             else None
         ),
     }

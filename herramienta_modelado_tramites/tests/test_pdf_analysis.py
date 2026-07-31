@@ -1,5 +1,7 @@
 import io
 import unittest
+from unittest.mock import Mock
+from unittest.mock import patch
 
 from pypdf import PdfWriter
 
@@ -8,11 +10,54 @@ from workflows.pdf_analysis import (
     _build_pdf_families,
     _build_verification,
     _canonical_pdf_name,
+    _download_pdf,
     _local_match_name,
+    _pdf_candidates,
 )
 
 
 class PdfAnalyzerTests(unittest.TestCase):
+    def test_download_uses_browser_compatible_headers_and_origin_referer(self):
+        response = Mock()
+        response.headers = {"Content-Length": "3"}
+        response.iter_content.return_value = [b"pdf"]
+        response.raise_for_status.return_value = None
+        with patch("workflows.pdf_analysis.requests.get", return_value=response) as get:
+            content = _download_pdf("https://example.test/files/doc.pdf")
+
+        self.assertEqual(content, b"pdf")
+        headers = get.call_args.kwargs["headers"]
+        self.assertTrue(headers["User-Agent"].startswith("Mozilla/5.0"))
+        self.assertEqual(headers["Referer"], "https://example.test/")
+
+    def test_pending_pdfs_are_candidates_before_individual_review(self):
+        node_resources = {
+            "pages": [
+                {
+                    "link_id": "node_1",
+                    "title": "Trámite",
+                    "resources": [
+                        {
+                            "resource_id": "resource_001",
+                            "resource_type": "pdf",
+                            "title": "Documento",
+                            "url": "https://example.test/documento_0.pdf",
+                        }
+                    ],
+                    "discarded_resources": [],
+                }
+            ]
+        }
+
+        candidates = _pdf_candidates(node_resources, {"decisions": []})
+
+        self.assertEqual(len(candidates), 1)
+        self.assertEqual(
+            candidates[0]["appearance_id"],
+            "node_1::resource_001",
+        )
+        self.assertIsNone(candidates[0]["existing_use"])
+
     def test_blank_pdf_analysis_is_deterministic(self):
         writer = PdfWriter()
         writer.add_blank_page(width=100, height=100)

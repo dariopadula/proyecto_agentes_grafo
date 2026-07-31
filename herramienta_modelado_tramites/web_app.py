@@ -5,6 +5,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs
+from urllib.parse import urlencode
 from urllib.parse import urlparse
 
 from config import DEFAULT_ACTOR
@@ -20,6 +21,9 @@ from workflows.pdf_analysis import verify_pdf_family
 from workflows.pdf_group_review import save_pdf_family_decision
 from workflows.pdf_group_review import save_pdf_partition_decision
 from workflows.resource_review import save_resource_decision
+from workflows.resource_filter_rules import load_or_create_resource_filter_rules
+from workflows.resource_filter_rules import save_resource_filter_configuration
+from workflows.resource_identity_review import save_resource_identity_decision
 
 
 HOST = "127.0.0.1"
@@ -46,6 +50,11 @@ class TramiteModelingHandler(BaseHTTPRequestHandler):
             self._send_html(_resources_page(project_id, self.path))
             return
 
+        project_id = _project_id_from_resource_rules_path(path)
+        if project_id:
+            self._send_html(_resource_rules_page(project_id, self.path))
+            return
+
         project_id = _project_id_from_pdf_groups_path(path)
         if project_id:
             self._send_html(_pdf_groups_page(project_id, self.path))
@@ -60,6 +69,64 @@ class TramiteModelingHandler(BaseHTTPRequestHandler):
 
     def do_POST(self) -> None:
         path = urlparse(self.path).path
+        identity_route = _resource_identity_route(path)
+        if identity_route:
+            project_id, source_link_id, resource_id = identity_route
+            form = self._read_form()
+            filters = _resource_filters_from_form(form)
+            try:
+                save_resource_identity_decision(
+                    project_id=project_id,
+                    appearance_id=f"{source_link_id}::{resource_id}",
+                    action=_single(form, "identity_action"),
+                    target_family_id=_single(form, "target_family_id"),
+                    assignment_mode=_single(form, "assignment_mode"),
+                    new_family_name=_single(form, "new_family_name"),
+                    notes=_single(form, "identity_notes"),
+                    actor=_single(form, "actor", DEFAULT_ACTOR),
+                )
+            except ValueError as error:
+                self._redirect(
+                    _resource_review_redirect(
+                        project_id,
+                        source_link_id,
+                        resource_id,
+                        {"error": str(error), **filters},
+                    )
+                )
+                return
+            self._redirect(
+                _resource_review_redirect(
+                    project_id,
+                    source_link_id,
+                    resource_id,
+                    {
+                        "saved_identity": f"{source_link_id}-{resource_id}",
+                        **filters,
+                    },
+                )
+            )
+            return
+
+        project_id = _project_id_from_resource_rules_path(path)
+        if project_id:
+            form = self._read_form()
+            try:
+                save_resource_filter_configuration(
+                    project_id=project_id,
+                    enabled_rule_ids=form.get("enabled_rule", []),
+                    match_type=_single(form, "match_type", "url_contains"),
+                    pattern=_single(form, "pattern"),
+                    reason=_single(form, "reason"),
+                )
+            except ValueError as error:
+                self._redirect(
+                    f"/projects/{project_id}/resource-rules?error={html_escape(error)}"
+                )
+                return
+            self._redirect(f"/projects/{project_id}/resource-rules?saved=1")
+            return
+
         resource_route = _resource_decision_route(path)
         if resource_route:
             self._save_resource_review(resource_route)
@@ -120,10 +187,16 @@ class TramiteModelingHandler(BaseHTTPRequestHandler):
     def _save_resource_review(self, route: tuple[str, str, str]) -> None:
         project_id, source_link_id, resource_id = route
         form = self._read_form()
+        filters = _resource_filters_from_form(form)
         use = _single(form, "use")
         if not use:
             self._redirect(
-                f"/projects/{project_id}/resources?error=missing_use#{source_link_id}-{resource_id}"
+                _resource_review_redirect(
+                    project_id,
+                    source_link_id,
+                    resource_id,
+                    {"error": "missing_use", **filters},
+                )
             )
             return
 
@@ -139,13 +212,22 @@ class TramiteModelingHandler(BaseHTTPRequestHandler):
             )
         except ValueError as error:
             self._redirect(
-                f"/projects/{project_id}/resources?error={html_escape(error)}#{source_link_id}-{resource_id}"
+                _resource_review_redirect(
+                    project_id,
+                    source_link_id,
+                    resource_id,
+                    {"error": str(error), **filters},
+                )
             )
             return
 
         self._redirect(
-            f"/projects/{project_id}/resources?saved={source_link_id}-{resource_id}"
-            f"#{source_link_id}-{resource_id}"
+            _resource_review_redirect(
+                project_id,
+                source_link_id,
+                resource_id,
+                {"saved": f"{source_link_id}-{resource_id}", **filters},
+            )
         )
 
     def _save_pdf_group_review(self, route: tuple[str, str, str]) -> None:
@@ -338,8 +420,8 @@ def _projects_page() -> str:
               <a class="button" href="/projects/{html_escape(project_id)}/review-links">
                 Revisar links
               </a>
-              <a class="button secondary" href="/projects/{html_escape(project_id)}/resources">
-                Ver recursos internos
+              <a class="button secondary" href="/projects/{html_escape(project_id)}/resource-rules">
+                Configurar exclusiones
               </a>
               <a class="button secondary" href="/projects/{html_escape(project_id)}/pdf-groups">
                 Revisar grupos PDF
@@ -347,11 +429,74 @@ def _projects_page() -> str:
               <a class="button secondary" href="/projects/{html_escape(project_id)}/auxiliary-links">
                 Revisar enlaces auxiliares
               </a>
+              <a class="button secondary" href="/projects/{html_escape(project_id)}/resources">
+                Revisar casos individuales
+              </a>
             </article>
             """
         )
 
     return _page("Proyectos", "<section class=\"grid\">" + "".join(cards) + "</section>")
+
+
+def _resource_rules_page(project_id: str, request_path: str) -> str:
+    project_dir = PROJECTS_DIR / project_id
+    project = load_json(project_dir / "project.json")
+    payload = load_or_create_resource_filter_rules(project_id)
+    rows = "".join(
+        f"""
+        <div class="resource-row">
+          <label class="checkbox">
+            <input type="checkbox" name="enabled_rule" value="{html_escape(rule.get('rule_id'))}" {'checked' if rule.get('enabled', True) else ''}>
+            <strong>{html_escape(rule.get('pattern'))}</strong>
+          </label>
+          <p class="muted">{html_escape(rule.get('match_type'))} · {html_escape(rule.get('reason'))}</p>
+        </div>
+        """
+        for rule in payload.get("rules", [])
+    )
+    message = (
+        '<p class="message ok">Reglas guardadas. Regenera los recursos y los agrupamientos para aplicarlas.</p>'
+        if "saved=1" in request_path
+        else ""
+    )
+    body = f"""
+    <section class="panel">
+      <p><a href="/">Volver a proyectos</a></p>
+      <p class="eyebrow">Paso 2 de 5</p>
+      <h2>Configurar exclusiones · {html_escape(project.get('name'))}</h2>
+      <p class="muted">
+        Estas reglas se aplican después del descubrimiento y antes de formar
+        grupos. Los enlaces excluidos conservan la regla y el motivo en
+        <code>node_resources.json</code>.
+      </p>
+      {message}
+    </section>
+    <form class="panel" method="post" action="/projects/{html_escape(project_id)}/resource-rules">
+      <h3>Reglas existentes</h3>
+      <div class="resource-list">{rows}</div>
+      <h3>Agregar una regla del proyecto</h3>
+      <div class="form-grid">
+        <label>Característica
+          <select name="match_type">
+            <option value="url_contains">La URL contiene</option>
+            <option value="text_contains">El texto o contexto contiene</option>
+          </select>
+        </label>
+        <label>Patrón
+          <input name="pattern" placeholder="Ejemplo: /contenido-no-relevante/">
+        </label>
+        <label>Motivo
+          <input name="reason" placeholder="Por qué no se considera">
+        </label>
+      </div>
+      <div class="actions">
+        <button type="submit">Guardar configuración</button>
+        <a class="button secondary" href="/projects/{html_escape(project_id)}/pdf-groups">Continuar a grupos PDF</a>
+      </div>
+    </form>
+    """
+    return _page(f"Exclusiones - {project.get('name')}", body)
 
 
 def _resources_page(project_id: str, request_path: str) -> str:
@@ -380,6 +525,28 @@ def _resources_page(project_id: str, request_path: str) -> str:
         decision.get("decision_id"): decision
         for decision in resource_review.get("decisions", [])
     }
+    pdf_analysis_path = project_dir / "pdf_analysis.json"
+    pdf_analysis = (
+        load_json(pdf_analysis_path)
+        if pdf_analysis_path.exists()
+        else {"appearances": [], "proposed_groups": []}
+    )
+    pdf_families = pdf_analysis.get("proposed_groups", [])
+    pdf_family_by_appearance = {
+        appearance_id: family
+        for family in pdf_families
+        for appearance_id in family.get("appearance_ids", [])
+    }
+    identity_review_path = project_dir / "resource_identity_review.json"
+    identity_review = (
+        load_json(identity_review_path)
+        if identity_review_path.exists()
+        else {"decisions": []}
+    )
+    identity_by_appearance = {
+        item.get("appearance_id"): item
+        for item in identity_review.get("decisions", [])
+    }
     pages = node_resources.get("pages", [])
     total_resources = node_resources.get("resources_count", 0)
     total_discarded = node_resources.get("discarded_resources_count", 0)
@@ -394,7 +561,7 @@ def _resources_page(project_id: str, request_path: str) -> str:
     )
     inherited_resources = sum(
         decision_id in reviewable_ids
-        and decision.get("decision_source") == "auxiliary_group"
+        and decision.get("decision_source") in {"auxiliary_group", "pdf_group"}
         for decision_id, decision in decisions_by_resource.items()
     )
     individual_resources = reviewed_resources - inherited_resources
@@ -402,7 +569,14 @@ def _resources_page(project_id: str, request_path: str) -> str:
     message = _status_message(request_path)
 
     cards = "".join(
-        _resource_page_card(project_id, page, decisions_by_resource)
+        _resource_page_card(
+            project_id,
+            page,
+            decisions_by_resource,
+            pdf_families,
+            pdf_family_by_appearance,
+            identity_by_appearance,
+        )
         for page in pages
     )
     body = f"""
@@ -412,7 +586,8 @@ def _resources_page(project_id: str, request_path: str) -> str:
         <a href="/projects/{html_escape(project_id)}/review-links">Revisar links principales</a>
       </p>
       <h2>{html_escape(project.get("name"))}</h2>
-      <p class="muted">Recursos internos detectados dentro de los links aceptados.</p>
+      <p class="eyebrow">Paso 5 de 5 · revisión final</p>
+      <p class="muted">Solo corresponde ajustar pendientes, recursos no agrupados y excepciones individuales.</p>
       <div class="stats">
         <div><strong>{html_escape(node_resources.get("accepted_links_count"))}</strong><span>Nodos explorados</span></div>
         <div><strong>{html_escape(total_resources)}</strong><span>Recursos utiles</span></div>
@@ -445,11 +620,21 @@ def _resources_page(project_id: str, request_path: str) -> str:
     <section class="cards">
       {cards}
     </section>
+    <p id="resourceNoResults" class="panel muted hidden">
+      No hay recursos que coincidan con los filtros seleccionados.
+    </p>
     <script>
       const search = document.getElementById("search");
       const typeFilter = document.getElementById("typeFilter");
       const discardFilter = document.getElementById("discardFilter");
       const decisionFilter = document.getElementById("decisionFilter");
+      const resourceNoResults = document.getElementById("resourceNoResults");
+      const initialFilters = new URLSearchParams(window.location.search);
+      search.value = initialFilters.get("search_filter") || "";
+      typeFilter.value = initialFilters.get("type_filter") || "";
+      discardFilter.value = initialFilters.get("discard_filter") || "";
+      decisionFilter.value = initialFilters.get("decision_filter") || "";
+      const restoredScrollY = Number(initialFilters.get("scroll_y") || 0);
       search.addEventListener("input", applyResourceFilters);
       typeFilter.addEventListener("change", applyResourceFilters);
       discardFilter.addEventListener("change", applyResourceFilters);
@@ -467,7 +652,42 @@ def _resources_page(project_id: str, request_path: str) -> str:
           const matchesDecision = !decisionState || row.dataset.decision === decisionState;
           row.classList.toggle("hidden", !(matchesText && matchesType && matchesDiscard && matchesDecision));
         }});
+        let visibleCards = 0;
+        document.querySelectorAll(".cards > .card").forEach(card => {{
+          const hasVisibleResource = Boolean(
+            card.querySelector(".resource-row:not(.hidden)")
+          );
+          card.classList.toggle("hidden", !hasVisibleResource);
+          if (hasVisibleResource) visibleCards += 1;
+        }});
+        resourceNoResults.classList.toggle("hidden", visibleCards > 0);
+        persistResourceFilters();
       }}
+
+      function persistResourceFilters() {{
+        const url = new URL(window.location.href);
+        const values = {{
+          search_filter: search.value.trim(),
+          type_filter: typeFilter.value,
+          discard_filter: discardFilter.value,
+          decision_filter: decisionFilter.value,
+        }};
+        Object.entries(values).forEach(([key, value]) => {{
+          if (value) url.searchParams.set(key, value);
+          else url.searchParams.delete(key);
+        }});
+        window.history.replaceState(null, "", url);
+      }}
+
+      document.querySelectorAll(".resource-review-form, .resource-identity-form").forEach(form => {{
+        form.addEventListener("submit", () => {{
+          form.elements.search_filter.value = search.value.trim();
+          form.elements.type_filter.value = typeFilter.value;
+          form.elements.discard_filter.value = discardFilter.value;
+          form.elements.decision_filter.value = decisionFilter.value;
+          form.elements.scroll_y.value = String(Math.round(window.scrollY));
+        }});
+      }});
 
       function clearResourceFilters() {{
         search.value = "";
@@ -475,6 +695,16 @@ def _resources_page(project_id: str, request_path: str) -> str:
         discardFilter.value = "";
         decisionFilter.value = "";
         applyResourceFilters();
+      }}
+      applyResourceFilters();
+      const savedIdentity = initialFilters.get("saved_identity");
+      if (savedIdentity) {{
+        const savedRow = document.getElementById(savedIdentity);
+        const identityDetails = savedRow && savedRow.querySelector(".identity-resolution");
+        if (identityDetails) identityDetails.open = true;
+      }}
+      if (restoredScrollY > 0) {{
+        window.requestAnimationFrame(() => window.scrollTo(0, restoredScrollY));
       }}
     </script>
     """
@@ -568,9 +798,11 @@ def _auxiliary_links_page(project_id: str, request_path: str) -> str:
     <section class="panel">
       <p>
         <a href="/">Volver a proyectos</a> |
-        <a href="/projects/{html_escape(project_id)}/resources">Ver recursos internos</a> |
+        <a href="/projects/{html_escape(project_id)}/resource-rules">Configurar exclusiones</a> |
+        <a href="/projects/{html_escape(project_id)}/resources">Revisar casos individuales</a> |
         <a href="/projects/{html_escape(project_id)}/pdf-groups">Revisar PDF</a>
       </p>
+      <p class="eyebrow">Paso 4 de 5 · grupos de enlaces</p>
       <h2>{html_escape(project.get("name"))}</h2>
       <p class="muted">
         Confirma el tratamiento una vez por grupo. La decisión se registra y se
@@ -969,8 +1201,11 @@ def _pdf_groups_page(project_id: str, request_path: str) -> str:
     <section class="panel">
       <p>
         <a href="/">Volver a proyectos</a> |
-        <a href="/projects/{html_escape(project_id)}/resources">Ver recursos internos</a>
+        <a href="/projects/{html_escape(project_id)}/resource-rules">Configurar exclusiones</a> |
+        <a href="/projects/{html_escape(project_id)}/auxiliary-links">Revisar enlaces auxiliares</a> |
+        <a href="/projects/{html_escape(project_id)}/resources">Revisar casos individuales</a>
       </p>
+      <p class="eyebrow">Paso 3 de 5 · grupos PDF</p>
       <h2>{html_escape(project.get("name"))}</h2>
       <p class="muted">
         El funcionario puede confirmar una familia por su conocimiento. La
@@ -1069,10 +1304,13 @@ def _pdf_group_card(
             ],
         ]
     ).lower()
+    family_decision_current = bool(family_decision) and set(
+        family_decision.get("appearance_ids", [])
+    ) == set(group.get("appearance_ids", []))
     return f"""
     <article class="card pdf-group" id="{html_escape(group_id)}"
         data-verification="{html_escape(verification.get("status"))}"
-        data-review="{"reviewed" if family_decision or (partitions and all(part.get("partition_id") in decisions for part in partitions)) else "pending"}"
+        data-review="{"reviewed" if family_decision_current or (partitions and all(part.get("partition_id") in decisions for part in partitions)) else "pending"}"
         data-search="{html_escape(search_text)}">
       <div class="card-head">
         <div>
@@ -1085,6 +1323,7 @@ def _pdf_group_card(
       {_pdf_evidence(group, items)}
       <h3>Links incluidos en la familia</h3>
       {_appearance_rows(items, set())}
+      {'<p class="message">La familia incorporó o perdió apariciones desde la decisión anterior. Confirma nuevamente el conjunto actual.</p>' if family_decision and not family_decision_current else ''}
       {_manual_family_form(project_id, group, items, family_decision)}
       <form method="post" action="/projects/{html_escape(project_id)}/pdf-groups/{html_escape(group_id)}/verify">
         <input type="hidden" name="actor" value="{html_escape(DEFAULT_ACTOR)}">
@@ -1374,7 +1613,7 @@ def _appearance_rows(
                   · uso actual: {html_escape(item.get("existing_use"))}
                   · análisis: {html_escape(analysis.get("status"))}
                 </p>
-                {f'<p class="message error">{html_escape(analysis.get("error"))}</p>' if analysis.get("error") else ""}
+                {f'<p class="message error">{html_escape(_friendly_pdf_error(analysis))}</p>' if analysis.get("error") else ""}
                 <a class="url" href="{html_escape(item.get("detected_url"))}"
                     target="_blank" rel="noreferrer">{html_escape(item.get("detected_url"))}</a>
               </div>
@@ -1382,6 +1621,25 @@ def _appearance_rows(
             """
         )
     return "".join(rows)
+
+
+def _friendly_pdf_error(analysis: dict[str, Any]) -> str:
+    error = str(analysis.get("error", ""))
+    if "WinError 10013" in error:
+        return (
+            "La aplicación no tuvo permiso de red para descargar este PDF. "
+            "Reiníciala desde una terminal con acceso a Internet y vuelve a verificar."
+        )
+    if "403" in error or "Forbidden" in error:
+        return (
+            "El sitio oficial rechazó la descarga automática. "
+            "Puedes abrir el enlace o volver a intentar la verificación."
+        )
+    if analysis.get("status") == "download_error":
+        return "No se pudo descargar este PDF. Comprueba la conexión y vuelve a intentar."
+    if analysis.get("status") == "analysis_error":
+        return "El PDF se descargó, pero no pudo analizarse automáticamente."
+    return "La verificación técnica no pudo completarse."
 
 
 def _canonical_url_options(
@@ -1593,6 +1851,9 @@ def _resource_page_card(
     project_id: str,
     page: dict[str, Any],
     decisions_by_resource: dict[str, dict[str, Any]],
+    pdf_families: list[dict[str, Any]],
+    pdf_family_by_appearance: dict[str, dict[str, Any]],
+    identity_by_appearance: dict[str, dict[str, Any]],
 ) -> str:
     resources = page.get("resources", [])
     discarded = page.get("discarded_resources", [])
@@ -1606,6 +1867,14 @@ def _resource_page_card(
                 f"{page.get('link_id')}::{resource.get('resource_id')}",
                 {},
             ),
+            pdf_families,
+            pdf_family_by_appearance.get(
+                f"{page.get('link_id')}::{resource.get('resource_id')}"
+            ),
+            identity_by_appearance.get(
+                f"{page.get('link_id')}::{resource.get('resource_id')}",
+                {},
+            ),
         )
         for resource in resources
     )
@@ -1616,6 +1885,14 @@ def _resource_page_card(
             resource,
             "discarded",
             decisions_by_resource.get(
+                f"{page.get('link_id')}::{resource.get('resource_id')}",
+                {},
+            ),
+            pdf_families,
+            pdf_family_by_appearance.get(
+                f"{page.get('link_id')}::{resource.get('resource_id')}"
+            ),
+            identity_by_appearance.get(
                 f"{page.get('link_id')}::{resource.get('resource_id')}",
                 {},
             ),
@@ -1657,6 +1934,9 @@ def _resource_row(
     resource: dict[str, Any],
     discard_state: str,
     decision: dict[str, Any],
+    pdf_families: list[dict[str, Any]],
+    current_pdf_family: dict[str, Any] | None,
+    identity_decision: dict[str, Any],
 ) -> str:
     reason = ""
     if discard_state == "discarded":
@@ -1674,6 +1954,15 @@ def _resource_row(
             resource,
             decision,
         )
+        if resource.get("resource_type") == "pdf":
+            review_form = _resource_identity_form(
+                project_id,
+                source_link_id,
+                resource,
+                pdf_families,
+                current_pdf_family,
+                identity_decision,
+            ) + review_form
     search_text = " ".join(
         str(value or "")
         for value in [
@@ -1688,7 +1977,7 @@ def _resource_row(
     if not decision:
         decision_state = "pending"
         decision_badge = '<span class="pill">Pendiente</span>'
-    elif decision.get("decision_source") == "auxiliary_group":
+    elif decision.get("decision_source") in {"auxiliary_group", "pdf_group"}:
         decision_state = "group"
         decision_badge = (
             '<span class="pill">Heredada del grupo '
@@ -1723,6 +2012,91 @@ def _resource_row(
     """
 
 
+def _resource_identity_form(
+    project_id: str,
+    source_link_id: str,
+    resource: dict[str, Any],
+    families: list[dict[str, Any]],
+    current_family: dict[str, Any] | None,
+    identity_decision: dict[str, Any],
+) -> str:
+    current_id = (
+        identity_decision.get("target_family_id")
+        or (current_family.get("group_id", "") if current_family else "")
+    )
+    options = "".join(
+        f'<option value="{html_escape(family.get("group_id"))}">'
+        f'{html_escape(family.get("proposed_canonical_resource", {}).get("display_name") or family.get("group_id"))} '
+        f'· {len(family.get("appearance_ids", []))} apariciones</option>'
+        for family in sorted(
+            families,
+            key=lambda item: (
+                item.get("group_id") != current_id,
+                str(item.get("proposed_canonical_resource", {}).get("display_name", "")),
+            ),
+        )
+    )
+    saved_notice = ""
+    if identity_decision:
+        mode_label = (
+            "pendiente de verificación"
+            if identity_decision.get("assignment_mode") == "candidate_verify"
+            else "confirmada directamente"
+        )
+        saved_notice = (
+            '<p class="message ok">Pertenencia guardada: '
+            f'{html_escape(identity_decision.get("target_family_id") or identity_decision.get("action"))} '
+            f'· {html_escape(mode_label)}.</p>'
+        )
+    current_notice = (
+        f'<p class="message">Actualmente es candidata de <strong>{html_escape(current_id)}</strong>. '
+        'Puedes reconfirmarla, moverla o mantenerla individual.</p>'
+        if current_id
+        else '<p class="message">Identidad sin consolidar. Selecciona cómo resolverla.</p>'
+    )
+    return f"""
+    <details class="identity-resolution">
+      <summary>Resolver identidad: asignar grupo, crear uno nuevo o excluir</summary>
+      {saved_notice}
+      {current_notice}
+      <form class="resource-identity-form" method="post" action="/projects/{html_escape(project_id)}/resources/{html_escape(source_link_id)}/{html_escape(resource.get('resource_id'))}/identity">
+        <input type="hidden" name="search_filter" value="">
+        <input type="hidden" name="type_filter" value="">
+        <input type="hidden" name="discard_filter" value="">
+        <input type="hidden" name="decision_filter" value="">
+        <input type="hidden" name="scroll_y" value="0">
+        <div class="form-grid">
+          <label>Acción
+            <select name="identity_action">
+              <option value="assign_existing" {'selected' if identity_decision.get('action', 'assign_existing') == 'assign_existing' else ''}>Asignar a una familia existente</option>
+              <option value="create_family" {'selected' if identity_decision.get('action') == 'create_family' else ''}>Crear una familia nueva</option>
+              <option value="keep_individual" {'selected' if identity_decision.get('action') == 'keep_individual' else ''}>Mantener como recurso individual</option>
+              <option value="exclude" {'selected' if identity_decision.get('action') == 'exclude' else ''}>Excluir este recurso</option>
+            </select>
+          </label>
+          <label>Buscar familia existente
+            <input name="target_family_id" list="families-{html_escape(source_link_id)}-{html_escape(resource.get('resource_id'))}" value="{html_escape(current_id)}" placeholder="Nombre o identificador">
+            <datalist id="families-{html_escape(source_link_id)}-{html_escape(resource.get('resource_id'))}">{options}</datalist>
+          </label>
+          <label>Nombre de familia nueva
+            <input name="new_family_name" value="{html_escape(identity_decision.get('new_family_name'))}" placeholder="Solo si creas una familia">
+          </label>
+        </div>
+        <fieldset>
+          <legend>Forma de incorporación</legend>
+          <label class="checkbox"><input type="radio" name="assignment_mode" value="candidate_verify" {'checked' if identity_decision.get('assignment_mode', 'candidate_verify') == 'candidate_verify' else ''}> Agregar como candidata y verificar</label>
+          <label class="checkbox"><input type="radio" name="assignment_mode" value="direct_confirm" {'checked' if identity_decision.get('assignment_mode') == 'direct_confirm' else ''}> Confirmar directamente como el mismo recurso</label>
+        </fieldset>
+        <label>Motivo o evidencia
+          <textarea name="identity_notes" placeholder="Explica por qué pertenece al grupo, debe separarse o excluirse.">{html_escape(identity_decision.get('notes'))}</textarea>
+        </label>
+        <input type="hidden" name="actor" value="{html_escape(DEFAULT_ACTOR)}">
+        <button type="submit">Guardar resolución de identidad</button>
+      </form>
+    </details>
+    """
+
+
 def _resource_review_form(
     project_id: str,
     source_link_id: str,
@@ -1730,7 +2104,12 @@ def _resource_review_form(
     decision: dict[str, Any],
 ) -> str:
     return f"""
-    <form method="post" action="/projects/{html_escape(project_id)}/resources/{html_escape(source_link_id)}/{html_escape(resource.get("resource_id"))}">
+    <form class="resource-review-form" method="post" action="/projects/{html_escape(project_id)}/resources/{html_escape(source_link_id)}/{html_escape(resource.get("resource_id"))}">
+      <input type="hidden" name="search_filter" value="">
+      <input type="hidden" name="type_filter" value="">
+      <input type="hidden" name="discard_filter" value="">
+      <input type="hidden" name="decision_filter" value="">
+      <input type="hidden" name="scroll_y" value="0">
       <div class="form-grid">
         <label>
           Que hacemos con este recurso
@@ -1740,10 +2119,9 @@ def _resource_review_form(
           </select>
         </label>
         <label>
-          Donde aplica
-          <select name="scope">
-            {_resource_scope_options(decision.get("scope", "node_only"))}
-          </select>
+          Alcance derivado
+          <input type="hidden" name="scope" value="{html_escape(decision.get('scope', 'node_only'))}">
+          <input value="{html_escape(_resource_scope_label(decision.get('scope', 'node_only')))}" disabled>
         </label>
         <label>
           Revisor
@@ -1792,6 +2170,13 @@ def _resource_scope_options(selected: str) -> str:
         """
         for code, label in labels.items()
     )
+
+
+def _resource_scope_label(scope: str) -> str:
+    return {
+        "node_only": "Solo aparece en este nodo",
+        "shared": "Compartido: derivado del recurso canónico",
+    }.get(scope, "Pendiente de consolidación")
 
 
 def _empty_message(items: list[dict[str, Any]], message: str) -> str:
@@ -1878,6 +2263,13 @@ def _project_id_from_resources_path(path: str) -> str | None:
     return None
 
 
+def _project_id_from_resource_rules_path(path: str) -> str | None:
+    parts = path.strip("/").split("/")
+    if len(parts) == 3 and parts[0] == "projects" and parts[2] == "resource-rules":
+        return parts[1]
+    return None
+
+
 def _project_id_from_pdf_groups_path(path: str) -> str | None:
     parts = path.strip("/").split("/")
     if len(parts) == 3 and parts[0] == "projects" and parts[2] == "pdf-groups":
@@ -1906,6 +2298,18 @@ def _decision_route(path: str) -> tuple[str, str] | None:
 def _resource_decision_route(path: str) -> tuple[str, str, str] | None:
     parts = path.strip("/").split("/")
     if len(parts) == 5 and parts[0] == "projects" and parts[2] == "resources":
+        return parts[1], parts[3], parts[4]
+    return None
+
+
+def _resource_identity_route(path: str) -> tuple[str, str, str] | None:
+    parts = path.strip("/").split("/")
+    if (
+        len(parts) == 6
+        and parts[0] == "projects"
+        and parts[2] == "resources"
+        and parts[5] == "identity"
+    ):
         return parts[1], parts[3], parts[4]
     return None
 
@@ -1971,8 +2375,53 @@ def _single(
     return values[0]
 
 
+def _resource_filters_from_form(
+    form: dict[str, list[str]],
+) -> dict[str, str]:
+    filters = {
+        "search_filter": _single(form, "search_filter")[:200],
+        "type_filter": _single(form, "type_filter")[:80],
+        "discard_filter": _single(form, "discard_filter"),
+        "decision_filter": _single(form, "decision_filter"),
+        "scroll_y": _single(form, "scroll_y"),
+    }
+    if filters["discard_filter"] not in {"", "kept", "discarded"}:
+        filters["discard_filter"] = ""
+    if filters["decision_filter"] not in {
+        "",
+        "pending",
+        "group",
+        "individual",
+    }:
+        filters["decision_filter"] = ""
+    try:
+        scroll_y = int(filters["scroll_y"] or "0")
+    except ValueError:
+        scroll_y = 0
+    filters["scroll_y"] = str(min(max(scroll_y, 0), 10_000_000))
+    if filters["scroll_y"] == "0":
+        filters["scroll_y"] = ""
+    return {key: value for key, value in filters.items() if value}
+
+
+def _resource_review_redirect(
+    project_id: str,
+    source_link_id: str,
+    resource_id: str,
+    parameters: dict[str, str],
+) -> str:
+    query = urlencode(parameters)
+    fragment = f"{source_link_id}-{resource_id}"
+    return f"/projects/{project_id}/resources?{query}#{fragment}"
+
+
 def _status_message(request_path: str) -> str:
     query = parse_qs(urlparse(request_path).query)
+    if "saved_identity" in query:
+        return (
+            '<p class="message ok">Pertenencia al grupo guardada. '
+            'Si se agregó como candidata, queda pendiente de verificación.</p>'
+        )
     if "saved" in query:
         return f"""<p class="message ok">Decision guardada para {html_escape(query["saved"][0])}.</p>"""
     if "verified" in query:
@@ -2035,6 +2484,7 @@ def _page(title: str, body: str) -> str:
       padding: 16px;
     }}
     .card.hidden {{ display: none; }}
+    .hidden {{ display: none !important; }}
     .card-head {{
       display: flex;
       justify-content: space-between;
@@ -2192,6 +2642,21 @@ def _page(title: str, body: str) -> str:
     }}
     .resource-row.hidden {{
       display: none;
+    }}
+    .identity-resolution {{
+      margin: 12px 0;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      background: #f5f9ff;
+    }}
+    .identity-resolution > summary {{
+      padding: 10px 12px;
+      color: var(--accent);
+      font-weight: 700;
+      cursor: pointer;
+    }}
+    .identity-resolution[open] {{
+      padding: 0 12px 12px;
     }}
     .resource-head {{
       display: flex;

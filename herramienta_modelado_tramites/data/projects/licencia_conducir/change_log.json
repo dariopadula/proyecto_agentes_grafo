@@ -10664,6 +10664,633 @@
         ],
         "preserved_individual_exception_ids": []
       }
+    },
+    {
+      "event_id": "event_332",
+      "timestamp": "2026-07-31T14:19:27-03:00",
+      "actor": "funcionario",
+      "action": "classify_resource",
+      "target_type": "internal_resource",
+      "target_id": "link_013::resource_011",
+      "summary": "Se guardo decision de recurso link_013::resource_011: show_as_link / node_only.",
+      "before": null,
+      "after": {
+        "decision_id": "link_013::resource_011",
+        "source_link_id": "link_013",
+        "resource_id": "resource_011",
+        "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/cartadeautorizaciondemenorg1edit.pdf",
+        "title": "Autorización del menor para G1",
+        "resource_type": "pdf",
+        "use": "show_as_link",
+        "scope": "node_only",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-31T14:19:27-03:00",
+        "decision_source": "individual",
+        "overrides_group": false,
+        "overridden_group_id": null
+      }
+    },
+    {
+      "event_id": "event_333",
+      "timestamp": "2026-07-31T14:20:38-03:00",
+      "actor": "funcionario",
+      "action": "classify_resource",
+      "target_type": "internal_resource",
+      "target_id": "link_014::resource_006",
+      "summary": "Se guardo decision de recurso link_014::resource_006: show_as_link / node_only.",
+      "before": null,
+      "after": {
+        "decision_id": "link_014::resource_006",
+        "source_link_id": "link_014",
+        "resource_id": "resource_006",
+        "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/planilladeclasespracticas.pdf",
+        "title": "Planilla de clases prácticas",
+        "resource_type": "pdf",
+        "use": "show_as_link",
+        "scope": "node_only",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-31T14:20:38-03:00",
+        "decision_source": "individual",
+        "overrides_group": false,
+        "overridden_group_id": null
+      }
+    },
+    {
+      "event_id": "event_334",
+      "timestamp": "2026-07-31T14:30:46-03:00",
+      "actor": "funcionario",
+      "action": "classify_resource",
+      "target_type": "internal_resource",
+      "target_id": "link_018::resource_005",
+      "summary": "Se guardo decision de recurso link_018::resource_005: process_as_context / node_only.",
+      "before": null,
+      "after": {
+        "decision_id": "link_018::resource_005",
+        "source_link_id": "link_018",
+        "resource_id": "resource_005",
+        "url": "https://normativa.montevideo.gub.uy/armado/65117",
+        "title": "Fiscalización administrativa sobre conductores y vehículos",
+        "resource_type": "normativa",
+        "use": "process_as_context",
+        "scope": "node_only",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-31T14:30:46-03:00",
+        "decision_source": "individual",
+        "overrides_group": false,
+        "overridden_group_id": null
+      }
+    },
+    {
+      "event_id": "event_335",
+      "timestamp": "2026-07-31T14:31:03-03:00",
+      "actor": "funcionario",
+      "action": "classify_resource",
+      "target_type": "internal_resource",
+      "target_id": "link_020::resource_009",
+      "summary": "Se guardo decision de recurso link_020::resource_009: show_as_link / node_only.",
+      "before": null,
+      "after": {
+        "decision_id": "link_020::resource_009",
+        "source_link_id": "link_020",
+        "resource_id": "resource_009",
+        "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1_2.pdf",
+        "title": "Instituciones médicas habilitadas - Junio 2026",
+        "resource_type": "pdf",
+        "use": "show_as_link",
+        "scope": "node_only",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-31T14:31:03-03:00",
+        "decision_source": "individual",
+        "overrides_group": false,
+        "overridden_group_id": null
+      }
+    },
+    {
+      "event_id": "event_336",
+      "timestamp": "2026-07-31T14:59:10-03:00",
+      "actor": "funcionario",
+      "action": "analyze_pdf_resources",
+      "target_type": "project",
+      "target_id": "licencia_conducir",
+      "summary": "Se prepararon 85 apariciones de PDF y se propusieron 15 familias por nombre.",
+      "before": null,
+      "after": {
+        "appearance_count": 85,
+        "analyzed_count": 0,
+        "error_count": 0,
+        "download_error_count": 0,
+        "analysis_error_count": 0,
+        "skipped_by_policy_count": 0,
+        "not_attempted_count": 0,
+        "proposed_group_count": 15,
+        "verified_family_count": 6,
+        "partition_count": 6
+      }
+    },
+    {
+      "event_id": "event_337",
+      "timestamp": "2026-07-31T15:34:44-03:00",
+      "actor": "funcionario",
+      "action": "confirm_pdf_family_manually",
+      "target_type": "pdf_family",
+      "target_id": "pdf_family_001",
+      "summary": "Se confirmó manualmente la familia PDF pdf_family_001.",
+      "before": {
+        "family_id": "pdf_family_001",
+        "identity_decision": "confirmed_same_manually",
+        "default_use": "process_as_context",
+        "selected_canonical_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab2411.pdf",
+        "display_name": "Códigos de patologías",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-30T11:33:06-03:00",
+        "analysis_generated_at": "2026-07-30T11:17:47-03:00",
+        "verification_reconciliation": "consistent"
+      },
+      "after": {
+        "family_id": "pdf_family_001",
+        "appearance_ids": [
+          "link_001::resource_002",
+          "link_002::resource_014",
+          "link_006::resource_004",
+          "link_008::resource_005",
+          "link_009::resource_014",
+          "link_011::resource_011",
+          "link_013::resource_008",
+          "link_014::resource_008",
+          "link_015::resource_012",
+          "link_019::resource_008",
+          "link_020::resource_007",
+          "link_021::resource_002",
+          "link_021::resource_011",
+          "link_022::resource_009"
+        ],
+        "identity_decision": "confirmed_same_manually",
+        "default_use": "process_as_context",
+        "selected_canonical_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab2411.pdf",
+        "display_name": "Códigos de patologías",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-31T15:34:44-03:00",
+        "analysis_generated_at": "2026-07-31T14:59:10-03:00",
+        "verification_reconciliation": "pending",
+        "materialization": {
+          "applied_appearance_ids": [
+            "link_001::resource_002",
+            "link_002::resource_014",
+            "link_006::resource_004",
+            "link_008::resource_005",
+            "link_009::resource_014",
+            "link_011::resource_011",
+            "link_013::resource_008",
+            "link_014::resource_008",
+            "link_015::resource_012",
+            "link_019::resource_008",
+            "link_020::resource_007",
+            "link_021::resource_002",
+            "link_021::resource_011",
+            "link_022::resource_009"
+          ],
+          "preserved_individual_exception_ids": [],
+          "reconciled_at": "2026-07-31T15:34:44-03:00"
+        }
+      }
+    },
+    {
+      "event_id": "event_338",
+      "timestamp": "2026-07-31T15:34:45-03:00",
+      "actor": "funcionario",
+      "action": "verify_pdf_family",
+      "target_type": "pdf_family",
+      "target_id": "pdf_family_001",
+      "summary": "Se verificó la familia pdf_family_001: 1 particiones y 10 apariciones no verificadas.",
+      "before": null,
+      "after": {
+        "status": "partial",
+        "verified_at": "2026-07-31T15:34:45-03:00",
+        "all_appearances_same": false,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_001_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_001::resource_002",
+              "link_006::resource_004",
+              "link_008::resource_005",
+              "link_011::resource_011"
+            ],
+            "binary_sha256_values": [
+              "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438"
+            ],
+            "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+            "derived_relations": [
+              {
+                "source_node_id": "link_001",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_001::resource_002"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_006",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_006::resource_004"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_008",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_008::resource_005"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_011",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_011::resource_011"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": [
+          "link_002::resource_014",
+          "link_009::resource_014",
+          "link_013::resource_008",
+          "link_014::resource_008",
+          "link_015::resource_012",
+          "link_019::resource_008",
+          "link_020::resource_007",
+          "link_021::resource_002",
+          "link_021::resource_011",
+          "link_022::resource_009"
+        ]
+      }
+    },
+    {
+      "event_id": "event_339",
+      "timestamp": "2026-07-31T15:40:31-03:00",
+      "actor": "funcionario",
+      "action": "verify_pdf_family",
+      "target_type": "pdf_family",
+      "target_id": "pdf_family_001",
+      "summary": "Se verificó la familia pdf_family_001: 1 particiones y 10 apariciones no verificadas.",
+      "before": null,
+      "after": {
+        "status": "partial",
+        "verified_at": "2026-07-31T15:40:31-03:00",
+        "all_appearances_same": false,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_001_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_001::resource_002",
+              "link_006::resource_004",
+              "link_008::resource_005",
+              "link_011::resource_011"
+            ],
+            "binary_sha256_values": [
+              "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438"
+            ],
+            "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+            "derived_relations": [
+              {
+                "source_node_id": "link_001",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_001::resource_002"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_006",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_006::resource_004"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_008",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_008::resource_005"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_011",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_011::resource_011"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": [
+          "link_002::resource_014",
+          "link_009::resource_014",
+          "link_013::resource_008",
+          "link_014::resource_008",
+          "link_015::resource_012",
+          "link_019::resource_008",
+          "link_020::resource_007",
+          "link_021::resource_002",
+          "link_021::resource_011",
+          "link_022::resource_009"
+        ]
+      }
+    },
+    {
+      "event_id": "event_340",
+      "timestamp": "2026-07-31T15:41:11-03:00",
+      "actor": "funcionario",
+      "action": "verify_pdf_family",
+      "target_type": "pdf_family",
+      "target_id": "pdf_family_001",
+      "summary": "Se verificó la familia pdf_family_001: 1 particiones y 10 apariciones no verificadas.",
+      "before": null,
+      "after": {
+        "status": "partial",
+        "verified_at": "2026-07-31T15:41:11-03:00",
+        "all_appearances_same": false,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_001_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_001::resource_002",
+              "link_006::resource_004",
+              "link_008::resource_005",
+              "link_011::resource_011"
+            ],
+            "binary_sha256_values": [
+              "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438"
+            ],
+            "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+            "derived_relations": [
+              {
+                "source_node_id": "link_001",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_001::resource_002"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_006",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_006::resource_004"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_008",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_008::resource_005"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_011",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_011::resource_011"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": [
+          "link_002::resource_014",
+          "link_009::resource_014",
+          "link_013::resource_008",
+          "link_014::resource_008",
+          "link_015::resource_012",
+          "link_019::resource_008",
+          "link_020::resource_007",
+          "link_021::resource_002",
+          "link_021::resource_011",
+          "link_022::resource_009"
+        ]
+      }
+    },
+    {
+      "event_id": "event_341",
+      "timestamp": "2026-07-31T15:41:34-03:00",
+      "actor": "funcionario",
+      "action": "verify_pdf_family",
+      "target_type": "pdf_family",
+      "target_id": "pdf_family_002",
+      "summary": "Se verificó la familia pdf_family_002: 0 particiones y 5 apariciones no verificadas.",
+      "before": null,
+      "after": {
+        "status": "partial",
+        "verified_at": "2026-07-31T15:41:34-03:00",
+        "all_appearances_same": false,
+        "partitions": [],
+        "unverified_appearance_ids": [
+          "link_002::resource_003",
+          "link_009::resource_002",
+          "link_019::resource_007",
+          "link_022::resource_002",
+          "link_022::resource_008"
+        ]
+      }
+    },
+    {
+      "event_id": "event_342",
+      "timestamp": "2026-07-31T15:59:09-03:00",
+      "actor": "funcionario",
+      "action": "resolve_resource_identity",
+      "target_type": "resource_appearance",
+      "target_id": "link_021::resource_003",
+      "summary": "Se resolvió identidad: assign_existing.",
+      "before": null,
+      "after": {
+        "appearance_id": "link_021::resource_003",
+        "resource_type": "pdf",
+        "action": "assign_existing",
+        "target_family_id": "pdf_family_011",
+        "assignment_mode": "candidate_verify",
+        "new_family_name": null,
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-31T15:59:09-03:00"
+      }
+    },
+    {
+      "event_id": "event_343",
+      "timestamp": "2026-07-31T16:00:22-03:00",
+      "actor": "funcionario",
+      "action": "resolve_resource_identity",
+      "target_type": "resource_appearance",
+      "target_id": "link_021::resource_003",
+      "summary": "Se resolvió identidad: assign_existing.",
+      "before": {
+        "appearance_id": "link_021::resource_003",
+        "resource_type": "pdf",
+        "action": "assign_existing",
+        "target_family_id": "pdf_family_011",
+        "assignment_mode": "candidate_verify",
+        "new_family_name": null,
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-31T15:59:09-03:00"
+      },
+      "after": {
+        "appearance_id": "link_021::resource_003",
+        "resource_type": "pdf",
+        "action": "assign_existing",
+        "target_family_id": "pdf_family_011",
+        "assignment_mode": "candidate_verify",
+        "new_family_name": null,
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-31T16:00:22-03:00"
+      }
+    },
+    {
+      "event_id": "event_344",
+      "timestamp": "2026-07-31T16:05:54-03:00",
+      "actor": "funcionario",
+      "action": "resolve_resource_identity",
+      "target_type": "resource_appearance",
+      "target_id": "link_001::resource_002",
+      "summary": "Se resolvió identidad: assign_existing.",
+      "before": null,
+      "after": {
+        "appearance_id": "link_001::resource_002",
+        "resource_type": "pdf",
+        "action": "assign_existing",
+        "target_family_id": "pdf_family_001",
+        "assignment_mode": "candidate_verify",
+        "new_family_name": null,
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-31T16:05:54-03:00"
+      }
+    },
+    {
+      "event_id": "event_345",
+      "timestamp": "2026-07-31T16:06:35-03:00",
+      "actor": "funcionario",
+      "action": "resolve_resource_identity",
+      "target_type": "resource_appearance",
+      "target_id": "link_001::resource_002",
+      "summary": "Se resolvió identidad: assign_existing.",
+      "before": {
+        "appearance_id": "link_001::resource_002",
+        "resource_type": "pdf",
+        "action": "assign_existing",
+        "target_family_id": "pdf_family_001",
+        "assignment_mode": "candidate_verify",
+        "new_family_name": null,
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-31T16:05:54-03:00"
+      },
+      "after": {
+        "appearance_id": "link_001::resource_002",
+        "resource_type": "pdf",
+        "action": "assign_existing",
+        "target_family_id": "pdf_family_001",
+        "assignment_mode": "candidate_verify",
+        "new_family_name": null,
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-31T16:06:35-03:00"
+      }
+    },
+    {
+      "event_id": "event_346",
+      "timestamp": "2026-07-31T16:07:34-03:00",
+      "actor": "funcionario",
+      "action": "resolve_resource_identity",
+      "target_type": "resource_appearance",
+      "target_id": "link_001::resource_002",
+      "summary": "Se resolvió identidad: assign_existing.",
+      "before": {
+        "appearance_id": "link_001::resource_002",
+        "resource_type": "pdf",
+        "action": "assign_existing",
+        "target_family_id": "pdf_family_001",
+        "assignment_mode": "candidate_verify",
+        "new_family_name": null,
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-31T16:06:35-03:00"
+      },
+      "after": {
+        "appearance_id": "link_001::resource_002",
+        "resource_type": "pdf",
+        "action": "assign_existing",
+        "target_family_id": "pdf_family_001",
+        "assignment_mode": "candidate_verify",
+        "new_family_name": null,
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-31T16:07:34-03:00"
+      }
+    },
+    {
+      "event_id": "event_347",
+      "timestamp": "2026-07-31T16:08:21-03:00",
+      "actor": "funcionario",
+      "action": "resolve_resource_identity",
+      "target_type": "resource_appearance",
+      "target_id": "link_021::resource_003",
+      "summary": "Se resolvió identidad: assign_existing.",
+      "before": {
+        "appearance_id": "link_021::resource_003",
+        "resource_type": "pdf",
+        "action": "assign_existing",
+        "target_family_id": "pdf_family_011",
+        "assignment_mode": "candidate_verify",
+        "new_family_name": null,
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-31T16:00:22-03:00"
+      },
+      "after": {
+        "appearance_id": "link_021::resource_003",
+        "resource_type": "pdf",
+        "action": "assign_existing",
+        "target_family_id": "pdf_family_011",
+        "assignment_mode": "candidate_verify",
+        "new_family_name": null,
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-31T16:08:21-03:00"
+      }
     }
   ]
 }

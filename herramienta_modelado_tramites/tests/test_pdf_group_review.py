@@ -20,10 +20,11 @@ class PdfGroupReviewTests(unittest.TestCase):
         _write_json(
             self.project_dir / "pdf_analysis.json",
             {
+                "project_id": "demo",
                 "generated_at": "2026-07-29T12:00:00-03:00",
                 "appearances": [
-                    {"appearance_id": "node_1::pdf_1", "detected_url": self.url_one},
-                    {"appearance_id": "node_2::pdf_2", "detected_url": self.url_two},
+                    {"appearance_id": "node_1::pdf_1", "source_node_id": "node_1", "resource_id": "pdf_1", "label": "Uno", "detected_url": self.url_one},
+                    {"appearance_id": "node_2::pdf_2", "source_node_id": "node_2", "resource_id": "pdf_2", "label": "Dos", "detected_url": self.url_two},
                 ],
                 "proposed_groups": [
                     {
@@ -125,6 +126,16 @@ class PdfGroupReviewTests(unittest.TestCase):
         self.assertEqual(
             review["family_decisions"][0]["verification_reconciliation"],
             "pending",
+        )
+        resource_review = _read_json(self.project_dir / "resource_review.json")
+        self.assertEqual(len(resource_review["decisions"]), 2)
+        self.assertTrue(
+            all(
+                item["scope"] == "shared"
+                and item["decision_source"] == "pdf_group"
+                and item["canonical_url"] == self.url_one
+                for item in resource_review["decisions"]
+            )
         )
 
     def test_consistent_verification_inherits_family_decision(self):

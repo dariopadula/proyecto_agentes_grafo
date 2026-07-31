@@ -15,9 +15,8 @@ Aplicacion local en desarrollo activo con:
 - analisis deterministico y agrupacion propuesta de PDF.
 - inventario deterministico de enlaces auxiliares no documentales.
 
-El siguiente paso es revisar los 14 recursos internos pendientes y validar una
-excepcion individual sobre una decision heredada. Luego debe evaluarse la misma
-materializacion para las decisiones de grupos PDF.
+El siguiente paso es reconfirmar las familias PDF ampliadas, comprobar su
+materialización en los casos individuales y validar una excepción heredada.
 
 El MVP inicial esta definido en:
 
@@ -199,6 +198,10 @@ La verificación está acotada: máximo 20 MB por PDF, 20 segundos de descarga,
 100 páginas y 1.000.000 de caracteres para extracción textual. Superar un
 límite produce `skipped_by_policy`; no invalida la decisión del funcionario.
 
+Las descargas usan encabezados compatibles con navegador porque el sitio
+oficial rechaza clientes automáticos genéricos. Los errores de red se muestran
+con mensajes operativos; el detalle técnico permanece en `pdf_analysis.json`.
+
 Si la verificación completa produce una sola partición consistente, la decisión
 familiar se aplica automáticamente y no exige otro guardado. Varias particiones
 requieren revisión separada. Si se usa `Verificar ahora` antes de confirmar, las
@@ -227,6 +230,19 @@ data/projects/licencia_conducir/resource_review.json
 ```
 
 La app actual guarda en:
+
+Para los PDF, cada caso individual incluye una sección plegable para resolver
+su identidad. Permite buscar una familia existente, crear una nueva, mantener
+el recurso separado o excluirlo. La incorporación puede hacerse como candidata
+con verificación o como equivalencia confirmada directamente.
+
+Estas decisiones se guardan en
+`data/projects/licencia_conducir/resource_identity_review.json` y se reaplican
+cuando se regenera `pdf_analysis.json`.
+
+Al guardar una resolución de identidad, la pantalla conserva sus filtros y
+posición, reabre el bloque correspondiente y muestra si la pertenencia quedó
+pendiente de verificación o confirmada directamente.
 
 - `data/projects/licencia_conducir/human_review.json`
 - `data/projects/licencia_conducir/change_log.json`
@@ -280,6 +296,22 @@ Esta salida todavia es preliminar. Sirve para revisar que recursos auxiliares ap
 python app.py analyze-pdfs --project-id licencia_conducir
 ```
 
+Desde 2026-07-31 este comando toma todos los PDF incluidos en
+`node_resources.json`, aunque no tengan decisión individual. Las decisiones
+confirmadas de familia o partición se materializan en `resource_review.json` y
+el alcance se deriva de los nodos que apuntan al recurso canónico. Si cambia la
+composición de una familia ya decidida, la interfaz exige reconfirmarla.
+
+Antes de ejecutar los análisis, las reglas de exclusión se configuran en:
+
+```text
+http://127.0.0.1:8000/projects/licencia_conducir/resource-rules
+```
+
+La pantalla permite activar, desactivar y agregar patrones por URL o texto. Para
+aplicarlos todavía se deben volver a ejecutar `discover-resources`,
+`analyze-pdfs` y `analyze-auxiliary-links`.
+
 Genera `data/projects/licencia_conducir/pdf_analysis.json` con las apariciones y
 familias iniciales construidas por el nombre normalizado obtenido de la URL. No
 descarga los PDF en esta etapa.
@@ -331,3 +363,8 @@ explícita y no se sobrescribe al actualizar el grupo.
 
 La pantalla `resources` permite filtrar recursos pendientes, decisiones
 heredadas de grupos y decisiones individuales.
+
+Los filtros se conservan al guardar una decisión y también quedan reflejados en
+la URL. La pantalla restaura la búsqueda, el tipo, el estado, útiles/descartados
+y la posición vertical aproximada. Los nodos sin recursos coincidentes se
+ocultan completamente.

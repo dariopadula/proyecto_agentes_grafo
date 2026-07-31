@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1",
+  "project_id": "licencia_conducir",
+  "updated_at": "2026-07-31T16:08:21-03:00",
+  "decisions": [
+    {
+      "appearance_id": "link_021::resource_003",
+      "resource_type": "pdf",
+      "action": "assign_existing",
+      "target_family_id": "pdf_family_011",
+      "assignment_mode": "candidate_verify",
+      "new_family_name": null,
+      "notes": "",
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-07-31T16:08:21-03:00"
+    },
+    {
+      "appearance_id": "link_001::resource_002",
+      "resource_type": "pdf",
+      "action": "assign_existing",
+      "target_family_id": "pdf_family_001",
+      "assignment_mode": "candidate_verify",
+      "new_family_name": null,
+      "notes": "",
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-07-31T16:07:34-03:00"
+    }
+  ]
+}

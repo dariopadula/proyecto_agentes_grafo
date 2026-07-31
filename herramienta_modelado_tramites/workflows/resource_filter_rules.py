@@ -76,6 +76,46 @@ def apply_resource_filter_rules(
     return kept_resources, discarded_resources
 
 
+def save_resource_filter_configuration(
+    project_id: str,
+    enabled_rule_ids: list[str],
+    match_type: str,
+    pattern: str,
+    reason: str,
+) -> dict[str, Any]:
+    """Actualiza reglas del proyecto antes de regenerar agrupamientos."""
+    if match_type and match_type not in {"url_contains", "text_contains"}:
+        raise ValueError("Tipo de coincidencia inválido")
+    payload = load_or_create_resource_filter_rules(project_id)
+    enabled = set(enabled_rule_ids)
+    for rule in payload.get("rules", []):
+        rule["enabled"] = rule.get("rule_id") in enabled
+
+    clean_pattern = pattern.strip()
+    if clean_pattern:
+        next_number = max(
+            [
+                int(str(rule.get("rule_id", "rule_000")).rsplit("_", 1)[-1])
+                for rule in payload.get("rules", [])
+                if str(rule.get("rule_id", "")).rsplit("_", 1)[-1].isdigit()
+            ],
+            default=0,
+        ) + 1
+        payload.setdefault("rules", []).append(
+            {
+                "rule_id": f"rule_{next_number:03d}",
+                "match_type": match_type or "url_contains",
+                "pattern": clean_pattern,
+                "action": "discard",
+                "reason": reason.strip() or "Exclusión definida para el proyecto.",
+                "enabled": True,
+            }
+        )
+    payload["updated_at"] = now_iso()
+    save_json(payload, PROJECTS_DIR / project_id / "resource_filter_rules.json")
+    return payload
+
+
 def _matching_rule(
     resource: dict[str, Any],
     rules: list[dict[str, Any]],

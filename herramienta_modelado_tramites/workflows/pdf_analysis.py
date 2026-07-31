@@ -16,18 +16,17 @@ from core.json_store import load_json
 from core.json_store import save_json
 from core.pdf_analyzer import analyze_pdf_content
 from core.time_utils import now_iso
+from workflows.resource_identity_review import apply_pdf_membership_decisions
 
-
-ANALYZABLE_PDF_USES = {
-    "process_as_context",
-    "show_as_link",
-}
 
 DOWNLOAD_HEADERS = {
     "User-Agent": (
-        "herramienta-modelado-tramites/0.1 "
-        "(POC de revision asistida)"
-    )
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/138.0 Safari/537.36"
+    ),
+    "Accept": "application/pdf,application/octet-stream;q=0.9,*/*;q=0.8",
+    "Accept-Language": "es-UY,es;q=0.9,en;q=0.7",
 }
 
 
@@ -52,16 +51,18 @@ def analyze_project_pdfs(
     change_log = load_json(change_log_path)
     timestamp = now_iso()
 
-    pages_by_link = {
-        page.get("link_id"): page
-        for page in node_resources.get("pages", [])
-    }
-    candidates = _pdf_candidates(resource_review, pages_by_link)
+    candidates = _pdf_candidates(node_resources, resource_review)
     appearances = [
         _candidate_appearance(candidate)
         for candidate in candidates
     ]
-    proposed_groups = _build_pdf_families(appearances)
+    existing_analysis = (
+        load_json(pdf_analysis_path)
+        if pdf_analysis_path.exists()
+        else {"proposed_groups": []}
+    )
+    proposed_groups = _build_pdf_families(appearances, existing_analysis)
+    identity_review_path = project_dir / "resource_identity_review.json"
 
     payload = {
         "schema_version": "0.1",
@@ -76,13 +77,22 @@ def analyze_project_pdfs(
         "analysis_policy": {
             "semantic_interpretation": False,
             "llm_usage": False,
-            "selected_uses": sorted(ANALYZABLE_PDF_USES),
+            "candidate_source": "all_included_pdf_resources",
             "verification_mode": "on_demand_by_family",
         },
         "summary": _analysis_summary(appearances, proposed_groups),
         "appearances": appearances,
         "proposed_groups": proposed_groups,
     }
+    if identity_review_path.exists():
+        payload = apply_pdf_membership_decisions(
+            payload,
+            load_json(identity_review_path),
+        )
+        payload["summary"] = _analysis_summary(
+            payload.get("appearances", []),
+            payload.get("proposed_groups", []),
+        )
     save_json(payload, pdf_analysis_path)
 
     change_log["events"].append(
@@ -284,30 +294,41 @@ def _reconcile_manual_family_decision(
 
 
 def _pdf_candidates(
+    node_resources: dict[str, Any],
     resource_review: dict[str, Any],
-    pages_by_link: dict[str, dict[str, Any]],
 ) -> list[dict[str, Any]]:
+    """Incluye todos los PDF no excluidos, aunque sigan sin revisión individual."""
+    decisions = {
+        (
+            item.get("source_link_id"),
+            item.get("resource_id"),
+        ): item
+        for item in resource_review.get("decisions", [])
+    }
     candidates = []
-    for decision in resource_review.get("decisions", []):
-        if decision.get("resource_type") != "pdf":
-            continue
-        if decision.get("use") not in ANALYZABLE_PDF_USES:
-            continue
-
-        source_link_id = decision.get("source_link_id")
-        page = pages_by_link.get(source_link_id, {})
-        candidates.append(
-            {
-                "appearance_id": decision.get("decision_id"),
-                "source_node_id": source_link_id,
-                "source_node_title": page.get("title", ""),
-                "resource_id": decision.get("resource_id"),
-                "label": decision.get("title", ""),
-                "detected_url": decision.get("url", ""),
-                "existing_use": decision.get("use"),
-                "existing_scope": decision.get("scope"),
-            }
-        )
+    for page in node_resources.get("pages", []):
+        source_link_id = page.get("link_id")
+        for resource in page.get("resources", []):
+            if resource.get("resource_type") != "pdf":
+                continue
+            decision = decisions.get(
+                (source_link_id, resource.get("resource_id")),
+                {},
+            )
+            candidates.append(
+                {
+                    "appearance_id": (
+                        f"{source_link_id}::{resource.get('resource_id')}"
+                    ),
+                    "source_node_id": source_link_id,
+                    "source_node_title": page.get("title", ""),
+                    "resource_id": resource.get("resource_id"),
+                    "label": resource.get("title", ""),
+                    "detected_url": resource.get("url", ""),
+                    "existing_use": decision.get("use"),
+                    "existing_scope": decision.get("scope"),
+                }
+            )
 
     return sorted(
         candidates,
@@ -409,10 +430,15 @@ def _empty_analysis(status: str) -> dict[str, Any]:
 
 
 def _download_pdf(url: str) -> bytes:
+    parsed = urlparse(url)
+    headers = {
+        **DOWNLOAD_HEADERS,
+        "Referer": f"{parsed.scheme}://{parsed.netloc}/",
+    }
     response = requests.get(
         url,
         timeout=(5, PDF_DOWNLOAD_TIMEOUT_SECONDS),
-        headers=DOWNLOAD_HEADERS,
+        headers=headers,
         stream=True,
     )
     response.raise_for_status()
@@ -447,6 +473,7 @@ def _take_local_file(
 
 def _build_pdf_families(
     appearances: list[dict[str, Any]],
+    existing_analysis: dict[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
     name_buckets: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for item in appearances:
@@ -460,9 +487,44 @@ def _build_pdf_families(
             continue
         groups.append(_family_payload(items, value))
 
-    for index, group in enumerate(groups, start=1):
-        group["group_id"] = f"pdf_family_{index:03d}"
+    existing_ids = {
+        group.get("evidence", {}).get("value"): group.get("group_id")
+        for group in (existing_analysis or {}).get("proposed_groups", [])
+        if group.get("group_id")
+    }
+    used_numbers = [
+        int(match.group(1))
+        for group_id in existing_ids.values()
+        if (match := re.fullmatch(r"pdf_family_(\d+)", group_id or ""))
+    ]
+    next_number = max(used_numbers, default=0) + 1
+    for group in groups:
+        canonical_name = group.get("evidence", {}).get("value")
+        group_id = existing_ids.get(canonical_name)
+        if not group_id:
+            group_id = f"pdf_family_{next_number:03d}"
+            next_number += 1
+        group["group_id"] = group_id
+        group["verification"] = _existing_verification(
+            existing_analysis or {},
+            group_id,
+            group.get("appearance_ids", []),
+        ) or group["verification"]
     return groups
+
+
+def _existing_verification(
+    existing_analysis: dict[str, Any],
+    group_id: str,
+    appearance_ids: list[str],
+) -> dict[str, Any] | None:
+    for group in existing_analysis.get("proposed_groups", []):
+        if group.get("group_id") != group_id:
+            continue
+        if set(group.get("appearance_ids", [])) == set(appearance_ids):
+            return group.get("verification")
+        return None
+    return None
 
 
 def _family_payload(

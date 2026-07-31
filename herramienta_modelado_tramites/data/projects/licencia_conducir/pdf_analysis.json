@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1",
-  "generated_at": "2026-07-30T13:05:50-03:00",
+  "generated_at": "2026-07-31T15:41:34-03:00",
   "project_id": "licencia_conducir",
   "resource_type": "pdf",
   "source": {
@@ -11,23 +11,20 @@
   "analysis_policy": {
     "semantic_interpretation": false,
     "llm_usage": false,
-    "selected_uses": [
-      "process_as_context",
-      "show_as_link"
-    ],
+    "candidate_source": "all_included_pdf_resources",
     "verification_mode": "on_demand_by_family"
   },
   "summary": {
-    "appearance_count": 71,
-    "analyzed_count": 55,
-    "error_count": 0,
-    "download_error_count": 0,
+    "appearance_count": 85,
+    "analyzed_count": 4,
+    "error_count": 15,
+    "download_error_count": 15,
     "analysis_error_count": 0,
     "skipped_by_policy_count": 0,
     "not_attempted_count": 0,
-    "proposed_group_count": 13,
-    "verified_family_count": 13,
-    "partition_count": 13
+    "proposed_group_count": 15,
+    "verified_family_count": 8,
+    "partition_count": 7
   },
   "appearances": [
     {
@@ -68,18 +65,18 @@
       "file_name": "requisitosespecialesmedicoprofesionales_1.pdf",
       "canonical_name": "requisitosespecialesmedicoprofesionales",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "download_error",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 66617,
-        "page_count": 1,
-        "character_count": 1184,
-        "word_count": 160,
-        "binary_sha256": "5f922d803a551e1d040ea31a56164a1a2c748d69c792b96efbadc3fc45d96aac",
-        "normalized_text_sha256": "4f88fe63924087965d11beae75202245a55fa38460637af1c72b507dbcc0d917",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
-        "error": null
+        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_1.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B5AA10>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
       }
     },
     {
@@ -104,6 +101,7 @@
         "binary_sha256": "",
         "normalized_text_sha256": "",
         "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -129,6 +127,7 @@
         "binary_sha256": "",
         "normalized_text_sha256": "",
         "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -144,16 +143,16 @@
       "file_name": "complementoteoricocate2019.pdf",
       "canonical_name": "complementoteoricocate2019",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 139548,
-        "page_count": 2,
-        "character_count": 4012,
-        "word_count": 155,
-        "binary_sha256": "d504654ff1d0e6bdd0a8d00edc669820ab5d6d1f473b197295e9cb67931fb688",
-        "normalized_text_sha256": "ff6af1f29f59ad1711fa5cd7354f53d212753de45bfbe652dce987bfd23728c7",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -170,16 +169,16 @@
       "file_name": "planilladeclasespracticas_4.pdf",
       "canonical_name": "planilladeclasespracticas",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 54429,
-        "page_count": 1,
-        "character_count": 1007,
-        "word_count": 167,
-        "binary_sha256": "bdf800e17ba11abfca680fe02077a35cd24ebbd800c72ab80367a4c9ddec664d",
-        "normalized_text_sha256": "7e64603b677640cd6fdfb3b96103a977097e79acceebace5366e6c8b71d926bf",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -196,18 +195,18 @@
       "file_name": "codigosdepatologiasab24_5.pdf",
       "canonical_name": "codigosdepatologiasab24",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "download_error",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 38133,
-        "page_count": 2,
-        "character_count": 1714,
-        "word_count": 304,
-        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
-        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
-        "error": null
+        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_5.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B5A320>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
       }
     },
     {
@@ -232,6 +231,7 @@
         "binary_sha256": "",
         "normalized_text_sha256": "",
         "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -247,16 +247,16 @@
       "file_name": "formulariobeneficiootrosprogramas11_1.pdf",
       "canonical_name": "formulariobeneficiootrosprogramas11",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 137600,
-        "page_count": 3,
-        "character_count": 3313,
-        "word_count": 490,
-        "binary_sha256": "d12713a5bfaa69c733d0e584164fafc63c4f209aedf73839537699fa6aad493b",
-        "normalized_text_sha256": "5762f83b80d83132153fcade7cbb974197172305cccab5b3128d857153ceb582",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -283,6 +283,7 @@
         "binary_sha256": "",
         "normalized_text_sha256": "",
         "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -308,6 +309,7 @@
         "binary_sha256": "",
         "normalized_text_sha256": "",
         "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -359,6 +361,7 @@
         "binary_sha256": "",
         "normalized_text_sha256": "",
         "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -374,16 +377,16 @@
       "file_name": "2025_Instituciones_médicas_habilitadas.pdf",
       "canonical_name": "2025_instituciones_m_dicas_habilitadas",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 189623,
-        "page_count": 2,
-        "character_count": 1862,
-        "word_count": 311,
-        "binary_sha256": "4952de9de72f51af53c0842e80d0d1970fa4e8bd31efa556a7da403a2f1e426c",
-        "normalized_text_sha256": "de1603c2c32396a16e6eafc76b9b247e1a3e735d6d187a9ee8afd72dc6662bf7",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -410,6 +413,7 @@
         "binary_sha256": "",
         "normalized_text_sha256": "",
         "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -461,6 +465,7 @@
         "binary_sha256": "",
         "normalized_text_sha256": "",
         "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -476,18 +481,18 @@
       "file_name": "requisitosespecialesmedicoprofesionales_0.pdf",
       "canonical_name": "requisitosespecialesmedicoprofesionales",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "download_error",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 66617,
-        "page_count": 1,
-        "character_count": 1184,
-        "word_count": 160,
-        "binary_sha256": "5f922d803a551e1d040ea31a56164a1a2c748d69c792b96efbadc3fc45d96aac",
-        "normalized_text_sha256": "4f88fe63924087965d11beae75202245a55fa38460637af1c72b507dbcc0d917",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
-        "error": null
+        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_0.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B5A320>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
       }
     },
     {
@@ -512,6 +517,7 @@
         "binary_sha256": "",
         "normalized_text_sha256": "",
         "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -537,6 +543,7 @@
         "binary_sha256": "",
         "normalized_text_sha256": "",
         "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -552,16 +559,16 @@
       "file_name": "complementoteoricocate2019_0.pdf",
       "canonical_name": "complementoteoricocate2019",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 139548,
-        "page_count": 2,
-        "character_count": 4012,
-        "word_count": 155,
-        "binary_sha256": "d504654ff1d0e6bdd0a8d00edc669820ab5d6d1f473b197295e9cb67931fb688",
-        "normalized_text_sha256": "ff6af1f29f59ad1711fa5cd7354f53d212753de45bfbe652dce987bfd23728c7",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -588,6 +595,7 @@
         "binary_sha256": "",
         "normalized_text_sha256": "",
         "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -603,18 +611,18 @@
       "file_name": "codigosdepatologiasab24_12.pdf",
       "canonical_name": "codigosdepatologiasab24",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "download_error",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 38133,
-        "page_count": 2,
-        "character_count": 1714,
-        "word_count": 304,
-        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
-        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
-        "error": null
+        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_12.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C87BB7C0>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
       }
     },
     {
@@ -629,16 +637,16 @@
       "file_name": "2025_Instituciones_médicas_habilitadas.pdf",
       "canonical_name": "2025_instituciones_m_dicas_habilitadas",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 189623,
-        "page_count": 2,
-        "character_count": 1862,
-        "word_count": 311,
-        "binary_sha256": "4952de9de72f51af53c0842e80d0d1970fa4e8bd31efa556a7da403a2f1e426c",
-        "normalized_text_sha256": "de1603c2c32396a16e6eafc76b9b247e1a3e735d6d187a9ee8afd72dc6662bf7",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -655,16 +663,16 @@
       "file_name": "2025_Academias_de_conducir_habilitadas-2_0.pdf",
       "canonical_name": "2025_academias_de_conducir_habilitadas_2",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 144086,
-        "page_count": 4,
-        "character_count": 4391,
-        "word_count": 560,
-        "binary_sha256": "22dce05d1a872c0c7d23c725212d5856f075e4d5bd86f18d71115ad46128737d",
-        "normalized_text_sha256": "fac0977f071a9a4ba0287acefa94fb37eaf2319b7da49a7248f28df3c083eb10",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -681,17 +689,17 @@
       "file_name": "manualautosymotos_0.pdf",
       "canonical_name": "manualautosymotos",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 3994413,
-        "page_count": 128,
-        "character_count": 111960,
-        "word_count": 18217,
-        "binary_sha256": "a0cf13c0f0b56f6408b0ceccb2636fe101c12414af30cd63eef63cd885245304",
-        "normalized_text_sha256": "8d8ac3213aee4ab53a8eb7cdeb46d79ecfa7ba697103f4c924920cb27df0ebfe",
-        "encrypted": false,
-        "text_extraction_truncated": true,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -707,17 +715,17 @@
       "file_name": "manualautosymotos_0.pdf",
       "canonical_name": "manualautosymotos",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 3994413,
-        "page_count": 128,
-        "character_count": 111960,
-        "word_count": 18217,
-        "binary_sha256": "a0cf13c0f0b56f6408b0ceccb2636fe101c12414af30cd63eef63cd885245304",
-        "normalized_text_sha256": "8d8ac3213aee4ab53a8eb7cdeb46d79ecfa7ba697103f4c924920cb27df0ebfe",
-        "encrypted": false,
-        "text_extraction_truncated": true,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -733,16 +741,17 @@
       "file_name": "formularioaspirante.pdf",
       "canonical_name": "formularioaspirante",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 330773,
-        "page_count": 2,
+        "size_bytes": null,
+        "page_count": null,
         "character_count": 0,
         "word_count": 0,
-        "binary_sha256": "347de44e74f0dbc5da5250766d4d0f4ab05de329537ffd1e04fb8e52cd4482c4",
+        "binary_sha256": "",
         "normalized_text_sha256": "",
-        "encrypted": false,
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -758,16 +767,16 @@
       "file_name": "planilladeclasespracticas_1.pdf",
       "canonical_name": "planilladeclasespracticas",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 54429,
-        "page_count": 1,
-        "character_count": 1007,
-        "word_count": 167,
-        "binary_sha256": "bdf800e17ba11abfca680fe02077a35cd24ebbd800c72ab80367a4c9ddec664d",
-        "normalized_text_sha256": "7e64603b677640cd6fdfb3b96103a977097e79acceebace5366e6c8b71d926bf",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -810,16 +819,17 @@
       "file_name": "2026_Instituciones_médicas_habilitadas-1_0.pdf",
       "canonical_name": "2026_instituciones_m_dicas_habilitadas_1",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 189918,
-        "page_count": 1,
-        "character_count": 1760,
-        "word_count": 296,
-        "binary_sha256": "55a02161592275b6af447ada21c8f0ff6ad7d796564a89b85019bc1e4d3e2860",
-        "normalized_text_sha256": "d061d2e50efa0c2eb10412b850356c7981d49d1cd4528ec8b06134003a871485",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -835,16 +845,16 @@
       "file_name": "2025_Instituciones_médicas_habilitadas.pdf",
       "canonical_name": "2025_instituciones_m_dicas_habilitadas",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 189623,
-        "page_count": 2,
-        "character_count": 1862,
-        "word_count": 311,
-        "binary_sha256": "4952de9de72f51af53c0842e80d0d1970fa4e8bd31efa556a7da403a2f1e426c",
-        "normalized_text_sha256": "de1603c2c32396a16e6eafc76b9b247e1a3e735d6d187a9ee8afd72dc6662bf7",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -861,16 +871,16 @@
       "file_name": "2025_Academias_de_conducir_habilitadas-2_5.pdf",
       "canonical_name": "2025_academias_de_conducir_habilitadas_2",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 144086,
-        "page_count": 4,
-        "character_count": 4391,
-        "word_count": 560,
-        "binary_sha256": "22dce05d1a872c0c7d23c725212d5856f075e4d5bd86f18d71115ad46128737d",
-        "normalized_text_sha256": "fac0977f071a9a4ba0287acefa94fb37eaf2319b7da49a7248f28df3c083eb10",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -897,6 +907,7 @@
         "binary_sha256": "",
         "normalized_text_sha256": "",
         "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -912,16 +923,17 @@
       "file_name": "2026_Instituciones_médicas_habilitadas-1_3.pdf",
       "canonical_name": "2026_instituciones_m_dicas_habilitadas_1",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 189918,
-        "page_count": 1,
-        "character_count": 1760,
-        "word_count": 296,
-        "binary_sha256": "55a02161592275b6af447ada21c8f0ff6ad7d796564a89b85019bc1e4d3e2860",
-        "normalized_text_sha256": "d061d2e50efa0c2eb10412b850356c7981d49d1cd4528ec8b06134003a871485",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -937,16 +949,16 @@
       "file_name": "2025_Instituciones_médicas_habilitadas.pdf",
       "canonical_name": "2025_instituciones_m_dicas_habilitadas",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 189623,
-        "page_count": 2,
-        "character_count": 1862,
-        "word_count": 311,
-        "binary_sha256": "4952de9de72f51af53c0842e80d0d1970fa4e8bd31efa556a7da403a2f1e426c",
-        "normalized_text_sha256": "de1603c2c32396a16e6eafc76b9b247e1a3e735d6d187a9ee8afd72dc6662bf7",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -963,16 +975,16 @@
       "file_name": "2025_Academias_de_conducir_habilitadas-2_1.pdf",
       "canonical_name": "2025_academias_de_conducir_habilitadas_2",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 144086,
-        "page_count": 4,
-        "character_count": 4391,
-        "word_count": 560,
-        "binary_sha256": "22dce05d1a872c0c7d23c725212d5856f075e4d5bd86f18d71115ad46128737d",
-        "normalized_text_sha256": "fac0977f071a9a4ba0287acefa94fb37eaf2319b7da49a7248f28df3c083eb10",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -999,6 +1011,7 @@
         "binary_sha256": "",
         "normalized_text_sha256": "",
         "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1014,17 +1027,17 @@
       "file_name": "manualautosymotos.pdf",
       "canonical_name": "manualautosymotos",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 3994413,
-        "page_count": 128,
-        "character_count": 111960,
-        "word_count": 18217,
-        "binary_sha256": "a0cf13c0f0b56f6408b0ceccb2636fe101c12414af30cd63eef63cd885245304",
-        "normalized_text_sha256": "8d8ac3213aee4ab53a8eb7cdeb46d79ecfa7ba697103f4c924920cb27df0ebfe",
-        "encrypted": false,
-        "text_extraction_truncated": true,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1040,18 +1053,18 @@
       "file_name": "codigosdepatologiasab24_1.pdf",
       "canonical_name": "codigosdepatologiasab24",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "download_error",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 38133,
-        "page_count": 2,
-        "character_count": 1714,
-        "word_count": 304,
-        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
-        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
-        "error": null
+        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_1.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B59840>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
       }
     },
     {
@@ -1066,17 +1079,17 @@
       "file_name": "manualautosymotos.pdf",
       "canonical_name": "manualautosymotos",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 3994413,
-        "page_count": 128,
-        "character_count": 111960,
-        "word_count": 18217,
-        "binary_sha256": "a0cf13c0f0b56f6408b0ceccb2636fe101c12414af30cd63eef63cd885245304",
-        "normalized_text_sha256": "8d8ac3213aee4ab53a8eb7cdeb46d79ecfa7ba697103f4c924920cb27df0ebfe",
-        "encrypted": false,
-        "text_extraction_truncated": true,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1092,16 +1105,43 @@
       "file_name": "formularioaspirante_1.pdf",
       "canonical_name": "formularioaspirante",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 330773,
-        "page_count": 2,
+        "size_bytes": null,
+        "page_count": null,
         "character_count": 0,
         "word_count": 0,
-        "binary_sha256": "347de44e74f0dbc5da5250766d4d0f4ab05de329537ffd1e04fb8e52cd4482c4",
+        "binary_sha256": "",
         "normalized_text_sha256": "",
-        "encrypted": false,
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_013::resource_011",
+      "source_node_id": "link_013",
+      "source_node_title": "Licencia de conducir para categoría G1 y G2 hasta 79 años inclusive",
+      "resource_id": "resource_011",
+      "label": "Autorización del menor para G1",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/cartadeautorizaciondemenorg1edit.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "cartadeautorizaciondemenorg1edit.pdf",
+      "canonical_name": "cartadeautorizaciondemenorg1edit",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1127,6 +1167,7 @@
         "binary_sha256": "",
         "normalized_text_sha256": "",
         "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1142,16 +1183,17 @@
       "file_name": "2026_Instituciones_médicas_habilitadas-1_1.pdf",
       "canonical_name": "2026_instituciones_m_dicas_habilitadas_1",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 189918,
-        "page_count": 1,
-        "character_count": 1760,
-        "word_count": 296,
-        "binary_sha256": "55a02161592275b6af447ada21c8f0ff6ad7d796564a89b85019bc1e4d3e2860",
-        "normalized_text_sha256": "d061d2e50efa0c2eb10412b850356c7981d49d1cd4528ec8b06134003a871485",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1167,16 +1209,17 @@
       "file_name": "requisitosespecialesmedicoamateur_1.pdf",
       "canonical_name": "requisitosespecialesmedicoamateur",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 79708,
-        "page_count": 1,
-        "character_count": 1353,
-        "word_count": 184,
-        "binary_sha256": "c9ccdd8d4309cab8a34aa39a75a45700115068df135519bed10e82a4c5f47e7c",
-        "normalized_text_sha256": "3a4f10f716c27aeee38907535039d1bebbb45921f5e1694c444d4fe10b0a5617",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1192,17 +1235,17 @@
       "file_name": "manualautosymotos_0.pdf",
       "canonical_name": "manualautosymotos",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 3994413,
-        "page_count": 128,
-        "character_count": 111960,
-        "word_count": 18217,
-        "binary_sha256": "a0cf13c0f0b56f6408b0ceccb2636fe101c12414af30cd63eef63cd885245304",
-        "normalized_text_sha256": "8d8ac3213aee4ab53a8eb7cdeb46d79ecfa7ba697103f4c924920cb27df0ebfe",
-        "encrypted": false,
-        "text_extraction_truncated": true,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1218,16 +1261,43 @@
       "file_name": "formularioaspirante_0.pdf",
       "canonical_name": "formularioaspirante",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 330773,
-        "page_count": 2,
+        "size_bytes": null,
+        "page_count": null,
         "character_count": 0,
         "word_count": 0,
-        "binary_sha256": "347de44e74f0dbc5da5250766d4d0f4ab05de329537ffd1e04fb8e52cd4482c4",
+        "binary_sha256": "",
         "normalized_text_sha256": "",
-        "encrypted": false,
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_014::resource_006",
+      "source_node_id": "link_014",
+      "source_node_title": "Licencia de conducir para personas con discapacidad",
+      "resource_id": "resource_006",
+      "label": "Planilla de clases prácticas",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/planilladeclasespracticas.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "planilladeclasespracticas.pdf",
+      "canonical_name": "planilladeclasespracticas",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1243,16 +1313,17 @@
       "file_name": "requisitosespecialesmedicoamateur.pdf",
       "canonical_name": "requisitosespecialesmedicoamateur",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 79708,
-        "page_count": 1,
-        "character_count": 1353,
-        "word_count": 184,
-        "binary_sha256": "c9ccdd8d4309cab8a34aa39a75a45700115068df135519bed10e82a4c5f47e7c",
-        "normalized_text_sha256": "3a4f10f716c27aeee38907535039d1bebbb45921f5e1694c444d4fe10b0a5617",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1268,18 +1339,18 @@
       "file_name": "codigosdepatologiasab24_0.pdf",
       "canonical_name": "codigosdepatologiasab24",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "download_error",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 38133,
-        "page_count": 2,
-        "character_count": 1714,
-        "word_count": 304,
-        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
-        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
-        "error": null
+        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_0.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B586A0>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
       }
     },
     {
@@ -1294,16 +1365,17 @@
       "file_name": "requisitosespecialesmedicoamateur_1.pdf",
       "canonical_name": "requisitosespecialesmedicoamateur",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 79708,
-        "page_count": 1,
-        "character_count": 1353,
-        "word_count": 184,
-        "binary_sha256": "c9ccdd8d4309cab8a34aa39a75a45700115068df135519bed10e82a4c5f47e7c",
-        "normalized_text_sha256": "3a4f10f716c27aeee38907535039d1bebbb45921f5e1694c444d4fe10b0a5617",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1319,16 +1391,16 @@
       "file_name": "2025_Academias_de_conducir_habilitadas-2_3.pdf",
       "canonical_name": "2025_academias_de_conducir_habilitadas_2",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 144086,
-        "page_count": 4,
-        "character_count": 4391,
-        "word_count": 560,
-        "binary_sha256": "22dce05d1a872c0c7d23c725212d5856f075e4d5bd86f18d71115ad46128737d",
-        "normalized_text_sha256": "fac0977f071a9a4ba0287acefa94fb37eaf2319b7da49a7248f28df3c083eb10",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -1345,17 +1417,17 @@
       "file_name": "manualautosymotos_0.pdf",
       "canonical_name": "manualautosymotos",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 3994413,
-        "page_count": 128,
-        "character_count": 111960,
-        "word_count": 18217,
-        "binary_sha256": "a0cf13c0f0b56f6408b0ceccb2636fe101c12414af30cd63eef63cd885245304",
-        "normalized_text_sha256": "8d8ac3213aee4ab53a8eb7cdeb46d79ecfa7ba697103f4c924920cb27df0ebfe",
-        "encrypted": false,
-        "text_extraction_truncated": true,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1371,17 +1443,17 @@
       "file_name": "manualautosymotos_1.pdf",
       "canonical_name": "manualautosymotos",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 3994413,
-        "page_count": 128,
-        "character_count": 111960,
-        "word_count": 18217,
-        "binary_sha256": "a0cf13c0f0b56f6408b0ceccb2636fe101c12414af30cd63eef63cd885245304",
-        "normalized_text_sha256": "8d8ac3213aee4ab53a8eb7cdeb46d79ecfa7ba697103f4c924920cb27df0ebfe",
-        "encrypted": false,
-        "text_extraction_truncated": true,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1397,16 +1469,17 @@
       "file_name": "formularioaspirante_2.pdf",
       "canonical_name": "formularioaspirante",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 330773,
-        "page_count": 2,
+        "size_bytes": null,
+        "page_count": null,
         "character_count": 0,
         "word_count": 0,
-        "binary_sha256": "347de44e74f0dbc5da5250766d4d0f4ab05de329537ffd1e04fb8e52cd4482c4",
+        "binary_sha256": "",
         "normalized_text_sha256": "",
-        "encrypted": false,
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1422,16 +1495,16 @@
       "file_name": "planilladeclasespracticas_2.pdf",
       "canonical_name": "planilladeclasespracticas",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 54429,
-        "page_count": 1,
-        "character_count": 1007,
-        "word_count": 167,
-        "binary_sha256": "bdf800e17ba11abfca680fe02077a35cd24ebbd800c72ab80367a4c9ddec664d",
-        "normalized_text_sha256": "7e64603b677640cd6fdfb3b96103a977097e79acceebace5366e6c8b71d926bf",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -1448,16 +1521,17 @@
       "file_name": "requisitosespecialesmedicoamateur_2.pdf",
       "canonical_name": "requisitosespecialesmedicoamateur",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 79708,
-        "page_count": 1,
-        "character_count": 1353,
-        "word_count": 184,
-        "binary_sha256": "c9ccdd8d4309cab8a34aa39a75a45700115068df135519bed10e82a4c5f47e7c",
-        "normalized_text_sha256": "3a4f10f716c27aeee38907535039d1bebbb45921f5e1694c444d4fe10b0a5617",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1473,18 +1547,18 @@
       "file_name": "codigosdepatologiasab24_3.pdf",
       "canonical_name": "codigosdepatologiasab24",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "download_error",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 38133,
-        "page_count": 2,
-        "character_count": 1714,
-        "word_count": 304,
-        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
-        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
-        "error": null
+        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_3.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B58040>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
       }
     },
     {
@@ -1499,16 +1573,17 @@
       "file_name": "declaracionjuradaexoneraciontasadeexpedicionpunca.pdf",
       "canonical_name": "declaracionjuradaexoneraciontasadeexpedicionpunca",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 98114,
-        "page_count": 4,
-        "character_count": 4473,
-        "word_count": 675,
-        "binary_sha256": "c726fe5629bcaf11e8cc1c75c77c47d30db8a43ca2452591e201eff45ca7e594",
-        "normalized_text_sha256": "48a97372b85f57eae8e937b2383f0eacf3fc5ee9e4d060802db27e58cb244e67",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1524,16 +1599,16 @@
       "file_name": "formulariobeneficiootrosprogramas11_1.pdf",
       "canonical_name": "formulariobeneficiootrosprogramas11",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 137600,
-        "page_count": 3,
-        "character_count": 3313,
-        "word_count": 490,
-        "binary_sha256": "d12713a5bfaa69c733d0e584164fafc63c4f209aedf73839537699fa6aad493b",
-        "normalized_text_sha256": "5762f83b80d83132153fcade7cbb974197172305cccab5b3128d857153ceb582",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -1550,16 +1625,43 @@
       "file_name": "declaracionjuradaexoneraciontasadeexpedicionpunca.pdf",
       "canonical_name": "declaracionjuradaexoneraciontasadeexpedicionpunca",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 98114,
-        "page_count": 4,
-        "character_count": 4473,
-        "word_count": 675,
-        "binary_sha256": "c726fe5629bcaf11e8cc1c75c77c47d30db8a43ca2452591e201eff45ca7e594",
-        "normalized_text_sha256": "48a97372b85f57eae8e937b2383f0eacf3fc5ee9e4d060802db27e58cb244e67",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_017::resource_009",
+      "source_node_id": "link_017",
+      "source_node_title": "Pago de licencia de conducir amateur categoría A",
+      "resource_id": "resource_009",
+      "label": "Formulario de benecios de otros programas de la IM",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formulariobeneficiootrosprogramas11_0.pdf",
+      "existing_use": "discard",
+      "existing_scope": "node_only",
+      "file_name": "formulariobeneficiootrosprogramas11_0.pdf",
+      "canonical_name": "formulariobeneficiootrosprogramas11",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1585,6 +1687,7 @@
         "binary_sha256": "",
         "normalized_text_sha256": "",
         "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1600,16 +1703,17 @@
       "file_name": "3-formulariodeinscripciondeacademias.pdf",
       "canonical_name": "3_formulariodeinscripciondeacademias",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 105399,
-        "page_count": 5,
-        "character_count": 3595,
-        "word_count": 520,
-        "binary_sha256": "43a8c6f7b58de5d3f59cf4a93ea56952ad4831c2c86b26063b4aeb2e3a6d3173",
-        "normalized_text_sha256": "cd875560441ae5f7b2fc263c3d53baf7d882090b2d1f09ba2517296b0ac509c1",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1625,16 +1729,17 @@
       "file_name": "3-formulariodeinscripciondeacademias.pdf",
       "canonical_name": "3_formulariodeinscripciondeacademias",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 105399,
-        "page_count": 5,
-        "character_count": 3595,
-        "word_count": 520,
-        "binary_sha256": "43a8c6f7b58de5d3f59cf4a93ea56952ad4831c2c86b26063b4aeb2e3a6d3173",
-        "normalized_text_sha256": "cd875560441ae5f7b2fc263c3d53baf7d882090b2d1f09ba2517296b0ac509c1",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1660,6 +1765,7 @@
         "binary_sha256": "",
         "normalized_text_sha256": "",
         "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1675,16 +1781,17 @@
       "file_name": "requisitosespecialesmedicoamateur_1.pdf",
       "canonical_name": "requisitosespecialesmedicoamateur",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 79708,
-        "page_count": 1,
-        "character_count": 1353,
-        "word_count": 184,
-        "binary_sha256": "c9ccdd8d4309cab8a34aa39a75a45700115068df135519bed10e82a4c5f47e7c",
-        "normalized_text_sha256": "3a4f10f716c27aeee38907535039d1bebbb45921f5e1694c444d4fe10b0a5617",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
         "error": null
       }
     },
@@ -1700,16 +1807,16 @@
       "file_name": "2025_Academias_de_conducir_habilitadas-2_2.pdf",
       "canonical_name": "2025_academias_de_conducir_habilitadas_2",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 144086,
-        "page_count": 4,
-        "character_count": 4391,
-        "word_count": 560,
-        "binary_sha256": "22dce05d1a872c0c7d23c725212d5856f075e4d5bd86f18d71115ad46128737d",
-        "normalized_text_sha256": "fac0977f071a9a4ba0287acefa94fb37eaf2319b7da49a7248f28df3c083eb10",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -1726,18 +1833,18 @@
       "file_name": "requisitosespecialesmedicoprofesionales_2.pdf",
       "canonical_name": "requisitosespecialesmedicoprofesionales",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "download_error",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 66617,
-        "page_count": 1,
-        "character_count": 1184,
-        "word_count": 160,
-        "binary_sha256": "5f922d803a551e1d040ea31a56164a1a2c748d69c792b96efbadc3fc45d96aac",
-        "normalized_text_sha256": "4f88fe63924087965d11beae75202245a55fa38460637af1c72b507dbcc0d917",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
-        "error": null
+        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_2.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B59270>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
       }
     },
     {
@@ -1752,18 +1859,18 @@
       "file_name": "codigosdepatologiasab24_6.pdf",
       "canonical_name": "codigosdepatologiasab24",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "download_error",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 38133,
-        "page_count": 2,
-        "character_count": 1714,
-        "word_count": 304,
-        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
-        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
-        "error": null
+        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_6.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8AED7B0>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
       }
     },
     {
@@ -1778,16 +1885,16 @@
       "file_name": "2025_Instituciones_médicas_habilitadas.pdf",
       "canonical_name": "2025_instituciones_m_dicas_habilitadas",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 189623,
-        "page_count": 2,
-        "character_count": 1862,
-        "word_count": 311,
-        "binary_sha256": "4952de9de72f51af53c0842e80d0d1970fa4e8bd31efa556a7da403a2f1e426c",
-        "normalized_text_sha256": "de1603c2c32396a16e6eafc76b9b247e1a3e735d6d187a9ee8afd72dc6662bf7",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -1804,18 +1911,18 @@
       "file_name": "codigosdepatologiasab24_8.pdf",
       "canonical_name": "codigosdepatologiasab24",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "download_error",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 38133,
-        "page_count": 2,
-        "character_count": 1714,
-        "word_count": 304,
-        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
-        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
-        "error": null
+        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_8.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8AEE0B0>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
       }
     },
     {
@@ -1830,18 +1937,304 @@
       "file_name": "2025_Academias_de_conducir_habilitadas-2_6.pdf",
       "canonical_name": "2025_academias_de_conducir_habilitadas_2",
       "analysis": {
-        "status": "analyzed",
-        "source": "download",
+        "status": "not_verified",
+        "source": null,
         "local_file_name": null,
-        "size_bytes": 144086,
-        "page_count": 4,
-        "character_count": 4391,
-        "word_count": 560,
-        "binary_sha256": "22dce05d1a872c0c7d23c725212d5856f075e4d5bd86f18d71115ad46128737d",
-        "normalized_text_sha256": "fac0977f071a9a4ba0287acefa94fb37eaf2319b7da49a7248f28df3c083eb10",
-        "encrypted": false,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
         "text_extraction_truncated": false,
         "error": null
+      }
+    },
+    {
+      "appearance_id": "link_020::resource_009",
+      "source_node_id": "link_020",
+      "source_node_title": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 74 años inclusive",
+      "resource_id": "resource_009",
+      "label": "Instituciones médicas habilitadas - Junio 2026",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1_2.pdf",
+      "existing_use": "show_as_link",
+      "existing_scope": "node_only",
+      "file_name": "2026_Instituciones_médicas_habilitadas-1_2.pdf",
+      "canonical_name": "2026_instituciones_m_dicas_habilitadas_1",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_021::resource_002",
+      "source_node_id": "link_021",
+      "source_node_title": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37.",
+      "resource_id": "resource_002",
+      "label": "patologías médicas",
+      "detected_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/codigosdepatologiasab24_9.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "codigosdepatologiasab24_9.pdf",
+      "canonical_name": "codigosdepatologiasab24",
+      "analysis": {
+        "status": "download_error",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": "ConnectionError: HTTPSConnectionPool(host='montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/default/files/biblioteca/codigosdepatologiasab24_9.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B5A4D0>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+      }
+    },
+    {
+      "appearance_id": "link_021::resource_003",
+      "source_node_id": "link_021",
+      "source_node_title": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37.",
+      "resource_id": "resource_003",
+      "label": "documentación complementaria requerida por patología",
+      "detected_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/requisitosespecialesmedicoamateur_1.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "requisitosespecialesmedicoamateur_1.pdf",
+      "canonical_name": "requisitosespecialesmedicoamateur",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_021::resource_004",
+      "source_node_id": "link_021",
+      "source_node_title": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37.",
+      "resource_id": "resource_004",
+      "label": "academia de conducción,",
+      "detected_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/2024academiasdeconducirhabilitadas_1.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "2024academiasdeconducirhabilitadas_1.pdf",
+      "canonical_name": "2024academiasdeconducirhabilitadas",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_021::resource_010",
+      "source_node_id": "link_021",
+      "source_node_title": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37.",
+      "resource_id": "resource_010",
+      "label": "Certificados médicos complementarios",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoamateur_0.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "requisitosespecialesmedicoamateur_0.pdf",
+      "canonical_name": "requisitosespecialesmedicoamateur",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_021::resource_011",
+      "source_node_id": "link_021",
+      "source_node_title": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37.",
+      "resource_id": "resource_011",
+      "label": "Códigos de patologías",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_9.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "codigosdepatologiasab24_9.pdf",
+      "canonical_name": "codigosdepatologiasab24",
+      "analysis": {
+        "status": "download_error",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_9.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B58FD0>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+      }
+    },
+    {
+      "appearance_id": "link_021::resource_012",
+      "source_node_id": "link_021",
+      "source_node_title": "Renovación de licencia de conducir categorías A, G1 y G2 hasta 79 años inclusive, con códigos 4, 24, 31 y/o 37.",
+      "resource_id": "resource_012",
+      "label": "Academias de conducir habilitadas - Octubre 2025",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_4.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "2025_Academias_de_conducir_habilitadas-2_4.pdf",
+      "canonical_name": "2025_academias_de_conducir_habilitadas_2",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_022::resource_002",
+      "source_node_id": "link_022",
+      "source_node_title": "Renovación de licencia de conducir profesional",
+      "resource_id": "resource_002",
+      "label": "certificados médicos complementarios",
+      "detected_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/requisitosespecialesmedicoprofesionales.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "requisitosespecialesmedicoprofesionales.pdf",
+      "canonical_name": "requisitosespecialesmedicoprofesionales",
+      "analysis": {
+        "status": "download_error",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": "ConnectionError: HTTPSConnectionPool(host='montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/default/files/biblioteca/requisitosespecialesmedicoprofesionales.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8AEE260>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+      }
+    },
+    {
+      "appearance_id": "link_022::resource_004",
+      "source_node_id": "link_022",
+      "source_node_title": "Renovación de licencia de conducir profesional",
+      "resource_id": "resource_004",
+      "label": "academia de conducir habilitada",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2024academiasdeconducirhabilitadas_5.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "2024academiasdeconducirhabilitadas_5.pdf",
+      "canonical_name": "2024academiasdeconducirhabilitadas",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_022::resource_008",
+      "source_node_id": "link_022",
+      "source_node_title": "Renovación de licencia de conducir profesional",
+      "resource_id": "resource_008",
+      "label": "Certificados médicos complementarios",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "requisitosespecialesmedicoprofesionales.pdf",
+      "canonical_name": "requisitosespecialesmedicoprofesionales",
+      "analysis": {
+        "status": "download_error",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8AEFF10>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+      }
+    },
+    {
+      "appearance_id": "link_022::resource_009",
+      "source_node_id": "link_022",
+      "source_node_title": "Renovación de licencia de conducir profesional",
+      "resource_id": "resource_009",
+      "label": "Códigos de patologías",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_10.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "codigosdepatologiasab24_10.pdf",
+      "canonical_name": "codigosdepatologiasab24",
+      "analysis": {
+        "status": "download_error",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_10.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B5B550>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
       }
     }
   ],
@@ -1853,7 +2246,7 @@
       "evidence": {
         "field": "canonical_name_from_url",
         "value": "codigosdepatologiasab24",
-        "appearance_count": 11,
+        "appearance_count": 14,
         "analysis_statuses": [
           "not_verified"
         ]
@@ -1869,7 +2262,10 @@
         "link_014::resource_008",
         "link_015::resource_012",
         "link_019::resource_008",
-        "link_020::resource_007"
+        "link_020::resource_007",
+        "link_021::resource_002",
+        "link_021::resource_011",
+        "link_022::resource_009"
       ],
       "proposed_canonical_resource": {
         "resource_id": "pdf_codigosdepatologiasab24",
@@ -1887,141 +2283,37 @@
           "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_0.pdf",
           "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_3.pdf",
           "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_6.pdf",
-          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_8.pdf"
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_8.pdf",
+          "https://montevideo.gub.uy/sites/default/files/biblioteca/codigosdepatologiasab24_9.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_9.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_10.pdf"
         ],
         "suggested_default_use": "process_as_context",
         "review_status": "pending_human_confirmation"
       },
       "verification": {
-        "status": "complete",
-        "verified_at": "2026-07-30T11:33:09-03:00",
-        "all_appearances_same": true,
-        "partitions": [
-          {
-            "partition_id": "pdf_family_001_part_001",
-            "certainty": "exact_binary_duplicate",
-            "appearance_ids": [
-              "link_001::resource_002",
-              "link_002::resource_014",
-              "link_006::resource_004",
-              "link_008::resource_005",
-              "link_009::resource_014",
-              "link_011::resource_011",
-              "link_013::resource_008",
-              "link_014::resource_008",
-              "link_015::resource_012",
-              "link_019::resource_008",
-              "link_020::resource_007"
-            ],
-            "binary_sha256_values": [
-              "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438"
-            ],
-            "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
-            "derived_relations": [
-              {
-                "source_node_id": "link_001",
-                "target_resource_id": "pdf_family_001_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_001::resource_002"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_002",
-                "target_resource_id": "pdf_family_001_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_002::resource_014"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_006",
-                "target_resource_id": "pdf_family_001_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_006::resource_004"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_008",
-                "target_resource_id": "pdf_family_001_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_008::resource_005"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_009",
-                "target_resource_id": "pdf_family_001_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_009::resource_014"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_011",
-                "target_resource_id": "pdf_family_001_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_011::resource_011"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_013",
-                "target_resource_id": "pdf_family_001_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_013::resource_008"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_014",
-                "target_resource_id": "pdf_family_001_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_014::resource_008"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_015",
-                "target_resource_id": "pdf_family_001_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_015::resource_012"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_019",
-                "target_resource_id": "pdf_family_001_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_019::resource_008"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_020",
-                "target_resource_id": "pdf_family_001_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_020::resource_007"
-                ],
-                "use_override": null
-              }
-            ]
-          }
-        ],
-        "unverified_appearance_ids": []
-      }
+        "status": "not_started",
+        "verified_at": null,
+        "all_appearances_same": null,
+        "partitions": [],
+        "unverified_appearance_ids": [
+          "link_001::resource_002",
+          "link_002::resource_014",
+          "link_006::resource_004",
+          "link_008::resource_005",
+          "link_009::resource_014",
+          "link_011::resource_011",
+          "link_013::resource_008",
+          "link_014::resource_008",
+          "link_015::resource_012",
+          "link_019::resource_008",
+          "link_020::resource_007",
+          "link_021::resource_002",
+          "link_021::resource_011",
+          "link_022::resource_009"
+        ]
+      },
+      "membership_source": "human_overlay"
     },
     {
       "group_id": "pdf_family_002",
@@ -2030,7 +2322,7 @@
       "evidence": {
         "field": "canonical_name_from_url",
         "value": "requisitosespecialesmedicoprofesionales",
-        "appearance_count": 3,
+        "appearance_count": 5,
         "analysis_statuses": [
           "not_verified"
         ]
@@ -2038,7 +2330,9 @@
       "appearance_ids": [
         "link_002::resource_003",
         "link_009::resource_002",
-        "link_019::resource_007"
+        "link_019::resource_007",
+        "link_022::resource_002",
+        "link_022::resource_008"
       ],
       "proposed_canonical_resource": {
         "resource_id": "pdf_requisitosespecialesmedicoprofesionales",
@@ -2048,60 +2342,25 @@
         "selected_canonical_url": null,
         "alternative_urls": [
           "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_0.pdf",
-          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_2.pdf"
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_2.pdf",
+          "https://montevideo.gub.uy/sites/default/files/biblioteca/requisitosespecialesmedicoprofesionales.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales.pdf"
         ],
         "suggested_default_use": "process_as_context",
         "review_status": "pending_human_confirmation"
       },
       "verification": {
-        "status": "complete",
-        "verified_at": "2026-07-30T13:05:50-03:00",
-        "all_appearances_same": true,
-        "partitions": [
-          {
-            "partition_id": "pdf_family_002_part_001",
-            "certainty": "exact_binary_duplicate",
-            "appearance_ids": [
-              "link_002::resource_003",
-              "link_009::resource_002",
-              "link_019::resource_007"
-            ],
-            "binary_sha256_values": [
-              "5f922d803a551e1d040ea31a56164a1a2c748d69c792b96efbadc3fc45d96aac"
-            ],
-            "normalized_text_sha256": "4f88fe63924087965d11beae75202245a55fa38460637af1c72b507dbcc0d917",
-            "derived_relations": [
-              {
-                "source_node_id": "link_002",
-                "target_resource_id": "pdf_family_002_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_002::resource_003"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_009",
-                "target_resource_id": "pdf_family_002_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_009::resource_002"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_019",
-                "target_resource_id": "pdf_family_002_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_019::resource_007"
-                ],
-                "use_override": null
-              }
-            ]
-          }
-        ],
-        "unverified_appearance_ids": []
+        "status": "partial",
+        "verified_at": "2026-07-31T15:41:34-03:00",
+        "all_appearances_same": false,
+        "partitions": [],
+        "unverified_appearance_ids": [
+          "link_002::resource_003",
+          "link_009::resource_002",
+          "link_019::resource_007",
+          "link_022::resource_002",
+          "link_022::resource_008"
+        ]
       }
     },
     {
@@ -2180,7 +2439,7 @@
       "evidence": {
         "field": "canonical_name_from_url",
         "value": "planilladeclasespracticas",
-        "appearance_count": 3,
+        "appearance_count": 4,
         "analysis_statuses": [
           "not_verified"
         ]
@@ -2188,6 +2447,7 @@
       "appearance_ids": [
         "link_002::resource_013",
         "link_011::resource_010",
+        "link_014::resource_006",
         "link_015::resource_010"
       ],
       "proposed_canonical_resource": {
@@ -2198,60 +2458,23 @@
         "selected_canonical_url": null,
         "alternative_urls": [
           "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/planilladeclasespracticas_1.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/planilladeclasespracticas.pdf",
           "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/planilladeclasespracticas_2.pdf"
         ],
         "suggested_default_use": "show_as_link",
         "review_status": "pending_human_confirmation"
       },
       "verification": {
-        "status": "complete",
-        "verified_at": "2026-07-29T15:50:27-03:00",
-        "all_appearances_same": true,
-        "partitions": [
-          {
-            "partition_id": "pdf_family_004_part_001",
-            "certainty": "exact_binary_duplicate",
-            "appearance_ids": [
-              "link_002::resource_013",
-              "link_011::resource_010",
-              "link_015::resource_010"
-            ],
-            "binary_sha256_values": [
-              "bdf800e17ba11abfca680fe02077a35cd24ebbd800c72ab80367a4c9ddec664d"
-            ],
-            "normalized_text_sha256": "7e64603b677640cd6fdfb3b96103a977097e79acceebace5366e6c8b71d926bf",
-            "derived_relations": [
-              {
-                "source_node_id": "link_002",
-                "target_resource_id": "pdf_family_004_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_002::resource_013"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_011",
-                "target_resource_id": "pdf_family_004_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_011::resource_010"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_015",
-                "target_resource_id": "pdf_family_004_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_015::resource_010"
-                ],
-                "use_override": null
-              }
-            ]
-          }
-        ],
-        "unverified_appearance_ids": []
+        "status": "not_started",
+        "verified_at": null,
+        "all_appearances_same": null,
+        "partitions": [],
+        "unverified_appearance_ids": [
+          "link_002::resource_013",
+          "link_011::resource_010",
+          "link_014::resource_006",
+          "link_015::resource_010"
+        ]
       }
     },
     {
@@ -2261,14 +2484,15 @@
       "evidence": {
         "field": "canonical_name_from_url",
         "value": "formulariobeneficiootrosprogramas11",
-        "appearance_count": 2,
+        "appearance_count": 3,
         "analysis_statuses": [
           "not_verified"
         ]
       },
       "appearance_ids": [
         "link_005::resource_002",
-        "link_017::resource_003"
+        "link_017::resource_003",
+        "link_017::resource_009"
       ],
       "proposed_canonical_resource": {
         "resource_id": "pdf_formulariobeneficiootrosprogramas11",
@@ -2276,49 +2500,22 @@
         "resource_type": "pdf",
         "proposed_canonical_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formulariobeneficiootrosprogramas11_1.pdf",
         "selected_canonical_url": null,
-        "alternative_urls": [],
-        "suggested_default_use": "show_as_link",
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formulariobeneficiootrosprogramas11_0.pdf"
+        ],
+        "suggested_default_use": "mixed",
         "review_status": "pending_human_confirmation"
       },
       "verification": {
-        "status": "complete",
-        "verified_at": "2026-07-29T15:50:35-03:00",
-        "all_appearances_same": true,
-        "partitions": [
-          {
-            "partition_id": "pdf_family_005_part_001",
-            "certainty": "exact_binary_duplicate",
-            "appearance_ids": [
-              "link_005::resource_002",
-              "link_017::resource_003"
-            ],
-            "binary_sha256_values": [
-              "d12713a5bfaa69c733d0e584164fafc63c4f209aedf73839537699fa6aad493b"
-            ],
-            "normalized_text_sha256": "5762f83b80d83132153fcade7cbb974197172305cccab5b3128d857153ceb582",
-            "derived_relations": [
-              {
-                "source_node_id": "link_005",
-                "target_resource_id": "pdf_family_005_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_005::resource_002"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_017",
-                "target_resource_id": "pdf_family_005_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_017::resource_003"
-                ],
-                "use_override": null
-              }
-            ]
-          }
-        ],
-        "unverified_appearance_ids": []
+        "status": "not_started",
+        "verified_at": null,
+        "all_appearances_same": null,
+        "partitions": [],
+        "unverified_appearance_ids": [
+          "link_005::resource_002",
+          "link_017::resource_003",
+          "link_017::resource_009"
+        ]
       }
     },
     {
@@ -2430,7 +2627,7 @@
       "evidence": {
         "field": "canonical_name_from_url",
         "value": "2025_academias_de_conducir_habilitadas_2",
-        "appearance_count": 6,
+        "appearance_count": 7,
         "analysis_statuses": [
           "not_verified"
         ]
@@ -2441,7 +2638,8 @@
         "link_013::resource_003",
         "link_015::resource_004",
         "link_019::resource_003",
-        "link_020::resource_008"
+        "link_020::resource_008",
+        "link_021::resource_012"
       ],
       "proposed_canonical_resource": {
         "resource_id": "pdf_2025_academias_de_conducir_habilitadas_2",
@@ -2454,90 +2652,26 @@
           "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_1.pdf",
           "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_3.pdf",
           "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_2.pdf",
-          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_6.pdf"
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_6.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_4.pdf"
         ],
         "suggested_default_use": "show_as_link",
         "review_status": "pending_human_confirmation"
       },
       "verification": {
-        "status": "complete",
-        "verified_at": "2026-07-29T15:51:20-03:00",
-        "all_appearances_same": true,
-        "partitions": [
-          {
-            "partition_id": "pdf_family_007_part_001",
-            "certainty": "exact_binary_duplicate",
-            "appearance_ids": [
-              "link_011::resource_003",
-              "link_012::resource_004",
-              "link_013::resource_003",
-              "link_015::resource_004",
-              "link_019::resource_003",
-              "link_020::resource_008"
-            ],
-            "binary_sha256_values": [
-              "22dce05d1a872c0c7d23c725212d5856f075e4d5bd86f18d71115ad46128737d"
-            ],
-            "normalized_text_sha256": "fac0977f071a9a4ba0287acefa94fb37eaf2319b7da49a7248f28df3c083eb10",
-            "derived_relations": [
-              {
-                "source_node_id": "link_011",
-                "target_resource_id": "pdf_family_007_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_011::resource_003"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_012",
-                "target_resource_id": "pdf_family_007_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_012::resource_004"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_013",
-                "target_resource_id": "pdf_family_007_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_013::resource_003"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_015",
-                "target_resource_id": "pdf_family_007_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_015::resource_004"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_019",
-                "target_resource_id": "pdf_family_007_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_019::resource_003"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_020",
-                "target_resource_id": "pdf_family_007_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_020::resource_008"
-                ],
-                "use_override": null
-              }
-            ]
-          }
-        ],
-        "unverified_appearance_ids": []
+        "status": "not_started",
+        "verified_at": null,
+        "all_appearances_same": null,
+        "partitions": [],
+        "unverified_appearance_ids": [
+          "link_011::resource_003",
+          "link_012::resource_004",
+          "link_013::resource_003",
+          "link_015::resource_004",
+          "link_019::resource_003",
+          "link_020::resource_008",
+          "link_021::resource_012"
+        ]
       }
     },
     {
@@ -2743,7 +2877,7 @@
       "evidence": {
         "field": "canonical_name_from_url",
         "value": "2026_instituciones_m_dicas_habilitadas_1",
-        "appearance_count": 3,
+        "appearance_count": 4,
         "analysis_statuses": [
           "not_verified"
         ]
@@ -2751,7 +2885,8 @@
       "appearance_ids": [
         "link_011::resource_012",
         "link_012::resource_010",
-        "link_013::resource_013"
+        "link_013::resource_013",
+        "link_020::resource_009"
       ],
       "proposed_canonical_resource": {
         "resource_id": "pdf_2026_instituciones_m_dicas_habilitadas_1",
@@ -2761,60 +2896,62 @@
         "selected_canonical_url": null,
         "alternative_urls": [
           "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1_3.pdf",
-          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1_1.pdf"
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1_1.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2026_Instituciones_m%C3%A9dicas_habilitadas-1_2.pdf"
         ],
         "suggested_default_use": "show_as_link",
         "review_status": "pending_human_confirmation"
       },
       "verification": {
-        "status": "complete",
-        "verified_at": "2026-07-29T15:22:18-03:00",
-        "all_appearances_same": true,
-        "partitions": [
-          {
-            "partition_id": "pdf_family_010_part_001",
-            "certainty": "exact_binary_duplicate",
-            "appearance_ids": [
-              "link_011::resource_012",
-              "link_012::resource_010",
-              "link_013::resource_013"
-            ],
-            "binary_sha256_values": [
-              "55a02161592275b6af447ada21c8f0ff6ad7d796564a89b85019bc1e4d3e2860"
-            ],
-            "normalized_text_sha256": "d061d2e50efa0c2eb10412b850356c7981d49d1cd4528ec8b06134003a871485",
-            "derived_relations": [
-              {
-                "source_node_id": "link_011",
-                "target_resource_id": "pdf_family_010_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_011::resource_012"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_012",
-                "target_resource_id": "pdf_family_010_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_012::resource_010"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_013",
-                "target_resource_id": "pdf_family_010_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_013::resource_013"
-                ],
-                "use_override": null
-              }
-            ]
-          }
+        "status": "not_started",
+        "verified_at": null,
+        "all_appearances_same": null,
+        "partitions": [],
+        "unverified_appearance_ids": [
+          "link_011::resource_012",
+          "link_012::resource_010",
+          "link_013::resource_013",
+          "link_020::resource_009"
+        ]
+      }
+    },
+    {
+      "group_id": "pdf_family_014",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "cartadeautorizaciondemenorg1edit",
+        "appearance_count": 2,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_013::resource_004",
+        "link_013::resource_011"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_cartadeautorizaciondemenorg1edit",
+        "display_name": "autorización del menor",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/cartadeautorizaciondemenorg1edit.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/cartadeautorizaciondemenorg1edit.pdf"
         ],
-        "unverified_appearance_ids": []
+        "suggested_default_use": "mixed",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "not_started",
+        "verified_at": null,
+        "all_appearances_same": null,
+        "partitions": [],
+        "unverified_appearance_ids": [
+          "link_013::resource_004",
+          "link_013::resource_011"
+        ]
       }
     },
     {
@@ -2824,7 +2961,7 @@
       "evidence": {
         "field": "canonical_name_from_url",
         "value": "requisitosespecialesmedicoamateur",
-        "appearance_count": 5,
+        "appearance_count": 7,
         "analysis_statuses": [
           "not_verified"
         ]
@@ -2834,7 +2971,9 @@
         "link_014::resource_007",
         "link_015::resource_002",
         "link_015::resource_011",
-        "link_019::resource_002"
+        "link_019::resource_002",
+        "link_021::resource_003",
+        "link_021::resource_010"
       ],
       "proposed_canonical_resource": {
         "resource_id": "pdf_requisitosespecialesmedicoamateur",
@@ -2844,65 +2983,28 @@
         "selected_canonical_url": null,
         "alternative_urls": [
           "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoamateur.pdf",
-          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoamateur_2.pdf"
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoamateur_2.pdf",
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoamateur_0.pdf"
         ],
         "suggested_default_use": "process_as_context",
         "review_status": "pending_human_confirmation"
       },
       "verification": {
-        "status": "complete",
-        "verified_at": "2026-07-29T15:22:30-03:00",
-        "all_appearances_same": true,
-        "partitions": [
-          {
-            "partition_id": "pdf_family_011_part_001",
-            "certainty": "exact_binary_duplicate",
-            "appearance_ids": [
-              "link_014::resource_002",
-              "link_014::resource_007",
-              "link_015::resource_002",
-              "link_015::resource_011",
-              "link_019::resource_002"
-            ],
-            "binary_sha256_values": [
-              "c9ccdd8d4309cab8a34aa39a75a45700115068df135519bed10e82a4c5f47e7c"
-            ],
-            "normalized_text_sha256": "3a4f10f716c27aeee38907535039d1bebbb45921f5e1694c444d4fe10b0a5617",
-            "derived_relations": [
-              {
-                "source_node_id": "link_014",
-                "target_resource_id": "pdf_family_011_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_014::resource_002",
-                  "link_014::resource_007"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_015",
-                "target_resource_id": "pdf_family_011_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_015::resource_002",
-                  "link_015::resource_011"
-                ],
-                "use_override": null
-              },
-              {
-                "source_node_id": "link_019",
-                "target_resource_id": "pdf_family_011_part_001",
-                "relation": "uses_resource",
-                "derived_from": [
-                  "link_019::resource_002"
-                ],
-                "use_override": null
-              }
-            ]
-          }
-        ],
-        "unverified_appearance_ids": []
-      }
+        "status": "not_started",
+        "verified_at": null,
+        "all_appearances_same": null,
+        "partitions": [],
+        "unverified_appearance_ids": [
+          "link_014::resource_002",
+          "link_014::resource_007",
+          "link_015::resource_002",
+          "link_015::resource_011",
+          "link_019::resource_002",
+          "link_021::resource_003",
+          "link_021::resource_010"
+        ]
+      },
+      "membership_source": "human_overlay"
     },
     {
       "group_id": "pdf_family_012",
@@ -3024,6 +3126,45 @@
           }
         ],
         "unverified_appearance_ids": []
+      }
+    },
+    {
+      "group_id": "pdf_family_015",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "2024academiasdeconducirhabilitadas",
+        "appearance_count": 2,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_021::resource_004",
+        "link_022::resource_004"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_2024academiasdeconducirhabilitadas",
+        "display_name": "academia de conducción,",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/2024academiasdeconducirhabilitadas_1.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2024academiasdeconducirhabilitadas_5.pdf"
+        ],
+        "suggested_default_use": "mixed",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "not_started",
+        "verified_at": null,
+        "all_appearances_same": null,
+        "partitions": [],
+        "unverified_appearance_ids": [
+          "link_021::resource_004",
+          "link_022::resource_004"
+        ]
       }
     }
   ]

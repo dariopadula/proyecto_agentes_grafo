@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "project_id": "licencia_conducir",
   "review_status": "complete",
-  "updated_at": "2026-07-30T13:05:50-03:00",
+  "updated_at": "2026-07-31T15:41:34-03:00",
   "decisions": [
     {
       "group_id": "pdf_group_001",
@@ -332,15 +332,51 @@
   "family_decisions": [
     {
       "family_id": "pdf_family_001",
+      "appearance_ids": [
+        "link_001::resource_002",
+        "link_002::resource_014",
+        "link_006::resource_004",
+        "link_008::resource_005",
+        "link_009::resource_014",
+        "link_011::resource_011",
+        "link_013::resource_008",
+        "link_014::resource_008",
+        "link_015::resource_012",
+        "link_019::resource_008",
+        "link_020::resource_007",
+        "link_021::resource_002",
+        "link_021::resource_011",
+        "link_022::resource_009"
+      ],
       "identity_decision": "confirmed_same_manually",
       "default_use": "process_as_context",
       "selected_canonical_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab2411.pdf",
       "display_name": "Códigos de patologías",
       "notes": "",
       "reviewed_by": "funcionario",
-      "reviewed_at": "2026-07-30T11:33:06-03:00",
-      "analysis_generated_at": "2026-07-30T11:17:47-03:00",
-      "verification_reconciliation": "consistent"
+      "reviewed_at": "2026-07-31T15:34:44-03:00",
+      "analysis_generated_at": "2026-07-31T14:59:10-03:00",
+      "verification_reconciliation": "verification_incomplete",
+      "materialization": {
+        "applied_appearance_ids": [
+          "link_001::resource_002",
+          "link_002::resource_014",
+          "link_006::resource_004",
+          "link_008::resource_005",
+          "link_009::resource_014",
+          "link_011::resource_011",
+          "link_013::resource_008",
+          "link_014::resource_008",
+          "link_015::resource_012",
+          "link_019::resource_008",
+          "link_020::resource_007",
+          "link_021::resource_002",
+          "link_021::resource_011",
+          "link_022::resource_009"
+        ],
+        "preserved_individual_exception_ids": [],
+        "reconciled_at": "2026-07-31T15:34:44-03:00"
+      }
     },
     {
       "family_id": "pdf_family_002",
@@ -352,7 +388,7 @@
       "reviewed_by": "funcionario",
       "reviewed_at": "2026-07-29T16:59:09-03:00",
       "analysis_generated_at": "2026-07-29T16:57:09-03:00",
-      "verification_reconciliation": "consistent"
+      "verification_reconciliation": "verification_incomplete"
     },
     {
       "family_id": "pdf_family_003",

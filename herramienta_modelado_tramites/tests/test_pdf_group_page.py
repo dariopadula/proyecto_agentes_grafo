@@ -1,9 +1,18 @@
 import unittest
 
 from web_app import _verification_result
+from web_app import _friendly_pdf_error
 
 
 class PdfGroupPageTests(unittest.TestCase):
+    def test_network_permission_error_is_presented_in_plain_language(self):
+        message = _friendly_pdf_error(
+            {"status": "download_error", "error": "PermissionError: WinError 10013"}
+        )
+
+        self.assertIn("permiso de red", message)
+        self.assertNotIn("ConnectionPool", message)
+
     def test_consistent_decided_partition_keeps_detail_closed(self):
         family, items = _family_fixture("complete", True)
         decisions = {
@@ -38,7 +47,8 @@ class PdfGroupPageTests(unittest.TestCase):
 
         self.assertIn("<strong>1</strong> no pudieron descargarse", html)
         self.assertIn("<details open>", html)
-        self.assertIn("Timeout", html)
+        self.assertIn("No se pudo descargar este PDF", html)
+        self.assertNotIn("Timeout", html)
 
 
 def _family_fixture(status, all_same):
