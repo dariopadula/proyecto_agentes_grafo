@@ -244,6 +244,11 @@ Al guardar una resolución de identidad, la pantalla conserva sus filtros y
 posición, reabre el bloque correspondiente y muestra si la pertenencia quedó
 pendiente de verificación o confirmada directamente.
 
+Limitación abierta al 2026-07-31: el usuario todavía observa pérdida de filtros
+y ausencia de confirmación en su instancia, aunque el JSON contiene decisiones.
+Antes de continuar se debe reproducir el ciclo completo sobre una única
+instancia identificada y comprobar POST, redirección y render final.
+
 - `data/projects/licencia_conducir/human_review.json`
 - `data/projects/licencia_conducir/change_log.json`
 
