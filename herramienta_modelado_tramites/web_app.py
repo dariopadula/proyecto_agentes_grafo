@@ -24,6 +24,9 @@ from workflows.resource_review import save_resource_decision
 from workflows.resource_filter_rules import load_or_create_resource_filter_rules
 from workflows.resource_filter_rules import save_resource_filter_configuration
 from workflows.resource_identity_review import save_resource_identity_decision
+from workflows.effective_project_state import resolve_effective_project_state
+from workflows.lifecycle_review import node_lifecycle_impact
+from workflows.lifecycle_review import save_node_lifecycle_status
 
 
 HOST = "127.0.0.1"
@@ -65,10 +68,38 @@ class TramiteModelingHandler(BaseHTTPRequestHandler):
             self._send_html(_auxiliary_links_page(project_id, self.path))
             return
 
+        project_id = _project_id_from_effective_state_path(path)
+        if project_id:
+            self._send_html(_effective_state_page(project_id, self.path))
+            return
+
         self._send_not_found()
 
     def do_POST(self) -> None:
         path = urlparse(self.path).path
+        lifecycle_route = _lifecycle_decision_route(path)
+        if lifecycle_route:
+            project_id, link_id = lifecycle_route
+            form = self._read_form()
+            try:
+                save_node_lifecycle_status(
+                    project_id=project_id,
+                    link_id=link_id,
+                    status=_single(form, "status"),
+                    notes=_single(form, "notes"),
+                    actor=_single(form, "actor", DEFAULT_ACTOR),
+                )
+            except ValueError as error:
+                self._redirect(
+                    f"/projects/{project_id}/effective-state?"
+                    f"{urlencode({'error': str(error)})}"
+                )
+                return
+            self._redirect(
+                f"/projects/{project_id}/effective-state?saved={link_id}#{link_id}"
+            )
+            return
+
         identity_route = _resource_identity_route(path)
         if identity_route:
             project_id, source_link_id, resource_id = identity_route
@@ -432,6 +463,9 @@ def _projects_page() -> str:
               <a class="button secondary" href="/projects/{html_escape(project_id)}/resources">
                 Revisar casos individuales
               </a>
+              <a class="button secondary" href="/projects/{html_escape(project_id)}/effective-state">
+                Ver estado efectivo
+              </a>
             </article>
             """
         )
@@ -499,6 +533,141 @@ def _resource_rules_page(project_id: str, request_path: str) -> str:
     return _page(f"Exclusiones - {project.get('name')}", body)
 
 
+def _effective_state_page(project_id: str, request_path: str) -> str:
+    project_dir = PROJECTS_DIR / project_id
+    project = load_json(project_dir / "project.json")
+    state = resolve_effective_project_state(project_id)
+    summary = state["summary"]
+    confirmed_resources = sum(
+        not item.get("canonical_resource_key", "").startswith("appearance:")
+        for item in state["canonical_resources"]
+    )
+    provisional_resources = summary["canonical_resource_count"] - confirmed_resources
+    query = parse_qs(urlparse(request_path).query)
+    message = ""
+    if "saved" in query:
+        message = (
+            f'<p class="message ok">Estado actualizado para '
+            f'{html_escape(query["saved"][0])}. El trabajo anterior se conserva.</p>'
+        )
+    elif "error" in query:
+        message = f'<p class="message error">{html_escape(query["error"][0])}</p>'
+
+    cards = []
+    relations_by_node: dict[str, int] = {}
+    for relation in state["relations"]:
+        link_id = relation.get("source_link_id")
+        relations_by_node[link_id] = relations_by_node.get(link_id, 0) + 1
+    for node in state["nodes"]:
+        if not node.get("participates_in_model"):
+            continue
+        link_id = node.get("link_id", "")
+        active = node.get("is_active")
+        impact = node_lifecycle_impact(state, link_id)
+        next_status = "inactive" if active else "active"
+        action_label = "Desactivar del modelo" if active else "Reactivar en el modelo"
+        status_label = "Activo" if active else "Inactivo"
+        status_class = "ok" if active else "error"
+        if active:
+            impact_text = (
+                f"Al desactivar: {impact['relation_count']} relaciones quedarán inactivas; "
+                f"{impact['orphaned_resource_count']} recursos quedarán huérfanos; "
+                f"{impact['still_used_resource_count']} seguirán usados por otros nodos."
+            )
+            confirmation = "¿Desactivar este nodo? No se borrará el trabajo realizado."
+        else:
+            relation_count = relations_by_node.get(link_id, 0)
+            impact_text = (
+                f"Al reactivar se recuperarán {relation_count} relaciones descubiertas "
+                "y sus decisiones previas, sin repetir el descubrimiento."
+            )
+            confirmation = "¿Reactivar este nodo y recuperar sus relaciones anteriores?"
+        search = " ".join(
+            str(value or "")
+            for value in [link_id, node.get("title"), node.get("url"), status_label]
+        ).lower()
+        cards.append(
+            f"""
+            <article class="card lifecycle-card" id="{html_escape(link_id)}"
+                data-status="{'active' if active else 'inactive'}"
+                data-search="{html_escape(search)}">
+              <div class="card-head">
+                <div>
+                  <p class="eyebrow">{html_escape(link_id)} · {html_escape(node.get('primary_role'))}</p>
+                  <h2>{html_escape(node.get('title'))}</h2>
+                  <a class="url" href="{html_escape(node.get('url'))}" target="_blank" rel="noreferrer">
+                    {html_escape(node.get('url'))}
+                  </a>
+                </div>
+                <span class="pill {status_class}">{status_label}</span>
+              </div>
+              <p><strong>Impacto previsto:</strong> {html_escape(impact_text)}</p>
+              <form method="post"
+                  action="/projects/{html_escape(project_id)}/effective-state/{html_escape(link_id)}"
+                  onsubmit="return confirm('{html_escape(confirmation)}')">
+                <input type="hidden" name="status" value="{next_status}">
+                <label>Motivo o nota
+                  <input name="notes" placeholder="Opcional; queda registrado en el historial">
+                </label>
+                <div class="actions">
+                  <button type="submit">{action_label}</button>
+                </div>
+              </form>
+            </article>
+            """
+        )
+
+    body = f"""
+    <section class="panel">
+      <p><a href="/">Volver a proyectos</a> |
+        <a href="/projects/{html_escape(project_id)}/resources">Revisar casos individuales</a></p>
+      <p class="eyebrow">Estado consolidado</p>
+      <h2>Estado efectivo · {html_escape(project.get('name'))}</h2>
+      <p class="muted">Esta vista se calcula desde la evidencia y las decisiones persistidas. Activar o desactivar no borra descubrimiento, grupos ni revisiones.</p>
+      <div class="stats">
+        <div><strong>{summary['active_node_count']}</strong><span>Nodos activos</span></div>
+        <div><strong>{summary['active_relation_count']}</strong><span>Relaciones activas</span></div>
+        <div><strong>{confirmed_resources}</strong><span>Recursos consolidados</span></div>
+        <div><strong>{provisional_resources}</strong><span>Identidades provisionales</span></div>
+        <div><strong>{summary['orphaned_resource_count']}</strong><span>Recursos huérfanos</span></div>
+        <div><strong>{summary['inconsistency_count']}</strong><span>Inconsistencias</span></div>
+      </div>
+      {message}
+    </section>
+    <section class="toolbar">
+      <input id="lifecycleSearch" type="search" placeholder="Buscar nodo">
+      <select id="lifecycleStatus">
+        <option value="">Todos</option>
+        <option value="active">Activos</option>
+        <option value="inactive">Inactivos</option>
+      </select>
+      <button type="button" onclick="clearLifecycleFilters()">Limpiar</button>
+    </section>
+    <section class="cards">{''.join(cards)}</section>
+    <script>
+      const lifecycleSearch = document.getElementById('lifecycleSearch');
+      const lifecycleStatus = document.getElementById('lifecycleStatus');
+      lifecycleSearch.addEventListener('input', applyLifecycleFilters);
+      lifecycleStatus.addEventListener('change', applyLifecycleFilters);
+      function applyLifecycleFilters() {{
+        const query = lifecycleSearch.value.trim().toLowerCase();
+        const status = lifecycleStatus.value;
+        document.querySelectorAll('.lifecycle-card').forEach(card => {{
+          const visible = (!query || card.dataset.search.includes(query)) &&
+            (!status || card.dataset.status === status);
+          card.classList.toggle('hidden', !visible);
+        }});
+      }}
+      function clearLifecycleFilters() {{
+        lifecycleSearch.value = '';
+        lifecycleStatus.value = '';
+        applyLifecycleFilters();
+      }}
+    </script>
+    """
+    return _page(f"Estado efectivo - {project.get('name')}", body)
+
+
 def _resources_page(project_id: str, request_path: str) -> str:
     project_dir = PROJECTS_DIR / project_id
     project = load_json(project_dir / "project.json")
@@ -547,6 +716,11 @@ def _resources_page(project_id: str, request_path: str) -> str:
         item.get("appearance_id"): item
         for item in identity_review.get("decisions", [])
     }
+    effective_state = resolve_effective_project_state(project_id, PROJECTS_DIR)
+    active_nodes = {
+        item.get("link_id"): item.get("is_active", False)
+        for item in effective_state.get("nodes", [])
+    }
     pages = node_resources.get("pages", [])
     total_resources = node_resources.get("resources_count", 0)
     total_discarded = node_resources.get("discarded_resources_count", 0)
@@ -576,6 +750,7 @@ def _resources_page(project_id: str, request_path: str) -> str:
             pdf_families,
             pdf_family_by_appearance,
             identity_by_appearance,
+            active_nodes.get(page.get("link_id"), True),
         )
         for page in pages
     )
@@ -1854,6 +2029,7 @@ def _resource_page_card(
     pdf_families: list[dict[str, Any]],
     pdf_family_by_appearance: dict[str, dict[str, Any]],
     identity_by_appearance: dict[str, dict[str, Any]],
+    node_is_active: bool = True,
 ) -> str:
     resources = page.get("resources", [])
     discarded = page.get("discarded_resources", [])
@@ -1903,8 +2079,22 @@ def _resource_page_card(
     if page.get("status") == "error":
         error = f"""<p class="message error">{html_escape(page.get("error"))}</p>"""
 
+    lifecycle_badge = (
+        '<span class="pill">Nodo activo</span>'
+        if node_is_active
+        else '<span class="pill inactive">Nodo inactivo · solo referencia</span>'
+    )
+    inactive_notice = ""
+    if not node_is_active:
+        inactive_notice = """
+        <p class="message inactive">
+          Este nodo fue desactivado del modelo. Sus recursos y decisiones se
+          muestran como referencia histórica y pueden recuperarse al reactivarlo.
+        </p>
+        """
+
     return f"""
-    <article class="card">
+    <article class="card {'inactive-node' if not node_is_active else ''}" data-node-status="{'active' if node_is_active else 'inactive'}">
       <div class="card-head">
         <div>
           <p class="eyebrow">{html_escape(page.get("link_id"))}</p>
@@ -1915,8 +2105,12 @@ def _resource_page_card(
           </h2>
           <p class="url">{html_escape(page.get("url"))}</p>
         </div>
-        <span class="pill">{len(resources)} utiles / {len(discarded)} descartados</span>
+        <div>
+          {lifecycle_badge}
+          <span class="pill">{len(resources)} utiles / {len(discarded)} descartados</span>
+        </div>
       </div>
+      {inactive_notice}
       {error}
       <h3>Recursos utiles</h3>
       {_empty_message(resources, "No se detectaron recursos utiles.")}
@@ -2288,6 +2482,20 @@ def _project_id_from_auxiliary_links_path(path: str) -> str | None:
     return None
 
 
+def _project_id_from_effective_state_path(path: str) -> str | None:
+    parts = path.strip("/").split("/")
+    if len(parts) == 3 and parts[0] == "projects" and parts[2] == "effective-state":
+        return parts[1]
+    return None
+
+
+def _lifecycle_decision_route(path: str) -> tuple[str, str] | None:
+    parts = path.strip("/").split("/")
+    if len(parts) == 4 and parts[0] == "projects" and parts[2] == "effective-state":
+        return parts[1], parts[3]
+    return None
+
+
 def _decision_route(path: str) -> tuple[str, str] | None:
     parts = path.strip("/").split("/")
     if len(parts) == 4 and parts[0] == "projects" and parts[2] == "review-links":
@@ -2485,6 +2693,11 @@ def _page(title: str, body: str) -> str:
     }}
     .card.hidden {{ display: none; }}
     .hidden {{ display: none !important; }}
+    .card.inactive-node {{
+      border-style: dashed;
+      background: #f8fafc;
+      opacity: .82;
+    }}
     .card-head {{
       display: flex;
       justify-content: space-between;
@@ -2582,6 +2795,11 @@ def _page(title: str, body: str) -> str:
       font-size: 13px;
       white-space: nowrap;
     }}
+    .pill.inactive {{
+      color: #7a2e0e;
+      border-color: #f0b58d;
+      background: #fff7ed;
+    }}
     .form-grid {{
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2625,6 +2843,10 @@ def _page(title: str, body: str) -> str:
     .message.error {{
       background: var(--error-bg);
       color: var(--error-text);
+    }}
+    .message.inactive {{
+      color: #7a2e0e;
+      background: #fff7ed;
     }}
     h3 {{
       margin: 18px 0 8px;

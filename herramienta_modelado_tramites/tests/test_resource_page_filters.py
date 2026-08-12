@@ -18,6 +18,14 @@ class ResourcePageFilterTests(unittest.TestCase):
             project_dir / "project.json",
         )
         save_json(
+            {"links": [{"link_id": "link_001", "title": "Nodo", "url": "https://example.test/node"}]},
+            project_dir / "candidate_links.json",
+        )
+        save_json(
+            {"decisions": [{"link_id": "link_001", "primary_role": "terminal_case"}]},
+            project_dir / "human_review.json",
+        )
+        save_json(
             {
                 "accepted_links_count": 1,
                 "resources_count": 1,
@@ -84,6 +92,19 @@ class ResourcePageFilterTests(unittest.TestCase):
         )
         self.assertIn("search_filter=agenda+profesional", location)
         self.assertTrue(location.endswith("#link_001-resource_001"))
+
+    def test_inactive_node_is_visibly_marked_without_losing_resources(self):
+        project_dir = Path(self.temp_dir.name) / "demo"
+        save_json(
+            {"node_states": [{"link_id": "link_001", "status": "inactive"}]},
+            project_dir / "lifecycle_review.json",
+        )
+
+        html = web_app._resources_page("demo", "/projects/demo/resources")
+
+        self.assertIn("Nodo inactivo · solo referencia", html)
+        self.assertIn("Sus recursos y decisiones", html)
+        self.assertIn("Agenda", html)
 
     def test_identity_save_reports_success_and_keeps_filter_contract(self):
         message = web_app._status_message(

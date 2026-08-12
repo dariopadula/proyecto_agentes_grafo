@@ -14,6 +14,27 @@ Aplicacion local en desarrollo activo con:
 - revision del uso y alcance de los recursos.
 - analisis deterministico y agrupacion propuesta de PDF.
 - inventario deterministico de enlaces auxiliares no documentales.
+- vista interna calculada de nodos, apariciones, recursos canónicos y relaciones.
+
+La vista de estado efectivo vive en
+`workflows/effective_project_state.py`. Es de solo lectura: combina los JSON del
+proyecto, deriva el alcance desde las relaciones activas y no crea una nueva
+fuente de verdad.
+
+La integración visual está disponible en:
+
+```text
+http://127.0.0.1:8000/projects/licencia_conducir/effective-state
+```
+
+La pantalla muestra el impacto previsto y permite desactivar o reactivar nodos.
+Las decisiones se guardan en `lifecycle_review.json`; no se eliminan evidencia,
+grupos, recursos ni revisiones. Al reactivar, el estado efectivo vuelve a
+incorporar las relaciones anteriores sin ejecutar el descubrimiento.
+
+En `Revisar casos individuales`, los nodos desactivados continúan visibles como
+referencia histórica, pero aparecen atenuados y con la etiqueta `Nodo inactivo`.
+Sus recursos y decisiones no se eliminan.
 
 El siguiente paso es reconfirmar las familias PDF ampliadas, comprobar su
 materialización en los casos individuales y validar una excepción heredada.

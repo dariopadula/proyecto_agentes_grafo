@@ -1,0 +1,14 @@
+{
+  "schema_version": "0.1",
+  "project_id": "licencia_conducir",
+  "updated_at": "2026-08-12T16:26:41-03:00",
+  "node_states": [
+    {
+      "link_id": "link_001",
+      "status": "active",
+      "notes": "",
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-12T16:26:41-03:00"
+    }
+  ]
+}
