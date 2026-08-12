@@ -11291,6 +11291,682 @@
         "reviewed_by": "funcionario",
         "reviewed_at": "2026-07-31T16:08:21-03:00"
       }
+    },
+    {
+      "event_id": "event_348",
+      "timestamp": "2026-08-11T15:14:37-03:00",
+      "actor": "funcionario",
+      "action": "confirm_pdf_family_manually",
+      "target_type": "pdf_family",
+      "target_id": "pdf_family_001",
+      "summary": "Se confirmó manualmente la familia PDF pdf_family_001.",
+      "before": {
+        "family_id": "pdf_family_001",
+        "appearance_ids": [
+          "link_001::resource_002",
+          "link_002::resource_014",
+          "link_006::resource_004",
+          "link_008::resource_005",
+          "link_009::resource_014",
+          "link_011::resource_011",
+          "link_013::resource_008",
+          "link_014::resource_008",
+          "link_015::resource_012",
+          "link_019::resource_008",
+          "link_020::resource_007",
+          "link_021::resource_002",
+          "link_021::resource_011",
+          "link_022::resource_009"
+        ],
+        "identity_decision": "confirmed_same_manually",
+        "default_use": "process_as_context",
+        "selected_canonical_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab2411.pdf",
+        "display_name": "Códigos de patologías",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-31T15:34:44-03:00",
+        "analysis_generated_at": "2026-07-31T14:59:10-03:00",
+        "verification_reconciliation": "verification_incomplete",
+        "materialization": {
+          "applied_appearance_ids": [
+            "link_001::resource_002",
+            "link_002::resource_014",
+            "link_006::resource_004",
+            "link_008::resource_005",
+            "link_009::resource_014",
+            "link_011::resource_011",
+            "link_013::resource_008",
+            "link_014::resource_008",
+            "link_015::resource_012",
+            "link_019::resource_008",
+            "link_020::resource_007",
+            "link_021::resource_002",
+            "link_021::resource_011",
+            "link_022::resource_009"
+          ],
+          "preserved_individual_exception_ids": [],
+          "reconciled_at": "2026-07-31T15:34:44-03:00"
+        }
+      },
+      "after": {
+        "family_id": "pdf_family_001",
+        "appearance_ids": [
+          "link_001::resource_002",
+          "link_002::resource_014",
+          "link_006::resource_004",
+          "link_008::resource_005",
+          "link_009::resource_014",
+          "link_011::resource_011",
+          "link_013::resource_008",
+          "link_014::resource_008",
+          "link_015::resource_012",
+          "link_019::resource_008",
+          "link_020::resource_007",
+          "link_021::resource_002",
+          "link_021::resource_011",
+          "link_022::resource_009"
+        ],
+        "identity_decision": "confirmed_same_manually",
+        "default_use": "process_as_context",
+        "selected_canonical_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab2411.pdf",
+        "display_name": "Códigos de patologías",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-11T15:14:37-03:00",
+        "analysis_generated_at": "2026-07-31T15:41:34-03:00",
+        "verification_reconciliation": "pending",
+        "materialization": {
+          "applied_appearance_ids": [
+            "link_001::resource_002",
+            "link_002::resource_014",
+            "link_006::resource_004",
+            "link_008::resource_005",
+            "link_009::resource_014",
+            "link_011::resource_011",
+            "link_013::resource_008",
+            "link_014::resource_008",
+            "link_015::resource_012",
+            "link_019::resource_008",
+            "link_020::resource_007",
+            "link_021::resource_002",
+            "link_021::resource_011",
+            "link_022::resource_009"
+          ],
+          "preserved_individual_exception_ids": [],
+          "reconciled_at": "2026-08-11T15:14:37-03:00"
+        }
+      }
+    },
+    {
+      "event_id": "event_349",
+      "timestamp": "2026-08-11T15:14:40-03:00",
+      "actor": "funcionario",
+      "action": "verify_pdf_family",
+      "target_type": "pdf_family",
+      "target_id": "pdf_family_001",
+      "summary": "Se verificó la familia pdf_family_001: 1 particiones y 0 apariciones no verificadas.",
+      "before": null,
+      "after": {
+        "status": "complete",
+        "verified_at": "2026-08-11T15:14:40-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_001_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_001::resource_002",
+              "link_002::resource_014",
+              "link_006::resource_004",
+              "link_008::resource_005",
+              "link_009::resource_014",
+              "link_011::resource_011",
+              "link_013::resource_008",
+              "link_014::resource_008",
+              "link_015::resource_012",
+              "link_019::resource_008",
+              "link_020::resource_007",
+              "link_021::resource_002",
+              "link_021::resource_011",
+              "link_022::resource_009"
+            ],
+            "binary_sha256_values": [
+              "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438"
+            ],
+            "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+            "derived_relations": [
+              {
+                "source_node_id": "link_001",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_001::resource_002"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_002",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_002::resource_014"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_006",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_006::resource_004"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_008",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_008::resource_005"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_009",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_009::resource_014"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_011",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_011::resource_011"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_013",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_013::resource_008"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_014",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_014::resource_008"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_015",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_015::resource_012"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_019",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_019::resource_008"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_020",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_020::resource_007"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_021",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_021::resource_002",
+                  "link_021::resource_011"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_022",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_022::resource_009"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "event_id": "event_350",
+      "timestamp": "2026-08-11T15:19:56-03:00",
+      "actor": "funcionario",
+      "action": "confirm_pdf_family_manually",
+      "target_type": "pdf_family",
+      "target_id": "pdf_family_002",
+      "summary": "Se confirmó manualmente la familia PDF pdf_family_002.",
+      "before": {
+        "family_id": "pdf_family_002",
+        "identity_decision": "confirmed_same_manually",
+        "default_use": "process_as_context",
+        "selected_canonical_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_1.pdf",
+        "display_name": "certificados médicos complementarios",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-07-29T16:59:09-03:00",
+        "analysis_generated_at": "2026-07-29T16:57:09-03:00",
+        "verification_reconciliation": "verification_incomplete"
+      },
+      "after": {
+        "family_id": "pdf_family_002",
+        "appearance_ids": [
+          "link_002::resource_003",
+          "link_009::resource_002",
+          "link_019::resource_007",
+          "link_022::resource_002",
+          "link_022::resource_008"
+        ],
+        "identity_decision": "confirmed_same_manually",
+        "default_use": "process_as_context",
+        "selected_canonical_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_1.pdf",
+        "display_name": "certificados médicos complementarios",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-11T15:19:56-03:00",
+        "analysis_generated_at": "2026-08-11T15:14:40-03:00",
+        "verification_reconciliation": "pending",
+        "materialization": {
+          "applied_appearance_ids": [
+            "link_002::resource_003",
+            "link_009::resource_002",
+            "link_019::resource_007",
+            "link_022::resource_002",
+            "link_022::resource_008"
+          ],
+          "preserved_individual_exception_ids": [],
+          "reconciled_at": "2026-08-11T15:19:56-03:00"
+        }
+      }
+    },
+    {
+      "event_id": "event_351",
+      "timestamp": "2026-08-11T15:19:57-03:00",
+      "actor": "funcionario",
+      "action": "verify_pdf_family",
+      "target_type": "pdf_family",
+      "target_id": "pdf_family_002",
+      "summary": "Se verificó la familia pdf_family_002: 1 particiones y 0 apariciones no verificadas.",
+      "before": null,
+      "after": {
+        "status": "complete",
+        "verified_at": "2026-08-11T15:19:57-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_002_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_002::resource_003",
+              "link_009::resource_002",
+              "link_019::resource_007",
+              "link_022::resource_002",
+              "link_022::resource_008"
+            ],
+            "binary_sha256_values": [
+              "5f922d803a551e1d040ea31a56164a1a2c748d69c792b96efbadc3fc45d96aac"
+            ],
+            "normalized_text_sha256": "4f88fe63924087965d11beae75202245a55fa38460637af1c72b507dbcc0d917",
+            "derived_relations": [
+              {
+                "source_node_id": "link_002",
+                "target_resource_id": "pdf_family_002_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_002::resource_003"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_009",
+                "target_resource_id": "pdf_family_002_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_009::resource_002"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_019",
+                "target_resource_id": "pdf_family_002_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_019::resource_007"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_022",
+                "target_resource_id": "pdf_family_002_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_022::resource_002",
+                  "link_022::resource_008"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "event_id": "event_352",
+      "timestamp": "2026-08-11T15:28:49-03:00",
+      "actor": "funcionario",
+      "action": "confirm_pdf_family_manually",
+      "target_type": "pdf_family",
+      "target_id": "pdf_family_014",
+      "summary": "Se confirmó manualmente la familia PDF pdf_family_014.",
+      "before": null,
+      "after": {
+        "family_id": "pdf_family_014",
+        "appearance_ids": [
+          "link_013::resource_004",
+          "link_013::resource_011"
+        ],
+        "identity_decision": "confirmed_same_manually",
+        "default_use": "process_as_context",
+        "selected_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/cartadeautorizaciondemenorg1edit.pdf",
+        "display_name": "autorización del menor",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-11T15:28:49-03:00",
+        "analysis_generated_at": "2026-08-11T15:19:57-03:00",
+        "verification_reconciliation": "pending",
+        "materialization": {
+          "applied_appearance_ids": [
+            "link_013::resource_004",
+            "link_013::resource_011"
+          ],
+          "preserved_individual_exception_ids": [],
+          "reconciled_at": "2026-08-11T15:28:49-03:00"
+        }
+      }
+    },
+    {
+      "event_id": "event_353",
+      "timestamp": "2026-08-11T15:28:49-03:00",
+      "actor": "funcionario",
+      "action": "verify_pdf_family",
+      "target_type": "pdf_family",
+      "target_id": "pdf_family_014",
+      "summary": "Se verificó la familia pdf_family_014: 1 particiones y 0 apariciones no verificadas.",
+      "before": null,
+      "after": {
+        "status": "complete",
+        "verified_at": "2026-08-11T15:28:49-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_014_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_013::resource_004",
+              "link_013::resource_011"
+            ],
+            "binary_sha256_values": [
+              "19a6df885b78ee922f9a5414462ddd769e1b8a0d2333b35fde65504469464b00"
+            ],
+            "normalized_text_sha256": "4eb823d078fe43013a7169793cd4066d46f4f60f90714bc8ab0d984994df5fbf",
+            "derived_relations": [
+              {
+                "source_node_id": "link_013",
+                "target_resource_id": "pdf_family_014_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_013::resource_004",
+                  "link_013::resource_011"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "event_id": "event_354",
+      "timestamp": "2026-08-11T15:28:49-03:00",
+      "actor": "funcionario",
+      "action": "inherit_pdf_family_decision",
+      "target_type": "pdf_partition",
+      "target_id": "pdf_family_014_part_001",
+      "summary": "La verificación produjo una sola partición y se aplicó automáticamente la decisión familiar.",
+      "before": null,
+      "after": {
+        "family_id": "pdf_family_014",
+        "partition_id": "pdf_family_014_part_001",
+        "identity_decision": "confirmed_same",
+        "default_use": "process_as_context",
+        "selected_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/cartadeautorizaciondemenorg1edit.pdf",
+        "display_name": "autorización del menor",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-11T15:28:49-03:00",
+        "analysis_generated_at": "2026-08-11T15:28:49-03:00",
+        "decision_source": "inherited_from_family",
+        "inherited_at": "2026-08-11T15:28:49-03:00"
+      }
+    },
+    {
+      "event_id": "event_355",
+      "timestamp": "2026-08-11T15:33:45-03:00",
+      "actor": "funcionario",
+      "action": "confirm_pdf_family_manually",
+      "target_type": "pdf_family",
+      "target_id": "pdf_family_015",
+      "summary": "Se confirmó manualmente la familia PDF pdf_family_015.",
+      "before": null,
+      "after": {
+        "family_id": "pdf_family_015",
+        "appearance_ids": [
+          "link_021::resource_004",
+          "link_022::resource_004"
+        ],
+        "identity_decision": "confirmed_same_manually",
+        "default_use": "process_as_context",
+        "selected_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/2024academiasdeconducirhabilitadas_1.pdf",
+        "display_name": "academia de conducción,",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-11T15:33:45-03:00",
+        "analysis_generated_at": "2026-08-11T15:28:49-03:00",
+        "verification_reconciliation": "pending",
+        "materialization": {
+          "applied_appearance_ids": [
+            "link_021::resource_004",
+            "link_022::resource_004"
+          ],
+          "preserved_individual_exception_ids": [],
+          "reconciled_at": "2026-08-11T15:33:45-03:00"
+        }
+      }
+    },
+    {
+      "event_id": "event_356",
+      "timestamp": "2026-08-11T15:33:45-03:00",
+      "actor": "funcionario",
+      "action": "verify_pdf_family",
+      "target_type": "pdf_family",
+      "target_id": "pdf_family_015",
+      "summary": "Se verificó la familia pdf_family_015: 1 particiones y 0 apariciones no verificadas.",
+      "before": null,
+      "after": {
+        "status": "complete",
+        "verified_at": "2026-08-11T15:33:45-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_015_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_021::resource_004",
+              "link_022::resource_004"
+            ],
+            "binary_sha256_values": [
+              "89dab59b6ade08cfb060a9b268b709629201bf4aa4d374d5b54b8b95701e0581"
+            ],
+            "normalized_text_sha256": "9638c73e4cd957ded3e52bc332ea47f66751ac6afbc05004e2a0bad17b2edaf5",
+            "derived_relations": [
+              {
+                "source_node_id": "link_021",
+                "target_resource_id": "pdf_family_015_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_021::resource_004"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_022",
+                "target_resource_id": "pdf_family_015_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_022::resource_004"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "event_id": "event_357",
+      "timestamp": "2026-08-11T15:33:45-03:00",
+      "actor": "funcionario",
+      "action": "inherit_pdf_family_decision",
+      "target_type": "pdf_partition",
+      "target_id": "pdf_family_015_part_001",
+      "summary": "La verificación produjo una sola partición y se aplicó automáticamente la decisión familiar.",
+      "before": null,
+      "after": {
+        "family_id": "pdf_family_015",
+        "partition_id": "pdf_family_015_part_001",
+        "identity_decision": "confirmed_same",
+        "default_use": "process_as_context",
+        "selected_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/2024academiasdeconducirhabilitadas_1.pdf",
+        "display_name": "academia de conducción,",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-11T15:33:45-03:00",
+        "analysis_generated_at": "2026-08-11T15:33:45-03:00",
+        "decision_source": "inherited_from_family",
+        "inherited_at": "2026-08-11T15:33:45-03:00"
+      }
+    },
+    {
+      "event_id": "event_358",
+      "timestamp": "2026-08-11T15:51:37-03:00",
+      "actor": "funcionario",
+      "action": "classify_resource",
+      "target_type": "internal_resource",
+      "target_id": "link_021::resource_003",
+      "summary": "Se guardo decision de recurso link_021::resource_003: show_as_link / node_only.",
+      "before": null,
+      "after": {
+        "decision_id": "link_021::resource_003",
+        "source_link_id": "link_021",
+        "resource_id": "resource_003",
+        "url": "https://montevideo.gub.uy/sites/default/files/biblioteca/requisitosespecialesmedicoamateur_1.pdf",
+        "title": "documentación complementaria requerida por patología",
+        "resource_type": "pdf",
+        "use": "show_as_link",
+        "scope": "node_only",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-11T15:51:37-03:00",
+        "decision_source": "individual",
+        "overrides_group": false,
+        "overridden_group_id": null
+      }
+    },
+    {
+      "event_id": "event_359",
+      "timestamp": "2026-08-11T15:51:57-03:00",
+      "actor": "funcionario",
+      "action": "classify_resource",
+      "target_type": "internal_resource",
+      "target_id": "link_021::resource_010",
+      "summary": "Se guardo decision de recurso link_021::resource_010: show_as_link / node_only.",
+      "before": null,
+      "after": {
+        "decision_id": "link_021::resource_010",
+        "source_link_id": "link_021",
+        "resource_id": "resource_010",
+        "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoamateur_0.pdf",
+        "title": "Certificados médicos complementarios",
+        "resource_type": "pdf",
+        "use": "show_as_link",
+        "scope": "node_only",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-11T15:51:57-03:00",
+        "decision_source": "individual",
+        "overrides_group": false,
+        "overridden_group_id": null
+      }
+    },
+    {
+      "event_id": "event_360",
+      "timestamp": "2026-08-11T15:52:06-03:00",
+      "actor": "funcionario",
+      "action": "classify_resource",
+      "target_type": "internal_resource",
+      "target_id": "link_021::resource_012",
+      "summary": "Se guardo decision de recurso link_021::resource_012: show_as_link / node_only.",
+      "before": null,
+      "after": {
+        "decision_id": "link_021::resource_012",
+        "source_link_id": "link_021",
+        "resource_id": "resource_012",
+        "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/2025_Academias_de_conducir_habilitadas-2_4.pdf",
+        "title": "Academias de conducir habilitadas - Octubre 2025",
+        "resource_type": "pdf",
+        "use": "show_as_link",
+        "scope": "node_only",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-11T15:52:06-03:00",
+        "decision_source": "individual",
+        "overrides_group": false,
+        "overridden_group_id": null
+      }
     }
   ]
 }

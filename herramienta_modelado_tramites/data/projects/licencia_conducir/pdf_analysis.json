@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1",
-  "generated_at": "2026-07-31T15:41:34-03:00",
+  "generated_at": "2026-08-11T15:33:45-03:00",
   "project_id": "licencia_conducir",
   "resource_type": "pdf",
   "source": {
@@ -16,15 +16,15 @@
   },
   "summary": {
     "appearance_count": 85,
-    "analyzed_count": 4,
-    "error_count": 15,
-    "download_error_count": 15,
+    "analyzed_count": 23,
+    "error_count": 0,
+    "download_error_count": 0,
     "analysis_error_count": 0,
     "skipped_by_policy_count": 0,
     "not_attempted_count": 0,
     "proposed_group_count": 15,
-    "verified_family_count": 8,
-    "partition_count": 7
+    "verified_family_count": 10,
+    "partition_count": 10
   },
   "appearances": [
     {
@@ -65,18 +65,18 @@
       "file_name": "requisitosespecialesmedicoprofesionales_1.pdf",
       "canonical_name": "requisitosespecialesmedicoprofesionales",
       "analysis": {
-        "status": "download_error",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 66617,
+        "page_count": 1,
+        "character_count": 1184,
+        "word_count": 160,
+        "binary_sha256": "5f922d803a551e1d040ea31a56164a1a2c748d69c792b96efbadc3fc45d96aac",
+        "normalized_text_sha256": "4f88fe63924087965d11beae75202245a55fa38460637af1c72b507dbcc0d917",
+        "encrypted": false,
         "text_extraction_truncated": false,
-        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_1.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B5AA10>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+        "error": null
       }
     },
     {
@@ -195,18 +195,18 @@
       "file_name": "codigosdepatologiasab24_5.pdf",
       "canonical_name": "codigosdepatologiasab24",
       "analysis": {
-        "status": "download_error",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
         "text_extraction_truncated": false,
-        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_5.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B5A320>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+        "error": null
       }
     },
     {
@@ -481,18 +481,18 @@
       "file_name": "requisitosespecialesmedicoprofesionales_0.pdf",
       "canonical_name": "requisitosespecialesmedicoprofesionales",
       "analysis": {
-        "status": "download_error",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 66617,
+        "page_count": 1,
+        "character_count": 1184,
+        "word_count": 160,
+        "binary_sha256": "5f922d803a551e1d040ea31a56164a1a2c748d69c792b96efbadc3fc45d96aac",
+        "normalized_text_sha256": "4f88fe63924087965d11beae75202245a55fa38460637af1c72b507dbcc0d917",
+        "encrypted": false,
         "text_extraction_truncated": false,
-        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_0.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B5A320>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+        "error": null
       }
     },
     {
@@ -611,18 +611,18 @@
       "file_name": "codigosdepatologiasab24_12.pdf",
       "canonical_name": "codigosdepatologiasab24",
       "analysis": {
-        "status": "download_error",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
         "text_extraction_truncated": false,
-        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_12.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C87BB7C0>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+        "error": null
       }
     },
     {
@@ -1001,16 +1001,16 @@
       "file_name": "cartadeautorizaciondemenorg1edit.pdf",
       "canonical_name": "cartadeautorizaciondemenorg1edit",
       "analysis": {
-        "status": "not_verified",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 55701,
+        "page_count": 1,
+        "character_count": 1112,
+        "word_count": 122,
+        "binary_sha256": "19a6df885b78ee922f9a5414462ddd769e1b8a0d2333b35fde65504469464b00",
+        "normalized_text_sha256": "4eb823d078fe43013a7169793cd4066d46f4f60f90714bc8ab0d984994df5fbf",
+        "encrypted": false,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -1053,18 +1053,18 @@
       "file_name": "codigosdepatologiasab24_1.pdf",
       "canonical_name": "codigosdepatologiasab24",
       "analysis": {
-        "status": "download_error",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
         "text_extraction_truncated": false,
-        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_1.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B59840>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+        "error": null
       }
     },
     {
@@ -1131,16 +1131,16 @@
       "file_name": "cartadeautorizaciondemenorg1edit.pdf",
       "canonical_name": "cartadeautorizaciondemenorg1edit",
       "analysis": {
-        "status": "not_verified",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 55701,
+        "page_count": 1,
+        "character_count": 1112,
+        "word_count": 122,
+        "binary_sha256": "19a6df885b78ee922f9a5414462ddd769e1b8a0d2333b35fde65504469464b00",
+        "normalized_text_sha256": "4eb823d078fe43013a7169793cd4066d46f4f60f90714bc8ab0d984994df5fbf",
+        "encrypted": false,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -1339,18 +1339,18 @@
       "file_name": "codigosdepatologiasab24_0.pdf",
       "canonical_name": "codigosdepatologiasab24",
       "analysis": {
-        "status": "download_error",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
         "text_extraction_truncated": false,
-        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_0.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B586A0>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+        "error": null
       }
     },
     {
@@ -1547,18 +1547,18 @@
       "file_name": "codigosdepatologiasab24_3.pdf",
       "canonical_name": "codigosdepatologiasab24",
       "analysis": {
-        "status": "download_error",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
         "text_extraction_truncated": false,
-        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_3.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B58040>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+        "error": null
       }
     },
     {
@@ -1833,18 +1833,18 @@
       "file_name": "requisitosespecialesmedicoprofesionales_2.pdf",
       "canonical_name": "requisitosespecialesmedicoprofesionales",
       "analysis": {
-        "status": "download_error",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 66617,
+        "page_count": 1,
+        "character_count": 1184,
+        "word_count": 160,
+        "binary_sha256": "5f922d803a551e1d040ea31a56164a1a2c748d69c792b96efbadc3fc45d96aac",
+        "normalized_text_sha256": "4f88fe63924087965d11beae75202245a55fa38460637af1c72b507dbcc0d917",
+        "encrypted": false,
         "text_extraction_truncated": false,
-        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales_2.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B59270>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+        "error": null
       }
     },
     {
@@ -1859,18 +1859,18 @@
       "file_name": "codigosdepatologiasab24_6.pdf",
       "canonical_name": "codigosdepatologiasab24",
       "analysis": {
-        "status": "download_error",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
         "text_extraction_truncated": false,
-        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_6.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8AED7B0>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+        "error": null
       }
     },
     {
@@ -1911,18 +1911,18 @@
       "file_name": "codigosdepatologiasab24_8.pdf",
       "canonical_name": "codigosdepatologiasab24",
       "analysis": {
-        "status": "download_error",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
         "text_extraction_truncated": false,
-        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_8.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8AEE0B0>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+        "error": null
       }
     },
     {
@@ -1989,18 +1989,18 @@
       "file_name": "codigosdepatologiasab24_9.pdf",
       "canonical_name": "codigosdepatologiasab24",
       "analysis": {
-        "status": "download_error",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
         "text_extraction_truncated": false,
-        "error": "ConnectionError: HTTPSConnectionPool(host='montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/default/files/biblioteca/codigosdepatologiasab24_9.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B5A4D0>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+        "error": null
       }
     },
     {
@@ -2041,16 +2041,16 @@
       "file_name": "2024academiasdeconducirhabilitadas_1.pdf",
       "canonical_name": "2024academiasdeconducirhabilitadas",
       "analysis": {
-        "status": "not_verified",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 111330,
+        "page_count": 4,
+        "character_count": 3548,
+        "word_count": 105,
+        "binary_sha256": "89dab59b6ade08cfb060a9b268b709629201bf4aa4d374d5b54b8b95701e0581",
+        "normalized_text_sha256": "9638c73e4cd957ded3e52bc332ea47f66751ac6afbc05004e2a0bad17b2edaf5",
+        "encrypted": false,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -2093,18 +2093,18 @@
       "file_name": "codigosdepatologiasab24_9.pdf",
       "canonical_name": "codigosdepatologiasab24",
       "analysis": {
-        "status": "download_error",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
         "text_extraction_truncated": false,
-        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_9.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B58FD0>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+        "error": null
       }
     },
     {
@@ -2145,18 +2145,18 @@
       "file_name": "requisitosespecialesmedicoprofesionales.pdf",
       "canonical_name": "requisitosespecialesmedicoprofesionales",
       "analysis": {
-        "status": "download_error",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 66617,
+        "page_count": 1,
+        "character_count": 1184,
+        "word_count": 160,
+        "binary_sha256": "5f922d803a551e1d040ea31a56164a1a2c748d69c792b96efbadc3fc45d96aac",
+        "normalized_text_sha256": "4f88fe63924087965d11beae75202245a55fa38460637af1c72b507dbcc0d917",
+        "encrypted": false,
         "text_extraction_truncated": false,
-        "error": "ConnectionError: HTTPSConnectionPool(host='montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/default/files/biblioteca/requisitosespecialesmedicoprofesionales.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8AEE260>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+        "error": null
       }
     },
     {
@@ -2171,16 +2171,16 @@
       "file_name": "2024academiasdeconducirhabilitadas_5.pdf",
       "canonical_name": "2024academiasdeconducirhabilitadas",
       "analysis": {
-        "status": "not_verified",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 111330,
+        "page_count": 4,
+        "character_count": 3548,
+        "word_count": 105,
+        "binary_sha256": "89dab59b6ade08cfb060a9b268b709629201bf4aa4d374d5b54b8b95701e0581",
+        "normalized_text_sha256": "9638c73e4cd957ded3e52bc332ea47f66751ac6afbc05004e2a0bad17b2edaf5",
+        "encrypted": false,
         "text_extraction_truncated": false,
         "error": null
       }
@@ -2197,18 +2197,18 @@
       "file_name": "requisitosespecialesmedicoprofesionales.pdf",
       "canonical_name": "requisitosespecialesmedicoprofesionales",
       "analysis": {
-        "status": "download_error",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 66617,
+        "page_count": 1,
+        "character_count": 1184,
+        "word_count": 160,
+        "binary_sha256": "5f922d803a551e1d040ea31a56164a1a2c748d69c792b96efbadc3fc45d96aac",
+        "normalized_text_sha256": "4f88fe63924087965d11beae75202245a55fa38460637af1c72b507dbcc0d917",
+        "encrypted": false,
         "text_extraction_truncated": false,
-        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/requisitosespecialesmedicoprofesionales.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8AEFF10>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+        "error": null
       }
     },
     {
@@ -2223,18 +2223,18 @@
       "file_name": "codigosdepatologiasab24_10.pdf",
       "canonical_name": "codigosdepatologiasab24",
       "analysis": {
-        "status": "download_error",
-        "source": null,
+        "status": "analyzed",
+        "source": "download",
         "local_file_name": null,
-        "size_bytes": null,
-        "page_count": null,
-        "character_count": 0,
-        "word_count": 0,
-        "binary_sha256": "",
-        "normalized_text_sha256": "",
-        "encrypted": null,
+        "size_bytes": 38133,
+        "page_count": 2,
+        "character_count": 1714,
+        "word_count": 304,
+        "binary_sha256": "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438",
+        "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+        "encrypted": false,
         "text_extraction_truncated": false,
-        "error": "ConnectionError: HTTPSConnectionPool(host='tramites.montevideo.gub.uy', port=443): Max retries exceeded with url: /sites/tramites.montevideo.gub.uy/files/tramites/documentos/codigosdepatologiasab24_10.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000126C8B5B550>: Failed to establish a new connection: [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso'))"
+        "error": null
       }
     }
   ],
@@ -2292,26 +2292,156 @@
         "review_status": "pending_human_confirmation"
       },
       "verification": {
-        "status": "not_started",
-        "verified_at": null,
-        "all_appearances_same": null,
-        "partitions": [],
-        "unverified_appearance_ids": [
-          "link_001::resource_002",
-          "link_002::resource_014",
-          "link_006::resource_004",
-          "link_008::resource_005",
-          "link_009::resource_014",
-          "link_011::resource_011",
-          "link_013::resource_008",
-          "link_014::resource_008",
-          "link_015::resource_012",
-          "link_019::resource_008",
-          "link_020::resource_007",
-          "link_021::resource_002",
-          "link_021::resource_011",
-          "link_022::resource_009"
-        ]
+        "status": "complete",
+        "verified_at": "2026-08-11T15:14:40-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_001_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_001::resource_002",
+              "link_002::resource_014",
+              "link_006::resource_004",
+              "link_008::resource_005",
+              "link_009::resource_014",
+              "link_011::resource_011",
+              "link_013::resource_008",
+              "link_014::resource_008",
+              "link_015::resource_012",
+              "link_019::resource_008",
+              "link_020::resource_007",
+              "link_021::resource_002",
+              "link_021::resource_011",
+              "link_022::resource_009"
+            ],
+            "binary_sha256_values": [
+              "c0ed4a79a9878875e8871d750e8fdd7f625441db611cc78f17747bd6bcba6438"
+            ],
+            "normalized_text_sha256": "f22aa98db11215ab5ac1349b15fd50a3bc43076c0d1a1bce252304830cd621d6",
+            "derived_relations": [
+              {
+                "source_node_id": "link_001",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_001::resource_002"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_002",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_002::resource_014"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_006",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_006::resource_004"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_008",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_008::resource_005"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_009",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_009::resource_014"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_011",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_011::resource_011"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_013",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_013::resource_008"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_014",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_014::resource_008"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_015",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_015::resource_012"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_019",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_019::resource_008"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_020",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_020::resource_007"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_021",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_021::resource_002",
+                  "link_021::resource_011"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_022",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_022::resource_009"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
       },
       "membership_source": "human_overlay"
     },
@@ -2350,17 +2480,66 @@
         "review_status": "pending_human_confirmation"
       },
       "verification": {
-        "status": "partial",
-        "verified_at": "2026-07-31T15:41:34-03:00",
-        "all_appearances_same": false,
-        "partitions": [],
-        "unverified_appearance_ids": [
-          "link_002::resource_003",
-          "link_009::resource_002",
-          "link_019::resource_007",
-          "link_022::resource_002",
-          "link_022::resource_008"
-        ]
+        "status": "complete",
+        "verified_at": "2026-08-11T15:19:57-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_002_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_002::resource_003",
+              "link_009::resource_002",
+              "link_019::resource_007",
+              "link_022::resource_002",
+              "link_022::resource_008"
+            ],
+            "binary_sha256_values": [
+              "5f922d803a551e1d040ea31a56164a1a2c748d69c792b96efbadc3fc45d96aac"
+            ],
+            "normalized_text_sha256": "4f88fe63924087965d11beae75202245a55fa38460637af1c72b507dbcc0d917",
+            "derived_relations": [
+              {
+                "source_node_id": "link_002",
+                "target_resource_id": "pdf_family_002_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_002::resource_003"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_009",
+                "target_resource_id": "pdf_family_002_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_009::resource_002"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_019",
+                "target_resource_id": "pdf_family_002_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_019::resource_007"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_022",
+                "target_resource_id": "pdf_family_002_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_022::resource_002",
+                  "link_022::resource_008"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
       }
     },
     {
@@ -2944,14 +3123,36 @@
         "review_status": "pending_human_confirmation"
       },
       "verification": {
-        "status": "not_started",
-        "verified_at": null,
-        "all_appearances_same": null,
-        "partitions": [],
-        "unverified_appearance_ids": [
-          "link_013::resource_004",
-          "link_013::resource_011"
-        ]
+        "status": "complete",
+        "verified_at": "2026-08-11T15:28:49-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_014_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_013::resource_004",
+              "link_013::resource_011"
+            ],
+            "binary_sha256_values": [
+              "19a6df885b78ee922f9a5414462ddd769e1b8a0d2333b35fde65504469464b00"
+            ],
+            "normalized_text_sha256": "4eb823d078fe43013a7169793cd4066d46f4f60f90714bc8ab0d984994df5fbf",
+            "derived_relations": [
+              {
+                "source_node_id": "link_013",
+                "target_resource_id": "pdf_family_014_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_013::resource_004",
+                  "link_013::resource_011"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
       }
     },
     {
@@ -3157,14 +3358,44 @@
         "review_status": "pending_human_confirmation"
       },
       "verification": {
-        "status": "not_started",
-        "verified_at": null,
-        "all_appearances_same": null,
-        "partitions": [],
-        "unverified_appearance_ids": [
-          "link_021::resource_004",
-          "link_022::resource_004"
-        ]
+        "status": "complete",
+        "verified_at": "2026-08-11T15:33:45-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_015_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_021::resource_004",
+              "link_022::resource_004"
+            ],
+            "binary_sha256_values": [
+              "89dab59b6ade08cfb060a9b268b709629201bf4aa4d374d5b54b8b95701e0581"
+            ],
+            "normalized_text_sha256": "9638c73e4cd957ded3e52bc332ea47f66751ac6afbc05004e2a0bad17b2edaf5",
+            "derived_relations": [
+              {
+                "source_node_id": "link_021",
+                "target_resource_id": "pdf_family_015_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_021::resource_004"
+                ],
+                "use_override": null
+              },
+              {
+                "source_node_id": "link_022",
+                "target_resource_id": "pdf_family_015_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_022::resource_004"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
       }
     }
   ]
