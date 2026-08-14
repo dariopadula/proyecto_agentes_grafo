@@ -2,6 +2,7 @@ from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler
 from http.server import ThreadingHTTPServer
 from concurrent.futures import ThreadPoolExecutor
+import json
 from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs
@@ -25,8 +26,10 @@ from workflows.resource_filter_rules import load_or_create_resource_filter_rules
 from workflows.resource_filter_rules import save_resource_filter_configuration
 from workflows.resource_identity_review import save_resource_identity_decision
 from workflows.effective_project_state import resolve_effective_project_state
+from workflows.document_map import build_document_map
 from workflows.lifecycle_review import node_lifecycle_impact
 from workflows.lifecycle_review import save_node_lifecycle_status
+from ui.document_map_page import render_document_map_body
 
 
 HOST = "127.0.0.1"
@@ -73,10 +76,41 @@ class TramiteModelingHandler(BaseHTTPRequestHandler):
             self._send_html(_effective_state_page(project_id, self.path))
             return
 
+        project_id = _project_id_from_document_map_path(path)
+        if project_id:
+            self._send_html(_document_map_page(project_id))
+            return
+
         self._send_not_found()
 
     def do_POST(self) -> None:
         path = urlparse(self.path).path
+        document_resource_route = _document_map_resource_route(path)
+        if document_resource_route:
+            project_id, source_link_id, resource_id = document_resource_route
+            form = self._read_form()
+            try:
+                save_resource_decision(
+                    project_id=project_id,
+                    source_link_id=source_link_id,
+                    resource_id=resource_id,
+                    use=_single(form, "use"),
+                    scope="node_only",
+                    notes=_single(form, "notes"),
+                    actor=_single(form, "actor", DEFAULT_ACTOR),
+                )
+            except ValueError as error:
+                self._redirect(
+                    f"/projects/{project_id}/document-map?"
+                    f"{urlencode({'error': str(error), 'node': source_link_id})}"
+                )
+                return
+            self._redirect(
+                f"/projects/{project_id}/document-map?"
+                f"{urlencode({'saved': resource_id, 'node': source_link_id})}"
+            )
+            return
+
         lifecycle_route = _lifecycle_decision_route(path)
         if lifecycle_route:
             project_id, link_id = lifecycle_route
@@ -466,6 +500,9 @@ def _projects_page() -> str:
               <a class="button secondary" href="/projects/{html_escape(project_id)}/effective-state">
                 Ver estado efectivo
               </a>
+              <a class="button secondary" href="/projects/{html_escape(project_id)}/document-map">
+                Ver mapa documental
+              </a>
             </article>
             """
         )
@@ -666,6 +703,269 @@ def _effective_state_page(project_id: str, request_path: str) -> str:
     </script>
     """
     return _page(f"Estado efectivo - {project.get('name')}", body)
+
+
+def _legacy_document_map_page(project_id: str) -> str:
+    project_dir = PROJECTS_DIR / project_id
+    project = load_json(project_dir / "project.json")
+    document_map = build_document_map(resolve_effective_project_state(project_id))
+    payload = json.dumps(document_map, ensure_ascii=False).replace("</", "<\\/")
+    body = f"""
+    <style>
+      .map-head {{ display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; }}
+      .map-tabs {{ display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }}
+      .map-tabs button[aria-selected="false"] {{ color: var(--accent); background: #fff; }}
+      .map-view[hidden] {{ display: none; }}
+      .node-map {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }}
+      .map-node {{ min-height: 125px; text-align: left; color: var(--text); background: var(--panel); border-color: var(--border); }}
+      .map-node:hover, .map-node:focus-visible {{ border-color: var(--accent); }}
+      .map-node strong {{ display: block; margin-bottom: 9px; line-height: 1.25; }}
+      .map-node .pill {{ display: inline-block; margin: 2px 3px 2px 0; white-space: normal; }}
+      .map-node.inactive-node {{ border-style: dashed; opacity: .75; }}
+      .audit-layout {{ display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 16px; }}
+      .terminal-summary {{ align-self: start; color: #fff; background: var(--accent); border-radius: 8px; padding: 16px; }}
+      .terminal-summary h2 {{ margin-bottom: 8px; }}
+      .terminal-summary p {{ color: #dcecff; }}
+      .terminal-summary a {{ color: #fff; }}
+      .resource-groups {{ display: grid; gap: 12px; }}
+      .resource-grid {{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }}
+      .map-resource {{ min-height: 105px; text-align: left; color: var(--text); background: #fbfcfe; border: 1px solid var(--border); border-radius: 6px; padding: 10px; }}
+      button.map-resource {{ cursor: pointer; }}
+      button.map-resource:hover, button.map-resource:focus-visible {{ border-color: var(--accent); background: #f5f9ff; }}
+      .map-resource strong {{ display: block; margin-bottom: 6px; }}
+      .map-resource p {{ margin: 5px 0; }}
+      .coverage-grid {{ display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }}
+      .coverage-list {{ display: grid; gap: 8px; }}
+      .coverage-item {{ padding: 10px; border: 1px solid var(--border); border-radius: 6px; background: #fbfcfe; }}
+      .coverage-item.inactive {{ border-style: dashed; background: #fff7ed; }}
+      .source-list {{ margin: 8px 0 0; padding-left: 20px; }}
+      .empty-state {{ padding: 12px; color: var(--muted); background: #f8fafc; border-radius: 6px; }}
+      @media (max-width: 900px) {{
+        .node-map, .resource-grid, .coverage-grid {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
+        .audit-layout {{ grid-template-columns: 1fr; }}
+      }}
+      @media (max-width: 650px) {{
+        .map-head, .node-map, .resource-grid, .coverage-grid {{ display: grid; grid-template-columns: 1fr; }}
+      }}
+    </style>
+    <section class="panel">
+      <p><a href="/">Volver a proyectos</a> · <a href="/projects/{html_escape(project_id)}/effective-state">Ver estado efectivo</a></p>
+      <div class="map-head">
+        <div>
+          <p class="eyebrow">Vista documental de solo lectura</p>
+          <h2>{html_escape(project.get('name'))}</h2>
+          <p class="muted">Orienta por los nodos terminales y permite auditar recursos y cobertura sin modificar decisiones.</p>
+        </div>
+        <span class="pill">Estado efectivo · datos vigentes</span>
+      </div>
+      <div class="stats">
+        <div><strong>{document_map['summary']['terminal_node_count']}</strong><span>Nodos terminales</span></div>
+        <div><strong>{document_map['summary']['resource_count']}</strong><span>Recursos efectivos</span></div>
+        <div><strong>{document_map['summary']['shared_resource_count']}</strong><span>Recursos compartidos</span></div>
+        <div><strong>{document_map['summary']['active_terminal_node_count']}</strong><span>Nodos activos</span></div>
+      </div>
+      <div class="map-tabs">
+        <button type="button" data-map-view="overview" aria-selected="true">Mapa general</button>
+        <button type="button" data-map-view="node" aria-selected="false">Auditoría del trámite</button>
+        <button type="button" data-map-view="resource" aria-selected="false">Cobertura del recurso</button>
+      </div>
+    </section>
+
+    <section class="map-view" id="map-overview-view">
+      <section class="toolbar">
+        <input id="map-search" type="search" placeholder="Buscar un nodo terminal">
+        <select id="map-alert-filter">
+          <option value="">Todos los nodos</option>
+          <option value="attention">Solo con pendientes o provisionales</option>
+          <option value="shared">Solo con recursos compartidos</option>
+          <option value="inactive">Solo inactivos</option>
+        </select>
+      </section>
+      <section class="node-map" id="document-node-map"></section>
+    </section>
+
+    <section class="map-view" id="map-node-view" hidden>
+      <section class="audit-layout" id="node-audit"></section>
+    </section>
+
+    <section class="map-view" id="map-resource-view" hidden>
+      <section id="resource-coverage"></section>
+    </section>
+
+    <script>
+      const documentMap = {payload};
+      const useLabels = {{
+        process_as_context: "Contexto",
+        show_as_link: "Solo link",
+        discard: "Descartado",
+        review_later: "Revisar después"
+      }};
+      const typeLabels = {{
+        pdf: "PDF", formulario: "Formulario", agenda: "Agenda",
+        normativa: "Normativa", link: "Link", tramite_relacionado: "Trámite relacionado"
+      }};
+      let selectedNodeId = documentMap.nodes[0]?.link_id || null;
+      let selectedResourceKey = null;
+
+      function escapeHtml(value) {{
+        return String(value ?? "").replace(/[&<>\"']/g, character => ({{
+          "&": "&amp;", "<": "&lt;", ">": "&gt;", '\"': "&quot;", "'": "&#039;"
+        }})[character]);
+      }}
+
+      function showMapView(viewName) {{
+        document.querySelectorAll(".map-view").forEach(view => {{
+          view.hidden = view.id !== `map-${{viewName}}-view`;
+        }});
+        document.querySelectorAll("[data-map-view]").forEach(button => {{
+          button.setAttribute("aria-selected", String(button.dataset.mapView === viewName));
+        }});
+      }}
+
+      function renderOverview() {{
+        const host = document.getElementById("document-node-map");
+        host.innerHTML = documentMap.nodes.map(node => {{
+          const summary = node.summary;
+          const attention = summary.pending_count + summary.provisional_count;
+          return `<button type="button" class="map-node ${{node.is_active ? "" : "inactive-node"}}"
+              data-node-id="${{escapeHtml(node.link_id)}}"
+              data-search="${{escapeHtml(node.title.toLowerCase())}}"
+              data-attention="${{attention}}" data-shared="${{summary.shared_count}}"
+              data-active="${{node.is_active}}">
+            <strong>${{escapeHtml(node.title)}}</strong>
+            <span class="pill">Contexto ${{summary.context_count}}</span>
+            <span class="pill">Links ${{summary.link_count}}</span>
+            <span class="pill">Compartidos ${{summary.shared_count}}</span>
+            <span class="pill">Provisionales ${{summary.provisional_count}}</span>
+            ${{summary.discarded_count ? `<span class="pill inactive">Descartados ${{summary.discarded_count}}</span>` : ""}}
+          </button>`;
+        }}).join("");
+        host.querySelectorAll(".map-node").forEach(button => {{
+          button.addEventListener("click", () => openNode(button.dataset.nodeId));
+        }});
+        applyMapFilters();
+      }}
+
+      function applyMapFilters() {{
+        const query = document.getElementById("map-search").value.trim().toLowerCase();
+        const filter = document.getElementById("map-alert-filter").value;
+        document.querySelectorAll(".map-node").forEach(node => {{
+          const matchesSearch = !query || node.dataset.search.includes(query);
+          const matchesFilter = !filter
+            || (filter === "attention" && Number(node.dataset.attention) > 0)
+            || (filter === "shared" && Number(node.dataset.shared) > 0)
+            || (filter === "inactive" && node.dataset.active === "false");
+          node.classList.toggle("hidden", !(matchesSearch && matchesFilter));
+        }});
+      }}
+
+      function openNode(nodeId) {{
+        selectedNodeId = nodeId;
+        const node = documentMap.nodes.find(item => item.link_id === nodeId);
+        if (!node) return;
+        const activeResources = node.resources.filter(item => item.relation_status === "active");
+        const groups = [
+          ["Contexto autorizado", activeResources.filter(item => item.effective_use === "process_as_context")],
+          ["Links para mostrar", activeResources.filter(item => item.effective_use === "show_as_link")],
+          ["Pendientes", activeResources.filter(item => !item.effective_use || item.effective_use === "review_later")],
+          ["Descartados", activeResources.filter(item => item.effective_use === "discard")],
+          ["Relaciones inactivas", node.resources.filter(item => item.relation_status === "inactive")]
+        ];
+        document.getElementById("node-audit").innerHTML = `
+          <aside class="terminal-summary">
+            <p class="eyebrow">${{escapeHtml(node.link_id)}}</p>
+            <h2>${{escapeHtml(node.title)}}</h2>
+            <p>${{node.is_active ? "Nodo terminal activo" : "Nodo terminal inactivo"}}</p>
+            <p>${{node.summary.resource_count}} recursos · ${{node.summary.shared_count}} compartidos</p>
+            <a href="${{escapeHtml(node.url)}}" target="_blank" rel="noreferrer">Abrir fuente oficial</a>
+          </aside>
+          <div class="resource-groups">
+            ${{groups.filter(([, items]) => items.length).map(([label, items]) => resourceGroup(label, items)).join("") || '<p class="empty-state">No hay recursos asociados.</p>'}}
+          </div>`;
+        document.querySelectorAll("[data-resource-key]").forEach(button => {{
+          button.addEventListener("click", () => openResource(button.dataset.resourceKey));
+        }});
+        showMapView("node");
+      }}
+
+      function resourceGroup(label, resources) {{
+        return `<section class="panel"><h3>${{escapeHtml(label)}} · ${{resources.length}}</h3>
+          <div class="resource-grid">${{resources.map(resourceCard).join("")}}</div></section>`;
+      }}
+
+      function resourceCard(resource) {{
+        const shared = resource.active_source_nodes.length > 1;
+        const buttonTag = resource.is_consolidated || shared ? "button" : "div";
+        const attributes = buttonTag === "button"
+          ? `type="button" data-resource-key="${{escapeHtml(resource.canonical_resource_key)}}"`
+          : "";
+        return `<${{buttonTag}} class="map-resource" ${{attributes}}>
+          <strong>${{escapeHtml(resource.display_name)}}</strong>
+          <span class="pill">${{escapeHtml(typeLabels[resource.resource_type] || resource.resource_type)}}</span>
+          <span class="pill">${{resource.is_consolidated ? "Consolidado" : "Provisional"}}</span>
+          ${{shared ? `<span class="pill">Compartido por ${{resource.active_source_nodes.length}}</span>` : ""}}
+          <p class="muted">${{escapeHtml(useLabels[resource.effective_use] || "Sin decisión")}} · ${{resource.appearance_count}} apariciones</p>
+          ${{buttonTag === "button" ? '<small>Seleccionar para auditar cobertura</small>' : ""}}
+        </${{buttonTag}}>`;
+      }}
+
+      function openResource(resourceKey) {{
+        selectedResourceKey = resourceKey;
+        const resource = documentMap.resources[resourceKey];
+        if (!resource) return;
+        document.getElementById("resource-coverage").innerHTML = `
+          <section class="panel">
+            <p><button class="button secondary" type="button" id="back-to-node">Volver al trámite</button></p>
+            <p class="eyebrow">${{resource.is_consolidated ? "Recurso canónico" : "Identidad provisional"}}</p>
+            <h2>${{escapeHtml(resource.display_name)}}</h2>
+            <p class="muted">${{escapeHtml(useLabels[resource.effective_use] || "Sin decisión")}} · ${{resource.appearance_count}} apariciones</p>
+            ${{resource.canonical_url ? `<p><a href="${{escapeHtml(resource.canonical_url)}}" target="_blank" rel="noreferrer">Abrir recurso canónico</a></p>` : ""}}
+          </section>
+          <div class="coverage-grid">
+            <section class="panel"><h3>Trámites vinculados actualmente · ${{resource.active_source_nodes.length}}</h3>
+              <div class="coverage-list">${{coverageItems(resource.active_source_nodes, false)}}</div></section>
+            <section class="panel"><h3>Relaciones inactivas · ${{resource.inactive_source_nodes.length}}</h3>
+              <div class="coverage-list">${{coverageItems(resource.inactive_source_nodes, true)}}</div></section>
+          </div>
+          <section class="panel"><h3>Apariciones que sustentan el recurso · ${{resource.appearance_sources.length}}</h3>
+            <ul class="source-list">${{resource.appearance_sources.map(item => `<li>${{escapeHtml(item.title || item.url || item.appearance_id)}} · ${{escapeHtml(item.source_link_id)}}</li>`).join("")}}</ul>
+          </section>`;
+        document.getElementById("back-to-node").addEventListener("click", () => openNode(selectedNodeId));
+        showMapView("resource");
+      }}
+
+      function coverageItems(nodes, inactive) {{
+        if (!nodes.length) return '<p class="empty-state">No hay relaciones en este estado.</p>';
+        return nodes.map(node => `<button type="button" class="coverage-item ${{inactive ? "inactive" : ""}}" data-coverage-node="${{escapeHtml(node.link_id)}}">
+          <strong>${{inactive ? "○" : "✓"}} ${{escapeHtml(node.title)}}</strong>
+        </button>`).join("");
+      }}
+
+      document.querySelectorAll("[data-map-view]").forEach(button => {{
+        button.addEventListener("click", () => {{
+          if (button.dataset.mapView === "node" && selectedNodeId) openNode(selectedNodeId);
+          else if (button.dataset.mapView === "resource" && selectedResourceKey) openResource(selectedResourceKey);
+          else showMapView(button.dataset.mapView);
+        }});
+      }});
+      document.getElementById("map-search").addEventListener("input", applyMapFilters);
+      document.getElementById("map-alert-filter").addEventListener("change", applyMapFilters);
+      document.addEventListener("click", event => {{
+        const button = event.target.closest("[data-coverage-node]");
+        if (button) openNode(button.dataset.coverageNode);
+      }});
+      renderOverview();
+    </script>
+    """
+    return _page(f"Mapa documental - {project.get('name')}", body)
+
+
+def _document_map_page(project_id: str) -> str:
+    project_dir = PROJECTS_DIR / project_id
+    project = load_json(project_dir / "project.json")
+    document_map = build_document_map(resolve_effective_project_state(project_id))
+    body = render_document_map_body(project, document_map)
+    return _page(f"Mapa documental - {project.get('name')}", body)
 
 
 def _resources_page(project_id: str, request_path: str) -> str:
@@ -2486,6 +2786,25 @@ def _project_id_from_effective_state_path(path: str) -> str | None:
     parts = path.strip("/").split("/")
     if len(parts) == 3 and parts[0] == "projects" and parts[2] == "effective-state":
         return parts[1]
+    return None
+
+
+def _project_id_from_document_map_path(path: str) -> str | None:
+    parts = path.strip("/").split("/")
+    if len(parts) == 3 and parts[0] == "projects" and parts[2] == "document-map":
+        return parts[1]
+    return None
+
+
+def _document_map_resource_route(path: str) -> tuple[str, str, str] | None:
+    parts = path.strip("/").split("/")
+    if (
+        len(parts) == 6
+        and parts[0] == "projects"
+        and parts[2] == "document-map"
+        and parts[3] == "resources"
+    ):
+        return parts[1], parts[4], parts[5]
     return None
 
 

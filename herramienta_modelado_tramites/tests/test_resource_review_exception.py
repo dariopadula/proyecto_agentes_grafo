@@ -46,6 +46,8 @@ class ResourceReviewExceptionTests(unittest.TestCase):
                         "scope": "shared",
                         "decision_source": "auxiliary_group",
                         "source_group_id": "agenda_001",
+                        "canonical_resource_id": "agenda_canonical_001",
+                        "canonical_url": "https://example.test/agenda-canonica",
                         "inherited": True,
                     }
                 ],
@@ -76,6 +78,11 @@ class ResourceReviewExceptionTests(unittest.TestCase):
         self.assertEqual(
             decision["overridden_group_id"],
             "agenda_001",
+        )
+        self.assertEqual(decision["canonical_resource_id"], "agenda_canonical_001")
+        self.assertEqual(
+            decision["canonical_url"],
+            "https://example.test/agenda-canonica",
         )
 
 

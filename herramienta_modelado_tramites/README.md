@@ -32,6 +32,37 @@ Las decisiones se guardan en `lifecycle_review.json`; no se eliminan evidencia,
 grupos, recursos ni revisiones. Al reactivar, el estado efectivo vuelve a
 incorporar las relaciones anteriores sin ejecutar el descubrimiento.
 
+El mapa documental real de solo lectura está disponible en:
+
+```text
+http://127.0.0.1:8000/projects/licencia_conducir/document-map
+```
+
+Consume `resolve_effective_project_state()` mediante
+`workflows/document_map.py`. Muestra los 22 nodos terminales, la documentación
+específica de cada nodo y la cobertura inversa de los recursos consolidados.
+La interfaz usa una lista lateral de trámites, auditoría central y cobertura
+contextual en un panel derecho. Desde cada tarjeta se puede cambiar el uso de
+una aparición concreta entre contexto, enlace, revisión posterior y descarte.
+El cambio es una excepción local del trámite: conserva la identidad canónica y
+no modifica las apariciones de otros nodos. Todavía no permite agregar recursos,
+eliminarlos globalmente ni cambiar su agrupación. Cada tarjeta ofrece acceso
+directo al recurso: URL canónica para los consolidados y URL efectiva para los
+individuales.
+
+## Prototipo de mapa documental
+
+Se conserva el prototipo navegable usado para validar el concepto en:
+
+```text
+prototypes/document_graph_demo.html
+```
+
+El prototipo usa datos ilustrativos y permite validar tres recorridos de
+producto: mapa general con 22 nodos, auditoría documental de un trámite y
+auditoría inversa de los trámites que comparten un recurso canónico. No guarda
+decisiones ni representa todavía el contrato definitivo de datos.
+
 En `Revisar casos individuales`, los nodos desactivados continúan visibles como
 referencia histórica, pero aparecen atenuados y con la etiqueta `Nodo inactivo`.
 Sus recursos y decisiones no se eliminan.

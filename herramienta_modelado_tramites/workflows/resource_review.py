@@ -78,6 +78,18 @@ def save_resource_decision(
             else None
         ),
     }
+    # Una edicion individual cambia el uso de esta aparicion, no su identidad.
+    # Conservar estos campos evita separar accidentalmente un recurso de la
+    # familia canonica de la que heredo la decision original.
+    if previous_decision:
+        for field in (
+            "canonical_resource_id",
+            "canonical_url",
+            "source_group_id",
+            "inherited",
+        ):
+            if field in previous_decision:
+                decision[field] = previous_decision[field]
 
     _upsert_decision(resource_review, decision)
     resource_review["review_status"] = _review_status(
