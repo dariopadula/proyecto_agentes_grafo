@@ -13,26 +13,26 @@ def render_document_map_body(
     template = r"""
     <style>
       main { max-width: 1440px; padding: 0; }
-      .document-shell { display: grid; grid-template-columns: 270px minmax(430px, 1fr) 310px; min-height: calc(100vh - 66px); }
-      .document-sidebar, .document-coverage { padding: 18px; background: var(--panel); }
-      .document-sidebar { border-right: 1px solid var(--border); }
-      .document-coverage { border-left: 1px solid var(--border); }
-      .document-workspace { padding: 20px; }
-      .document-sidebar h2, .document-coverage h2 { margin-bottom: 6px; font-size: 18px; }
-      .document-sidebar input { margin-bottom: 14px; }
-      .terminal-list { display: grid; gap: 5px; }
-      .terminal-choice { display: grid; grid-template-columns: 11px minmax(0, 1fr) auto; gap: 8px; align-items: start; width: 100%; min-height: 0; margin: 0; padding: 9px; color: var(--text); background: transparent; border-color: transparent; text-align: left; }
-      .terminal-choice:hover, .terminal-choice:focus-visible { color: var(--text); background: #f4f7fa; border-color: var(--border); }
-      .terminal-choice.selected { color: var(--accent); background: #eef6ff; border-color: #a9cbea; }
-      .terminal-choice.hidden { display: none; }
-      .terminal-choice small { color: var(--muted); }
-      .terminal-state { width: 9px; height: 9px; margin-top: 4px; border-radius: 50%; background: var(--ok-text); }
-      .terminal-state.attention { background: #b25e09; }
-      .terminal-state.inactive { background: var(--muted); }
+      .document-shell { display: grid; grid-template-columns: minmax(560px, 1fr) 340px; height: calc(100vh - 66px); min-height: 560px; overflow: hidden; }
+      .document-coverage { padding: 18px; background: var(--panel); }
+      .document-coverage { min-height: 0; overflow-y: auto; border-left: 1px solid var(--border); }
+      .document-workspace { min-height: 0; padding: 20px; overflow-y: auto; scroll-behavior: smooth; }
+      .document-coverage h2 { margin-bottom: 6px; font-size: 18px; }
+      .document-selector { position: sticky; top: -20px; z-index: 8; margin: -20px -20px 18px; padding: 16px 20px 14px; background: #f4f6f8; border-bottom: 1px solid var(--border); }
+      .document-selector-row { position: relative; max-width: 920px; }
+      .document-selector input { margin: 5px 0 0; padding-right: 38px; background: var(--panel); }
+      .document-selector-toggle { position: absolute; right: 4px; bottom: 4px; width: 32px; min-height: 32px; margin: 0; padding: 0; color: var(--accent); background: transparent; border-color: transparent; }
+      .document-suggestions { position: absolute; z-index: 20; top: calc(100% + 4px); left: 0; right: 0; display: grid; max-height: 340px; padding: 5px; overflow-y: auto; overscroll-behavior: contain; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 12px 28px rgba(16, 24, 40, .16); }
+      .document-suggestions[hidden] { display: none; }
+      .terminal-option { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; width: 100%; min-height: 0; margin: 0; padding: 10px 11px; color: var(--text); background: transparent; border-color: transparent; text-align: left; }
+      .terminal-option:hover, .terminal-option:focus-visible, .terminal-option.selected { color: var(--text); background: #eef6ff; border-color: #a9cbea; }
+      .terminal-option strong { line-height: 1.35; }
       .terminal-count { color: var(--muted); font-size: 11px; }
       .workspace-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
       .workspace-head h2 { margin-bottom: 6px; font-size: 21px; }
       .workspace-summary { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+      .workspace-navigation { display: flex; gap: 6px; margin-top: 10px; }
+      .workspace-navigation button { min-height: 30px; margin: 0; padding: 0 9px; }
       .terminal-focus { margin: 18px 0; padding: 16px; color: #fff; background: var(--accent); border-radius: 8px; text-align: center; }
       .terminal-focus strong { display: block; margin-bottom: 5px; }
       .terminal-focus small { color: #dcecff; }
@@ -68,7 +68,8 @@ def render_document_map_body(
       .coverage-evidence ul { padding-left: 18px; }
       .coverage-evidence li { margin: 6px 0; overflow-wrap: anywhere; }
       @media (max-width: 1050px) {
-        .document-shell { grid-template-columns: 250px minmax(0, 1fr); }
+        .document-shell { grid-template-columns: minmax(0, 1fr); height: auto; min-height: calc(100vh - 66px); overflow: visible; }
+        .document-workspace, .document-coverage { overflow: visible; }
         .document-coverage { grid-column: 1 / -1; border-top: 1px solid var(--border); border-left: 0; }
       }
       @media (max-width: 700px) {
@@ -80,23 +81,32 @@ def render_document_map_body(
       }
     </style>
     <section class="document-shell">
-      <aside class="document-sidebar">
-        <p><a href="/">Volver a proyectos</a></p>
-        <p class="eyebrow">Mapa documental editable</p>
-        <h2>Trámites</h2>
-        <p class="muted"><span id="visible-terminal-count"></span> de __TERMINAL_COUNT__ nodos terminales</p>
-        <label for="document-terminal-search">Buscar trámite</label>
-        <input id="document-terminal-search" type="search" placeholder="Ej.: renovación">
-        <div class="terminal-list" id="document-terminal-list"></div>
-      </aside>
-
       <section class="document-workspace">
+        <div class="document-selector">
+          <p><a href="/">Volver a proyectos</a></p>
+          <p class="eyebrow">Mapa documental editable · __TERMINAL_COUNT__ trámites</p>
+          <div class="document-selector-row">
+            <label for="document-terminal-search">Buscar o seleccionar trámite</label>
+            <input id="document-terminal-search" type="search" role="combobox"
+                aria-autocomplete="list" aria-expanded="false"
+                aria-controls="document-terminal-suggestions"
+                placeholder="Escribe parte del nombre del trámite">
+            <button class="document-selector-toggle" id="document-selector-toggle"
+                type="button" aria-label="Mostrar trámites">⌄</button>
+            <div class="document-suggestions" id="document-terminal-suggestions"
+                role="listbox" hidden></div>
+          </div>
+        </div>
         <div id="document-message" hidden></div>
         <div class="workspace-head">
           <div>
             <p class="eyebrow">Auditoría documental · __PROJECT_NAME__</p>
             <h2 id="document-node-title"></h2>
             <a id="document-node-source" href="#" target="_blank" rel="noreferrer">Abrir fuente oficial</a>
+            <div class="workspace-navigation">
+              <button id="document-previous-node" type="button">← Anterior</button>
+              <button id="document-next-node" type="button">Siguiente →</button>
+            </div>
           </div>
           <div class="workspace-summary" id="document-node-summary"></div>
         </div>
@@ -139,41 +149,63 @@ def render_document_map_body(
         })[character]);
       }
 
-      function renderTerminalList() {
-        const host = document.getElementById("document-terminal-list");
-        host.innerHTML = documentMap.nodes.map(node => {
-          const attention = node.summary.pending_count + node.summary.provisional_count;
-          const stateClass = !node.is_active ? "inactive" : attention ? "attention" : "";
-          return `<button type="button" class="terminal-choice ${node.link_id === selectedNodeId ? "selected" : ""}"
-              data-node-id="${escapeHtml(node.link_id)}" data-search="${escapeHtml(node.title.toLowerCase())}">
-            <span class="terminal-state ${stateClass}"></span>
-            <span>${escapeHtml(node.title)}</span>
-            <span class="terminal-count">${node.summary.resource_count}</span>
-          </button>`;
-        }).join("");
+      function normalizedText(value) {
+        return String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      }
+
+      function renderTerminalSuggestions(query = "") {
+        const host = document.getElementById("document-terminal-suggestions");
+        const normalizedQuery = normalizedText(query.trim());
+        const matches = documentMap.nodes.filter(node =>
+          !normalizedQuery || normalizedText(node.title).includes(normalizedQuery)
+        );
+        host.innerHTML = matches.length ? matches.map(node => `
+          <button type="button" role="option"
+              class="terminal-option ${node.link_id === selectedNodeId ? "selected" : ""}"
+              data-node-id="${escapeHtml(node.link_id)}">
+            <strong>${escapeHtml(node.title)}</strong>
+            <span class="terminal-count">${node.summary.resource_count} recursos</span>
+          </button>`).join("") : '<p class="document-empty">No se encontraron trámites.</p>';
         host.querySelectorAll("[data-node-id]").forEach(button => {
           button.addEventListener("click", () => selectNode(button.dataset.nodeId));
         });
-        applyTerminalSearch();
       }
 
-      function applyTerminalSearch() {
-        const query = document.getElementById("document-terminal-search").value.trim().toLowerCase();
-        let visible = 0;
-        document.querySelectorAll(".terminal-choice").forEach(button => {
-          const matches = !query || button.dataset.search.includes(query);
-          button.classList.toggle("hidden", !matches);
-          if (matches) visible += 1;
-        });
-        document.getElementById("visible-terminal-count").textContent = visible;
+      function openTerminalSuggestions() {
+        const input = document.getElementById("document-terminal-search");
+        renderTerminalSuggestions(input.dataset.editing === "true" ? input.value : "");
+        document.getElementById("document-terminal-suggestions").hidden = false;
+        input.setAttribute("aria-expanded", "true");
+      }
+
+      function closeTerminalSuggestions() {
+        document.getElementById("document-terminal-suggestions").hidden = true;
+        document.getElementById("document-terminal-search").setAttribute("aria-expanded", "false");
       }
 
       function selectNode(nodeId) {
         selectedNodeId = nodeId;
         selectedResourceKey = null;
-        renderTerminalList();
         renderSelectedNode();
         clearCoverage();
+        closeTerminalSuggestions();
+        const selectedNode = documentMap.nodes.find(item => item.link_id === nodeId);
+        const input = document.getElementById("document-terminal-search");
+        input.value = selectedNode?.title || "";
+        input.dataset.editing = "false";
+        const url = new URL(window.location.href);
+        url.searchParams.set("node", nodeId);
+        url.searchParams.delete("saved");
+        url.searchParams.delete("error");
+        window.history.replaceState(null, "", url);
+        document.querySelector(".document-workspace").scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function selectAdjacentNode(offset) {
+        const index = documentMap.nodes.findIndex(item => item.link_id === selectedNodeId);
+        if (index < 0 || !documentMap.nodes.length) return;
+        const nextIndex = (index + offset + documentMap.nodes.length) % documentMap.nodes.length;
+        selectNode(documentMap.nodes[nextIndex].link_id);
       }
 
       function renderSelectedNode() {
@@ -297,7 +329,39 @@ def render_document_map_body(
           <p>Selecciona un recurso consolidado para ver todos los trámites que lo utilizan.</p></div></div>`;
       }
 
-      document.getElementById("document-terminal-search").addEventListener("input", applyTerminalSearch);
+      const terminalSearch = document.getElementById("document-terminal-search");
+      terminalSearch.addEventListener("focus", () => {
+        terminalSearch.dataset.editing = "true";
+        terminalSearch.select();
+        openTerminalSuggestions();
+      });
+      terminalSearch.addEventListener("input", () => {
+        terminalSearch.dataset.editing = "true";
+        openTerminalSuggestions();
+      });
+      terminalSearch.addEventListener("keydown", event => {
+        const options = [...document.querySelectorAll(".terminal-option")];
+        const focused = document.activeElement.closest?.(".terminal-option");
+        if (event.key === "Escape") closeTerminalSuggestions();
+        if (event.key === "ArrowDown" && options.length) {
+          event.preventDefault();
+          (focused ? options[(options.indexOf(focused) + 1) % options.length] : options[0]).focus();
+        }
+        if (event.key === "Enter" && options.length) {
+          event.preventDefault();
+          options[0].click();
+        }
+      });
+      document.getElementById("document-selector-toggle").addEventListener("click", () => {
+        terminalSearch.dataset.editing = "true";
+        terminalSearch.focus();
+        openTerminalSuggestions();
+      });
+      document.addEventListener("click", event => {
+        if (!event.target.closest(".document-selector-row")) closeTerminalSuggestions();
+      });
+      document.getElementById("document-previous-node").addEventListener("click", () => selectAdjacentNode(-1));
+      document.getElementById("document-next-node").addEventListener("click", () => selectAdjacentNode(1));
       const message = document.getElementById("document-message");
       if (pageParameters.has("saved")) {
         message.className = "document-message";
@@ -308,7 +372,10 @@ def render_document_map_body(
         message.textContent = `No se pudo guardar: ${pageParameters.get("error")}`;
         message.hidden = false;
       }
-      renderTerminalList();
+      const initialNode = documentMap.nodes.find(item => item.link_id === selectedNodeId);
+      terminalSearch.value = initialNode?.title || "";
+      terminalSearch.dataset.editing = "false";
+      renderTerminalSuggestions();
       renderSelectedNode();
     </script>
     """

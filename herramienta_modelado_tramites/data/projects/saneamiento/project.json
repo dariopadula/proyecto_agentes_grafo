@@ -2,9 +2,9 @@
   "project_id": "saneamiento",
   "name": "Saneamiento",
   "start_url": "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento",
-  "status": "reviewed",
+  "status": "resource_discovery",
   "created_at": "2026-08-14T15:18:01-03:00",
-  "updated_at": "2026-08-17T10:33:46-03:00",
+  "updated_at": "2026-08-17T14:32:27-03:00",
   "current_snapshot": null,
   "description": "Todos los tramites asociados a saneaminto de la IM"
 }

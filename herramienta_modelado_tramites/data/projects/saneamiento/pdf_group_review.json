@@ -1,0 +1,162 @@
+{
+  "schema_version": "0.1",
+  "project_id": "saneamiento",
+  "review_status": "not_started",
+  "updated_at": "2026-08-17T14:32:00-03:00",
+  "decisions": [
+    {
+      "family_id": "pdf_family_001",
+      "partition_id": "pdf_family_001_part_001",
+      "identity_decision": "confirmed_same",
+      "default_use": "process_as_context",
+      "selected_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/cambiodepropietario.pdf",
+      "display_name": "formulario de DGI Nº 6351",
+      "notes": "",
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T14:28:58-03:00",
+      "analysis_generated_at": "2026-08-17T14:29:00-03:00",
+      "decision_source": "inherited_from_family",
+      "inherited_at": "2026-08-17T14:29:00-03:00"
+    },
+    {
+      "family_id": "pdf_family_002",
+      "partition_id": "pdf_family_002_part_001",
+      "identity_decision": "confirmed_same",
+      "default_use": "process_as_context",
+      "selected_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/instructivoi.o.pdf",
+      "display_name": "instructivo",
+      "notes": "",
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T14:30:07-03:00",
+      "analysis_generated_at": "2026-08-17T14:30:08-03:00",
+      "decision_source": "inherited_from_family",
+      "inherited_at": "2026-08-17T14:30:08-03:00"
+    },
+    {
+      "family_id": "pdf_family_003",
+      "partition_id": "pdf_family_003_part_001",
+      "identity_decision": "confirmed_same",
+      "default_use": "process_as_context",
+      "selected_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/cartasolicitudbarometricaprediosindustriales-4.pdf",
+      "display_name": "Carta de solicitud",
+      "notes": "",
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T14:30:37-03:00",
+      "analysis_generated_at": "2026-08-17T14:30:38-03:00",
+      "decision_source": "inherited_from_family",
+      "inherited_at": "2026-08-17T14:30:38-03:00"
+    },
+    {
+      "family_id": "pdf_family_004",
+      "partition_id": "pdf_family_004_part_001",
+      "identity_decision": "confirmed_same",
+      "default_use": "show_as_link",
+      "selected_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/tomadeconexion.pdf",
+      "display_name": "Rótulo",
+      "notes": "",
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T14:31:58-03:00",
+      "analysis_generated_at": "2026-08-17T14:32:00-03:00",
+      "decision_source": "inherited_from_family",
+      "inherited_at": "2026-08-17T14:32:00-03:00"
+    }
+  ],
+  "family_decisions": [
+    {
+      "family_id": "pdf_family_001",
+      "appearance_ids": [
+        "link_005::resource_002",
+        "link_005::resource_004"
+      ],
+      "identity_decision": "confirmed_same_manually",
+      "default_use": "process_as_context",
+      "selected_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/cambiodepropietario.pdf",
+      "display_name": "formulario de DGI Nº 6351",
+      "notes": "",
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T14:28:58-03:00",
+      "analysis_generated_at": "2026-08-17T14:28:49-03:00",
+      "verification_reconciliation": "consistent",
+      "materialization": {
+        "applied_appearance_ids": [
+          "link_005::resource_002",
+          "link_005::resource_004"
+        ],
+        "preserved_individual_exception_ids": [],
+        "reconciled_at": "2026-08-17T14:28:58-03:00"
+      }
+    },
+    {
+      "family_id": "pdf_family_002",
+      "appearance_ids": [
+        "link_014::resource_002",
+        "link_014::resource_003"
+      ],
+      "identity_decision": "confirmed_same_manually",
+      "default_use": "process_as_context",
+      "selected_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/instructivoi.o.pdf",
+      "display_name": "instructivo",
+      "notes": "",
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T14:30:07-03:00",
+      "analysis_generated_at": "2026-08-17T14:29:00-03:00",
+      "verification_reconciliation": "consistent",
+      "materialization": {
+        "applied_appearance_ids": [
+          "link_014::resource_002",
+          "link_014::resource_003"
+        ],
+        "preserved_individual_exception_ids": [],
+        "reconciled_at": "2026-08-17T14:30:07-03:00"
+      }
+    },
+    {
+      "family_id": "pdf_family_003",
+      "appearance_ids": [
+        "link_024::resource_002",
+        "link_024::resource_005"
+      ],
+      "identity_decision": "confirmed_same_manually",
+      "default_use": "show_as_link",
+      "selected_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/cartasolicitudbarometricaprediosindustriales-4.pdf",
+      "display_name": "Carta de solicitud",
+      "notes": "",
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T14:31:45-03:00",
+      "analysis_generated_at": "2026-08-17T14:30:38-03:00",
+      "verification_reconciliation": "consistent",
+      "materialization": {
+        "applied_appearance_ids": [
+          "link_024::resource_002",
+          "link_024::resource_005"
+        ],
+        "preserved_individual_exception_ids": [],
+        "reconciled_at": "2026-08-17T14:31:45-03:00"
+      }
+    },
+    {
+      "family_id": "pdf_family_004",
+      "appearance_ids": [
+        "link_029::resource_002",
+        "link_029::resource_008"
+      ],
+      "identity_decision": "confirmed_same_manually",
+      "default_use": "show_as_link",
+      "selected_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/tomadeconexion.pdf",
+      "display_name": "Rótulo",
+      "notes": "",
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T14:31:58-03:00",
+      "analysis_generated_at": "2026-08-17T14:31:46-03:00",
+      "verification_reconciliation": "consistent",
+      "materialization": {
+        "applied_appearance_ids": [
+          "link_029::resource_002",
+          "link_029::resource_008"
+        ],
+        "preserved_individual_exception_ids": [],
+        "reconciled_at": "2026-08-17T14:31:58-03:00"
+      }
+    }
+  ]
+}

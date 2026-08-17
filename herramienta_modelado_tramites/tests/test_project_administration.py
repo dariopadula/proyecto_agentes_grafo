@@ -83,6 +83,10 @@ class ProjectAdministrationTests(unittest.TestCase):
         self.assertIn("Nuevo proyecto", page)
         self.assertIn('/projects/demo/discover-links', page)
         self.assertIn('/projects/demo/delete', page)
+        self.assertIn("Flujo principal", page)
+        self.assertIn("Revisión avanzada", page)
+        self.assertLess(page.index("Ver mapa documental"), page.index("Revisar casos individuales"))
+        self.assertLess(page.index("Revisar casos individuales"), page.index("Ver estado efectivo"))
 
     def test_existing_project_only_offers_review_not_discovery(self):
         project_dir = self.projects / "demo"

@@ -158,6 +158,35 @@ class AuxiliaryInventoryTests(unittest.TestCase):
         self.assertEqual(len(groups), 1)
         self.assertEqual(groups[0]["evidence"]["appearance_count"], 2)
 
+    def test_group_id_is_preserved_when_an_appearance_is_added(self):
+        first = {
+            "appearance_id": "a1",
+            "source_node_id": "node_1",
+            "detected_url": "https://example.test/shared",
+        }
+        existing = _build_groups(
+            [first, {**first, "appearance_id": "a2", "source_node_id": "node_2"}],
+            key_field="detected_url",
+            prefix="exact_url",
+            certainty="exact_url",
+            evidence_field="detected_url",
+        )
+        updated = _build_groups(
+            [
+                first,
+                {**first, "appearance_id": "a2", "source_node_id": "node_2"},
+                {**first, "appearance_id": "a3", "source_node_id": "node_3"},
+            ],
+            key_field="detected_url",
+            prefix="exact_url",
+            certainty="exact_url",
+            evidence_field="detected_url",
+            existing_groups=existing,
+        )
+
+        self.assertEqual(updated[0]["group_id"], existing[0]["group_id"])
+        self.assertEqual(len(updated[0]["appearance_ids"]), 3)
+
 
 def _resource(resource_id, url, resource_type="link"):
     return {

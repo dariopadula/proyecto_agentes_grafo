@@ -25,6 +25,11 @@ def analyze_auxiliary_links(project_id: str, actor: str) -> dict[str, Any]:
     resource_review = load_json(resource_review_path)
     change_log = load_json(change_log_path)
     timestamp = now_iso()
+    existing_analysis = (
+        load_json(analysis_path)
+        if analysis_path.exists()
+        else {}
+    )
 
     decisions = {
         decision.get("decision_id"): decision
@@ -41,6 +46,7 @@ def analyze_auxiliary_links(project_id: str, actor: str) -> dict[str, Any]:
         prefix="exact_url",
         certainty="exact_url",
         evidence_field="detected_url",
+        existing_groups=existing_analysis.get("exact_url_groups", []),
     )
     normalized_groups = _build_groups(
         appearances,
@@ -49,6 +55,9 @@ def analyze_auxiliary_links(project_id: str, actor: str) -> dict[str, Any]:
         certainty="strong_normalized_equivalent",
         evidence_field="identity_key",
         require_distinct_urls=True,
+        existing_groups=existing_analysis.get(
+            "normalized_equivalence_candidates", []
+        ),
     )
     agenda_groups = _build_groups(
         [
@@ -61,6 +70,7 @@ def analyze_auxiliary_links(project_id: str, actor: str) -> dict[str, Any]:
         certainty="agenda_parameters_match",
         evidence_field="identity_key",
         include_singletons=True,
+        existing_groups=existing_analysis.get("agenda_candidates", []),
     )
 
     payload = {
@@ -246,6 +256,7 @@ def _build_groups(
     evidence_field: str,
     require_distinct_urls: bool = False,
     include_singletons: bool = False,
+    existing_groups: list[dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
     buckets: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for appearance in appearances:
@@ -254,16 +265,30 @@ def _build_groups(
             buckets[value].append(appearance)
 
     groups = []
+    existing_ids = {
+        group.get("evidence", {}).get("value"): group.get("group_id")
+        for group in (existing_groups or [])
+        if group.get("group_id")
+    }
+    used_numbers = []
+    for group_id in existing_ids.values():
+        suffix = str(group_id).rsplit("_", 1)[-1]
+        if suffix.isdigit():
+            used_numbers.append(int(suffix))
+    next_number = max(used_numbers, default=0) + 1
     for value, items in sorted(buckets.items()):
         urls = sorted({item.get("detected_url", "") for item in items})
         if not include_singletons and len(items) < 2:
             continue
         if require_distinct_urls and len(urls) < 2:
             continue
-        group_index = len(groups) + 1
+        group_id = existing_ids.get(value)
+        if not group_id:
+            group_id = f"{prefix}_{next_number:03d}"
+            next_number += 1
         groups.append(
             {
-                "group_id": f"{prefix}_{group_index:03d}",
+                "group_id": group_id,
                 "certainty": certainty,
                 "evidence": {
                     "field": evidence_field,

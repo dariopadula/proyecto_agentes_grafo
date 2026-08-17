@@ -1,0 +1,1484 @@
+{
+  "project_id": "saneamiento",
+  "generated_at": "2026-08-17T14:32:27-03:00",
+  "source": "accepted_candidate_links",
+  "accepted_links_count": 26,
+  "resources_count": 69,
+  "discarded_resources_count": 52,
+  "filter_rules_path": "C:\\DARIO\\Git\\proyecto_agentes_grafo\\herramienta_modelado_tramites\\data\\projects\\saneamiento\\resource_filter_rules.json",
+  "pages": [
+    {
+      "link_id": "link_001",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/consulta/aprobacion-de-sistemas-constructivos-materiales-sanitarios-o-consulta-de-reglamentacion-de-higiene",
+      "title": "Aprobación de sistemas constructivos, materiales sanitarios o consulta de reglamentación de higiene",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formulariotramiteenconsultaf-tc-01v3editable.pdf",
+          "title": "Formulario de consulta",
+          "anchor_text": "Formulario de consulta",
+          "resource_type": "pdf",
+          "source_context": "Formulario de consulta .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://montevideo.gub.uy/node/30194",
+          "title": "Cálculo de transmitancia térmica",
+          "anchor_text": "Cálculo de transmitancia térmica",
+          "resource_type": "link",
+          "source_context": "Cálculo de transmitancia térmica",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://montevideo.gub.uy/node/30186",
+          "title": "Listado de materiales sanitarios",
+          "anchor_text": "Listado de materiales sanitarios",
+          "resource_type": "link",
+          "source_context": "Listado de materiales sanitarios",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://montevideo.gub.uy/node/30179",
+          "title": "Sistemas constructivos no tradicionales",
+          "anchor_text": "Sistemas constructivos no tradicionales",
+          "resource_type": "link",
+          "source_context": "Sistemas constructivos no tradicionales",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://montevideo.gub.uy/node/40304",
+          "title": "Normativas relacionadas del Servicio de Contralor de la Edificación",
+          "anchor_text": "Normativas relacionadas del Servicio de Contralor de la Edificación",
+          "resource_type": "link",
+          "source_context": "Normativas relacionadas del Servicio de Contralor de la Edificación",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24796",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/consulta/aprobacion-de-sistemas-constructivos-materiales-sanitarios-o-consulta-de-reglamentacion-de-higiene",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_002",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/barometrica-para-zonas-no-saneadas",
+      "title": "Barométrica para zonas no saneadas",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24665",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/barometrica-para-zonas-no-saneadas",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_003",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-categoria-de-tarifa-de-saneamiento",
+      "title": "Cambio de categoría de la tarifa de saneamiento",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/45158",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-categoria-de-tarifa-de-saneamiento",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_004",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-firma-tecnica-en-solicitudes-de-conexion-a-saneamiento",
+      "title": "Cambio de firma técnica en solicitudes de conexión a saneamiento",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/cambiodefirma.pdf",
+          "title": "Formulario de solicitud de cambio de firma técnica",
+          "anchor_text": "Formulario de solicitud de cambio de firma técnica",
+          "resource_type": "pdf",
+          "source_context": "Formulario de solicitud de cambio de firma técnica .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/node/46029",
+          "title": "Cambio de persona propietaria para solicitudes de conexión a saneamiento",
+          "anchor_text": "Cambio de persona propietaria para solicitudes de conexión a saneamiento",
+          "resource_type": "link",
+          "source_context": "De existir también cambio de persona propietaria, deberás realizar el trámite de Cambio de persona propietaria para solicitudes de conexión a saneamiento .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-propietario-para-solicitudes-de-conexion-a-saneamiento",
+          "title": "Cambio de persona propietaria en solicitudes de conexión a saneamiento",
+          "anchor_text": "Cambio de persona propietaria en solicitudes de conexión a saneamiento",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Cambio de persona propietaria en solicitudes de conexión a saneamiento",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/tecnico-para-solicitudes-de-conexion-a-saneamiento",
+          "title": "Registro de persona técnica para solicitudes de conexión a saneamiento",
+          "anchor_text": "Registro de persona técnica para solicitudes de conexión a saneamiento",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Registro de persona técnica para solicitudes de conexión a saneamiento",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/46028",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-firma-tecnica-en-solicitudes-de-conexion-a-saneamiento",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_005",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-propietario-para-solicitudes-de-conexion-a-saneamiento",
+      "title": "Cambio de persona propietaria en solicitudes de conexión a saneamiento",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://montevideo.gub.uy/sites/default/files/biblioteca/cambiodepropietario.pdf",
+          "title": "formulario de DGI Nº 6351",
+          "anchor_text": "formulario de DGI Nº 6351",
+          "resource_type": "pdf",
+          "source_context": "Si es una persona jurídica, formulario de DGI Nº 6351 .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/node/46028",
+          "title": "Cambio de firma técnica para solicitudes de conexión al saneamiento",
+          "anchor_text": "Cambio de firma técnica para solicitudes de conexión al saneamiento",
+          "resource_type": "link",
+          "source_context": "De existir también cambio de firma técnica, deberás realizar el trámite de Cambio de firma técnica para solicitudes de conexión al saneamiento .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/cambiodepropietario.pdf",
+          "title": "Formulario de cambio de persona propietaria para solicitudes de conexión a saneamiento",
+          "anchor_text": "Formulario de cambio de persona propietaria para solicitudes de conexión a saneamiento",
+          "resource_type": "pdf",
+          "source_context": "Formulario de cambio de persona propietaria para solicitudes de conexión a saneamiento ( pdf - 170.14 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-firma-tecnica-en-solicitudes-de-conexion-a-saneamiento",
+          "title": "Cambio de firma técnica en solicitudes de conexión a saneamiento",
+          "anchor_text": "Cambio de firma técnica en solicitudes de conexión a saneamiento",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Cambio de firma técnica en solicitudes de conexión a saneamiento",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/46029",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-propietario-para-solicitudes-de-conexion-a-saneamiento",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_006",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/canalizacion-especial-de-desague",
+      "title": "Canalización especial de desagüe",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/aplicacion/facturacion-de-sellado-solicitud-estudios-y-proyectos-de-saneamiento",
+          "title": "Generar la factura",
+          "anchor_text": "Generar la factura",
+          "resource_type": "link",
+          "source_context": "Generar la factura",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24673",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/canalizacion-especial-de-desague",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_007",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/canalizacion-pluvial-zanjados-y-cunetas",
+      "title": "Canalización pluvial (zanjas y cunetas)",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24633",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/canalizacion-pluvial-zanjados-y-cunetas",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_008",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/certificado-de-saneamiento-para-compraventa-de-inmuebles",
+      "title": "Certificado de saneamiento para compraventa de inmuebles",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=VUNICA&recurso=RESERVAPREVIA&pagina_retorno=https%3A//www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "agendate",
+          "anchor_text": "agendate",
+          "resource_type": "agenda",
+          "source_context": "Cuando recibas el correo con la aprobación y número de certificado, agendate para retirarlo en Atención a la Ciudadanía (Soriano 1363).",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/anexo1.3_0.pdf",
+          "title": "Formulario anexo",
+          "anchor_text": "Formulario anexo",
+          "resource_type": "pdf",
+          "source_context": "Formulario anexo (si corresponde), con la firma autógrafa de la persona declarante.",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/27437",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/certificado-de-saneamiento-para-compraventa-de-inmuebles",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_009",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/colector-provisorio",
+      "title": "Colector provisorio",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/aplicacion/facturacion-de-sellado-solicitud-estudios-y-proyectos-de-saneamiento",
+          "title": "Generar la factura",
+          "anchor_text": "Generar la factura",
+          "resource_type": "link",
+          "source_context": "Generar la factura",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/modelo_colector_provisorio_-_canalizacion_especial_de_desague.pdf",
+          "title": "Modelo de solicitud",
+          "anchor_text": "Modelo de solicitud",
+          "resource_type": "pdf",
+          "source_context": "Modelo de solicitud ( pdf - 93.39 KB)",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24931",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/colector-provisorio",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_011",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/boca-de-tormenta",
+      "title": "Construcción de boca de tormenta",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/reclamo/boca-de-tormenta-tapada",
+          "title": "Reparación de boca de tormenta",
+          "anchor_text": "Reparación de boca de tormenta",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Reparación de boca de tormenta",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/limpieza-boca-de-tormenta",
+          "title": "Limpieza de boca de tormenta",
+          "anchor_text": "Limpieza de boca de tormenta",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Limpieza de boca de tormenta",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24667",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/boca-de-tormenta",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_012",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/construccion-de-bocas-de-tormenta",
+      "title": "Construcción de bocas de tormenta",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24677",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/construccion-de-bocas-de-tormenta",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_013",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/division-de-deuda-de-tarifa-de-saneamiento",
+      "title": "División de deuda de tarifa de saneamiento",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/Formulario%20Divisi%C3%B3n%20de%20Deuda%20saneamiento.pdf",
+          "title": "Formulario de solicitud de división de deuda completo",
+          "anchor_text": "Formulario de solicitud de división de deuda completo",
+          "resource_type": "pdf",
+          "source_context": "Formulario de solicitud de división de deuda completo con original de los siguientes documentos:",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=VUNICA&recurso=RESERVAPREVIA&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+          "title": "Reservar hora",
+          "anchor_text": "Reservar hora",
+          "resource_type": "agenda",
+          "source_context": "Reservar hora",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/Formulario%20Division%20de%20Deuda.pdf",
+          "title": "Formulario de división de deuda",
+          "anchor_text": "Formulario de división de deuda",
+          "resource_type": "pdf",
+          "source_context": "Formulario de división de deuda ( pdf - 85.12 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "http://normativa.montevideo.gub.uy/articulo/89103",
+          "title": "Artículo Nº 310.13.7 del TOTID",
+          "anchor_text": "Artículo Nº 310.13.7 del TOTID",
+          "resource_type": "normativa",
+          "source_context": "Artículo Nº 310.13.7 del TOTID",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://www.montevideo.gub.uy/asl/sistemas/Gestar/resoluci.nsf/0bfcab2a0d22bf960325678d00746391/1a8f7c44d9bf045d03257f4e00563734?OpenDocument",
+          "title": "Resolución N° 183/16",
+          "anchor_text": "Resolución N° 183/16",
+          "resource_type": "link",
+          "source_context": "Resolución N° 183/16",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/36521",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/division-de-deuda-de-tarifa-de-saneamiento",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_014",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/certificado/efluentes-industriales-informe-de-operacion-de-industrias",
+      "title": "Efluentes industriales. Informe de operación de industrias",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://montevideo.gub.uy/sites/default/files/biblioteca/instructivoi.o.pdf",
+          "title": "instructivo",
+          "anchor_text": "instructivo",
+          "resource_type": "pdf",
+          "source_context": "Se elaboran siguiendo las pautas del instructivo en el formulario del trámite en línea, en el que se brinda la ayuda necesaria.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/instructivoi.o.pdf",
+          "title": "Instructivo para el informe de operación de industrias",
+          "anchor_text": "Instructivo para el informe de operación de industrias",
+          "resource_type": "pdf",
+          "source_context": "Instructivo para el informe de operación de industrias ( pdf - 119.97 KB)",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/30442",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/certificado/efluentes-industriales-informe-de-operacion-de-industrias",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_015",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/factibilidad-de-saneamiento",
+      "title": "Estudio de factibilidad de saneamiento",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/modelo_factibilidad_de_saneamiento.pdf",
+          "title": "Instructivo para presentación de solicitudes de factibilidad de saneamiento",
+          "anchor_text": "Instructivo para presentación de solicitudes de factibilidad de saneamiento",
+          "resource_type": "pdf",
+          "source_context": "Nota dirigida a la Dirección del servicio firmada por la persona interesada. Los detalles de lo que debe incluir la nota se encuentran en el Instructivo para presentación de solicitudes de factibilidad de saneamiento .",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24848",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/factibilidad-de-saneamiento",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_016",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/fondo-rotatorio-de-barometricas",
+      "title": "Fondo Rotatorio de Barométricas",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://montevideo.gub.uy/node/25041",
+          "title": "Centros Comunales Zonales",
+          "anchor_text": "Centros Comunales Zonales",
+          "resource_type": "link",
+          "source_context": "Este trámite se realiza en los Centros Comunales Zonales 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 y 18.",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/59010",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/fondo-rotatorio-de-barometricas",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_017",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/reclamo/gestiones-comerciales-de-tarifa-de-saneamiento",
+      "title": "Gestiones Comerciales de Tarifa de Saneamiento",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/node/36521",
+          "title": "División de deuda de tarifa de saneamiento",
+          "anchor_text": "División de deuda de tarifa de saneamiento",
+          "resource_type": "link",
+          "source_context": "División de deuda de tarifa de saneamiento",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/node/24998",
+          "title": "Solicitud de exoneración de deuda de tarifa de Saneamiento por ocupantes morosos",
+          "anchor_text": "Solicitud de exoneración de deuda de tarifa de Saneamiento por ocupantes morosos",
+          "resource_type": "link",
+          "source_context": "Solicitud de exoneración de deuda de tarifa de Saneamiento por ocupantes morosos",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/node/24991",
+          "title": "Alta de tarifa :",
+          "anchor_text": "Alta de tarifa :",
+          "resource_type": "link",
+          "source_context": "Alta de tarifa : Si tu vivienda está conectada a la red de saneamiento pero nunca recibiste una tarifa, tenés que hacer el trámite de alta de la tarifa.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://tramites.montevideo.gub.uy/node/24993",
+          "title": "Anulación de tarifa",
+          "anchor_text": "Anulación de tarifa",
+          "resource_type": "link",
+          "source_context": "Anulación de tarifa : Si no estás conectado a la red pero igual recibís una tarifa, solicitá la anulación.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://tramites.montevideo.gub.uy/node/45158",
+          "title": "Ajuste de categoría",
+          "anchor_text": "Ajuste de categoría",
+          "resource_type": "link",
+          "source_context": "Ajuste de categoría : Si recibís una tarifa incorrecta (por ejemplo, comercial en vez de domiciliaria), podés pedir un ajuste.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://tramites.montevideo.gub.uy/node/50980",
+          "title": "Reclamo de facturación",
+          "anchor_text": "Reclamo de facturación",
+          "resource_type": "link",
+          "source_context": "Reclamo de facturación : Si tenés cualquier otro reclamo sobre la facturación, ingresalo a través del sitio web.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_008",
+          "url": "https://tramites.montevideo.gub.uy/tramite/ingreso-de-lecturas-de-medidores-de-fuentes-propias",
+          "title": "Ingreso de Lecturas de Fuentes Propias",
+          "anchor_text": "Ingreso de Lecturas de Fuentes Propias",
+          "resource_type": "link",
+          "source_context": "Ingreso de Lecturas de Fuentes Propias : Si tenés abastecimiento de agua distinto al de OSE debés aportar las lecturas de tu medidor.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_009",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/anulacion-de-deuda-de-tarifa-de-saneamiento-por-no-conexion",
+          "title": "Anulación de deuda de Tarifa de Saneamiento por no conexión",
+          "anchor_text": "Anulación de deuda de Tarifa de Saneamiento por no conexión",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Anulación de deuda de Tarifa de Saneamiento por no conexión",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_010",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/alta-de-tarifa-de-saneamiento",
+          "title": "Alta de tarifa de saneamiento",
+          "anchor_text": "Alta de tarifa de saneamiento",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Alta de tarifa de saneamiento",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_011",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-categoria-de-tarifa-de-saneamiento",
+          "title": "Cambio de categoría de la tarifa de saneamiento",
+          "anchor_text": "Cambio de categoría de la tarifa de saneamiento",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Cambio de categoría de la tarifa de saneamiento",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_012",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/exoneracion/solicitud-de-exoneracion-de-deuda-de-tarifa-de-saneamiento-generada-por-ocupantes-morosos",
+          "title": "Solicitud de exoneración de deuda de tarifa de saneamiento generada por ocupantes morosos",
+          "anchor_text": "Solicitud de exoneración de deuda de tarifa de saneamiento generada por ocupantes morosos",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Solicitud de exoneración de deuda de tarifa de saneamiento generada por ocupantes morosos",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_013",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/division-de-deuda-de-tarifa-de-saneamiento",
+          "title": "División de deuda de tarifa de saneamiento",
+          "anchor_text": "División de deuda de tarifa de saneamiento",
+          "resource_type": "tramite_relacionado",
+          "source_context": "División de deuda de tarifa de saneamiento",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_014",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/reclamo/reclamo-por-facturacion-de-tarifa-de-saneamiento",
+          "title": "Reclamo por facturación de tarifa de saneamiento",
+          "anchor_text": "Reclamo por facturación de tarifa de saneamiento",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Reclamo por facturación de tarifa de saneamiento",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/50791",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_015",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/reclamo/gestiones-comerciales-de-tarifa-de-saneamiento",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_018",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/denuncia/hundimiento-de-pavimento-causada-por-colectores",
+      "title": "Hundimiento de pavimento causado por colectores",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://montevideo.gub.uy/app/sur/ingreso/?codigo_sur=261",
+          "title": "formulario web",
+          "anchor_text": "formulario web",
+          "resource_type": "formulario",
+          "source_context": "Completá el formulario web .",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24704",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/denuncia/hundimiento-de-pavimento-causada-por-colectores",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_019",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/denuncia/hundimiento-de-veredas-causado-por-colectores-o-conexiones-sanitarias",
+      "title": "Hundimiento de veredas causado por colectores o conexiones sanitarias",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://montevideo.gub.uy/app/sur/ingreso/?codigo_sur=261",
+          "title": "formulario web",
+          "anchor_text": "formulario web",
+          "resource_type": "formulario",
+          "source_context": "Completá el formulario web .",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24672",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/denuncia/hundimiento-de-veredas-causado-por-colectores-o-conexiones-sanitarias",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_022",
+      "url": "https://tramites.montevideo.gub.uy/tramite/ingreso-de-lecturas-de-medidores-de-fuentes-propias",
+      "title": "Ingreso de lecturas de medidores de fuentes propias",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/node/52464",
+          "title": "Administración de Permisos en Trámites para Empresas (APTE)",
+          "anchor_text": "Administración de Permisos en Trámites para Empresas (APTE)",
+          "resource_type": "link",
+          "source_context": "Para ingresar las mediciones la empresa debe estar registrada en Administración de Permisos en Trámites para Empresas (APTE) con un representante autorizado que gestionará los datos de la empresa y otorgará roles de usuario para el ingreso a la plataforma para registrar las mediciones. El registro de la empresa en APTE se realiza presencial en la Intendencia, entrando por la calle Soriano. Se debe reservar hora y asistir con la documentación requerida.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://montevideo.gub.uy/como-crear-un-usuario-gubuy",
+          "title": "usuario",
+          "anchor_text": "usuario",
+          "resource_type": "link",
+          "source_context": "Las personas con roles deben ingresar las mediciones en la plataforma antes del 15 de cada mes. Para ingresar las lecturas se debe contar con usuario gub .uy .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://montevideo.gub.uy/node/61853",
+          "title": "gub",
+          "anchor_text": "gub",
+          "resource_type": "link",
+          "source_context": "Las personas con roles deben ingresar las mediciones en la plataforma antes del 15 de cada mes. Para ingresar las lecturas se debe contar con usuario gub .uy .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/reclamo/gestiones-comerciales-de-tarifa-de-saneamiento",
+          "title": "Gestiones Comerciales de Tarifa de Saneamiento",
+          "anchor_text": "Gestiones Comerciales de Tarifa de Saneamiento",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Gestiones Comerciales de Tarifa de Saneamiento",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/suscripcionactualizacion-de-personas-administradoras-de-usuarios-para-empresas-y-otras-entidades",
+          "title": "Suscripción o actualización de personas administradoras de usuarios para empresas y otras entidades",
+          "anchor_text": "Suscripción o actualización de personas administradoras de usuarios para empresas y otras entidades",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Suscripción o actualización de personas administradoras de usuarios para empresas y otras entidades",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://montevideo.gub.uy/app/sanea-fuentes-propias/",
+          "title": "Iniciar trámite",
+          "anchor_text": "Iniciar trámite",
+          "resource_type": "link",
+          "source_context": "Iniciar trámite",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/63984",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_008",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramite/ingreso-de-lecturas-de-medidores-de-fuentes-propias",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_023",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/limpieza-boca-de-tormenta",
+      "title": "Limpieza de boca de tormenta",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/reclamo/boca-de-tormenta-tapada",
+          "title": "Reparación de boca de tormenta",
+          "anchor_text": "Reparación de boca de tormenta",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Reparación de boca de tormenta",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/construccion-de-bocas-de-tormenta",
+          "title": "Construcción de bocas de tormenta",
+          "anchor_text": "Construcción de bocas de tormenta",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Construcción de bocas de tormenta",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://montevideo.gub.uy/app/sur/ingreso/?codigo_sur=261",
+          "title": "Iniciar trámite",
+          "anchor_text": "Iniciar trámite",
+          "resource_type": "link",
+          "source_context": "Iniciar trámite",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24588",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/limpieza-boca-de-tormenta",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_024",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/pedido-especial-para-uso-de-barometricas-en-industrias",
+      "title": "Pedido especial para uso de barométricas en industrias",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://montevideo.gub.uy/sites/default/files/biblioteca/cartasolicitudbarometricaprediosindustriales-4.pdf",
+          "title": "Carta de solicitud",
+          "anchor_text": "Carta de solicitud",
+          "resource_type": "pdf",
+          "source_context": "Carta de solicitud de uso especial de barométricas en industrias",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/guiatransportebarometrica2024.pdf",
+          "title": "Guía para barométrica",
+          "anchor_text": "Guía para barométrica",
+          "resource_type": "pdf",
+          "source_context": "Guía para barométrica",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/instructivobarometrica01191_0.pdf",
+          "title": "instructivo",
+          "anchor_text": "instructivo",
+          "resource_type": "pdf",
+          "source_context": "Recomendamos leer el instructivo antes de comenzar el trámite.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/cartasolicitudbarometricaprediosindustriales-4.pdf",
+          "title": "Carta de solicitud",
+          "anchor_text": "Carta de solicitud",
+          "resource_type": "pdf",
+          "source_context": "Carta de solicitud ( pdf - 126.35 KB)",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/30443",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/pedido-especial-para-uso-de-barometricas-en-industrias",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_025",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/registro-de-profesionales-e-instaladores-sanitarios",
+      "title": "Profesionales e instaladores sanitarios",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/f-rta-01registrodeprofesionalesoinstaladoressanitariosversion5.pdf",
+          "title": "Formulario - Registro de Profesionales o Instaladores Sanitarios",
+          "anchor_text": "Formulario - Registro de Profesionales o Instaladores Sanitarios",
+          "resource_type": "pdf",
+          "source_context": "Formulario - Registro de Profesionales o Instaladores Sanitarios ( pdf - 206.15 KB)",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24731",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/registro/registro-de-profesionales-e-instaladores-sanitarios",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_026",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/reclamo/reclamo-por-facturacion-de-tarifa-de-saneamiento",
+      "title": "Reclamo por facturación de tarifa de saneamiento",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/exoneracion/solicitud-de-exoneracion-de-deuda-de-tarifa-de-saneamiento-generada-por-ocupantes-morosos",
+          "title": "Exoneración de deuda por ocupantes morosos",
+          "anchor_text": "Exoneración de deuda por ocupantes morosos",
+          "resource_type": "tramite_relacionado",
+          "source_context": "En los casos de Exoneración de deuda por ocupantes morosos y División de deudas de tarifa de saneamiento verificar la documentación en la página correspondiente.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://montevideo.gub.uy/tramites-y-tributos/solicitud/division-de-deuda-de-tarifa-de-saneamiento",
+          "title": "División de deudas de tarifa de saneamiento",
+          "anchor_text": "División de deudas de tarifa de saneamiento",
+          "resource_type": "tramite_relacionado",
+          "source_context": "En los casos de Exoneración de deuda por ocupantes morosos y División de deudas de tarifa de saneamiento verificar la documentación en la página correspondiente.",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/50980",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/reclamo/reclamo-por-facturacion-de-tarifa-de-saneamiento",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_027",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/tecnico-para-solicitudes-de-conexion-a-saneamiento",
+      "title": "Registro de persona técnica para solicitudes de conexión a saneamiento",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/46027",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/registro/tecnico-para-solicitudes-de-conexion-a-saneamiento",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_028",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/conexiones-sanitarias-obstruidas",
+      "title": "Solicitud para destapar conexiones de saneamiento",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24658",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_002",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/conexiones-sanitarias-obstruidas",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    },
+    {
+      "link_id": "link_029",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/toma-de-conexion-al-saneamiento",
+      "title": "Toma de conexión al saneamiento",
+      "status": "ok",
+      "page_title": "Menú",
+      "resources": [
+        {
+          "resource_id": "resource_002",
+          "url": "https://montevideo.gub.uy/sites/default/files/biblioteca/tomadeconexion.pdf",
+          "title": "Rótulo",
+          "anchor_text": "Rótulo",
+          "resource_type": "pdf",
+          "source_context": "Rótulo de acuerdo al modelo del sector Usuarios y Conexiones.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_003",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/sol0010808.pdf",
+          "title": "Formulario de toma de conexión",
+          "anchor_text": "Formulario de toma de conexión",
+          "resource_type": "pdf",
+          "source_context": "Formulario de toma de conexión escaneado con las correspondientes firmas.",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_004",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/mem0010808.pdf",
+          "title": "Formulario de memoria descriptiva",
+          "anchor_text": "Formulario de memoria descriptiva",
+          "resource_type": "pdf",
+          "source_context": "Formulario de memoria descriptiva escaneado con las correspondientes firmas y timbres profesionales (si la persona actuante es profesional de la Arquitectura o Ingeniería civil).",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_005",
+          "url": "https://tramites.montevideo.gub.uy/node/46040",
+          "title": "Certificado de conexión al saneamiento",
+          "anchor_text": "Certificado de conexión al saneamiento",
+          "resource_type": "link",
+          "source_context": "Informe técnico del Certificado de conexión al saneamiento .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_006",
+          "url": "https://tramites.montevideo.gub.uy/node/23583",
+          "title": "debe encontrarse comprendida en la primera franja de la Contribución Inmobiliaria Urbana y Suburbana",
+          "anchor_text": "debe encontrarse comprendida en la primera franja de la Contribución Inmobiliaria Urbana y Suburbana",
+          "resource_type": "link",
+          "source_context": "Para la aprobación de obras de adecuación dentro de un inmueble con el fin de eliminar una servidumbre o pozo negro, la vivienda debe encontrarse comprendida en la primera franja de la Contribución Inmobiliaria Urbana y Suburbana . En caso de justificación técnica, social y/o ambiental, la División Saneamiento podrá autorizar esta modalidad sin considerarse el valor del inmueble. Con el informe técnico correspondiente aprobado, la persona técnica designada por la o el propietario debe presentar ",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_007",
+          "url": "https://tramites.montevideo.gub.uy/node/46027",
+          "title": "registro de personas técnicas habilitadas para solicitudes de conexión al saneamiento",
+          "anchor_text": "registro de personas técnicas habilitadas para solicitudes de conexión al saneamiento",
+          "resource_type": "link",
+          "source_context": "La persona que realice este trámite debe estar en el registro de personas técnicas habilitadas para solicitudes de conexión al saneamiento .",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_008",
+          "url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/tomadeconexion.pdf",
+          "title": "Rótulo toma de conexión",
+          "anchor_text": "Rótulo toma de conexión",
+          "resource_type": "pdf",
+          "source_context": "Rótulo toma de conexión ( pdf - 107 KB)",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_009",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/conexion-al-saneamiento",
+          "title": "Informe Técnico de Conexión a Saneamiento",
+          "anchor_text": "Informe Técnico de Conexión a Saneamiento",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Informe Técnico de Conexión a Saneamiento",
+          "status": "pending_review"
+        },
+        {
+          "resource_id": "resource_010",
+          "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/tecnico-para-solicitudes-de-conexion-a-saneamiento",
+          "title": "Registro de persona técnica para solicitudes de conexión a saneamiento",
+          "anchor_text": "Registro de persona técnica para solicitudes de conexión a saneamiento",
+          "resource_type": "tramite_relacionado",
+          "source_context": "Registro de persona técnica para solicitudes de conexión a saneamiento",
+          "status": "pending_review"
+        }
+      ],
+      "discarded_resources": [
+        {
+          "resource_id": "resource_001",
+          "url": "https://tramites.montevideo.gub.uy/print/pdf/node/24684",
+          "title": "Descargas",
+          "anchor_text": "Descargas",
+          "resource_type": "link",
+          "source_context": "Descargas",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_001",
+          "discard_reason": "Version PDF imprimible generada desde la pagina HTML."
+        },
+        {
+          "resource_id": "resource_011",
+          "url": "https://tramites.montevideo.gub.uy/formularios/comunicar-un-error-en-la-informa?referer=http%3A//tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/toma-de-conexion-al-saneamiento",
+          "title": "Enviar reporte.",
+          "anchor_text": "Enviar reporte.",
+          "resource_type": "formulario",
+          "source_context": "¿Encontraste un error en la página? Enviar reporte.",
+          "status": "discarded_by_rule",
+          "discard_rule_id": "rule_003",
+          "discard_reason": "Formulario administrativo para reportar errores de la pagina."
+        }
+      ]
+    }
+  ]
+}

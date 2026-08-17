@@ -1,0 +1,154 @@
+{
+  "schema_version": "0.1",
+  "project_id": "saneamiento",
+  "review_status": "in_progress",
+  "updated_at": "2026-08-17T14:38:54-03:00",
+  "decisions": [
+    {
+      "group_id": "agenda_001",
+      "group_kind": "agenda",
+      "identity_decision": "confirmed_same",
+      "default_use": "show_as_link",
+      "scope": "shared",
+      "selected_canonical_url": "https://www.montevideo.gub.uy/sae/agendarReserva/Paso1.xhtml?agenda=VUNICA&recurso=RESERVAPREVIA&pagina_retorno=https://www.montevideo.gub.uy&solo_cuerpo=false",
+      "display_name": "Agenda VUNICA / RESERVAPREVIA",
+      "notes": "",
+      "appearance_ids": [
+        "link_008::resource_002",
+        "link_013::resource_003"
+      ],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T14:35:24-03:00",
+      "analysis_generated_at": "2026-08-17T14:32:39-03:00",
+      "materialization": {
+        "applied_appearance_ids": [
+          "link_008::resource_002",
+          "link_013::resource_003"
+        ],
+        "preserved_individual_exception_ids": []
+      }
+    },
+    {
+      "group_id": "exact_url_001",
+      "group_kind": "exact",
+      "identity_decision": "confirmed_same",
+      "default_use": "show_as_link",
+      "scope": "shared",
+      "selected_canonical_url": "https://montevideo.gub.uy/app/sur/ingreso/?codigo_sur=261",
+      "display_name": "formulario web",
+      "notes": "",
+      "appearance_ids": [
+        "link_018::resource_002",
+        "link_019::resource_002",
+        "link_023::resource_004"
+      ],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T14:36:03-03:00",
+      "analysis_generated_at": "2026-08-17T14:32:39-03:00",
+      "materialization": {
+        "applied_appearance_ids": [
+          "link_018::resource_002",
+          "link_019::resource_002",
+          "link_023::resource_004"
+        ],
+        "preserved_individual_exception_ids": []
+      }
+    },
+    {
+      "group_id": "exact_url_002",
+      "group_kind": "exact",
+      "identity_decision": "confirmed_same",
+      "default_use": "show_as_link",
+      "scope": "shared",
+      "selected_canonical_url": "https://tramites.montevideo.gub.uy/aplicacion/facturacion-de-sellado-solicitud-estudios-y-proyectos-de-saneamiento",
+      "display_name": "Generar la factura",
+      "notes": "",
+      "appearance_ids": [
+        "link_006::resource_002",
+        "link_009::resource_002"
+      ],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T14:36:45-03:00",
+      "analysis_generated_at": "2026-08-17T14:32:39-03:00",
+      "materialization": {
+        "applied_appearance_ids": [
+          "link_006::resource_002",
+          "link_009::resource_002"
+        ],
+        "preserved_individual_exception_ids": []
+      }
+    },
+    {
+      "group_id": "exact_url_003",
+      "group_kind": "exact",
+      "identity_decision": "confirmed_same",
+      "default_use": "show_as_link",
+      "scope": "shared",
+      "selected_canonical_url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/exoneracion/solicitud-de-exoneracion-de-deuda-de-tarifa-de-saneamiento-generada-por-ocupantes-morosos",
+      "display_name": "Solicitud de exoneración de deuda de tarifa de saneamiento generada por ocupantes morosos",
+      "notes": "",
+      "appearance_ids": [
+        "link_017::resource_012",
+        "link_026::resource_002"
+      ],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T14:37:15-03:00",
+      "analysis_generated_at": "2026-08-17T14:32:39-03:00",
+      "materialization": {
+        "applied_appearance_ids": [
+          "link_017::resource_012",
+          "link_026::resource_002"
+        ],
+        "preserved_individual_exception_ids": []
+      }
+    },
+    {
+      "group_id": "exact_url_004",
+      "group_kind": "exact",
+      "identity_decision": "confirmed_same",
+      "default_use": "process_as_context",
+      "scope": "shared",
+      "selected_canonical_url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/reclamo/boca-de-tormenta-tapada",
+      "display_name": "Reparación de boca de tormenta",
+      "notes": "",
+      "appearance_ids": [
+        "link_011::resource_002",
+        "link_023::resource_002"
+      ],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T14:38:25-03:00",
+      "analysis_generated_at": "2026-08-17T14:32:39-03:00",
+      "materialization": {
+        "applied_appearance_ids": [
+          "link_011::resource_002",
+          "link_023::resource_002"
+        ],
+        "preserved_individual_exception_ids": []
+      }
+    },
+    {
+      "group_id": "exact_url_005",
+      "group_kind": "exact",
+      "identity_decision": "confirmed_same",
+      "default_use": "process_as_context",
+      "scope": "shared",
+      "selected_canonical_url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/tecnico-para-solicitudes-de-conexion-a-saneamiento",
+      "display_name": "Registro de persona técnica para solicitudes de conexión a saneamiento",
+      "notes": "",
+      "appearance_ids": [
+        "link_004::resource_005",
+        "link_029::resource_010"
+      ],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T14:38:54-03:00",
+      "analysis_generated_at": "2026-08-17T14:32:39-03:00",
+      "materialization": {
+        "applied_appearance_ids": [
+          "link_004::resource_005",
+          "link_029::resource_010"
+        ],
+        "preserved_individual_exception_ids": []
+      }
+    }
+  ]
+}

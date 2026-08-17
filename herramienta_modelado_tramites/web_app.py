@@ -30,6 +30,9 @@ from workflows.document_map import build_document_map
 from workflows.lifecycle_review import node_lifecycle_impact
 from workflows.lifecycle_review import save_node_lifecycle_status
 from workflows.link_discovery import discover_candidate_links
+from workflows.node_resource_discovery import discover_node_resources
+from workflows.pdf_analysis import analyze_project_pdfs
+from workflows.auxiliary_link_analysis import analyze_auxiliary_links
 from workflows.project_administration import delete_project_recoverably
 from workflows.project_setup import create_project
 from ui.document_map_page import render_document_map_body
@@ -133,6 +136,44 @@ class TramiteModelingHandler(BaseHTTPRequestHandler):
                 f"/projects/{discover_project_id}/review-links?"
                 f"{urlencode({'discovered': result['links_count'], 'pages': result['pages_scanned'], 'page_errors': len(result['page_errors']), 'page_limit': int(result['page_limit_reached'])})}"
             )
+            return
+
+        analysis_route = _project_analysis_route(path)
+        if analysis_route:
+            project_id, action = analysis_route
+            form = self._read_form()
+            actor = _single(form, "actor", DEFAULT_ACTOR)
+            try:
+                if action == "process-documentation":
+                    resources = discover_node_resources(project_id, actor)
+                    pdfs = analyze_project_pdfs(project_id, actor)
+                    auxiliary = analyze_auxiliary_links(project_id, actor)
+                    query = urlencode({
+                        "processed": 1,
+                        "resources": resources["resources_count"],
+                        "pdfs": pdfs["appearance_count"],
+                        "auxiliary": auxiliary["appearance_count"],
+                    })
+                    self._redirect(f"/projects/{project_id}/resources?{query}")
+                elif action == "analyze-pdfs":
+                    discover_node_resources(project_id, actor)
+                    result = analyze_project_pdfs(project_id, actor)
+                    self._redirect(
+                        f"/projects/{project_id}/pdf-groups?"
+                        f"{urlencode({'generated': result['appearance_count']})}"
+                    )
+                else:
+                    discover_node_resources(project_id, actor)
+                    result = analyze_auxiliary_links(project_id, actor)
+                    self._redirect(
+                        f"/projects/{project_id}/auxiliary-links?"
+                        f"{urlencode({'generated': result['appearance_count']})}"
+                    )
+            except Exception as error:
+                self._redirect(
+                    f"/projects/{project_id}/review-links?"
+                    f"{urlencode({'process_error': f'No se pudo actualizar la documentación: {error}'})}"
+                )
             return
 
         delete_project_id = _project_id_from_delete_path(path)
@@ -582,35 +623,45 @@ def _projects_page(request_path: str = "/") -> str:
         )
         cards.append(
             f"""
-            <article class="card">
-              <h2>{html_escape(project.get("name"))}</h2>
+            <article class="card project-card">
+              <div class="project-card-head">
+                <h2>{html_escape(project.get("name"))}</h2>
+                <a class="button danger project-delete" href="/projects/{html_escape(project_id)}/delete">
+                  Eliminar proyecto
+                </a>
+              </div>
               <p class="muted">{html_escape(project.get("start_url"))}</p>
               <dl>
                 <dt>Estado</dt><dd>{html_escape(project.get("status"))}</dd>
                 <dt>Actualizado</dt><dd>{html_escape(project.get("updated_at"))}</dd>
               </dl>
-              {primary_action}
-              <a class="button secondary" href="/projects/{html_escape(project_id)}/resource-rules">
-                Configurar exclusiones
-              </a>
-              <a class="button secondary" href="/projects/{html_escape(project_id)}/pdf-groups">
-                Revisar grupos PDF
-              </a>
-              <a class="button secondary" href="/projects/{html_escape(project_id)}/auxiliary-links">
-                Revisar enlaces auxiliares
-              </a>
-              <a class="button secondary" href="/projects/{html_escape(project_id)}/resources">
-                Revisar casos individuales
-              </a>
-              <a class="button secondary" href="/projects/{html_escape(project_id)}/effective-state">
-                Ver estado efectivo
-              </a>
-              <a class="button secondary" href="/projects/{html_escape(project_id)}/document-map">
-                Ver mapa documental
-              </a>
-              <a class="button danger" href="/projects/{html_escape(project_id)}/delete">
-                Eliminar proyecto
-              </a>
+              <p class="eyebrow project-section-label">Flujo principal</p>
+              <div class="project-actions">
+                {primary_action}
+                <a class="button secondary" href="/projects/{html_escape(project_id)}/resource-rules">
+                  Configurar exclusiones
+                </a>
+                <a class="button secondary" href="/projects/{html_escape(project_id)}/pdf-groups">
+                  Revisar grupos PDF
+                </a>
+                <a class="button secondary" href="/projects/{html_escape(project_id)}/auxiliary-links">
+                  Revisar enlaces auxiliares
+                </a>
+                <a class="button secondary" href="/projects/{html_escape(project_id)}/document-map">
+                  Ver mapa documental
+                </a>
+              </div>
+              <section class="project-advanced">
+                <p class="eyebrow">Revisión avanzada</p>
+                <div class="project-actions">
+                  <a class="button advanced-review" href="/projects/{html_escape(project_id)}/resources">
+                    Revisar casos individuales
+                  </a>
+                  <a class="button technical-view" href="/projects/{html_escape(project_id)}/effective-state">
+                    Ver estado efectivo
+                  </a>
+                </div>
+              </section>
             </article>
             """
         )
@@ -1389,7 +1440,10 @@ def _auxiliary_links_page(project_id: str, request_path: str) -> str:
           <p><a href="/">Volver a proyectos</a></p>
           <h2>{html_escape(project.get("name"))}</h2>
           <p>No existe <code>auxiliary_link_analysis.json</code>.</p>
-          <p class="muted">Ejecuta <code>python app.py analyze-auxiliary-links --project-id {html_escape(project_id)}</code>.</p>
+          <p class="muted">Primero genera el inventario de enlaces auxiliares.</p>
+          <form method="post" action="/projects/{html_escape(project_id)}/analyze-auxiliary-links">
+            <button type="submit">Generar revisión de enlaces</button>
+          </form>
         </section>
         """
         return _page("Enlaces auxiliares", body)
@@ -1416,6 +1470,12 @@ def _auxiliary_links_page(project_id: str, request_path: str) -> str:
         [],
     )
     exact_groups = analysis.get("exact_url_groups", [])
+    changed_group_count = sum(
+        bool(decisions.get(group.get("group_id")))
+        and set(decisions[group.get("group_id")].get("appearance_ids", []))
+        != set(group.get("appearance_ids", []))
+        for group in [*agenda_groups, *normalized_groups, *exact_groups]
+    )
     normalized_non_agenda = [
         group
         for group in normalized_groups
@@ -1476,11 +1536,16 @@ def _auxiliary_links_page(project_id: str, request_path: str) -> str:
         Confirma el tratamiento una vez por grupo. La decisión se registra y se
         aplica a las apariciones sin decisión individual.
       </p>
+      <form method="post" action="/projects/{html_escape(project_id)}/analyze-auxiliary-links">
+        <button type="submit">Actualizar grupos de enlaces</button>
+        <span class="muted">Conserva decisiones y señala los grupos cuya composición cambió.</span>
+      </form>
       <div class="stats">
         <div><strong>{html_escape(summary.get("appearance_count", 0))}</strong><span>Apariciones no documentales</span></div>
         <div><strong>{html_escape(summary.get("exact_url_group_count", 0))}</strong><span>Grupos por URL exacta</span></div>
         <div><strong>{html_escape(summary.get("normalized_equivalence_candidate_count", 0))}</strong><span>Equivalencias fuertes</span></div>
         <div><strong>{html_escape(summary.get("agenda_candidate_count", 0))}</strong><span>Agendas candidatas</span></div>
+        <div><strong>{changed_group_count}</strong><span>Grupos con cambios</span></div>
       </div>
       {_auxiliary_status_message(request_path)}
     </section>
@@ -1492,14 +1557,22 @@ def _auxiliary_links_page(project_id: str, request_path: str) -> str:
         <option value="normalized">Equivalencias normalizadas</option>
         <option value="exact">URLs exactas</option>
       </select>
+      <select id="auxReview">
+        <option value="">Todos los estados</option>
+        <option value="changed">Solo grupos con cambios</option>
+        <option value="pending">Sin decisión</option>
+        <option value="current">Decisión vigente</option>
+      </select>
       <button type="button" onclick="clearAuxFilters()">Limpiar</button>
     </section>
     <section class="cards">{cards}</section>
     <script>
       const auxSearch = document.getElementById("auxSearch");
       const auxKind = document.getElementById("auxKind");
+      const auxReview = document.getElementById("auxReview");
       auxSearch.addEventListener("input", applyAuxFilters);
       auxKind.addEventListener("change", applyAuxFilters);
+      auxReview.addEventListener("change", applyAuxFilters);
 
       function applyAuxFilters() {{
         const query = auxSearch.value.trim().toLowerCase();
@@ -1507,13 +1580,15 @@ def _auxiliary_links_page(project_id: str, request_path: str) -> str:
         document.querySelectorAll(".aux-group").forEach(card => {{
           const matchesText = !query || card.dataset.search.includes(query);
           const matchesKind = !kind || card.dataset.kind === kind;
-          card.classList.toggle("hidden", !(matchesText && matchesKind));
+          const matchesReview = !auxReview.value || card.dataset.review === auxReview.value;
+          card.classList.toggle("hidden", !(matchesText && matchesKind && matchesReview));
         }});
       }}
 
       function clearAuxFilters() {{
         auxSearch.value = "";
         auxKind.value = "";
+        auxReview.value = "";
         applyAuxFilters();
       }}
     </script>
@@ -1554,8 +1629,17 @@ def _auxiliary_group_card(
         decision,
     )
     materialization = decision.get("materialization", {})
+    decision_current = bool(decision) and set(decision.get("appearance_ids", [])) == set(
+        group.get("appearance_ids", [])
+    )
+    added_count = len(
+        set(group.get("appearance_ids", [])) - set(decision.get("appearance_ids", []))
+    )
+    removed_count = len(
+        set(decision.get("appearance_ids", [])) - set(group.get("appearance_ids", []))
+    )
     decision_summary = ""
-    if decision:
+    if decision_current:
         decision_summary = f"""
         <p class="message ok">
           Decisión guardada: {html_escape(decision.get("identity_decision"))} /
@@ -1565,10 +1649,19 @@ def _auxiliary_group_card(
           excepciones individuales conservadas.
         </p>
         """
+    elif decision:
+        decision_summary = f"""
+        <p class="message">
+          Este grupo cambió desde la última decisión: {added_count} apariciones
+          nuevas y {removed_count} ausentes. La decisión anterior se conserva,
+          pero debes confirmar su aplicación al conjunto actual.
+        </p>
+        """
     return f"""
     <article class="card aux-group"
         id="{html_escape(group.get("group_id"))}"
         data-kind="{html_escape(section_kind)}"
+        data-review="{'current' if decision_current else 'changed' if decision else 'pending'}"
         data-search="{html_escape(search_text)}">
       <div class="card-head">
         <div>
@@ -1705,6 +1798,13 @@ def _auxiliary_canonical_url_options(
 
 def _auxiliary_status_message(request_path: str) -> str:
     query = parse_qs(urlparse(request_path).query)
+    if "generated" in query:
+        return f"""
+        <p class="message ok">
+          Revisión actualizada: {html_escape(query["generated"][0])}
+          apariciones de enlaces auxiliares inventariadas.
+        </p>
+        """
     if "saved" in query:
         applied = query.get("applied", ["0"])[0]
         exceptions = query.get("exceptions", ["0"])[0]
@@ -1819,7 +1919,10 @@ def _pdf_groups_page(project_id: str, request_path: str) -> str:
           <p><a href="/">Volver a proyectos</a></p>
           <h2>{html_escape(project.get("name"))}</h2>
           <p>No existe <code>pdf_analysis.json</code>.</p>
-          <p class="muted">Ejecuta <code>python app.py analyze-pdfs --project-id {html_escape(project_id)}</code>.</p>
+          <p class="muted">Primero genera el inventario y los grupos de PDF.</p>
+          <form method="post" action="/projects/{html_escape(project_id)}/analyze-pdfs">
+            <button type="submit">Generar revisión de PDF</button>
+          </form>
         </section>
         """
         return _page("Revisión agrupada de PDF", body)
@@ -1879,6 +1982,10 @@ def _pdf_groups_page(project_id: str, request_path: str) -> str:
         El funcionario puede confirmar una familia por su conocimiento. La
         verificación técnica se ejecuta después, con límites de seguridad.
       </p>
+      <form method="post" action="/projects/{html_escape(project_id)}/analyze-pdfs">
+        <button type="submit">Actualizar grupos PDF</button>
+        <span class="muted">Mantiene los grupos estables y reabre únicamente los que cambiaron.</span>
+      </form>
       <div class="stats">
         <div><strong>{len(groups)}</strong><span>Grupos propuestos</span></div>
         <div><strong>{reviewed_count}/{partition_count}</strong><span>Particiones revisadas</span></div>
@@ -2400,6 +2507,11 @@ def _review_links_page(project_id: str, request_path: str) -> str:
         <div><strong>{len(links) - reviewed_count}</strong><span>Pendientes</span></div>
         <div><strong>{html_escape(human_review.get("review_status"))}</strong><span>Estado</span></div>
       </div>
+      <form method="post" action="/projects/{html_escape(project_id)}/process-documentation">
+        <input type="hidden" name="actor" value="{html_escape(DEFAULT_ACTOR)}">
+        <button type="submit">Generar o actualizar documentación</button>
+        <span class="muted">Explora los trámites aceptados y actualiza los grupos de PDF y enlaces conservando las decisiones válidas.</span>
+      </form>
       {message}
     </section>
     <section class="toolbar">
@@ -3001,6 +3113,18 @@ def _project_id_from_discover_path(path: str) -> str | None:
     return None
 
 
+def _project_analysis_route(path: str) -> tuple[str, str] | None:
+    parts = path.strip("/").split("/")
+    actions = {
+        "process-documentation",
+        "analyze-pdfs",
+        "analyze-auxiliary-links",
+    }
+    if len(parts) == 3 and parts[0] == "projects" and parts[2] in actions:
+        return parts[1], parts[2]
+    return None
+
+
 def _project_id_from_delete_path(path: str) -> str | None:
     parts = path.strip("/").split("/")
     if len(parts) == 3 and parts[0] == "projects" and parts[2] == "delete":
@@ -3156,6 +3280,8 @@ def _resource_review_redirect(
 
 def _status_message(request_path: str) -> str:
     query = parse_qs(urlparse(request_path).query)
+    if "process_error" in query:
+        return f"""<p class="message error">{html_escape(query["process_error"][0])}</p>"""
     if "created" in query:
         return (
             '<p class="message ok">Proyecto creado. Ahora puedes volver a proyectos '
@@ -3184,6 +3310,8 @@ def _status_message(request_path: str) -> str:
         return f"""<p class="message ok">Decision guardada para {html_escape(query["saved"][0])}.</p>"""
     if "verified" in query:
         return f"""<p class="message ok">Verificación terminada para {html_escape(query["verified"][0])}.</p>"""
+    if "generated" in query:
+        return f"""<p class="message ok">Revisión actualizada: {html_escape(query["generated"][0])} apariciones procesadas.</p>"""
     if "error" in query:
         return f"""<p class="message error">No se pudo guardar: {html_escape(query["error"][0])}</p>"""
     return ""
@@ -3288,10 +3416,48 @@ def _page(title: str, body: str) -> str:
       color: var(--accent);
       background: #fff;
     }}
+    .project-card-head {{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }}
+    .project-actions {{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }}
+    .project-actions .button, .project-actions form, .project-actions button {{
+      margin: 0;
+    }}
+    .project-section-label {{ margin-top: 18px; }}
+    .project-advanced {{
+      margin-top: 18px;
+      padding: 14px;
+      border: 1px solid #e4e7ec;
+      border-radius: 8px;
+      background: #f8fafc;
+    }}
+    .button.advanced-review {{
+      color: #92400e;
+      border-color: #f59e0b;
+      background: #fffbeb;
+    }}
+    .button.technical-view {{
+      color: #475467;
+      border-color: #98a2b3;
+      background: #fff;
+    }}
     button.danger, .button.danger {{
       background: #a12b2b;
       border-color: #a12b2b;
       color: #fff;
+    }}
+    .button.danger.project-delete {{
+      flex: 0 0 auto;
+      color: #a12b2b;
+      background: #fff;
     }}
     .toolbar {{
       display: flex;
@@ -3496,6 +3662,8 @@ def _page(title: str, body: str) -> str:
         display: grid;
         grid-template-columns: 1fr;
       }}
+      .project-card-head {{ display: block; }}
+      .project-delete {{ margin: 0 0 12px; }}
     }}
   </style>
 </head>

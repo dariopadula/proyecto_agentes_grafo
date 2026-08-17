@@ -1,0 +1,797 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-08-17T14:31:59-03:00",
+  "project_id": "saneamiento",
+  "resource_type": "pdf",
+  "source": {
+    "node_resources": "C:\\DARIO\\Git\\proyecto_agentes_grafo\\herramienta_modelado_tramites\\data\\projects\\saneamiento\\node_resources.json",
+    "resource_review": "C:\\DARIO\\Git\\proyecto_agentes_grafo\\herramienta_modelado_tramites\\data\\projects\\saneamiento\\resource_review.json",
+    "local_pdf_dir": "C:\\DARIO\\Git\\proyecto_agentes_grafo\\herramienta_modelado_tramites\\data\\projects\\saneamiento\\pdfs"
+  },
+  "analysis_policy": {
+    "semantic_interpretation": false,
+    "llm_usage": false,
+    "candidate_source": "all_included_pdf_resources",
+    "verification_mode": "on_demand_by_family"
+  },
+  "summary": {
+    "appearance_count": 20,
+    "analyzed_count": 8,
+    "error_count": 0,
+    "download_error_count": 0,
+    "analysis_error_count": 0,
+    "skipped_by_policy_count": 0,
+    "not_attempted_count": 0,
+    "proposed_group_count": 4,
+    "verified_family_count": 4,
+    "partition_count": 4
+  },
+  "appearances": [
+    {
+      "appearance_id": "link_001::resource_002",
+      "source_node_id": "link_001",
+      "source_node_title": "Aprobación de sistemas constructivos, materiales sanitarios o consulta de reglamentación de higiene",
+      "resource_id": "resource_002",
+      "label": "Formulario de consulta",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/formulariotramiteenconsultaf-tc-01v3editable.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "formulariotramiteenconsultaf-tc-01v3editable.pdf",
+      "canonical_name": "formulariotramiteenconsultaf_tc_01v3editable",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_004::resource_002",
+      "source_node_id": "link_004",
+      "source_node_title": "Cambio de firma técnica en solicitudes de conexión a saneamiento",
+      "resource_id": "resource_002",
+      "label": "Formulario de solicitud de cambio de firma técnica",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/cambiodefirma.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "cambiodefirma.pdf",
+      "canonical_name": "cambiodefirma",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_005::resource_002",
+      "source_node_id": "link_005",
+      "source_node_title": "Cambio de persona propietaria en solicitudes de conexión a saneamiento",
+      "resource_id": "resource_002",
+      "label": "formulario de DGI Nº 6351",
+      "detected_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/cambiodepropietario.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "cambiodepropietario.pdf",
+      "canonical_name": "cambiodepropietario",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 174224,
+        "page_count": 1,
+        "character_count": 1446,
+        "word_count": 84,
+        "binary_sha256": "dc993fe6c44af8f48f026ffe8d6b4135c1982ce85c71479b3dd62d81798c16b7",
+        "normalized_text_sha256": "61d7bad93b241164fa8edfdad8d3c62c07299b0d30b0b195ebb3e65f462db034",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_005::resource_004",
+      "source_node_id": "link_005",
+      "source_node_title": "Cambio de persona propietaria en solicitudes de conexión a saneamiento",
+      "resource_id": "resource_004",
+      "label": "Formulario de cambio de persona propietaria para solicitudes de conexión a saneamiento",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/cambiodepropietario.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "cambiodepropietario.pdf",
+      "canonical_name": "cambiodepropietario",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 174224,
+        "page_count": 1,
+        "character_count": 1446,
+        "word_count": 84,
+        "binary_sha256": "dc993fe6c44af8f48f026ffe8d6b4135c1982ce85c71479b3dd62d81798c16b7",
+        "normalized_text_sha256": "61d7bad93b241164fa8edfdad8d3c62c07299b0d30b0b195ebb3e65f462db034",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_008::resource_003",
+      "source_node_id": "link_008",
+      "source_node_title": "Certificado de saneamiento para compraventa de inmuebles",
+      "resource_id": "resource_003",
+      "label": "Formulario anexo",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/anexo1.3_0.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "anexo1.3_0.pdf",
+      "canonical_name": "anexo1_3",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_009::resource_003",
+      "source_node_id": "link_009",
+      "source_node_title": "Colector provisorio",
+      "resource_id": "resource_003",
+      "label": "Modelo de solicitud",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/modelo_colector_provisorio_-_canalizacion_especial_de_desague.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "modelo_colector_provisorio_-_canalizacion_especial_de_desague.pdf",
+      "canonical_name": "modelo_colector_provisorio_canalizacion_especial_de_desague",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_013::resource_002",
+      "source_node_id": "link_013",
+      "source_node_title": "División de deuda de tarifa de saneamiento",
+      "resource_id": "resource_002",
+      "label": "Formulario de solicitud de división de deuda completo",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/Formulario%20Divisi%C3%B3n%20de%20Deuda%20saneamiento.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "Formulario División de Deuda saneamiento.pdf",
+      "canonical_name": "formulario_divisi_n_de_deuda_saneamiento",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_013::resource_004",
+      "source_node_id": "link_013",
+      "source_node_title": "División de deuda de tarifa de saneamiento",
+      "resource_id": "resource_004",
+      "label": "Formulario de división de deuda",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/Formulario%20Division%20de%20Deuda.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "Formulario Division de Deuda.pdf",
+      "canonical_name": "formulario_division_de_deuda",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_014::resource_002",
+      "source_node_id": "link_014",
+      "source_node_title": "Efluentes industriales. Informe de operación de industrias",
+      "resource_id": "resource_002",
+      "label": "instructivo",
+      "detected_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/instructivoi.o.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "instructivoi.o.pdf",
+      "canonical_name": "instructivoi_o",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 122850,
+        "page_count": 3,
+        "character_count": 6016,
+        "word_count": 917,
+        "binary_sha256": "483bac9603ff84c5f7f9d46e4852979cb11de354ae9307c70744fde2b60bb676",
+        "normalized_text_sha256": "1952b173d351d241649d454f80dd2d16493b8f81b695c329e7264e67026555a1",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_014::resource_003",
+      "source_node_id": "link_014",
+      "source_node_title": "Efluentes industriales. Informe de operación de industrias",
+      "resource_id": "resource_003",
+      "label": "Instructivo para el informe de operación de industrias",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/instructivoi.o.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "instructivoi.o.pdf",
+      "canonical_name": "instructivoi_o",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 122850,
+        "page_count": 3,
+        "character_count": 6016,
+        "word_count": 917,
+        "binary_sha256": "483bac9603ff84c5f7f9d46e4852979cb11de354ae9307c70744fde2b60bb676",
+        "normalized_text_sha256": "1952b173d351d241649d454f80dd2d16493b8f81b695c329e7264e67026555a1",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_015::resource_002",
+      "source_node_id": "link_015",
+      "source_node_title": "Estudio de factibilidad de saneamiento",
+      "resource_id": "resource_002",
+      "label": "Instructivo para presentación de solicitudes de factibilidad de saneamiento",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/modelo_factibilidad_de_saneamiento.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "modelo_factibilidad_de_saneamiento.pdf",
+      "canonical_name": "modelo_factibilidad_de_saneamiento",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_024::resource_002",
+      "source_node_id": "link_024",
+      "source_node_title": "Pedido especial para uso de barométricas en industrias",
+      "resource_id": "resource_002",
+      "label": "Carta de solicitud",
+      "detected_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/cartasolicitudbarometricaprediosindustriales-4.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "cartasolicitudbarometricaprediosindustriales-4.pdf",
+      "canonical_name": "cartasolicitudbarometricaprediosindustriales",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 129382,
+        "page_count": 2,
+        "character_count": 1583,
+        "word_count": 271,
+        "binary_sha256": "74452562c4384d90b7995788edfa690f96e8c0d94c92015792a52f55fa00a74e",
+        "normalized_text_sha256": "23e4d0c0df8afaedd8d3be8f49a13e6624a3ad5f753d1fbef8f5d2a45a973d0b",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_024::resource_003",
+      "source_node_id": "link_024",
+      "source_node_title": "Pedido especial para uso de barométricas en industrias",
+      "resource_id": "resource_003",
+      "label": "Guía para barométrica",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/guiatransportebarometrica2024.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "guiatransportebarometrica2024.pdf",
+      "canonical_name": "guiatransportebarometrica2024",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_024::resource_004",
+      "source_node_id": "link_024",
+      "source_node_title": "Pedido especial para uso de barométricas en industrias",
+      "resource_id": "resource_004",
+      "label": "instructivo",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/instructivobarometrica01191_0.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "instructivobarometrica01191_0.pdf",
+      "canonical_name": "instructivobarometrica01191",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_024::resource_005",
+      "source_node_id": "link_024",
+      "source_node_title": "Pedido especial para uso de barométricas en industrias",
+      "resource_id": "resource_005",
+      "label": "Carta de solicitud",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/cartasolicitudbarometricaprediosindustriales-4.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "cartasolicitudbarometricaprediosindustriales-4.pdf",
+      "canonical_name": "cartasolicitudbarometricaprediosindustriales",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 129382,
+        "page_count": 2,
+        "character_count": 1583,
+        "word_count": 271,
+        "binary_sha256": "74452562c4384d90b7995788edfa690f96e8c0d94c92015792a52f55fa00a74e",
+        "normalized_text_sha256": "23e4d0c0df8afaedd8d3be8f49a13e6624a3ad5f753d1fbef8f5d2a45a973d0b",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_025::resource_002",
+      "source_node_id": "link_025",
+      "source_node_title": "Profesionales e instaladores sanitarios",
+      "resource_id": "resource_002",
+      "label": "Formulario - Registro de Profesionales o Instaladores Sanitarios",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/f-rta-01registrodeprofesionalesoinstaladoressanitariosversion5.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "f-rta-01registrodeprofesionalesoinstaladoressanitariosversion5.pdf",
+      "canonical_name": "f_rta_01registrodeprofesionalesoinstaladoressanitariosversion5",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_029::resource_002",
+      "source_node_id": "link_029",
+      "source_node_title": "Toma de conexión al saneamiento",
+      "resource_id": "resource_002",
+      "label": "Rótulo",
+      "detected_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/tomadeconexion.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "tomadeconexion.pdf",
+      "canonical_name": "tomadeconexion",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 109573,
+        "page_count": 1,
+        "character_count": 6,
+        "word_count": 1,
+        "binary_sha256": "fba3cc6502ce0f7f047f29009b987e69d792596da418400ae66b4e39de5bd12f",
+        "normalized_text_sha256": "51f262b81039d09961d67012eead8eff1bf40e3e52b23a02cc9002ca71aaea5f",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_029::resource_003",
+      "source_node_id": "link_029",
+      "source_node_title": "Toma de conexión al saneamiento",
+      "resource_id": "resource_003",
+      "label": "Formulario de toma de conexión",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/sol0010808.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "sol0010808.pdf",
+      "canonical_name": "sol",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_029::resource_004",
+      "source_node_id": "link_029",
+      "source_node_title": "Toma de conexión al saneamiento",
+      "resource_id": "resource_004",
+      "label": "Formulario de memoria descriptiva",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/mem0010808.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "mem0010808.pdf",
+      "canonical_name": "mem",
+      "analysis": {
+        "status": "not_verified",
+        "source": null,
+        "local_file_name": null,
+        "size_bytes": null,
+        "page_count": null,
+        "character_count": 0,
+        "word_count": 0,
+        "binary_sha256": "",
+        "normalized_text_sha256": "",
+        "encrypted": null,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    },
+    {
+      "appearance_id": "link_029::resource_008",
+      "source_node_id": "link_029",
+      "source_node_title": "Toma de conexión al saneamiento",
+      "resource_id": "resource_008",
+      "label": "Rótulo toma de conexión",
+      "detected_url": "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/tomadeconexion.pdf",
+      "existing_use": null,
+      "existing_scope": null,
+      "file_name": "tomadeconexion.pdf",
+      "canonical_name": "tomadeconexion",
+      "analysis": {
+        "status": "analyzed",
+        "source": "download",
+        "local_file_name": null,
+        "size_bytes": 109573,
+        "page_count": 1,
+        "character_count": 6,
+        "word_count": 1,
+        "binary_sha256": "fba3cc6502ce0f7f047f29009b987e69d792596da418400ae66b4e39de5bd12f",
+        "normalized_text_sha256": "51f262b81039d09961d67012eead8eff1bf40e3e52b23a02cc9002ca71aaea5f",
+        "encrypted": false,
+        "text_extraction_truncated": false,
+        "error": null
+      }
+    }
+  ],
+  "proposed_groups": [
+    {
+      "group_id": "pdf_family_001",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "cambiodepropietario",
+        "appearance_count": 2,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_005::resource_002",
+        "link_005::resource_004"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_cambiodepropietario",
+        "display_name": "formulario de DGI Nº 6351",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/cambiodepropietario.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/cambiodepropietario.pdf"
+        ],
+        "suggested_default_use": "mixed",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "complete",
+        "verified_at": "2026-08-17T14:29:00-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_001_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_005::resource_002",
+              "link_005::resource_004"
+            ],
+            "binary_sha256_values": [
+              "dc993fe6c44af8f48f026ffe8d6b4135c1982ce85c71479b3dd62d81798c16b7"
+            ],
+            "normalized_text_sha256": "61d7bad93b241164fa8edfdad8d3c62c07299b0d30b0b195ebb3e65f462db034",
+            "derived_relations": [
+              {
+                "source_node_id": "link_005",
+                "target_resource_id": "pdf_family_001_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_005::resource_002",
+                  "link_005::resource_004"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "group_id": "pdf_family_002",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "instructivoi_o",
+        "appearance_count": 2,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_014::resource_002",
+        "link_014::resource_003"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_instructivoi_o",
+        "display_name": "instructivo",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/instructivoi.o.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/instructivoi.o.pdf"
+        ],
+        "suggested_default_use": "mixed",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "complete",
+        "verified_at": "2026-08-17T14:30:08-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_002_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_014::resource_002",
+              "link_014::resource_003"
+            ],
+            "binary_sha256_values": [
+              "483bac9603ff84c5f7f9d46e4852979cb11de354ae9307c70744fde2b60bb676"
+            ],
+            "normalized_text_sha256": "1952b173d351d241649d454f80dd2d16493b8f81b695c329e7264e67026555a1",
+            "derived_relations": [
+              {
+                "source_node_id": "link_014",
+                "target_resource_id": "pdf_family_002_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_014::resource_002",
+                  "link_014::resource_003"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "group_id": "pdf_family_003",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "cartasolicitudbarometricaprediosindustriales",
+        "appearance_count": 2,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_024::resource_002",
+        "link_024::resource_005"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_cartasolicitudbarometricaprediosindustriales",
+        "display_name": "Carta de solicitud",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/cartasolicitudbarometricaprediosindustriales-4.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/cartasolicitudbarometricaprediosindustriales-4.pdf"
+        ],
+        "suggested_default_use": "mixed",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "complete",
+        "verified_at": "2026-08-17T14:31:46-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_003_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_024::resource_002",
+              "link_024::resource_005"
+            ],
+            "binary_sha256_values": [
+              "74452562c4384d90b7995788edfa690f96e8c0d94c92015792a52f55fa00a74e"
+            ],
+            "normalized_text_sha256": "23e4d0c0df8afaedd8d3be8f49a13e6624a3ad5f753d1fbef8f5d2a45a973d0b",
+            "derived_relations": [
+              {
+                "source_node_id": "link_024",
+                "target_resource_id": "pdf_family_003_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_024::resource_002",
+                  "link_024::resource_005"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    },
+    {
+      "group_id": "pdf_family_004",
+      "group_kind": "candidate_family",
+      "certainty": "unverified",
+      "evidence": {
+        "field": "canonical_name_from_url",
+        "value": "tomadeconexion",
+        "appearance_count": 2,
+        "analysis_statuses": [
+          "not_verified"
+        ]
+      },
+      "appearance_ids": [
+        "link_029::resource_002",
+        "link_029::resource_008"
+      ],
+      "proposed_canonical_resource": {
+        "resource_id": "pdf_tomadeconexion",
+        "display_name": "Rótulo",
+        "resource_type": "pdf",
+        "proposed_canonical_url": "https://montevideo.gub.uy/sites/default/files/biblioteca/tomadeconexion.pdf",
+        "selected_canonical_url": null,
+        "alternative_urls": [
+          "https://tramites.montevideo.gub.uy/sites/tramites.montevideo.gub.uy/files/tramites/documentos/tomadeconexion.pdf"
+        ],
+        "suggested_default_use": "mixed",
+        "review_status": "pending_human_confirmation"
+      },
+      "verification": {
+        "status": "complete",
+        "verified_at": "2026-08-17T14:31:59-03:00",
+        "all_appearances_same": true,
+        "partitions": [
+          {
+            "partition_id": "pdf_family_004_part_001",
+            "certainty": "exact_binary_duplicate",
+            "appearance_ids": [
+              "link_029::resource_002",
+              "link_029::resource_008"
+            ],
+            "binary_sha256_values": [
+              "fba3cc6502ce0f7f047f29009b987e69d792596da418400ae66b4e39de5bd12f"
+            ],
+            "normalized_text_sha256": "51f262b81039d09961d67012eead8eff1bf40e3e52b23a02cc9002ca71aaea5f",
+            "derived_relations": [
+              {
+                "source_node_id": "link_029",
+                "target_resource_id": "pdf_family_004_part_001",
+                "relation": "uses_resource",
+                "derived_from": [
+                  "link_029::resource_002",
+                  "link_029::resource_008"
+                ],
+                "use_override": null
+              }
+            ]
+          }
+        ],
+        "unverified_appearance_ids": []
+      }
+    }
+  ]
+}

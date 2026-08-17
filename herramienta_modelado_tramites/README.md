@@ -1,5 +1,13 @@
 # Herramienta de modelado de tramites
 
+## Navegación del mapa documental
+
+El mapa usa un selector buscable similar a un `selectInput`: al escribir parte
+del nombre presenta sugerencias sin distinguir mayúsculas ni tildes. La ventana
+desplegable muestra nombres completos, cantidad de recursos y scroll propio.
+Esto elimina la columna lateral y deja más ancho para la documentación. Los
+botones `Anterior` y `Siguiente` se conservan como navegación secundaria.
+
 Esta carpeta alojara la herramienta asistida para que una persona no tecnica pueda construir y validar la logica de un tramite a partir de paginas web oficiales.
 
 ## Estado
@@ -227,6 +235,24 @@ http://127.0.0.1:8000/
 ```
 
 Desde ahi se puede entrar al proyecto `licencia_conducir`, revisar cada link por titulo y URL, elegir rol principal, roles secundarios, confianza, notas y guardar.
+
+Después de revisar los links, `Generar o actualizar documentación` ejecuta desde
+la aplicación la exploración de recursos y la regeneración de los análisis de
+PDF y enlaces auxiliares. También existen acciones separadas en las pantallas
+de ambos análisis. Estas acciones separadas actualizan primero
+`node_resources.json`, por lo que también funcionan en un proyecto que todavía
+no haya ejecutado la exploración de recursos.
+
+En la lista de proyectos, el flujo principal termina en `Ver mapa documental`.
+`Revisar casos individuales` y `Ver estado efectivo` aparecen aparte como
+revisión avanzada; la segunda es una vista técnica. `Eliminar proyecto` se
+ubica en la esquina superior derecha de cada tarjeta y mantiene la confirmación
+reforzada existente.
+
+La regeneración es conservadora: las decisiones cuyo conjunto de apariciones
+no cambió siguen vigentes. Cuando un grupo incorpora o pierde apariciones, la
+decisión anterior se conserva y la interfaz pide reconfirmar solamente ese
+grupo. Los enlaces auxiliares pueden filtrarse por `Solo grupos con cambios`.
 
 La pantalla principal permite crear proyectos sin usar la consola. `Nuevo
 proyecto` solicita nombre y URL, propone un identificador y valida que no exista
