@@ -43,7 +43,7 @@ Las decisiones se guardan en `lifecycle_review.json`; no se eliminan evidencia,
 grupos, recursos ni revisiones. Al reactivar, el estado efectivo vuelve a
 incorporar las relaciones anteriores sin ejecutar el descubrimiento.
 
-El mapa documental real de solo lectura está disponible en:
+El mapa documental real está disponible en:
 
 ```text
 http://127.0.0.1:8000/projects/licencia_conducir/document-map
@@ -52,7 +52,7 @@ http://127.0.0.1:8000/projects/licencia_conducir/document-map
 Consume `resolve_effective_project_state()` mediante
 `workflows/document_map.py`. Muestra los 22 nodos terminales, la documentación
 específica de cada nodo y la cobertura inversa de los recursos consolidados.
-La interfaz usa una lista lateral de trámites, auditoría central y cobertura
+La interfaz usa un selector buscable de trámites, auditoría central y cobertura
 contextual en un panel derecho. Desde cada tarjeta se puede cambiar el uso de
 una aparición concreta entre contexto, enlace, revisión posterior y descarte.
 El cambio es una excepción local del trámite: conserva la identidad canónica y
