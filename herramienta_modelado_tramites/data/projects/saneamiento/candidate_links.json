@@ -1,0 +1,420 @@
+{
+  "project_id": "saneamiento",
+  "source_url": "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento",
+  "generated_at": "2026-08-17T10:24:53-03:00",
+  "pages_scanned": 2,
+  "page_urls": [
+    "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento",
+    "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento?page=1"
+  ],
+  "page_errors": [],
+  "page_limit_reached": false,
+  "links": [
+    {
+      "link_id": "link_001",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/consulta/aprobacion-de-sistemas-constructivos-materiales-sanitarios-o-consulta-de-reglamentacion-de-higiene",
+      "title": "Aprobación de sistemas constructivos, materiales sanitarios o consulta de reglamentación de higiene",
+      "anchor_text": "Aprobación de sistemas constructivos, materiales sanitarios o consulta de reglamentación de higiene",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "consulta",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_002",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/barometrica-para-zonas-no-saneadas",
+      "title": "Barométrica para zonas no saneadas",
+      "anchor_text": "Barométrica para zonas no saneadas",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_003",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-categoria-de-tarifa-de-saneamiento",
+      "title": "Cambio de categoría de la tarifa de saneamiento",
+      "anchor_text": "Cambio de categoría de la tarifa de saneamiento",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_004",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-firma-tecnica-en-solicitudes-de-conexion-a-saneamiento",
+      "title": "Cambio de firma técnica en solicitudes de conexión a saneamiento",
+      "anchor_text": "Cambio de firma técnica en solicitudes de conexión a saneamiento",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_005",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-propietario-para-solicitudes-de-conexion-a-saneamiento",
+      "title": "Cambio de persona propietaria en solicitudes de conexión a saneamiento",
+      "anchor_text": "Cambio de persona propietaria en solicitudes de conexión a saneamiento",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_006",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/canalizacion-especial-de-desague",
+      "title": "Canalización especial de desagüe",
+      "anchor_text": "Canalización especial de desagüe",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_007",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/canalizacion-pluvial-zanjados-y-cunetas",
+      "title": "Canalización pluvial (zanjas y cunetas)",
+      "anchor_text": "Canalización pluvial (zanjas y cunetas)",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_008",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/certificado-de-saneamiento-para-compraventa-de-inmuebles",
+      "title": "Certificado de saneamiento para compraventa de inmuebles",
+      "anchor_text": "Certificado de saneamiento para compraventa de inmuebles",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_009",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/colector-provisorio",
+      "title": "Colector provisorio",
+      "anchor_text": "Colector provisorio",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_010",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/efluentes-industriales-constancia-de-registro",
+      "title": "Constancia de registro de efluentes industriales",
+      "anchor_text": "Constancia de registro de efluentes industriales",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "registro",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_011",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/boca-de-tormenta",
+      "title": "Construcción de boca de tormenta",
+      "anchor_text": "Construcción de boca de tormenta",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_012",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/construccion-de-bocas-de-tormenta",
+      "title": "Construcción de bocas de tormenta",
+      "anchor_text": "Construcción de bocas de tormenta",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_013",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/division-de-deuda-de-tarifa-de-saneamiento",
+      "title": "División de deuda de tarifa de saneamiento",
+      "anchor_text": "División de deuda de tarifa de saneamiento",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_014",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/certificado/efluentes-industriales-informe-de-operacion-de-industrias",
+      "title": "Efluentes industriales. Informe de operación de industrias",
+      "anchor_text": "Efluentes industriales. Informe de operación de industrias",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "certificado",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_015",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/factibilidad-de-saneamiento",
+      "title": "Estudio de factibilidad de saneamiento",
+      "anchor_text": "Estudio de factibilidad de saneamiento",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_016",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/fondo-rotatorio-de-barometricas",
+      "title": "Fondo Rotatorio de Barométricas",
+      "anchor_text": "Fondo Rotatorio de Barométricas",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_017",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/reclamo/gestiones-comerciales-de-tarifa-de-saneamiento",
+      "title": "Gestiones Comerciales de Tarifa de Saneamiento",
+      "anchor_text": "Gestiones Comerciales de Tarifa de Saneamiento",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "reclamo",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_018",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/denuncia/hundimiento-de-pavimento-causada-por-colectores",
+      "title": "Hundimiento de pavimento causado por colectores",
+      "anchor_text": "Hundimiento de pavimento causado por colectores",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "denuncia",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_019",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/denuncia/hundimiento-de-veredas-causado-por-colectores-o-conexiones-sanitarias",
+      "title": "Hundimiento de veredas causado por colectores o conexiones sanitarias",
+      "anchor_text": "Hundimiento de veredas causado por colectores o conexiones sanitarias",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "denuncia",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_020",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/certificado/capacidad-de-vertimiento-a-colector",
+      "title": "Informe de capacidad de vertimiento a colector",
+      "anchor_text": "Informe de capacidad de vertimiento a colector",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "certificado",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_021",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/conexion-al-saneamiento",
+      "title": "Informe Técnico de Conexión a Saneamiento",
+      "anchor_text": "Informe Técnico de Conexión a Saneamiento",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_022",
+      "url": "https://tramites.montevideo.gub.uy/tramite/ingreso-de-lecturas-de-medidores-de-fuentes-propias",
+      "title": "Ingreso de lecturas de medidores de fuentes propias",
+      "anchor_text": "Ingreso de lecturas de medidores de fuentes propias",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_023",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/limpieza-boca-de-tormenta",
+      "title": "Limpieza de boca de tormenta",
+      "anchor_text": "Limpieza de boca de tormenta",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_024",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/pedido-especial-para-uso-de-barometricas-en-industrias",
+      "title": "Pedido especial para uso de barométricas en industrias",
+      "anchor_text": "Pedido especial para uso de barométricas en industrias",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_025",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/registro-de-profesionales-e-instaladores-sanitarios",
+      "title": "Profesionales e instaladores sanitarios",
+      "anchor_text": "Profesionales e instaladores sanitarios",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "registro",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento"
+      ]
+    },
+    {
+      "link_id": "link_026",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/reclamo/reclamo-por-facturacion-de-tarifa-de-saneamiento",
+      "title": "Reclamo por facturación de tarifa de saneamiento",
+      "anchor_text": "Reclamo por facturación de tarifa de saneamiento",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "reclamo",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento?page=1"
+      ]
+    },
+    {
+      "link_id": "link_027",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/tecnico-para-solicitudes-de-conexion-a-saneamiento",
+      "title": "Registro de persona técnica para solicitudes de conexión a saneamiento",
+      "anchor_text": "Registro de persona técnica para solicitudes de conexión a saneamiento",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "registro",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento?page=1"
+      ]
+    },
+    {
+      "link_id": "link_028",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/conexiones-sanitarias-obstruidas",
+      "title": "Solicitud para destapar conexiones de saneamiento",
+      "anchor_text": "Solicitud para destapar conexiones de saneamiento",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento?page=1"
+      ]
+    },
+    {
+      "link_id": "link_029",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/toma-de-conexion-al-saneamiento",
+      "title": "Toma de conexión al saneamiento",
+      "anchor_text": "Toma de conexión al saneamiento",
+      "source_context": "Listado de resultados del buscador",
+      "detection_reason": "Link encontrado en listado principal de tramites",
+      "url_category": "solicitud",
+      "detected_role": "candidate",
+      "status": "pending_review",
+      "source_page_urls": [
+        "https://tramites.montevideo.gub.uy/buscador_tramites/Saneamiento?page=1"
+      ]
+    }
+  ]
+}

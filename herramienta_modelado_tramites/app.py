@@ -152,6 +152,9 @@ def main() -> None:
         )
         print(f"Proyecto: {result['project_id']}")
         print(f"Links candidatos: {result['links_count']}")
+        print(f"Paginas recorridas: {result['pages_scanned']}")
+        print(f"Errores parciales: {len(result['page_errors'])}")
+        print(f"Limite alcanzado: {result['page_limit_reached']}")
         print(f"Archivo: {result['candidate_links_path']}")
 
     if args.command == "build-review-links":

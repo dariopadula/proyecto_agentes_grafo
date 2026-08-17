@@ -1,5 +1,7 @@
 from pathlib import Path
+import re
 from typing import Any
+from urllib.parse import urlparse
 
 from config import OUTPUTS_DIR
 from config import PROJECTS_DIR
@@ -16,11 +18,25 @@ def create_project(
     description: str = "",
 ) -> dict[str, str]:
     """Crea los archivos iniciales de un proyecto editable."""
+    project_id = project_id.strip()
+    name = name.strip()
+    start_url = start_url.strip()
+    if not re.fullmatch(r"[a-z0-9]+(?:_[a-z0-9]+)*", project_id):
+        raise ValueError(
+            "El identificador solo puede contener letras minusculas, numeros y guiones bajos."
+        )
+    if not name:
+        raise ValueError("El nombre del proyecto es obligatorio.")
+    parsed_url = urlparse(start_url)
+    if parsed_url.scheme not in {"http", "https"} or not parsed_url.netloc:
+        raise ValueError("La URL inicial debe ser una direccion HTTP o HTTPS valida.")
     project_dir = PROJECTS_DIR / project_id
     output_dir = OUTPUTS_DIR / project_id
     snapshots_dir = project_dir / "snapshots"
 
-    project_dir.mkdir(parents=True, exist_ok=True)
+    if project_dir.exists():
+        raise ValueError(f"Ya existe un proyecto con el identificador {project_id}.")
+    project_dir.mkdir(parents=True, exist_ok=False)
     output_dir.mkdir(parents=True, exist_ok=True)
     snapshots_dir.mkdir(parents=True, exist_ok=True)
     _touch_gitkeep(snapshots_dir)

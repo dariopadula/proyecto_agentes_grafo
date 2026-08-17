@@ -29,6 +29,9 @@ from workflows.effective_project_state import resolve_effective_project_state
 from workflows.document_map import build_document_map
 from workflows.lifecycle_review import node_lifecycle_impact
 from workflows.lifecycle_review import save_node_lifecycle_status
+from workflows.link_discovery import discover_candidate_links
+from workflows.project_administration import delete_project_recoverably
+from workflows.project_setup import create_project
 from ui.document_map_page import render_document_map_body
 
 
@@ -43,7 +46,16 @@ class TramiteModelingHandler(BaseHTTPRequestHandler):
     def do_GET(self) -> None:
         path = urlparse(self.path).path
         if path == "/":
-            self._send_html(_projects_page())
+            self._send_html(_projects_page(self.path))
+            return
+
+        if path == "/projects/new":
+            self._send_html(_new_project_page(self.path))
+            return
+
+        delete_project_id = _project_id_from_delete_path(path)
+        if delete_project_id:
+            self._send_html(_delete_project_page(delete_project_id, self.path))
             return
 
         project_id = _project_id_from_review_path(path)
@@ -85,6 +97,62 @@ class TramiteModelingHandler(BaseHTTPRequestHandler):
 
     def do_POST(self) -> None:
         path = urlparse(self.path).path
+        if path == "/projects":
+            form = self._read_form()
+            try:
+                create_project(
+                    project_id=_single(form, "project_id"),
+                    name=_single(form, "name"),
+                    start_url=_single(form, "start_url"),
+                    description=_single(form, "description"),
+                    actor=_single(form, "actor", DEFAULT_ACTOR),
+                )
+            except (OSError, ValueError) as error:
+                self._redirect(f"/projects/new?{urlencode({'error': str(error)})}")
+                return
+            project_id = _single(form, "project_id")
+            self._redirect(
+                f"/projects/{project_id}/review-links?created=1"
+            )
+            return
+
+        discover_project_id = _project_id_from_discover_path(path)
+        if discover_project_id:
+            form = self._read_form()
+            try:
+                result = discover_candidate_links(
+                    project_id=discover_project_id,
+                    actor=_single(form, "actor", DEFAULT_ACTOR),
+                )
+            except Exception as error:
+                self._redirect(
+                    f"/?{urlencode({'error': f'No se pudieron buscar enlaces: {error}'})}"
+                )
+                return
+            self._redirect(
+                f"/projects/{discover_project_id}/review-links?"
+                f"{urlencode({'discovered': result['links_count'], 'pages': result['pages_scanned'], 'page_errors': len(result['page_errors']), 'page_limit': int(result['page_limit_reached'])})}"
+            )
+            return
+
+        delete_project_id = _project_id_from_delete_path(path)
+        if delete_project_id:
+            form = self._read_form()
+            try:
+                delete_project_recoverably(
+                    project_id=delete_project_id,
+                    confirmation=_single(form, "confirmation"),
+                    actor=_single(form, "actor", DEFAULT_ACTOR),
+                )
+            except (OSError, ValueError) as error:
+                self._redirect(
+                    f"/projects/{delete_project_id}/delete?"
+                    f"{urlencode({'error': str(error)})}"
+                )
+                return
+            self._redirect(f"/?{urlencode({'deleted': delete_project_id})}")
+            return
+
         document_resource_route = _document_map_resource_route(path)
         if document_resource_route:
             project_id, source_link_id, resource_id = document_resource_route
@@ -454,18 +522,38 @@ def _verify_pdf_family_background(
         mark_pdf_family_verification_failed(project_id, family_id, error)
 
 
-def _projects_page() -> str:
+def _projects_page(request_path: str = "/") -> str:
     projects = []
+    PROJECTS_DIR.mkdir(parents=True, exist_ok=True)
     for project_dir in sorted(PROJECTS_DIR.iterdir()):
         project_path = project_dir / "project.json"
         if project_path.exists():
             projects.append(load_json(project_path))
 
+    query = parse_qs(urlparse(request_path).query)
+    message = ""
+    if "deleted" in query:
+        message = (
+            f'<p class="message ok">Proyecto {html_escape(query["deleted"][0])} '
+            'eliminado de la lista activa. Se conserva una copia recuperable.</p>'
+        )
+    elif "error" in query:
+        message = f'<p class="message error">{html_escape(query["error"][0])}</p>'
+
+    heading = f"""
+    <section class="panel">
+      <div class="card-head">
+        <div><p class="eyebrow">Administración</p><h2>Proyectos</h2></div>
+        <a class="button" href="/projects/new">Nuevo proyecto</a>
+      </div>
+      {message}
+    </section>
+    """
     if not projects:
-        body = """
+        body = heading + """
         <section class="panel">
           <h2>No hay proyectos creados</h2>
-          <p>Primero crea un proyecto con <code>python app.py init-project</code>.</p>
+          <p>Usa <strong>Nuevo proyecto</strong> para comenzar.</p>
         </section>
         """
         return _page("Proyectos", body)
@@ -473,6 +561,25 @@ def _projects_page() -> str:
     cards = []
     for project in projects:
         project_id = project.get("project_id", "")
+        candidate_links_path = PROJECTS_DIR / project_id / "candidate_links.json"
+        candidate_links = (
+            load_json(candidate_links_path).get("links", [])
+            if candidate_links_path.exists()
+            else []
+        )
+        primary_action = (
+            f"""
+              <a class="button" href="/projects/{html_escape(project_id)}/review-links">
+                Revisar links
+              </a>
+            """
+            if candidate_links
+            else f"""
+              <form method="post" action="/projects/{html_escape(project_id)}/discover-links">
+                <button type="submit">Buscar enlaces</button>
+              </form>
+            """
+        )
         cards.append(
             f"""
             <article class="card">
@@ -482,9 +589,7 @@ def _projects_page() -> str:
                 <dt>Estado</dt><dd>{html_escape(project.get("status"))}</dd>
                 <dt>Actualizado</dt><dd>{html_escape(project.get("updated_at"))}</dd>
               </dl>
-              <a class="button" href="/projects/{html_escape(project_id)}/review-links">
-                Revisar links
-              </a>
+              {primary_action}
               <a class="button secondary" href="/projects/{html_escape(project_id)}/resource-rules">
                 Configurar exclusiones
               </a>
@@ -503,11 +608,99 @@ def _projects_page() -> str:
               <a class="button secondary" href="/projects/{html_escape(project_id)}/document-map">
                 Ver mapa documental
               </a>
+              <a class="button danger" href="/projects/{html_escape(project_id)}/delete">
+                Eliminar proyecto
+              </a>
             </article>
             """
         )
 
-    return _page("Proyectos", "<section class=\"grid\">" + "".join(cards) + "</section>")
+    return _page("Proyectos", heading + "<section class=\"grid\">" + "".join(cards) + "</section>")
+
+
+def _new_project_page(request_path: str) -> str:
+    query = parse_qs(urlparse(request_path).query)
+    message = (
+        f'<p class="message error">{html_escape(query["error"][0])}</p>'
+        if "error" in query
+        else ""
+    )
+    body = f"""
+    <section class="panel">
+      <p><a href="/">Volver a proyectos</a></p>
+      <p class="eyebrow">Nuevo proyecto</p>
+      <h2>Crear un proyecto de trámites</h2>
+      <p class="muted">Después de crearlo podrás buscar los enlaces desde la aplicación.</p>
+      {message}
+    </section>
+    <form class="panel" method="post" action="/projects" id="new-project-form">
+      <div class="form-grid">
+        <label>Nombre
+          <input name="name" id="project-name" required placeholder="Ej.: Habilitaciones comerciales">
+        </label>
+        <label>URL inicial
+          <input name="start_url" type="url" required placeholder="https://tramites.montevideo.gub.uy/…">
+        </label>
+        <label>Identificador
+          <input name="project_id" id="project-id" required pattern="[a-z0-9]+(?:_[a-z0-9]+)*" placeholder="habilitaciones_comerciales">
+          <small class="muted">Se genera desde el nombre y puede ajustarse antes de crear.</small>
+        </label>
+        <label>Descripción opcional
+          <input name="description" placeholder="Alcance o propósito del proyecto">
+        </label>
+      </div>
+      <div class="actions">
+        <button type="submit">Crear proyecto</button>
+        <a class="button secondary" href="/">Cancelar</a>
+      </div>
+    </form>
+    <script>
+      const nameInput = document.getElementById("project-name");
+      const idInput = document.getElementById("project-id");
+      let idWasEdited = false;
+      idInput.addEventListener("input", () => {{ idWasEdited = true; }});
+      nameInput.addEventListener("input", () => {{
+        if (idWasEdited) return;
+        idInput.value = nameInput.value.normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase().replace(/[^a-z0-9]+/g, "_")
+          .replace(/^_+|_+$/g, "");
+      }});
+    </script>
+    """
+    return _page("Nuevo proyecto", body)
+
+
+def _delete_project_page(project_id: str, request_path: str) -> str:
+    project_path = PROJECTS_DIR / project_id / "project.json"
+    if not project_path.exists():
+        return _page("Proyecto inexistente", '<p><a href="/">Volver a proyectos</a></p><p>El proyecto no existe.</p>')
+    project = load_json(project_path)
+    query = parse_qs(urlparse(request_path).query)
+    message = (
+        f'<p class="message error">{html_escape(query["error"][0])}</p>'
+        if "error" in query
+        else ""
+    )
+    body = f"""
+    <section class="panel">
+      <p><a href="/">Volver a proyectos</a></p>
+      <p class="eyebrow">Eliminar proyecto</p>
+      <h2>{html_escape(project.get('name'))}</h2>
+      <p>El proyecto desaparecerá de la lista activa. Sus datos y salidas se conservarán en el área recuperable.</p>
+      {message}
+    </section>
+    <form class="panel" method="post" action="/projects/{html_escape(project_id)}/delete">
+      <label>Escribe <strong>{html_escape(project_id)}</strong> para confirmar
+        <input name="confirmation" required autocomplete="off">
+      </label>
+      <div class="actions">
+        <button class="danger" type="submit">Eliminar proyecto</button>
+        <a class="button secondary" href="/">Cancelar</a>
+      </div>
+    </form>
+    """
+    return _page(f"Eliminar - {project.get('name')}", body)
 
 
 def _resource_rules_page(project_id: str, request_path: str) -> str:
@@ -2198,6 +2391,9 @@ def _review_links_page(project_id: str, request_path: str) -> str:
       <p><a href="/">Volver a proyectos</a></p>
       <h2>{html_escape(project.get("name"))}</h2>
       <p class="muted">{html_escape(project.get("start_url"))}</p>
+      {f'''<form method="post" action="/projects/{html_escape(project_id)}/discover-links">
+        <button type="submit">Buscar enlaces ahora</button>
+      </form>''' if not links else ''}
       <div class="stats">
         <div><strong>{len(links)}</strong><span>Links candidatos</span></div>
         <div><strong>{reviewed_count}</strong><span>Revisados</span></div>
@@ -2260,6 +2456,7 @@ def _link_card(
             link.get("title"),
             link.get("url"),
             link.get("anchor_text"),
+            link.get("url_category"),
             notes,
         ]
     ).lower()
@@ -2283,6 +2480,7 @@ def _link_card(
       <dl>
         <dt>Texto detectado</dt><dd>{html_escape(link.get("anchor_text"))}</dd>
         <dt>Contexto</dt><dd>{html_escape(link.get("source_context"))}</dd>
+        <dt>Categoría de URL</dt><dd>{html_escape(link.get("url_category") or "No disponible")}</dd>
         <dt>Motivo</dt><dd>{html_escape(link.get("detection_reason"))}</dd>
       </dl>
       <form method="post" action="/projects/{html_escape(project_id)}/review-links/{html_escape(link_id)}">
@@ -2796,6 +2994,20 @@ def _project_id_from_document_map_path(path: str) -> str | None:
     return None
 
 
+def _project_id_from_discover_path(path: str) -> str | None:
+    parts = path.strip("/").split("/")
+    if len(parts) == 3 and parts[0] == "projects" and parts[2] == "discover-links":
+        return parts[1]
+    return None
+
+
+def _project_id_from_delete_path(path: str) -> str | None:
+    parts = path.strip("/").split("/")
+    if len(parts) == 3 and parts[0] == "projects" and parts[2] == "delete":
+        return parts[1]
+    return None
+
+
 def _document_map_resource_route(path: str) -> tuple[str, str, str] | None:
     parts = path.strip("/").split("/")
     if (
@@ -2944,6 +3156,25 @@ def _resource_review_redirect(
 
 def _status_message(request_path: str) -> str:
     query = parse_qs(urlparse(request_path).query)
+    if "created" in query:
+        return (
+            '<p class="message ok">Proyecto creado. Ahora puedes volver a proyectos '
+            'y usar Buscar enlaces.</p>'
+        )
+    if "discovered" in query:
+        pages = query.get("pages", ["1"])[0]
+        errors = query.get("page_errors", ["0"])[0]
+        limit_reached = query.get("page_limit", ["0"])[0] == "1"
+        warning = ""
+        if errors != "0":
+            warning += f" {html_escape(errors)} páginas no pudieron procesarse."
+        if limit_reached:
+            warning += " Se alcanzó el límite de páginas."
+        return (
+            f'<p class="message ok">Búsqueda terminada: '
+            f'{html_escape(query["discovered"][0])} enlaces encontrados en '
+            f'{html_escape(pages)} páginas.{warning}</p>'
+        )
     if "saved_identity" in query:
         return (
             '<p class="message ok">Pertenencia al grupo guardada. '
@@ -3056,6 +3287,11 @@ def _page(title: str, body: str) -> str:
     .button.secondary {{
       color: var(--accent);
       background: #fff;
+    }}
+    button.danger, .button.danger {{
+      background: #a12b2b;
+      border-color: #a12b2b;
+      color: #fff;
     }}
     .toolbar {{
       display: flex;

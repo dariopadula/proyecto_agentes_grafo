@@ -1,0 +1,651 @@
+{
+  "project_id": "saneamiento",
+  "events": [
+    {
+      "event_id": "event_001",
+      "timestamp": "2026-08-14T15:18:01-03:00",
+      "actor": "funcionario",
+      "action": "create_project",
+      "target_type": "project",
+      "target_id": "saneamiento",
+      "summary": "Se creo el proyecto editable.",
+      "before": null,
+      "after": {
+        "status": "draft"
+      }
+    },
+    {
+      "event_id": "event_002",
+      "timestamp": "2026-08-14T15:18:06-03:00",
+      "actor": "funcionario",
+      "action": "detect_candidate_links",
+      "target_type": "project",
+      "target_id": "saneamiento",
+      "summary": "Se detectaron 20 links candidatos.",
+      "before": {
+        "status": "draft",
+        "links_count": null
+      },
+      "after": {
+        "status": "link_review",
+        "links_count": 20
+      }
+    },
+    {
+      "event_id": "event_003",
+      "timestamp": "2026-08-17T10:13:53-03:00",
+      "actor": "funcionario",
+      "action": "detect_candidate_links",
+      "target_type": "project",
+      "target_id": "saneamiento",
+      "summary": "Se detectaron 25 links candidatos.",
+      "before": {
+        "status": "link_review",
+        "links_count": null
+      },
+      "after": {
+        "status": "link_review",
+        "links_count": 25
+      }
+    },
+    {
+      "event_id": "event_004",
+      "timestamp": "2026-08-17T10:24:53-03:00",
+      "actor": "funcionario",
+      "action": "detect_candidate_links",
+      "target_type": "project",
+      "target_id": "saneamiento",
+      "summary": "Se detectaron 29 links candidatos en 2 paginas.",
+      "before": {
+        "status": "link_review",
+        "links_count": null
+      },
+      "after": {
+        "status": "link_review",
+        "links_count": 29,
+        "pages_scanned": 2,
+        "page_error_count": 0
+      }
+    },
+    {
+      "event_id": "event_005",
+      "timestamp": "2026-08-17T10:31:01-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_001",
+      "summary": "Se guardo decision para link_001: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_001",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/consulta/aprobacion-de-sistemas-constructivos-materiales-sanitarios-o-consulta-de-reglamentacion-de-higiene",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:31:01-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_006",
+      "timestamp": "2026-08-17T10:31:15-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_002",
+      "summary": "Se guardo decision para link_002: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_002",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/barometrica-para-zonas-no-saneadas",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:31:15-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_007",
+      "timestamp": "2026-08-17T10:31:22-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_003",
+      "summary": "Se guardo decision para link_003: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_003",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-categoria-de-tarifa-de-saneamiento",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:31:22-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_008",
+      "timestamp": "2026-08-17T10:31:27-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_004",
+      "summary": "Se guardo decision para link_004: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_004",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-firma-tecnica-en-solicitudes-de-conexion-a-saneamiento",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:31:27-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_009",
+      "timestamp": "2026-08-17T10:31:31-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_005",
+      "summary": "Se guardo decision para link_005: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_005",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-propietario-para-solicitudes-de-conexion-a-saneamiento",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:31:31-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_010",
+      "timestamp": "2026-08-17T10:31:37-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_006",
+      "summary": "Se guardo decision para link_006: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_006",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/canalizacion-especial-de-desague",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:31:37-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_011",
+      "timestamp": "2026-08-17T10:31:41-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_007",
+      "summary": "Se guardo decision para link_007: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_007",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/canalizacion-pluvial-zanjados-y-cunetas",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:31:41-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_012",
+      "timestamp": "2026-08-17T10:31:46-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_008",
+      "summary": "Se guardo decision para link_008: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_008",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/certificado-de-saneamiento-para-compraventa-de-inmuebles",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:31:46-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_013",
+      "timestamp": "2026-08-17T10:31:52-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_009",
+      "summary": "Se guardo decision para link_009: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_009",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/colector-provisorio",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:31:52-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_014",
+      "timestamp": "2026-08-17T10:32:06-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_010",
+      "summary": "Se guardo decision para link_010: discarded / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_010",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/efluentes-industriales-constancia-de-registro",
+        "primary_role": "discarded",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:32:06-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_015",
+      "timestamp": "2026-08-17T10:32:13-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_011",
+      "summary": "Se guardo decision para link_011: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_011",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/boca-de-tormenta",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:32:13-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_016",
+      "timestamp": "2026-08-17T10:32:19-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_012",
+      "summary": "Se guardo decision para link_012: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_012",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/construccion-de-bocas-de-tormenta",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:32:19-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_017",
+      "timestamp": "2026-08-17T10:32:25-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_013",
+      "summary": "Se guardo decision para link_013: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_013",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/division-de-deuda-de-tarifa-de-saneamiento",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:32:25-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_018",
+      "timestamp": "2026-08-17T10:32:31-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_014",
+      "summary": "Se guardo decision para link_014: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_014",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/certificado/efluentes-industriales-informe-de-operacion-de-industrias",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:32:31-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_019",
+      "timestamp": "2026-08-17T10:32:37-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_015",
+      "summary": "Se guardo decision para link_015: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_015",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/factibilidad-de-saneamiento",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:32:37-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_020",
+      "timestamp": "2026-08-17T10:32:41-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_016",
+      "summary": "Se guardo decision para link_016: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_016",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/fondo-rotatorio-de-barometricas",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:32:41-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_021",
+      "timestamp": "2026-08-17T10:32:45-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_017",
+      "summary": "Se guardo decision para link_017: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_017",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/reclamo/gestiones-comerciales-de-tarifa-de-saneamiento",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:32:45-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_022",
+      "timestamp": "2026-08-17T10:32:49-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_018",
+      "summary": "Se guardo decision para link_018: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_018",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/denuncia/hundimiento-de-pavimento-causada-por-colectores",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:32:49-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_023",
+      "timestamp": "2026-08-17T10:32:53-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_019",
+      "summary": "Se guardo decision para link_019: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_019",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/denuncia/hundimiento-de-veredas-causado-por-colectores-o-conexiones-sanitarias",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:32:53-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_024",
+      "timestamp": "2026-08-17T10:33:06-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_020",
+      "summary": "Se guardo decision para link_020: discarded / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_020",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/certificado/capacidad-de-vertimiento-a-colector",
+        "primary_role": "discarded",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:33:06-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_025",
+      "timestamp": "2026-08-17T10:33:13-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_021",
+      "summary": "Se guardo decision para link_021: discarded / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_021",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/conexion-al-saneamiento",
+        "primary_role": "discarded",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:33:13-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_026",
+      "timestamp": "2026-08-17T10:33:18-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_022",
+      "summary": "Se guardo decision para link_022: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_022",
+        "url": "https://tramites.montevideo.gub.uy/tramite/ingreso-de-lecturas-de-medidores-de-fuentes-propias",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:33:18-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_027",
+      "timestamp": "2026-08-17T10:33:21-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_023",
+      "summary": "Se guardo decision para link_023: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_023",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/limpieza-boca-de-tormenta",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:33:21-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_028",
+      "timestamp": "2026-08-17T10:33:25-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_024",
+      "summary": "Se guardo decision para link_024: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_024",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/pedido-especial-para-uso-de-barometricas-en-industrias",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:33:25-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_029",
+      "timestamp": "2026-08-17T10:33:29-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_025",
+      "summary": "Se guardo decision para link_025: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_025",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/registro-de-profesionales-e-instaladores-sanitarios",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:33:29-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_030",
+      "timestamp": "2026-08-17T10:33:34-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_026",
+      "summary": "Se guardo decision para link_026: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_026",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/reclamo/reclamo-por-facturacion-de-tarifa-de-saneamiento",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:33:34-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_031",
+      "timestamp": "2026-08-17T10:33:38-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_027",
+      "summary": "Se guardo decision para link_027: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_027",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/tecnico-para-solicitudes-de-conexion-a-saneamiento",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:33:38-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_032",
+      "timestamp": "2026-08-17T10:33:42-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_028",
+      "summary": "Se guardo decision para link_028: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_028",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/conexiones-sanitarias-obstruidas",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:33:42-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    },
+    {
+      "event_id": "event_033",
+      "timestamp": "2026-08-17T10:33:46-03:00",
+      "actor": "funcionario",
+      "action": "classify_link",
+      "target_type": "candidate_link",
+      "target_id": "link_029",
+      "summary": "Se guardo decision para link_029: terminal_case / [].",
+      "before": null,
+      "after": {
+        "link_id": "link_029",
+        "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/toma-de-conexion-al-saneamiento",
+        "primary_role": "terminal_case",
+        "secondary_roles": [],
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-17T10:33:46-03:00",
+        "confidence": "media",
+        "notes": ""
+      }
+    }
+  ]
+}

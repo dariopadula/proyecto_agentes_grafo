@@ -12103,6 +12103,23 @@
         "source_group_id": "pdf_family_001",
         "inherited": true
       }
+    },
+    {
+      "event_id": "event_365",
+      "timestamp": "2026-08-14T15:04:13-03:00",
+      "actor": "funcionario",
+      "action": "detect_candidate_links",
+      "target_type": "project",
+      "target_id": "licencia_conducir",
+      "summary": "Se detectaron 22 links candidatos.",
+      "before": {
+        "status": "resource_discovery",
+        "links_count": null
+      },
+      "after": {
+        "status": "link_review",
+        "links_count": 22
+      }
     }
   ]
 }

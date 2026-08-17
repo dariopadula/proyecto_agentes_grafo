@@ -412,6 +412,7 @@ def _build_html(
           <div class="meta">
             <div>Texto link</div><div>${{escapeHtml(link.anchor_text || "")}}</div>
             <div>Contexto</div><div>${{escapeHtml(link.source_context || "")}}</div>
+            <div>Categoría de URL</div><div>${{escapeHtml(link.url_category || "No disponible")}}</div>
             <div>Motivo</div><div>${{escapeHtml(link.detection_reason || "")}}</div>
             <div>Estado</div><div>${{escapeHtml(link.status || "")}}</div>
           </div>
@@ -445,7 +446,7 @@ def _build_html(
     }}
 
     function searchText(link) {{
-      return [link.link_id, link.title, link.url, link.anchor_text, link.source_context]
+      return [link.link_id, link.title, link.url, link.anchor_text, link.source_context, link.url_category]
         .join(" ")
         .toLowerCase();
     }}

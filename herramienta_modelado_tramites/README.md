@@ -6,6 +6,9 @@ Esta carpeta alojara la herramienta asistida para que una persona no tecnica pue
 
 Aplicacion local en desarrollo activo con:
 
+- creación de proyectos desde la pantalla principal;
+- búsqueda de enlaces desde la aplicación;
+- eliminación recuperable de proyectos;
 - creacion de proyectos;
 - deteccion y revision de links candidatos;
 - persistencia de decisiones por CLI y navegador;
@@ -224,6 +227,28 @@ http://127.0.0.1:8000/
 ```
 
 Desde ahi se puede entrar al proyecto `licencia_conducir`, revisar cada link por titulo y URL, elegir rol principal, roles secundarios, confianza, notas y guardar.
+
+La pantalla principal permite crear proyectos sin usar la consola. `Nuevo
+proyecto` solicita nombre y URL, propone un identificador y valida que no exista
+otro proyecto con ese ID. Después se puede ejecutar `Buscar enlaces ahora` desde
+la pantalla de revisión o desde el listado de proyectos. Esta acción solo se
+muestra mientras el proyecto no tenga enlaces candidatos. Una vez realizado el
+descubrimiento, la acción principal pasa a ser `Revisar links`.
+
+Volver a descubrir enlaces en un proyecto trabajado no está habilitado desde la
+interfaz. Se reserva para un futuro flujo `Actualizar enlaces`, con comparación
+previa y confirmación para proteger decisiones existentes.
+
+Desde 2026-08-17 el descubrimiento incluye todos los enlaces del listado oficial
+sin filtrar por categoría y recorre las páginas numéricas del mismo buscador.
+La categoría se conserva en `url_category` como evidencia. El recorrido tiene
+un límite de 50 páginas, deduplica por URL y registra errores parciales. La
+validación pública con `Saneamiento` encontró 29 candidatos en 2 páginas.
+
+`Eliminar proyecto` exige escribir el identificador como confirmación. La
+operación es recuperable: mueve datos y salidas a
+`data/deleted_projects/<id>__<fecha>/`; no los borra físicamente. La restauración
+todavía no está disponible desde la interfaz.
 
 Tambien se puede entrar a:
 

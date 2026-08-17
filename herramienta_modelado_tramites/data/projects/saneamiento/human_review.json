@@ -1,0 +1,297 @@
+{
+  "project_id": "saneamiento",
+  "review_status": "complete",
+  "updated_at": "2026-08-17T10:33:46-03:00",
+  "decisions": [
+    {
+      "link_id": "link_001",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/consulta/aprobacion-de-sistemas-constructivos-materiales-sanitarios-o-consulta-de-reglamentacion-de-higiene",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:31:01-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_002",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/barometrica-para-zonas-no-saneadas",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:31:15-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_003",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-categoria-de-tarifa-de-saneamiento",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:31:22-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_004",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-firma-tecnica-en-solicitudes-de-conexion-a-saneamiento",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:31:27-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_005",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/cambio-de-propietario-para-solicitudes-de-conexion-a-saneamiento",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:31:31-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_006",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/canalizacion-especial-de-desague",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:31:37-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_007",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/canalizacion-pluvial-zanjados-y-cunetas",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:31:41-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_008",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/certificado-de-saneamiento-para-compraventa-de-inmuebles",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:31:46-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_009",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/colector-provisorio",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:31:52-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_010",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/efluentes-industriales-constancia-de-registro",
+      "primary_role": "discarded",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:32:06-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_011",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/boca-de-tormenta",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:32:13-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_012",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/construccion-de-bocas-de-tormenta",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:32:19-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_013",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/division-de-deuda-de-tarifa-de-saneamiento",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:32:25-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_014",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/certificado/efluentes-industriales-informe-de-operacion-de-industrias",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:32:31-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_015",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/factibilidad-de-saneamiento",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:32:37-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_016",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/fondo-rotatorio-de-barometricas",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:32:41-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_017",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/reclamo/gestiones-comerciales-de-tarifa-de-saneamiento",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:32:45-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_018",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/denuncia/hundimiento-de-pavimento-causada-por-colectores",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:32:49-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_019",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/denuncia/hundimiento-de-veredas-causado-por-colectores-o-conexiones-sanitarias",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:32:53-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_020",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/certificado/capacidad-de-vertimiento-a-colector",
+      "primary_role": "discarded",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:33:06-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_021",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/conexion-al-saneamiento",
+      "primary_role": "discarded",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:33:13-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_022",
+      "url": "https://tramites.montevideo.gub.uy/tramite/ingreso-de-lecturas-de-medidores-de-fuentes-propias",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:33:18-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_023",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/limpieza-boca-de-tormenta",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:33:21-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_024",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/pedido-especial-para-uso-de-barometricas-en-industrias",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:33:25-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_025",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/registro-de-profesionales-e-instaladores-sanitarios",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:33:29-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_026",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/reclamo/reclamo-por-facturacion-de-tarifa-de-saneamiento",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:33:34-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_027",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/registro/tecnico-para-solicitudes-de-conexion-a-saneamiento",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:33:38-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_028",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/conexiones-sanitarias-obstruidas",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:33:42-03:00",
+      "confidence": "media",
+      "notes": ""
+    },
+    {
+      "link_id": "link_029",
+      "url": "https://tramites.montevideo.gub.uy/tramites-y-tributos/solicitud/toma-de-conexion-al-saneamiento",
+      "primary_role": "terminal_case",
+      "secondary_roles": [],
+      "reviewed_by": "funcionario",
+      "reviewed_at": "2026-08-17T10:33:46-03:00",
+      "confidence": "media",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "project_id": "saneamiento",
+  "updated_at": "2026-08-14T15:18:01-03:00",
+  "rules": [
+    {
+      "rule_id": "rule_001",
+      "match_type": "url_contains",
+      "pattern": "/print/pdf/node/",
+      "action": "discard",
+      "reason": "Version PDF imprimible generada desde la pagina HTML.",
+      "enabled": true
+    },
+    {
+      "rule_id": "rule_002",
+      "match_type": "url_contains",
+      "pattern": "wa.me/message/",
+      "action": "discard",
+      "reason": "Canal de reporte o feedback, no es recurso del tramite.",
+      "enabled": true
+    },
+    {
+      "rule_id": "rule_003",
+      "match_type": "url_contains",
+      "pattern": "/formularios/comunicar-un-error",
+      "action": "discard",
+      "reason": "Formulario administrativo para reportar errores de la pagina.",
+      "enabled": true
+    }
+  ]
+}
