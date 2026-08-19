@@ -200,15 +200,17 @@ class TramiteModelingHandler(BaseHTTPRequestHandler):
             project_id, source_link_id, resource_id = document_resource_route
             form = self._read_form()
             try:
-                save_resource_decision(
-                    project_id=project_id,
-                    source_link_id=source_link_id,
-                    resource_id=resource_id,
-                    use=_single(form, "use"),
-                    scope="node_only",
-                    notes=_single(form, "notes"),
-                    actor=_single(form, "actor", DEFAULT_ACTOR),
-                )
+                resource_ids = list(dict.fromkeys(form.get("resource_id") or [resource_id]))
+                for current_resource_id in resource_ids:
+                    save_resource_decision(
+                        project_id=project_id,
+                        source_link_id=source_link_id,
+                        resource_id=current_resource_id,
+                        use=_single(form, "use"),
+                        scope="node_only",
+                        notes=_single(form, "notes"),
+                        actor=_single(form, "actor", DEFAULT_ACTOR),
+                    )
             except ValueError as error:
                 self._redirect(
                     f"/projects/{project_id}/document-map?"

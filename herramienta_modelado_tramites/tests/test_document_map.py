@@ -46,6 +46,38 @@ class DocumentMapTests(unittest.TestCase):
             {"node_1", "node_2"},
         )
 
+    def test_groups_equivalent_appearances_inside_the_same_node(self):
+        state = self._state()
+        duplicate = self._appearance(
+            "node_1::pdf_duplicate",
+            "node_1",
+            "pdf",
+            "canonical:shared_pdf",
+            "process_as_context",
+        )
+        state["appearances"].append(duplicate)
+        state["canonical_resources"][0]["appearance_ids"].append(
+            duplicate["appearance_id"]
+        )
+        state["relations"].append(
+            self._relation(
+                duplicate["appearance_id"],
+                duplicate["source_link_id"],
+                duplicate["canonical_resource_key"],
+                "active",
+            )
+        )
+
+        view = build_document_map(state)
+
+        node = next(item for item in view["nodes"] if item["link_id"] == "node_1")
+        shared = next(
+            item for item in node["resources"]
+            if item["canonical_resource_key"] == "canonical:shared_pdf"
+        )
+        self.assertEqual(len(shared["node_appearances"]), 2)
+        self.assertEqual(node["summary"]["resource_count"], 3)
+
     def _state(self):
         nodes = [
             self._node("node_1", "Uno", "terminal_case", True),

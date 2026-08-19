@@ -59,6 +59,8 @@ específica de cada nodo y la cobertura inversa de los recursos consolidados.
 La interfaz usa un selector buscable de trámites, auditoría central y cobertura
 contextual en un panel derecho. Desde cada tarjeta se puede cambiar el uso de
 una aparición concreta entre contexto, enlace, revisión posterior y descarte.
+Las apariciones equivalentes de un mismo recurso dentro del trámite comparten
+un único editor, y la cobertura solo se ofrece cuando vincula más de un nodo.
 El cambio es una excepción local del trámite: conserva la identidad canónica y
 no modifica las apariciones de otros nodos. Todavía no permite agregar recursos,
 eliminarlos globalmente ni cambiar su agrupación. Cada tarjeta ofrece acceso

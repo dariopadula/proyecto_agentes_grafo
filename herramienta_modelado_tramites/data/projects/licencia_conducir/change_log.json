@@ -12308,6 +12308,92 @@
         "source_group_id": "pdf_family_002",
         "inherited": true
       }
+    },
+    {
+      "event_id": "event_370",
+      "timestamp": "2026-08-19T17:13:20-03:00",
+      "actor": "funcionario",
+      "action": "deactivate_node",
+      "target_type": "candidate_link",
+      "target_id": "link_005",
+      "summary": "Se cambió link_005 a estado inactive sin borrar trabajo previo.",
+      "before": null,
+      "after": {
+        "link_id": "link_005",
+        "status": "inactive",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-19T17:13:20-03:00"
+      }
+    },
+    {
+      "event_id": "event_371",
+      "timestamp": "2026-08-19T17:13:53-03:00",
+      "actor": "funcionario",
+      "action": "reactivate_node",
+      "target_type": "candidate_link",
+      "target_id": "link_005",
+      "summary": "Se cambió link_005 a estado active sin borrar trabajo previo.",
+      "before": {
+        "link_id": "link_005",
+        "status": "inactive",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-19T17:13:20-03:00"
+      },
+      "after": {
+        "link_id": "link_005",
+        "status": "active",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-19T17:13:53-03:00"
+      }
+    },
+    {
+      "event_id": "event_372",
+      "timestamp": "2026-08-19T17:14:08-03:00",
+      "actor": "funcionario",
+      "action": "deactivate_node",
+      "target_type": "candidate_link",
+      "target_id": "link_001",
+      "summary": "Se cambió link_001 a estado inactive sin borrar trabajo previo.",
+      "before": {
+        "link_id": "link_001",
+        "status": "active",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-12T16:26:41-03:00"
+      },
+      "after": {
+        "link_id": "link_001",
+        "status": "inactive",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-19T17:14:08-03:00"
+      }
+    },
+    {
+      "event_id": "event_373",
+      "timestamp": "2026-08-19T17:17:20-03:00",
+      "actor": "funcionario",
+      "action": "reactivate_node",
+      "target_type": "candidate_link",
+      "target_id": "link_001",
+      "summary": "Se cambió link_001 a estado active sin borrar trabajo previo.",
+      "before": {
+        "link_id": "link_001",
+        "status": "inactive",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-19T17:14:08-03:00"
+      },
+      "after": {
+        "link_id": "link_001",
+        "status": "active",
+        "notes": "",
+        "reviewed_by": "funcionario",
+        "reviewed_at": "2026-08-19T17:17:20-03:00"
+      }
     }
   ]
 }

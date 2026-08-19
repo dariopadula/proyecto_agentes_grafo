@@ -123,6 +123,12 @@ Varias acciones también tienen equivalente CLI en `app.py`.
 | Mapa documental | Cambiar uso de una tarjeta | Funcionario | Decisión local actualizada | `web_app.py`, `resource_review.py` | `save_resource_decision` con `scope="node_only"` | Inventario y decisión anterior | `resource_review.json`, `change_log.json` |
 | Proyecto activo | Eliminar con confirmación reforzada | Funcionario | Proyecto retirado | `project_administration.py` | `delete_project_recoverably` | Carpeta completa del proyecto y salidas | Mueve datos; crea `deletion.json` |
 
+En el mapa, varias apariciones equivalentes del mismo recurso dentro de un nodo
+se presentan con un único editor y la acción local se aplica a todas ellas. La
+cobertura inversa solo se ofrece cuando el recurso vincula más de un nodo activo
+o inactivo. Esto no crea una relación entre un recurso interno y un link
+principal con la misma URL; ese vínculo permanece pendiente de diseño.
+
 ## Regeneración y vuelta hacia atrás
 
 `Generar o actualizar documentación` no crea una transacción única. Ejecuta

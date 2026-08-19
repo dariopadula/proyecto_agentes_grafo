@@ -256,7 +256,8 @@ def render_document_map_body(
       }
 
       function resourceCard(resource) {
-        const selectable = resource.is_consolidated;
+        const coverageNodeCount = resource.active_source_nodes.length + resource.inactive_source_nodes.length;
+        const selectable = resource.is_consolidated && coverageNodeCount > 1;
         return `<div class="document-item ${resource.canonical_resource_key === selectedResourceKey ? "selected" : ""}">
           <strong>${escapeHtml(resource.display_name)}</strong>
           <span class="pill">${escapeHtml(typeLabels[resource.resource_type] || resource.resource_type)}</span>
@@ -265,14 +266,16 @@ def render_document_map_body(
           ${resource.active_source_nodes.length > 1 ? `<p>Compartido por ${resource.active_source_nodes.length} trámites</p>` : ""}
           ${resource.canonical_url ? `<a class="document-resource-link" href="${escapeHtml(resource.canonical_url)}" target="_blank" rel="noreferrer">Abrir recurso</a>` : '<p>Sin URL disponible</p>'}
           ${selectable ? `<button class="document-coverage-action" type="button" data-resource-key="${escapeHtml(resource.canonical_resource_key)}">Ver cobertura</button>` : ""}
-          ${resource.node_appearances.map(appearance => resourceEdit(appearance)).join("")}
+          ${resourceEdit(resource.node_appearances)}
           <details><summary>Ver evidencia</summary>
             ${resource.appearance_count} apariciones · clave ${escapeHtml(resource.canonical_resource_key)}
           </details>
         </div>`;
       }
 
-      function resourceEdit(appearance) {
+      function resourceEdit(appearances) {
+        if (!appearances.length) return "";
+        const appearance = appearances[0];
         const action = `/projects/${encodeURIComponent(documentMap.project_id)}/document-map/resources/${encodeURIComponent(appearance.source_link_id)}/${encodeURIComponent(appearance.resource_id)}`;
         const options = [
           ["process_as_context", "Usar como contexto"],
@@ -283,6 +286,8 @@ def render_document_map_body(
         return `<details class="document-edit"><summary>Editar clasificación</summary>
           <form method="post" action="${escapeHtml(action)}">
             <span class="document-local-note">El cambio afecta solo a este trámite. No elimina ni modifica el recurso compartido.</span>
+            ${appearances.map(item => `<input type="hidden" name="resource_id" value="${escapeHtml(item.resource_id)}">`).join("")}
+            ${appearances.length > 1 ? `<span class="document-local-note">Se aplicará a ${appearances.length} apariciones equivalentes de este recurso en el trámite.</span>` : ""}
             <select name="use" aria-label="Clasificación del recurso">${options}</select>
             <input name="notes" type="text" placeholder="Nota opcional sobre el cambio">
             <button type="submit">Guardar cambio</button>
