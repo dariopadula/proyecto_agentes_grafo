@@ -22,6 +22,7 @@ from workflows.pdf_analysis import verify_pdf_family
 from workflows.pdf_group_review import save_pdf_family_decision
 from workflows.pdf_group_review import save_pdf_partition_decision
 from workflows.resource_review import save_resource_decision
+from workflows.resource_group_inheritance import restore_resource_group_inheritance
 from workflows.resource_filter_rules import load_or_create_resource_filter_rules
 from workflows.resource_filter_rules import save_resource_filter_configuration
 from workflows.resource_identity_review import save_resource_identity_decision
@@ -240,6 +241,43 @@ class TramiteModelingHandler(BaseHTTPRequestHandler):
                 return
             self._redirect(
                 f"/projects/{project_id}/effective-state?saved={link_id}#{link_id}"
+            )
+            return
+
+        inheritance_route = _resource_group_inheritance_route(path)
+        if inheritance_route:
+            project_id, source_link_id, resource_id = inheritance_route
+            form = self._read_form()
+            filters = _resource_filters_from_form(form)
+            try:
+                restored = restore_resource_group_inheritance(
+                    project_id=project_id,
+                    source_link_id=source_link_id,
+                    resource_id=resource_id,
+                    actor=_single(form, "actor", DEFAULT_ACTOR),
+                )
+            except ValueError as error:
+                self._redirect(
+                    _resource_review_redirect(
+                        project_id,
+                        source_link_id,
+                        resource_id,
+                        {"error": str(error), **filters},
+                    )
+                )
+                return
+            self._redirect(
+                _resource_review_redirect(
+                    project_id,
+                    source_link_id,
+                    resource_id,
+                    {
+                        "restored_inheritance": restored.get(
+                            "source_group_id", ""
+                        ),
+                        **filters,
+                    },
+                )
             )
             return
 
@@ -2907,6 +2945,27 @@ def _resource_review_form(
     resource: dict[str, Any],
     decision: dict[str, Any],
 ) -> str:
+    restore_form = ""
+    if decision.get("overrides_group") is True:
+        group_id = (
+            decision.get("overridden_group_id")
+            or decision.get("source_group_id")
+        )
+        restore_form = f"""
+        <form class="resource-inheritance-form" method="post" action="/projects/{html_escape(project_id)}/resources/{html_escape(source_link_id)}/{html_escape(resource.get('resource_id'))}/inherit">
+          <input type="hidden" name="search_filter" value="">
+          <input type="hidden" name="type_filter" value="">
+          <input type="hidden" name="discard_filter" value="">
+          <input type="hidden" name="decision_filter" value="">
+          <input type="hidden" name="scroll_y" value="0">
+          <input type="hidden" name="actor" value="{html_escape(decision.get('reviewed_by', DEFAULT_ACTOR))}">
+          <p class="muted">
+            Esta aparición reemplaza la decisión del grupo
+            <code>{html_escape(group_id)}</code>.
+          </p>
+          <button type="submit">Volver a heredar del grupo</button>
+        </form>
+        """
     return f"""
     <form class="resource-review-form" method="post" action="/projects/{html_escape(project_id)}/resources/{html_escape(source_link_id)}/{html_escape(resource.get("resource_id"))}">
       <input type="hidden" name="search_filter" value="">
@@ -2941,6 +3000,7 @@ def _resource_review_form(
         <span class="muted">{_reviewed_at(decision)}</span>
       </div>
     </form>
+    {restore_form}
     """
 
 
@@ -3177,6 +3237,20 @@ def _resource_identity_route(path: str) -> tuple[str, str, str] | None:
     return None
 
 
+def _resource_group_inheritance_route(
+    path: str,
+) -> tuple[str, str, str] | None:
+    parts = path.strip("/").split("/")
+    if (
+        len(parts) == 6
+        and parts[0] == "projects"
+        and parts[2] == "resources"
+        and parts[5] == "inherit"
+    ):
+        return parts[1], parts[3], parts[4]
+    return None
+
+
 def _auxiliary_group_decision_route(
     path: str,
 ) -> tuple[str, str] | None:
@@ -3305,6 +3379,12 @@ def _status_message(request_path: str) -> str:
         return (
             '<p class="message ok">Pertenencia al grupo guardada. '
             'Si se agregó como candidata, queda pendiente de verificación.</p>'
+        )
+    if "restored_inheritance" in query:
+        return (
+            '<p class="message ok">La excepción individual fue eliminada. '
+            'El recurso vuelve a heredar la decisión vigente del grupo '
+            f'<code>{html_escape(query["restored_inheritance"][0])}</code>.</p>'
         )
     if "saved" in query:
         return f"""<p class="message ok">Decision guardada para {html_escape(query["saved"][0])}.</p>"""

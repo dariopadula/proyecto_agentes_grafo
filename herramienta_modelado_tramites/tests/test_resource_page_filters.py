@@ -113,6 +113,51 @@ class ResourcePageFilterTests(unittest.TestCase):
 
         self.assertIn("Pertenencia al grupo guardada", message)
 
+    def test_group_exception_offers_restore_inheritance_action(self):
+        project_dir = Path(self.temp_dir.name) / "demo"
+        save_json(
+            {
+                "decisions": [
+                    {
+                        "decision_id": "link_001::resource_001",
+                        "source_link_id": "link_001",
+                        "resource_id": "resource_001",
+                        "use": "discard",
+                        "scope": "node_only",
+                        "decision_source": "individual",
+                        "overrides_group": True,
+                        "overridden_group_id": "agenda_001",
+                    }
+                ]
+            },
+            project_dir / "resource_review.json",
+        )
+
+        html = web_app._resources_page("demo", "/projects/demo/resources")
+
+        self.assertIn("Volver a heredar del grupo", html)
+        self.assertIn(
+            "/projects/demo/resources/link_001/resource_001/inherit",
+            html,
+        )
+        self.assertIn("agenda_001", html)
+
+    def test_restore_inheritance_reports_success(self):
+        message = web_app._status_message(
+            "/projects/demo/resources?restored_inheritance=agenda_001"
+        )
+
+        self.assertIn("vuelve a heredar", message)
+        self.assertIn("agenda_001", message)
+
+    def test_restore_inheritance_route_is_specific(self):
+        self.assertEqual(
+            web_app._resource_group_inheritance_route(
+                "/projects/demo/resources/link_001/resource_001/inherit"
+            ),
+            ("demo", "link_001", "resource_001"),
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

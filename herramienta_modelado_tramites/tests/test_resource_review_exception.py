@@ -85,6 +85,59 @@ class ResourceReviewExceptionTests(unittest.TestCase):
             "https://example.test/agenda-canonica",
         )
 
+    def test_editing_exception_again_preserves_group_override(self):
+        resource_review.save_resource_decision(
+            project_id="demo",
+            source_link_id="node_1",
+            resource_id="resource_1",
+            use="process_as_context",
+            scope="node_only",
+            notes="Primera excepción",
+            actor="funcionario",
+        )
+
+        resource_review.save_resource_decision(
+            project_id="demo",
+            source_link_id="node_1",
+            resource_id="resource_1",
+            use="discard",
+            scope="node_only",
+            notes="Excepción editada",
+            actor="funcionario",
+        )
+
+        payload = load_json(self.project_dir / "resource_review.json")
+        decision = payload["decisions"][0]
+        self.assertEqual(decision["decision_source"], "individual")
+        self.assertTrue(decision["overrides_group"])
+        self.assertEqual(decision["overridden_group_id"], "agenda_001")
+        self.assertEqual(decision["source_group_id"], "agenda_001")
+
+    def test_pdf_group_exception_uses_the_same_contract(self):
+        review_path = self.project_dir / "resource_review.json"
+        payload = load_json(review_path)
+        inherited = payload["decisions"][0]
+        inherited["decision_source"] = "pdf_group"
+        inherited["source_group_id"] = "pdf_family_001"
+        inherited["canonical_resource_id"] = "pdf_family_001"
+        save_json(payload, review_path)
+
+        for use in ("process_as_context", "review_later"):
+            resource_review.save_resource_decision(
+                project_id="demo",
+                source_link_id="node_1",
+                resource_id="resource_1",
+                use=use,
+                scope="node_only",
+                notes="Excepción PDF",
+                actor="funcionario",
+            )
+
+        decision = load_json(review_path)["decisions"][0]
+        self.assertTrue(decision["overrides_group"])
+        self.assertEqual(decision["overridden_group_id"], "pdf_family_001")
+        self.assertEqual(decision["canonical_resource_id"], "pdf_family_001")
+
 
 if __name__ == "__main__":
     unittest.main()

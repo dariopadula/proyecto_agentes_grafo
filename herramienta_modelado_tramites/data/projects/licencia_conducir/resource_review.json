@@ -1,7 +1,7 @@
 {
   "project_id": "licencia_conducir",
   "review_status": "complete",
-  "updated_at": "2026-08-14T14:21:48-03:00",
+  "updated_at": "2026-08-19T09:57:41-03:00",
   "decisions": [
     {
       "decision_id": "link_001::resource_002",
@@ -49,7 +49,7 @@
       "scope": "shared",
       "notes": "",
       "reviewed_by": "funcionario",
-      "reviewed_at": "2026-08-11T15:19:56-03:00",
+      "reviewed_at": "2026-08-19T09:57:41-03:00",
       "decision_source": "pdf_group",
       "source_group_id": "pdf_family_002",
       "inherited": true

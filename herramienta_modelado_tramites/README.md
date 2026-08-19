@@ -1,5 +1,9 @@
 # Herramienta de modelado de tramites
 
+Este README describe el uso y las capacidades vigentes de la aplicación. Las
+tareas activas, pausadas y futuras se mantienen únicamente en
+`cerebro_agentes_grafo/07_tareas_y_roadmap.md`.
+
 ## Navegación del mapa documental
 
 El mapa usa un selector buscable similar a un `selectInput`: al escribir parte
@@ -77,9 +81,6 @@ decisiones ni representa todavía el contrato definitivo de datos.
 En `Revisar casos individuales`, los nodos desactivados continúan visibles como
 referencia histórica, pero aparecen atenuados y con la etiqueta `Nodo inactivo`.
 Sus recursos y decisiones no se eliminan.
-
-El siguiente paso es reconfirmar las familias PDF ampliadas, comprobar su
-materialización en los casos individuales y validar una excepción heredada.
 
 El MVP inicial esta definido en:
 
@@ -347,17 +348,12 @@ Al guardar una resolución de identidad, la pantalla conserva sus filtros y
 posición, reabre el bloque correspondiente y muestra si la pertenencia quedó
 pendiente de verificación o confirmada directamente.
 
-Limitación abierta al 2026-07-31: el usuario todavía observa pérdida de filtros
-y ausencia de confirmación en su instancia, aunque el JSON contiene decisiones.
-Antes de continuar se debe reproducir el ciclo completo sobre una única
-instancia identificada y comprobar POST, redirección y render final.
-
 - `data/projects/licencia_conducir/human_review.json`
 - `data/projects/licencia_conducir/change_log.json`
 
-Limitacion actual: la app permite revisar links principales, visualizar recursos internos y clasificar el uso de cada recurso util. Todavia no permite editar reglas de filtrado desde pantalla, cargar informacion complementaria ni generar un resumen final de decisiones.
-
-Pendiente importante: si un recurso interno apunta a un link que ya existe como link principal del proyecto, la herramienta deberia detectarlo y proponer vincularlo con ese nodo existente en lugar de documentarlo otra vez.
+Las mejoras futuras de este circuito, incluida la posible vinculación de un
+recurso interno con un link principal ya existente, se registran en el catálogo
+único de tareas y no en este manual de uso.
 
 ## Descubrir recursos internos
 
@@ -471,6 +467,17 @@ explícita y no se sobrescribe al actualizar el grupo.
 
 La pantalla `resources` permite filtrar recursos pendientes, decisiones
 heredadas de grupos y decisiones individuales.
+
+Una aparición heredada que se edita individualmente queda como excepción con
+`overrides_group: true`. Las ediciones posteriores conservan el grupo de origen
+y la identidad canónica, y una nueva materialización del grupo no sobrescribe
+la excepción. Este contrato se verifica para grupos PDF y auxiliares.
+
+La revisión individual muestra `Volver a heredar del grupo` únicamente para
+esas excepciones. La acción adopta de inmediato el uso, alcance y referencia
+canónica de la última decisión grupal vigente. Se rechaza si la aparición dejó
+de pertenecer al grupo o si la composición actual exige reconfirmación. El
+cambio afecta solo esa aparición y queda registrado en `change_log.json`.
 
 Los filtros se conservan al guardar una decisión y también quedan reflejados en
 la URL. La pantalla restaura la búsqueda, el tipo, el estado, útiles/descartados

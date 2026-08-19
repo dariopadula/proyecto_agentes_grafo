@@ -51,6 +51,9 @@ def save_resource_decision(
         resource_id,
     )
     timestamp = now_iso()
+    overrides_group, overridden_group_id = _group_override_state(
+        previous_decision
+    )
 
     decision = {
         "decision_id": f"{source_link_id}::{resource_id}",
@@ -65,18 +68,8 @@ def save_resource_decision(
         "reviewed_by": actor,
         "reviewed_at": timestamp,
         "decision_source": "individual",
-        "overrides_group": bool(
-            previous_decision
-            and previous_decision.get("decision_source")
-            in {"auxiliary_group", "pdf_group"}
-        ),
-        "overridden_group_id": (
-            previous_decision.get("source_group_id")
-            if previous_decision
-            and previous_decision.get("decision_source")
-            in {"auxiliary_group", "pdf_group"}
-            else None
-        ),
+        "overrides_group": overrides_group,
+        "overridden_group_id": overridden_group_id,
     }
     # Una edicion individual cambia el uso de esta aparicion, no su identidad.
     # Conservar estos campos evita separar accidentalmente un recurso de la
@@ -130,6 +123,25 @@ def save_resource_decision(
         "scope": scope,
         "resource_review_path": str(resource_review_path),
     }
+
+
+def _group_override_state(
+    previous_decision: dict[str, Any] | None,
+) -> tuple[bool, str | None]:
+    """Conserva una excepción individual durante ediciones posteriores."""
+    if not previous_decision:
+        return False, None
+    if previous_decision.get("decision_source") in {
+        "auxiliary_group",
+        "pdf_group",
+    }:
+        return True, previous_decision.get("source_group_id")
+    if previous_decision.get("overrides_group") is True:
+        return True, (
+            previous_decision.get("overridden_group_id")
+            or previous_decision.get("source_group_id")
+        )
+    return False, None
 
 
 def _load_or_create_resource_review(
